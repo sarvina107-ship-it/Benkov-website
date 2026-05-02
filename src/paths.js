@@ -1,0 +1,22 @@
+export const ROUTES = {
+  HOME: '/',
+  ABOUT: '/about',
+  ACHIEVEMENTS: '/achievements',
+  ADMISSION: '/admission',
+  CONTACTS: '/contacts',
+  DIRECTIONS: '/directions',
+  DIRECTIONSDETAIL: '/directionsdetail',
+  DOCUMENTS: '/documents',
+  DIRECTOR: '/director',
+  DEPUTY: '/deputy',
+  INFRASTRUCTURE: '/infrastructure',
+  STUDYPLAN: '/studyplan',
+  MANAGEMENT: '/management',
+  GALLERY: '/gallery',
+  CONDITIONS: '/conditions',
+  NEWSSECTION: '/newsSection',
+  NEWSLIST: '/newsList',
+  NEWSDETAIL: '/newsDetail',
+  LOGIN: '/login',
+  ADMINNEWS: '/adminNews'
+};

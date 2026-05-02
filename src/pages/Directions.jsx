@@ -1,0 +1,139 @@
+import React from 'react';
+import { Link } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
+import { directionsCategories, directionsData } from '../data/directionsData';
+import { ROUTES } from '../paths';
+
+const Directions = () => {
+  const { t } = useTranslation();
+  return (
+    <section className="pt-24 bg-[#F4F2EE] text-[#1A1A1A]" id="art-directions">
+      {/* Заголовок */}
+      <div className="max-w-7xl mx-auto px-6 text-center mb-20">
+        <h2 className="text-5xl md:text-6xl font-serif font-bold mb-6 text-[#0E1A2B]">
+          {t('directions.data.title')}
+        </h2>
+        <p className="text-xl text-gray-600 max-w-3xl mx-auto leading-relaxed">
+          {t('directions.data.desc')}
+        </p>
+        <div className="w-24 h-1 bg-[#D4A259] mx-auto mt-8 rounded-full"></div>
+      </div>
+
+      <div className="max-w-7xl mx-auto px-6 pb-32">
+        {directionsCategories.map((category, catIndex) => (
+          <div key={catIndex} className="mb-24 last:mb-0">
+            {/* Заголовок категории из i18n */}
+            <div className="flex items-center gap-4 mb-10">
+              <h3 className="text-2xl md:text-3xl font-serif font-bold text-[#0E1A2B] uppercase">
+                {t(`directions.categories.${category.category}`)}
+              </h3>
+              <div className="flex-1 h-[2px] bg-[#D4A259]/20"></div>
+            </div>
+
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-10">
+              {category.items.map((itemId) => {
+                const staticData = directionsData[itemId];
+                if (!staticData) return null;
+
+                return (
+                  <Link
+                    to={`/directions/${itemId}`}
+                    key={itemId}
+                    className="group flex flex-col md:flex-row bg-white rounded-[24px] overflow-hidden shadow-md hover:shadow-2xl transition-all duration-500 border border-white hover:border-[#D4A259]/30"
+                  >
+                    {/* Фото */}
+                    <div className="md:w-1/2 h-64 md:h-auto overflow-hidden">
+                      <img
+                        src={staticData.image}
+                        alt={t(`directions.items.${itemId}.title`)}
+                        className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                      />
+                    </div>
+
+                    {/* Текст из i18n */}
+                    <div className="md:w-1/2 p-8 flex flex-col justify-center">
+                      <h4 className="text-2xl font-bold font-serif mb-4 text-[#0E1A2B] group-hover:text-[#D4A259] transition-colors duration-300 leading-tight">
+                        {t(`directions.items.${itemId}.title`)}
+                      </h4>
+                      <p className="text-base text-gray-600 leading-relaxed mb-6 line-clamp-3">
+                        {t(`directions.items.${itemId}.desc`)}
+                      </p>
+
+                      <div className="flex items-center gap-3 text-sm font-bold uppercase tracking-widest text-[#D4A259]">
+                        <span>{t('directions.about.btn')}</span>
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform group-hover:translate-x-2">
+                          <line x1="5" y1="12" x2="19" y2="12"></line>
+                          <polyline points="12 5 19 12 12 19"></polyline>
+                        </svg>
+                      </div>
+                    </div>
+                  </Link>
+                );
+              })}
+            </div>
+          </div>
+        ))}
+      </div>
+
+      {/* Блок призыва к действию */}
+      <section className="py-24 bg-[#F4F2EE] border-t border-[#D4A259]/10">
+        <div className="max-w-5xl mx-auto px-6">
+          <div className="bg-white rounded-[30px] p-12 shadow-inner border border-[#D4A259]/10 relative overflow-hidden">
+
+            {/* Декоративный элемент на фоне (Art) */}
+            <div className="absolute -bottom-10 -right-10 text-[180px] font-serif font-bold text-[#D4A259]/5 select-none pointer-events-none">
+              Art
+            </div>
+
+            <div className="flex flex-col md:flex-row items-center gap-12 relative z-10">
+              {/* Иконка или графический элемент */}
+              <div className="flex-shrink-0 w-24 h-24 rounded-full bg-[#F4F2EE] flex items-center justify-center border-4 border-white shadow-lg">
+                <svg width="40" height="40" viewBox="0 0 24 24" fill="none" stroke="#D4A259" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round">
+                  <path d="M14 2H6a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h12a2 2 0 0 0 2-2V8z"></path>
+                  <polyline points="14 2 14 8 20 8"></polyline>
+                  <line x1="12" y1="18" x2="12" y2="12"></line>
+                  <line x1="9" y1="15" x2="15" y2="15"></line>
+                </svg>
+              </div>
+
+              {/* Текст */}
+              <div className="flex-1 text-center md:text-left space-y-4">
+                <div className="flex items-center gap-3 justify-center md:justify-start">
+                  <h2 className="text-4xl font-serif font-bold text-[#0E1A2B]">
+                    {t('directions.about.apply')}
+                  </h2>
+
+                </div>
+                <div className="h-[2px] w-20 bg-[#D4A259] mx-auto md:mx-0"></div>
+                <p className="text-lg text-gray-600 leading-relaxed max-w-2xl">
+                  {t('directions.about.desc')}
+                </p>
+              </div>
+
+              {/* Кнопка */}
+              <div className="flex-shrink-0">
+                <Link to={ROUTES.CONDITIONS}>
+                  <button className="group relative px-10 py-4 bg-[#1B2A44] text-white rounded-xl font-bold uppercase tracking-[0.2em] text-sm border border-[#D4A259]/30 transition-all duration-300 hover:border-white">
+                    <span className="absolute inset-0 border border-white rounded-xl opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></span>
+                    <span className="relative z-10 flex items-center gap-2">
+                      {t('directions.about.btn')}
+                      <span className="relative w-3 h-3">
+                        <span className="absolute top-1/2 left-0 w-full h-[1px] bg-white transition-transform group-hover:rotate-90"></span>
+                        <span className="absolute top-1/2 left-0 w-full h-[1px] bg-white"></span>
+                      </span>
+                    </span>
+                  </button>
+                </Link>
+              </div>
+            </div>
+
+            {/* Нижняя разделительная линия */}
+            <div className="absolute inset-x-0 bottom-0 h-2 bg-gradient-to-r from-transparent via-[#D4A259]/40 to-transparent"></div>
+          </div>
+        </div>
+      </section>
+    </section>
+  );
+};
+
+export default Directions;
