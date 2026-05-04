@@ -370,7 +370,7 @@ const Home = () => {
 
               {/* Дополнительная деталь: парящий элемент с цифрой */}
               <div className="absolute -bottom-8 -right-8 bg-[#D4A259] p-6 rounded-2xl shadow-xl hidden lg:block transform group-hover:rotate-6 transition-transform duration-500">
-                <p className="text-[#0B1524] text-3xl font-bold leading-none">90+</p>
+                <p className="text-[#0B1524] text-3xl font-bold leading-none">100+</p>
                 <p className="text-[#0B1524] text-[10px] font-bold uppercase tracking-tighter">{t('home.director.years_tradition')}</p>
               </div>
             </div>

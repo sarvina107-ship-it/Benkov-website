@@ -1,7 +1,9 @@
 import React, { useState, useMemo } from 'react';
 import axios from 'axios';
+import { useTranslation } from 'react-i18next';
 
 const Admission = () => {
+  const { t } = useTranslation();
   const [formData, setFormData] = useState({ name: '', phone: '', direction: '' });
   const [isSubmitted, setIsSubmitted] = useState(false);
   const [loading, setLoading] = useState(false);
@@ -13,23 +15,18 @@ const Admission = () => {
   const TELEGRAM_BOT_TOKEN = '8792163596:AAEvf26FSPUS0ulU1nwBOicEM8210F7HFro';
   const TELEGRAM_CHAT_ID = '1633967629';
 
-  const directions = [
-    "Художник кино и телевидения", "Художник лаковой миниатюры", "Художник-график",
-    "Станковая живопись", "Монументальная живопись", "Театральный живописец-декоратор",
-    "Театральная бутафория", "Мастер-художник художественной резьбы по дереву",
-    "Мастер-художник художественной резьбы по гипсу (ганчу)", "Мастер-художник художественной вышивки",
-    "Художник по костюмам", "Дизайн интерьера", "Дизайн компьютерной графики",
-    "Художественная керамика", "Скульптура", "Художник-реставратор живописи и произведений прикладного искусства"
-  ];
+  // Получаем массив направлений из переводов
+  const directions = t('admission.directions', { returnObjects: true });
 
   const filteredDirections = useMemo(() => {
+    if (!Array.isArray(directions)) return [];
     return directions.filter(d => d.toLowerCase().includes(searchTerm.toLowerCase()));
-  }, [searchTerm]);
+  }, [searchTerm, directions]);
 
   const sendToTelegram = async (e) => {
     e.preventDefault();
     if (!formData.direction) {
-      alert("Пожалуйста, выберите направление");
+      alert(t('admission.selectAlert'));
       return;
     }
     setLoading(true);
@@ -49,7 +46,7 @@ const Admission = () => {
       });
       setIsSubmitted(true);
     } catch (error) {
-      alert('Ошибка при отправке.');
+      alert(t('admission.error'));
     } finally {
       setLoading(false);
     }
@@ -60,13 +57,17 @@ const Admission = () => {
       {!isSubmitted ? (
         <div className="max-w-xl w-full bg-white rounded-[30px] shadow-2xl border border-gray-100 relative">
           <div className="bg-[#1B2A44] p-8 text-white text-center rounded-t-[30px]">
-            <h2 className="text-3xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>Поступление 2026</h2>
+            <h2 className="text-3xl font-bold" style={{ fontFamily: "'Playfair Display', serif" }}>
+              {t('admission.title')}
+            </h2>
             <div className="w-16 h-1 bg-[#D4A259] mx-auto mt-3 rounded-full"></div>
           </div>
 
           <form onSubmit={sendToTelegram} className="p-10 space-y-6">
             <div className="space-y-2">
-              <label className="text-sm font-bold text-[#1B2A44] uppercase tracking-wider">Ф.И.О. Абитуриента</label>
+              <label className="text-sm font-bold text-[#1B2A44] uppercase tracking-wider">
+                {t('admission.labelName')}
+              </label>
               <input
                 required
                 className="w-full p-4 bg-gray-50 border border-gray-200 rounded-2xl focus:border-[#D4A259] outline-none transition-all"
@@ -75,7 +76,9 @@ const Admission = () => {
             </div>
 
             <div className="space-y-2">
-              <label className="text-sm font-bold text-[#1B2A44] uppercase tracking-wider">Номер телефона</label>
+              <label className="text-sm font-bold text-[#1B2A44] uppercase tracking-wider">
+                {t('admission.labelPhone')}
+              </label>
               <input
                 required
                 type="tel"
@@ -87,33 +90,31 @@ const Admission = () => {
 
             {/* ВЫБОР НАПРАВЛЕНИЯ */}
             <div className="space-y-2 relative">
-              <label className="text-sm font-bold text-[#1B2A44] uppercase tracking-wider">Направление обучения</label>
+              <label className="text-sm font-bold text-[#1B2A44] uppercase tracking-wider">
+                {t('admission.labelDirection')}
+              </label>
 
-              {/* Триггер списка */}
               <div
                 className={`w-full p-4 bg-gray-50 border rounded-2xl cursor-pointer transition-all flex justify-between items-center relative z-[45] ${isOpen ? 'border-[#D4A259] ring-1 ring-[#D4A259]' : 'border-gray-200'}`}
                 onClick={() => setIsOpen(!isOpen)}
               >
                 <span className={formData.direction ? 'text-[#1B2A44]' : 'text-gray-400'}>
-                  {formData.direction || "Выберите из списка..."}
+                  {formData.direction || t('admission.placeholderDirection')}
                 </span>
                 <svg className={`w-5 h-5 transition-transform duration-300 ${isOpen ? 'rotate-180' : ''}`} fill="none" stroke="currentColor" viewBox="0 0 24 24">
                   <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M19 9l-7 7-7-7" />
                 </svg>
               </div>
 
-              {/* Выпадающее меню */}
               {isOpen && (
                 <>
-                  {/* Прозрачный фон для закрытия при клике вне меню */}
                   <div className="fixed inset-0 z-[40]" onClick={() => setIsOpen(false)}></div>
-
-                  <div className="absolute z-[50] left-0 right-0 mt-2 bg-white border border-gray-100 shadow-[0_15px_45px_rgba(0,0,0,0.15)] rounded-2xl overflow-hidden animate-in fade-in slide-in-from-top-2 duration-200">
+                  <div className="absolute z-[50] left-0 right-0 mt-2 bg-white border border-gray-100 shadow-[0_15px_45px_rgba(0,0,0,0.15)] rounded-2xl overflow-hidden">
                     <div className="p-3 border-b bg-gray-50 sticky top-0 z-10">
                       <input
                         autoFocus
                         type="text"
-                        placeholder="Поиск направления..."
+                        placeholder={t('admission.searchPlaceholder')}
                         className="w-full p-2 text-sm border border-gray-200 rounded-lg outline-none focus:border-[#D4A259]"
                         value={searchTerm}
                         onChange={(e) => setSearchTerm(e.target.value)}
@@ -136,7 +137,9 @@ const Admission = () => {
                           </div>
                         ))
                       ) : (
-                        <div className="p-5 text-center text-gray-400 text-sm italic">Ничего не найдено</div>
+                        <div className="p-5 text-center text-gray-400 text-sm italic">
+                          {t('admission.notFound')}
+                        </div>
                       )}
                     </div>
                   </div>
@@ -144,15 +147,12 @@ const Admission = () => {
               )}
             </div>
 
-            <button  disabled={loading} className="w-full group relative px-10 py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-sm bg-[#D4A259] text-[#1B2A44] border-2 border-[#D4A259] hover:bg-transparent hover:text-[#D4A259] transition-all duration-500 ease-in-out overflow-hidden">
+            <button disabled={loading} className="w-full group relative px-10 py-4 rounded-xl font-bold uppercase tracking-[0.2em] text-sm bg-[#D4A259] text-[#1B2A44] border-2 border-[#D4A259] hover:bg-transparent hover:text-[#D4A259] transition-all duration-500 ease-in-out overflow-hidden">
               <span className="absolute top-0 left-0 w-2 h-[2px] bg-[#1B2A44] group-hover:bg-[#D4A259] group-hover:w-full transition-all duration-500"></span>
               <span className="absolute bottom-0 right-0 w-2 h-[2px] bg-[#1B2A44] group-hover:bg-[#D4A259] group-hover:w-full transition-all duration-500"></span>
-              <span className="relative z-10 flex items-center justify-center gap-3">
-                <span className="h-[1px] w-0 bg-[#D4A259] group-hover:w-4 transition-all duration-500"></span>
-                <span className="h-[1px] w-0 bg-[#D4A259] group-hover:w-4 transition-all duration-500"></span>
+              <span className="relative z-10">
+                {loading ? t('admission.sending') : t('admission.submitBtn')}
               </span>
-              <span className="absolute inset-0 opacity-0 group-hover:opacity-100 shadow-[inside_0_0_15px_rgba(212,162,89,0.2)] transition-opacity duration-500"></span>
-              {loading ? 'ОТПРАВКА...' : 'ОТПРАВИТЬ ЗАЯВКУ'}
             </button>
           </form>
         </div>
@@ -164,17 +164,19 @@ const Admission = () => {
               <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="3" d="M5 13l4 4L19 7" />
             </svg>
           </div>
-          <h2 className="text-4xl font-black text-[#1B2A44] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>ЗАЯВКА ПРИНЯТА!</h2>
+          <h2 className="text-4xl font-black text-[#1B2A44] mb-6" style={{ fontFamily: "'Playfair Display', serif" }}>
+            {t('admission.successTitle')}
+          </h2>
           <div className="bg-[#1B2A44] p-8 rounded-3xl shadow-inner">
             <p className="text-[#D4A259] text-2xl font-bold leading-relaxed">
-              ⚠️ ВНИМАНИЕ: СЛЕДИТЕ ЗА НОВОСТЯМИ ОБ ДАТЕ ПРОВЕДЕНИЯ ЭКЗАМЕНОВ В НАШЕМ ТЕЛЕГРАМ КАНАЛЕ И НА САЙТЕ!
+              {t('admission.successAlert')}
             </p>
           </div>
           <button
             onClick={() => window.location.href = '/'}
             className="mt-10 text-[#1B2A44] font-bold border-b-2 border-[#1B2A44] hover:text-[#D4A259] hover:border-[#D4A259] transition-all"
           >
-            Вернуться на главную
+            {t('admission.backHome')}
           </button>
         </div>
       )}

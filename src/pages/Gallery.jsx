@@ -1,6 +1,9 @@
 import React, { useState } from 'react';
+import { useTranslation } from 'react-i18next'; // Импорт хука
 
 const Gallery = () => {
+  const { t } = useTranslation(); // Инициализация переводов
+
   // 1. Загрузка всех изображений
   const imageModules = import.meta.glob('/src/assets/gallery/*.{png,jpg,jpeg,webp}', {
     eager: true,
@@ -10,7 +13,7 @@ const Gallery = () => {
 
   // 2. Настройки пагинации
   const [currentPage, setCurrentPage] = useState(1);
-  const imagesPerPage = 6; // Сколько картинок показывать на одной странице
+  const imagesPerPage = 6;
 
   // Расчеты
   const totalPages = Math.ceil(allImages.length / imagesPerPage);
@@ -18,7 +21,7 @@ const Gallery = () => {
   const indexOfFirstImage = indexOfLastImage - imagesPerPage;
   const currentImages = allImages.slice(indexOfFirstImage, indexOfLastImage);
 
-  // Функция скролла вверх при смене страницы (чтобы пользователь не оставался внизу)
+  // Функция скролла вверх при смене страницы
   const paginate = (pageNumber) => {
     setCurrentPage(pageNumber);
     window.scrollTo({ top: 0, behavior: 'smooth' });
@@ -33,16 +36,16 @@ const Gallery = () => {
         {/* Заголовок */}
         <div className="text-center mb-20">
           <span className="text-[#D4A259] font-medium tracking-[0.2em] uppercase text-sm mb-4 block">
-            Творчество наших воспитанников
+            {t('gallery.span')}
           </span>
           <h2 className="text-5xl md:text-6xl font-bold text-[#1B2A44] relative inline-block"
             style={{ fontFamily: "'Playfair Display', serif" }}>
-            Галерея
+            {t('gallery.title')}
             <span className="absolute -bottom-4 left-1/2 -translate-x-1/2 w-12 h-[3px] bg-[#D4A259]"></span>
           </h2>
         </div>
 
-        {/* Сетка Masonry (теперь отрисовывает только currentImages) */}
+        {/* Сетка Masonry */}
         <div className="columns-1 sm:columns-2 lg:columns-3 gap-8 space-y-8 transition-all duration-500">
           {currentImages.map((src, index) => (
             <div
@@ -54,15 +57,17 @@ const Gallery = () => {
               <div className="absolute inset-0 border-[0px] group-hover:border-[15px] border-white/10 transition-all duration-500 z-20 pointer-events-none"></div>
               <img
                 src={src}
-                alt={`Ученическая работа ${indexOfFirstImage + index + 1}`}
+                alt={`${t('gallery.projectTitle')} ${indexOfFirstImage + index + 1}`}
                 className="w-full h-auto object-cover transition-transform duration-[1.5s] group-hover:scale-110"
               />
               <div className="absolute inset-0 bg-gradient-to-t from-[#1B2A44]/90 via-[#1B2A44]/20 to-transparent 
                               opacity-0 group-hover:opacity-100 transition-all duration-500 z-10 flex flex-col justify-end p-8">
                 <div className="transform translate-y-8 group-hover:translate-y-0 transition-transform duration-500">
-                  <p className="text-[#D4A259] text-xs uppercase tracking-widest mb-2 font-semibold">Направление обучения</p>
+                  <p className="text-[#D4A259] text-xs uppercase tracking-widest mb-2 font-semibold">
+                    {t('gallery.directionLabel')}
+                  </p>
                   <h3 className="text-white text-xl font-bold mb-2" style={{ fontFamily: "'Playfair Display', serif" }}>
-                    Творческий проект №{indexOfFirstImage + index + 1}
+                    {t('gallery.projectTitle')}{indexOfFirstImage + index + 1}
                   </h3>
                   <div className="w-8 h-[1px] bg-[#D4A259] group-hover:w-full transition-all duration-700"></div>
                 </div>
@@ -71,7 +76,7 @@ const Gallery = () => {
           ))}
         </div>
 
-        {/* ПАГИНАЦИЯ (Кнопки переключения) */}
+        {/* ПАГИНАЦИЯ */}
         {totalPages > 1 && (
           <div className="mt-20 flex justify-center items-center gap-4">
             <button
@@ -79,7 +84,7 @@ const Gallery = () => {
               disabled={currentPage === 1}
               className={`px-4 py-2 rounded-lg border border-[#D4A259] transition-all ${currentPage === 1 ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#D4A259] hover:text-white text-[#D4A259]'}`}
             >
-              ← Пред
+              {t('gallery.prev')}
             </button>
 
             <div className="flex gap-2">
@@ -99,15 +104,19 @@ const Gallery = () => {
               disabled={currentPage === totalPages}
               className={`px-4 py-2 rounded-lg border border-[#D4A259] transition-all ${currentPage === totalPages ? 'opacity-30 cursor-not-allowed' : 'hover:bg-[#D4A259] hover:text-white text-[#D4A259]'}`}
             >
-              След →
+              {t('gallery.next')}
             </button>
           </div>
         )}
 
-        {/* Футер */}
+        {/* Футер с динамическими данными */}
         <div className="mt-20 text-center">
           <p className="text-[#1B2A44]/60 italic font-serif">
-            Показано {indexOfFirstImage + 1} — {Math.min(indexOfLastImage, allImages.length)} из {allImages.length} работ
+            {t('gallery.footerText', {
+              start: indexOfFirstImage + 1,
+              end: Math.min(indexOfLastImage, allImages.length),
+              total: allImages.length
+            })}
           </p>
         </div>
       </div>

@@ -127,7 +127,9 @@ i18n
                         data: {
                             title: "Наши направления",
                             desc: "Профессиональное обучение по всем видам художественного искусства.Выберите свою специализацию.",
-                            btn: "Подробнее"
+                            btn: "Подробнее",
+                            back: "назад к направлениям",
+                            undefined: "направление не найдено"
                         },
                         categories: {
                             cinema: "ИСКУССТВО КИНО И ТЕЛЕВИДЕНИЕ",
@@ -149,99 +151,75 @@ i18n
                         items: {
                             "cinema-artist": {
                                 title: "Художник кино и телевидения",
-                                desc: "Изучение художественного оформления кино и телевизионных проектов. Работа над созданием визуального ряда, декораций и атмосферы кадра.",
-                                name: "И.Ф",
-                                quote: "Кино — это искусство видеть мир иначе."
+                                desc: "Учащиеся отделения постигают секреты кино и телекусства, и, в особенности, обретают навыки изобразительно-композиционного решения, в частности, таких важных моментах кино и телевидения, как жизнь и образ, кадр и композиция, кадр и дизайн. Кроме того, они приобретают знания и навыки в таких вопросах, как виды и жанры изобразительного искусства и их использование в кино и на телевидении, овладевают основами композиции, колорита, влияния закономерностей живописи на телеэкран и т. д. Художник кино и телевидения должен глубоко усвоить композиционную структуру произведения, способы раскрытия чувств героев, жанровые особенности и умение их передачи в своих работах.",
+                                desc1: "В числе специалистов, передающих свои знания студентам, художники-педагоги Кора-Бое Мурод, Гофурова Зухра, Убайдуллаев Хашим. Выпускники отделения художники-постановщики, художники-дизайнеры трудятся на государственных и частных киностудиях, различных каналах телевидения Узбекистана."
                             },
                             "lacquer-miniature": {
                                 title: "Художник лаковой миниатюры",
-                                desc: "Изучение традиционных техник росписи, работа с папье-маше и тонкими деталями орнамента.",
-                                name: "И.Ф",
-                                quote: "В малой форме скрыта великая душа народа."
+                                desc: "На отделении лаковой миниатюры готовят мастеров-художников лаковой миниатюры, которые работают как в нашей республике, так и за её пределами. Благодаря самоотверженной творческой и педагогической деятельности специалистов данного направления древнее национальное искусство миниатюры, являющее собой основу национального изобразительного искусства, из поколения в поколение возрождается, обогащая вековые традиции за счёт новых творческих подходов и новых технологий.",
+                                desc1: "Учащиеся колледжа, получая знания о древних традициях лаковой миниатюры и гармонично сочетая их с современными приёмами, обретают навыки создания композиций и использования их для оформления"
                             },
                             "graphic-artist": {
                                 title: "Художник-график",
-                                desc: "Освоение техник эстампа, литографии и книжной графики. Работа с линией и контрастом.",
-                                name: "И.Ф",
-                                quote: "Графика — это музыка черного и белого.",
+                                desc: "Художники-графики востребованы в таких областях искусства, как реклама, художественное оформление книг, станковой графики. На отделении готовятся художники-графики, умеющие использовать графические средства в художественном оформлении книг и плакатов, изготовлении эмблем, логотипов предприятий, а также экслибрисов, организаций, концернов, фирм и других заведений.",
+                                desc1: "Обучают студентов секретам мастерства такие известные художники и педагоги, как Виктор Лебедев, Анвар Мамаджанов, Анатолий Чибисов, Леким Ибрагимов, Борий Махкамов, Хурсаной Инагамова, Ривкат Азиханов, Дилафруз Мамарасулова, Камила Галицкая, Мария Крюкова, Мафират Шожалилова, Феруза Джаббарова, Светлана Абдумуминова, Мария Воробьева, Камола Субхонова, Гулираъно Мирхамидова, Шухрат Хушвактов, Одилжон Умирзоков."
                             },
                             "easel-painting": {
                                 title: "Станковая живопись",
-                                desc: "Классическое обучение живописи маслом на холсте. Создание портретов, пейзажей и натюрмортов.",
-                                name: "И.Ф",
-                                quote: "Живопись — это застывшее мгновение жизни."
+                                desc: "Преподаватели этого направления готовят художников станковой живописи на основе традиций школ национального и мирового изобразительного искусства, ими был разработан ряд учебно-методических пособий по предметам специальности с использованием теоретических основ современного изобразительного искусства и своего богатого творческого и педагогического опыта. Их ученики усваивают технику работы с масляными и водяными красками, закрепляя полученные теоретические знания в процессе практической работы.",
+                                desc1: "В числе преподавателей по этим специальностям такие художники-педагоги, как Аминов Хусан, Махкамов Бахтиёр,Муллажонов Билолиддин, Акромов Рихситилла, Мирсаидов Мирвохид, Турдалиев Абдулла, Усмонов Жамол, Исламшиков Зухриддин, Носиров Жамшид, Эгамбердиев Хасан, Косимов Абдугани, Зоиров Мухтор, Миносьянц Арминак, Хакимов Шавкат, Мавлонов Фаррух, Юлдашев Мухаммад, Махкамов Бекзод, Адилхужаев Махмуд."
                             },
                             "monumental-painting": {
-                                title: "Монументальная живопись",
-                                desc: "Работа с крупными формами: фрески, мозаики и роспись архитектурных объектов.",
-                                name: "И.Ф",
-                                quote: "Искусство должно быть частью пространства."
+                                title: "Монумент живопись",
+                                desc: "В данном направлении готовятся кадры по двум специальностям: художник-монументалист и руководитель кружка изобразительного искусства. В процессе обучения по этому направлению ученики изучают технику монументальной живописи, овладевают навыками практического использования соответствующих материалов, а также обучаются таким работам, как копирование монументальных настенных картин знаменитых художников, роспись, сграффито, мозаика, написание отдельных частей витражных композиций на различные материалы.",
+                                desc1: "В настоящее время по этой специальности преподают такие зрелые художники-педагоги, как Зокиров Тулкин, Шин Игорь, Нуриддинов Дилшод, Умрзоков Дониёр.Выпускники данного отделения колледжа, получив специальность художника монументальной живописи и оформителя, в основном будут работать в частных фирмах в качестве оформителей витражей, изготовлением мозаик и настенных картин."
                             },
                             "theatrical-set-designer": {
                                 title: "Театральный живописец-декоратор",
-                                desc: "Проектирование декораций и создание сценического пространства для спектаклей.",
-                                name: "И.Ф",
-                                quote: "Сцена — это мир, который мы создаем с нуля."
+                                desc: "Учащиеся этого направления изучают живопись и технологию использования материалов, проектирование, театральные макеты, сценическую технику, осваивая методы создания эскизов и макетов на основе идей и сценариев драматических произведений, разработки их образно-композиционного решения. В процессе подготовки макета одного сценического действа выбранного спектакля учащиеся приобретают навыки видеть и воплощать задумки в масштабе.",
+                                desc1: "В процессе изготовления каждого отдельного элемента макета, то есть выполняя полный цикл работ, в том числе столярных, связанных с плотницкой работой, по кройке и шитью, по изготовлению бутафории, занимаясь также косметикой и гримом, приобретают навыки осуществления общих монтажных работ.Опытные педагоги-художники Мазитов Владимир, Номозов Отабек, Абдукодирова Камола, Зокиров Миркомил, Бозорова Наргис передают свои знания и накопленный опыт своим ученикам. Выпускники этого отделения трудятся в театрах Республики художниками театра."
                             },
                             "theatrical-props": {
                                 title: "Театральная бутафория",
-                                desc: "Мастерство имитации материалов и создание реквизита для театральных постановок.",
-                                name: "И.Ф",
-                                quote: "В бутафории любая вещь обретает магию."
+                                desc: "В этом направлении готовятся кадры по двум специальностям: художник-бутафор театрального искусства и руководитель кружка изобразительного искусства. Для того, чтобы учащиеся глубоко усвоили профессию, они изучают работу в мастерской, проектирование, искусство театральной бутафории, технику нанесения узора на материю, театральный макет. На занятиях по этим предметам они занимаются изготовлением мягких игрушек, форм из папье-маше, покраской и лакировкой моделей, имитацией предметов украшения и др. Творческая работа художника-бутафора оказывает большое влияние на привлекательность сценического действа.",
+                                desc1: "Преданные своему делу заботливые учителя и трудолюбивые педагоги-художники Петрова Нина, Кляйер Галина, Дементьева Елена, Эгамбердиева Дилнора помогают учащимся в овладении секретами данной профессии. Выпускники этой специальности работают во всех театрах Узбекистана.Республиканский художественный колледж имени П. Бенькова — единственное учебное заведение, готовящее специалистов в этой области."
                             },
                             "wood-carving": {
                                 title: "Резьба по дереву",
-                                desc: "Художественная обработка дерева, создание орнаментов и объемных композиций.",
-                                name: "И.Ф",
-                                quote: "Дерево помнит тепло рук мастера."
+                                desc: "Резьба по дереву — одно из древнейших и широко распространённых ремёсел, получивших развитие на территории Узбекистана. Жилые здания, колонны, потолки, окна и двери различных сооружений украшались резными изделиями из дерева.Учащиеся отделения постигают секреты работы с деревом, нанесения на деревянную основу узоров, изготовления различных форм и узоров, в том числе форм 'хандасавий' (при изготовлении решёток, перил, оград), растительных и геометрических узоров.",
+                                desc1: "Искусные мастера, знатоки своего дела Тураев Туроб, Мирзаев Баходир обучают своих учеников традициям древних мастеров резьбы по дереву. Выпускники данного отделения работают на государственных и в частных ремесленных предприятиях."
                             },
                             "ganch-carving": {
                                 title: "Резьба по ганчу",
-                                desc: "Традиционное узбекское искусство резьбы по гипсу (ганчу) для украшения интерьеров.",
-                                name: "И.Ф",
-                                quote: "Ганч — это кружево, застывшее в камне."
-                            },
-                            "embroidery": {
-                                title: "Художественная вышивка",
-                                desc: "Освоение техник вышивки золотом, шелком и создание уникальных текстильных изделий.",
-                                name: "И.Ф",
-                                quote: "Нить соединяет прошлое и будущее."
+                                desc: "Учащихся отделения обучают оформлению помещений, изучению особенностей использования цвета в орнаментальных композициях, постижению секретов использования естественных оттенков цвета, условностей использования цвета и форм, а также умелому использованию естественной фактуры материалов.",
+                                desc1: "Кроме того, они осваивают виды 'ислими', 'гирих', их разные и общие черты, основные элементы, используемые в их создании (геометрические формы в 'гирихе', а в 'ислими' — стилизованные природные формы, то есть условные изображения растений и животных), а также целесообразное использование цветов и таких изобразительных средств, как их гамма, колорит, ритм, симметрия и асимметрия и т.д. Секретам орнамента обучает учеников талантливый художник Ибрагимов Собир."
                             },
                             "costume-designer": {
                                 title: "Художник по костюмам",
-                                desc: "Дизайн и создание сценических, исторических и современных костюмов.",
-                                name: "И.Ф",
-                                quote: "Костюм — это первая реплика героя."
+                                desc: "В этом направлении готовятся кадры по двум специальностям: художник театрального костюма и руководитель кружка изобразительного искусства. Учащиеся получают знания о роли и месте одежды в обществе, искусстве создания костюмов, особенностях костюмов Древнего Востока, Средней Азии, античной Греции и Рима, Европейского средневековья, Ближнего Востока, эпохи Ренессанса, Европы и России нового времени, обретают профессиональные навыки шитья исторических костюмов на основе современных технологий. Кроме того, они овладевают мастерством создания композиций этнографических, исторических костюмов народов мира, моделирования и технологией создания и пошива современных и исторических театральных костюмов, художественной обработки тканей, нанесению узоров на ткани трафаретно-печатным способом и технологии батика, технологии создания художественных кружев, парчи и золотошвейных изделий, аксессуаров (шарфов) путём покраски ткани методами 'шибори и банддон', овладевают искусством создания композиций костюмов национальных, исторических и сказочных персонажей.",
+                                desc1: "В этом направлении готовятся кадры по двум специальностям: художник театрального костюма и руководитель кружка изобразительного искусства. Учащиеся получают знания о роли и месте одежды в обществе, искусстве создания костюмов, особенностях костюмов Древнего Востока, Средней Азии, античной Греции и Рима, Европейского средневековья, Ближнего Востока, эпохи Ренессанса, Европы и России нового времени, обретают профессиональные навыки шитья исторических костюмов на основе современных технологий. Кроме того, они овладевают мастерством создания композиций этнографических, исторических костюмов народов мира, моделирования и технологией создания и пошива современных и исторических театральных костюмов, художественной обработки тканей, нанесению узоров на ткани трафаретно-печатным способом и технологии батика, технологии создания художественных кружев, парчи и золотошвейных изделий, аксессуаров (шарфов) путём покраски ткани методами 'шибори и банддон', овладевают искусством создания композиций костюмов национальных, исторических и сказочных персонажей."
                             },
                             "interior-designer": {
                                 title: "Дизайн интерьера",
-                                desc: "Проектирование комфортных и эстетичных пространств для жизни и работы.",
-                                name: "И.Ф",
-                                quote: "Интерьер — это портрет души владельца."
+                                desc: "Проектирование комфортных и эстетичных пространств для жизни и работы."
                             },
                             "computer-graphics-designer": {
                                 title: "Дизайн компьютерной графики",
-                                desc: "Цифровой дизайн, веб-графика и современные визуальные коммуникации.",
-                                name: "И.Ф",
-                                quote: "Технологии — это кисти нового времени."
+                                desc: "Цифровой дизайн, веб-графика и современные визуальные коммуникации."
                             },
                             "artistic-ceramics": {
                                 title: "Художественная керамика",
-                                shortDesc: "Работа с глиной, формами и глазурью. Создание авторской посуды и скульптур.",
-                                name: "И.Ф",
-                                quote: "Глина оживает под пальцами творца."
+                                desc: "Работа с глиной, формами и глазурью. Создание авторской посуды и скульптур."
                             },
                             "sculpture": {
                                 title: "Скульптура",
-                                desc: "Создание монументальных и станковых скульптурных композиций из камня, гипса и металла.",
-                                name: "И.Ф",
-                                quote: "Я просто отсекаю всё лишнее."
+                                desc: "Педагоги, работающие на отделении по специальностям: скульптор и художник архитектурно-декоративной пластики вносят значительный вклад в дело развития искусства скульптуры, опираясь на лучшие национальные традиции в этой области. Учащиеся получают знания по работе с материалами и инструментами, используемыми в мастерских скульптуры, обретая навыки изготовления клеевых форм, гипсовых моделей, а также гипсовых форм различной геометрической конфигурации, использованию современных технологий по снятию форм простых и сложных розеток и т.д. Учащиеся обучаются изготовлению различных розеток, копий античных скульптур и их частей: глаз, ушей, носов, разрезов головы, античных портретов и бюстов, а также созданию портретов и бюстов с натуры. Их преподаватели — талантливые скульпторы, Пашаев Фуркат, Отаназаров Улугбек, Бокиев Йигитали.",
+                                desc1: "Произведения, созданные учащимися и выпускниками отделения скульптуры, украшают площади многих городов Узбекистана."
                             },
                             "artist-restorer": {
                                 title: "Художник-реставратор",
-                                desc: "Профессиональное восстановление и сохранение памятников искусства и старины.",
-                                name: "И.Ф",
-                                quote: "Мы дарим искусству вторую жизнь."
+                                desc: "В данном направлении готовятся кадры по двум специальностям: художник-реставратор произведений живописи и специалист по хранению произведений искусства. У обучающихся формируются знания и навыки по сохранению, хранению, реставрированию и сбережению произведений изобразительного и прикладного искусства. А также они обучаются работе с материалами, используемыми в создании произведений изобразительного и прикладного искусств, получают сведения об их технологическом составе, создании проектов работы с архитектурными украшениями, работе над экспонатами гончарного искусства, технике работы с картограммами, технике работы с учебными пособиями и материалами, знакомятся с особенностями искусства мозаики, технологии материалов, технике работы с фактурой, технологиями по восстановлению резных деревянных экспонатов, реставрации произведений станковой живописи и изучению их дореставрационного состояния, фотосъёмке, проведению реставрационных и профилактических работ, составлению дефектологических актов и картограмм, изучению произведений живописи на основе современных технологий.",
+                                desc1: "По данной специальности сейчас обучают такие зрелые специалисты, как Ахмадхужаев Амир, Жонхужаев Илёс, Махсудова Гуё."
                             }
                         }
                     },
@@ -464,6 +442,102 @@ i18n
                                 desc: "Республиканская специализированная художественная школа имени Павла Бенкова награждена Благодарственной грамотой Национальной библиотеки Узбекистана имени Алишера Навои за активное участие и высокий уровень организации мероприятий в рамках II Недели чтения книги."
                             }
                         ]
+                    },
+                    infrastructure: {
+                        span: "Архитектура и природа",
+                        title: "Внешний вид школы",
+                        desc: "Гармоничное сочетание академической строгости фасадов и умиротворяющей зелени внутреннего дворика.",
+                        yard: "Внутренний двор",
+                        facade: "Фасад школы",
+                        entrance: "Главный вход",
+                        learnmore: "Узнать больше об направлениях",
+                        hall: {
+                            title: "Актовый зал",
+                            desc: "Центр творческих событий. Здесь проходят концерты, выставки и театральные постановки.Зал оснащен профессиональной акустикой и сценой, которая помнит поколения юных талантов."
+                        },
+                        art: {
+                            title: "Художественные классы",
+                            desc: "Пространства, залитые северным светом, созданные специально для творчества."
+                        },
+                        paint: {
+                            title: "Кабинет Живописи",
+                            desc: "Пространство для работы с маслом и акварелью"
+                        },
+                        costume: {
+                            title: "Кабинет по костюмам",
+                            desc: "Мастерская дизайна костюмов"
+                        },
+                        sculpture: {
+                            title: "Кабинет Скульптуры",
+                            desc: "Работа с глиной, гипсом и объемом"
+                        },
+                        science: {
+                            title: "Цифровое искусство",
+                            desc: "Современный компьютерный класс — это мост между классической школой и технологиями будущего. Здесь ученики осваивают графический дизайн и 3D-моделирование.",
+                            span: "ТЕХНОЛОГИИ"
+                        },
+                        library: {
+                            title: "Храм знаний",
+                            desc: "Тишина, запах старых книг и бесконечное вдохновение",
+                            span: "Главный зал"
+                        },
+                        dining: {
+                            span: "Забота о здоровье",
+                            title: "Школьная трапезная",
+                            desc: "Светлая и уютная столовая, где ученики могут восстановить силы. Мы уделяем особое внимание качеству питания и эстетике места, чтобы даже обеденный перерыв был приятным.",
+                            span1: "Сбалансированное меню",
+                            span2: "Чистота и уют",
+                            span3: "Свежие продукты ежедневно"
+                        },
+                        exhibition: {
+                            title: "Живая галерея",
+                            desc: "Коридоры второго этажа — экспозиция лучших работ наших воспитанников"
+                        },
+                        general: {
+                            title: "Общеобразовательный блок",
+                            desc: "Кабинет полностью оснащен",
+                            about1: "Математика",
+                            about2: "Физика",
+                            about3: "Химия"
+                        },
+                        gallery: {
+                            title: "Галерея работ",
+                            desc: "Каждая работа — это шаг к мастерству. Приглашаем вас познакомиться с лучшими творениями наших воспитанников в полном объеме.",
+                            learnmore: "Перейти в галерею"
+                        }
+                    },
+                    admission: {
+                        title: "Поступление",
+                        labelName: "Ф.И.О. Абитуриента",
+                        labelPhone: "Номер телефона",
+                        labelDirection: "Направление обучения",
+                        placeholderDirection: "Выберите из списка...",
+                        searchPlaceholder: "Поиск направления...",
+                        notFound: "Ничего не найдено",
+                        submitBtn: "ОТПРАВИТЬ ЗАЯВКУ",
+                        sending: "ОТПРАВКА...",
+                        successTitle: "ЗАЯВКА ПРИНЯТА!",
+                        successAlert: "⚠️ ВНИМАНИЕ: СЛЕДИТЕ ЗА НОВОСТЯМИ О ДАТЕ ПРОВЕДЕНИЯ ЭКЗАМЕНОВ В НАШЕМ ТЕЛЕГРАМ КАНАЛЕ И НА САЙТЕ!",
+                        backHome: "Вернуться на главную",
+                        error: "Ошибка при отправке.",
+                        selectAlert: "Пожалуйста, выберите направление",
+                        directions: [
+                            "Художник кино и телевидения", "Художник лаковой миниатюры", "Художник-график",
+                            "Станковая живопись", "Монументальная живопись", "Театральный живописец-декоратор",
+                            "Театральная бутафория", "Мастер-художник художественной резьбы по дереву",
+                            "Мастер-художник художественной резьбы по гипсу (ганчу)",
+                            "Художник по костюмам", "Дизайн интерьера", "Дизайн компьютерной графики",
+                            "Художественная керамика", "Скульптура", "Художник-реставратор живописи и произведений прикладного искусства"
+                        ]
+                    },
+                    gallery: {
+                        span: "Творчество наших воспитанников",
+                        title: "Галерея",
+                        directionLabel: "Направление обучения",
+                        projectTitle: "Творческий проект №",
+                        prev: "← Пред",
+                        next: "След →",
+                        footerText: "Показано {{start}} — {{end}} из {{total}} работ"
                     }
 
                 }
@@ -583,7 +657,9 @@ i18n
                         data: {
                             title: "Bizning yo‘nalishlarimiz",
                             desc: "Barcha turdagi badiiy san’at yo‘nalishlari bo‘yicha professional ta’lim. O‘zingizga mos ixtisoslikni tanlang.",
-                            btn: "Batafsil"
+                            btn: "Batafsil",
+                            back: "yo'nalishlarga qaytish",
+                            undefined: "Yo'nalish topilmadi"
                         },
                         categories: {
                             cinema: "KINO VA TELEVIDENIYE SAN’ATI",
@@ -605,99 +681,75 @@ i18n
                         items: {
                             "cinema-artist": {
                                 title: "Kino va televideniya rassomi",
-                                desc: "Kino va televideniya loyihalarining badiiy bezagini o‘rganish. Kadrning vizual qiyofasi, dekoratsiya va muhitini yaratish ustida ishlash.",
-                                name: "I.F",
-                                quote: "Kino — bu dunyoni boshqacha ko‘rish san’ati."
+                                desc: "Bu bo‘lim talabalari kino va televideniye san’ati sir-asrorlarini puxta egallaydi, xususan, tasviriy kompozitsiya, xususan, kino va televideniening hayot va obraz, kadr va kompozitsiya, kadr va dizayn kabi muhim jihatlari bo‘yicha ko‘nikmalarga ega bo‘ladi. Shuningdek, ular tasviriy san’at turlari va janrlari hamda ulardan kino va televideniyeda foydalanish, kompozitsiya asoslari, rang, rasmning teleekrandagi ta’siri va boshqalarni o‘zlashtirish kabi sohalarda bilim va ko‘nikmalarga ega bo‘ladilar. Kino va televideniye ijodkorlari asarning kompozitsion tuzilishini, personajlarning his-tuyg‘ularini ochish usullarini, janr xususiyatlarini, ularni o‘z ijodida etkazish qobiliyatini chuqur anglab olishlari kerak.",
+                                desc1: "O‘z bilimlarini talabalarga yetkazayotgan mutaxassislardan tasviriy san’at o‘qituvchilari Qora-bo‘e Murod, G‘ofurova Zuxra, Ubaydullaev Hoshim kabilar bor. Kafedra bitiruvchilari, prodyuserlar va badiiy rahbarlar O‘zbekistondagi davlat va xususiy kinostudiyalar, turli telekanallarda faoliyat yuritmoqda."
                             },
                             "lacquer-miniature": {
                                 title: "Lokli miniatyura rassomi",
-                                desc: "An’anaviy rasm chizish texnikalarini o‘rganish, papier-mache bilan ishlash va nozik ornament detallarini yaratish.",
-                                name: "I.F",
-                                quote: "Kichik shaklda xalqning buyuk ruhi yashirin."
+                                desc: "“Lak miniatyura” bo‘limida respublikamizda va xorijda ijod qilayotgan lak miniatyura ustalari tayyorlanadi. Ana shu mutaxassislarning fidoyi ijodiy va pedagogik mehnati tufayli milliy tasviriy san’atning asosini tashkil etuvchi qadimiy milliy miniatyura san’ati avloddan-avlodga qayta tiklanib, ko‘p asrlik an’analarni yangi ijodiy yondashuvlar, yangi texnologiyalar bilan boyitib bormoqda.",
+                                desc1: "Kollej o‘quvchilari lak miniatyurasining qadimiy an’analari haqida bilimga ega bo‘lib, ularni zamonaviy uslublar bilan uyg‘unlashtirib, kompozitsiya yaratish va ulardan bezakda foydalanish ko‘nikmalariga ega bo‘ladilar."
                             },
                             "graphic-artist": {
                                 title: "Grafika rassomi",
-                                desc: "Estamp, litografiya va kitob grafikasi texnikalarini o‘zlashtirish. Chiziq va kontrast bilan ishlash.",
-                                name: "I.F",
-                                quote: "Grafika — bu qora va oqning musiqasi."
+                                desc: "Viktor Lebedev, Anvar Mamadjanov, Anatoliy Chibisov, Lekim Ibrohimov, Boriy Maxkamov, Xursanoy Inagamova, Rivkat Azixanov, Dilafruz Mamarasulova, Kamila Galitskaya, Mariya Kryukova, Mafirat Shozhalilova, Feruza-Mamadjanov, Mariyarobyova, S. Kamola Subxonova, Gulirano Mirhamidova, Shuhrat Xushvaktov, Odiljon Umirzoqovlar o‘quvchilarga mahorat sirlarini o‘rgatmoqda.",
+                                desc1: "Grafik rassomlar reklama, kitob dizayni, molbert grafikasi kabi sohalarda talabga ega. Kafedrada grafik vositalardan kitob va afishalar loyihalash, emblemalar, kompaniya logotiplari va tashkilotlar, konsernlar, firmalar va boshqa muassasalar uchun lavhalar yaratish uchun grafik vositalardan foydalanish bo‘yicha malakali grafik rassomlar tayyorlanadi."
                             },
                             "easel-painting": {
                                 title: "Dastgohli rangtasvir",
-                                desc: "Tuval ustida moybo‘yoq bilan klassik rangtasvirni o‘rganish. Portret, peyzaj va natyurmortlar yaratish.",
-                                name: "I.F",
-                                quote: "Rangtasvir — bu hayotning muzlab qolgan lahzasi."
+                                desc: "Ushbu dastur bo'yicha o'qituvchilar milliy va xalqaro tasviriy san'at maktablari an'analari asosida dastgoh rassomlarini tayyorlaydilar. Ular zamonaviy tasviriy san’atning nazariy asoslari hamda katta ijodiy va pedagogik tajribalariga tayangan holda ixtisoslashtirilgan fanlar bo‘yicha qator o‘quv qo‘llanmalarini ishlab chiqdilar. Ularning o‘quvchilari yog‘li va suvli bo‘yoqlar bilan ishlash usullarini o‘zlashtirib, olgan nazariy bilimlarini amaliy ishlar orqali mustahkamlaydi.",
+                                desc1: "Bu mutaxassisliklar bo‘yicha o‘qituvchilardan Aminov Xusan, Maxkamov Baxtiyor, Mullajonov Biloliddin, Akromov Rixsitilla, Mirsaidov Mirvohid, Turdaliev Abdulla, Usmonov Jamol, Islomshikov Zuxriddin, Nosirov Jamshid, Egamberdiev Hasan, Zomirov Abdug‘aniy, Qosimov Abdug‘aniy, Armiya Mug‘aniy kabi rassom-ustozlar bor. Shavkat, Mavlonov Farrux, Yuldashev Muhammad, Maxkamov Bekzod, Adilxujaev Maxmud."
                             },
                             "monumental-painting": {
                                 title: "Mahobatli rangtasvir",
-                                desc: "Yirik shakllar bilan ishlash: freska, mozaika va arxitektura obyektlarini bezash.",
-                                name: "I.F",
-                                quote: "San’at makonning bir qismi bo‘lishi kerak."
+                                desc: "Ushbu dastur talabalarni ikkita mutaxassislik bo'yicha tayyorlaydi: devoriy rassom va tasviriy san'at to'garagi rahbari. Talabalar o‘qish davomida devoriy rasm chizish texnikasini o‘rganadi, tegishli materiallardan foydalanish bo‘yicha amaliy ko‘nikmalarni egallaydi, shuningdek, taniqli rassomlarning monumental devoriy rasmlarini nusxalash, rangtasvir, sgraffito, mozaika, turli materiallarda vitraj kompozitsiyalarining alohida bo‘limlarini yaratish kabi ko‘nikmalarga ega bo‘ladi.",
+                                desc1: "Ayni paytda To‘lqin Zokirov, Igor Shin, Dilshod Nuriddinov, Doniyor Umrzoqov kabi yetuk san’atkorlar, pedagoglar ushbu mutaxassislik bo‘yicha saboq bermoqda.Ushbu kollej bitiruvchilari monumental rangtasvir va dizayn yo'nalishi bo'yicha ilmiy darajaga ega bo'lib, birinchi navbatda xususiy firmalarda vitrajlar, mozaikalar va devoriy rassomlar bo'lib ishlaydilar."
                             },
                             "theatrical-set-designer": {
                                 title: "Teatr sahna bezagi rangtasvir rassomi",
-                                desc: "Spektakllar uchun dekoratsiyalar loyihalash va sahna muhitini yaratish.",
-                                name: "I.F",
-                                quote: "Sahna — bu biz noldan yaratadigan dunyo."
+                                desc: "Ushbu dastur bo‘yicha talabalar rangtasvir va material texnologiyasi, dizayn, teatr modellari va sahna texnologiyasini o‘rganadilar, dramatik asarlar g‘oyasi va ssenariysi asosida eskiz va maketlarni yaratish, ularning obrazli va kompozitsion yechimlarini ishlab chiqish usullarini o‘zlashtiradilar. Tanlangan asar uchun bir bosqichli akt modelini tayyorlash jarayonida o‘quvchilar g‘oyalarni ko‘lamda tasavvur qilish va amalga oshirish ko‘nikmalarini rivojlantiradilar.",
+                                desc1: "Har bir alohida model elementini yaratishda talabalar duradgorlik, kesish va tikuvchilik va rekvizitlar tayyorlash, shuningdek, kosmetika va pardozlash kabi to'liq ish siklini bajaradilar, shu bilan birga umumiy yig'ish ishlari bo'yicha ko'nikmalarga ega bo'ladilar.Tajribali san’at o‘qituvchilari Vladimir Mazitov, Otabek Nomozov, Kamola Abduqodirova, Mirkomil Zokirov, Nargis Bozorova o‘z bilimi va to‘plangan tajribasini shogirdlariga o‘rgatmoqda. Ushbu bo‘lim bitiruvchilari Respublika teatrlarida sahna rassomi bo‘lib ishlamoqda."
                             },
                             "theatrical-props": {
                                 title: "Teatr san’ati butafori rassomi",
-                                desc: "Materiallarni imitatsiya qilish va teatr uchun rekvizitlar yaratish mahorati.",
-                                name: "I.F",
-                                quote: "Butaforiyada har qanday buyum sehrga ega bo‘ladi."
+                                desc: "Ushbu dastur talabalarni ikkita mutaxassislik bo'yicha tayyorlaydi: teatr rekvizitlari dizayneri va tasviriy san'at klubi direktori. Kasbni to‘liq anglash uchun talabalar ustaxona ishi, dizayn, teatr rekvizitlari san’ati, mato naqshlash texnikasi va teatr maketi yasash yo‘nalishlarini o‘rganadilar. Ushbu mashg'ulotlar davomida ular yumshoq o'yinchoqlar, papier-mache qoliplari, bo'yoq va lak modellarini yaratadilar, zargarlik buyumlarini taqlid qiladilar va boshqalar. Taqdimotchining ijodiy ishi sahna asari jozibadorligiga katta ta'sir ko'rsatadi.",
+                                desc1: "Fidoyi, g‘amxo‘r ustozlar, mehnatkash tasviriy san’at o‘qituvchilari Nina Petrova, Galina Klyayer, Yelena Dementyeva, Dilnora Egamberdiyevalar o‘quvchilarning bu kasb sirlarini puxta egallashiga xizmat qilmoqda. Ushbu mutaxassislik bitiruvchilari butun O‘zbekiston teatrlarida ishlaydi.P.Benkov nomidagi Respublika rassomlik kolleji mazkur yo‘nalishda mutaxassislar tayyorlaydigan yagona ta’lim muassasasidir."
                             },
                             "wood-carving": {
                                 title: "Badiiy yog‘och o‘ymakorligi usta-rassomi",
-                                desc: "Yog‘ochga badiiy ishlov berish, ornamentlar va hajmli kompozitsiyalar yaratish.",
-                                name: "I.F",
-                                quote: "Yog‘och ustaning qo‘l haroratini eslab qoladi."
+                                desc: "Yogʻoch oʻymakorligi Oʻzbekistonda rivojlangan eng qadimiy va keng tarqalgan hunarmandchilik turlaridan biridir. Turar-joy binolari, ustunlar, shiftlar, turli inshootlarning derazalari va eshiklari o'yilgan yog'och buyumlar bilan bezatilgan.Bu bo‘lim talabalari yog‘ochga ishlov berish, yog‘och yuzalarga naqsh qo‘llash, turli shakl va naqshlar, jumladan, “handasaviy” (panjara, panjara, panjara yasashda qo‘llaniladigan), gul va geometrik naqshlar yasash sirlarini o‘rganadilar.",
+                                desc1: "Mohir hunarmand va o‘z sohasining mutaxassislari To‘rab To‘rayev va Bahodir Mirzayev o‘z shogirdlariga qadimiy yog‘och o‘ymakorligi ustalari an’analarini o‘rgatmoqda. Ushbu bo'lim bitiruvchilari davlat va xususiy hunarmandchilik korxonalarida ishlaydi."
                             },
                             "ganch-carving": {
                                 title: "Badiiy naqqoshlik usta-rassomi",
-                                desc: "Interyerlarni bezash uchun ganch o‘ymakorligining an’anaviy o‘zbek san’ati.",
-                                name: "I.F",
-                                quote: "Ganch — bu toshda muzlab qolgan naqshli dantel."
-                            },
-                            "embroidery": {
-                                title: "Badiiy kashtachilik usta-rassomi",
-                                desc: "Oltin va ipak bilan kashta tikish texnikalarini o‘rganish, noyob tekstil mahsulotlari yaratish.",
-                                name: "I.F",
-                                quote: "Ip o‘tmish va kelajakni bog‘laydi."
+                                desc: "Kafedrada talabalarga interyer dizayni, bezak kompozitsiyalarida rangdan foydalanish, tabiiy rang soyalaridan foydalanish sirlari, rang va shakl konventsiyalari, materiallarning tabiiy teksturasidan mohirona foydalanish kabi fanlar o‘rgatiladi.",
+                                desc1: "Bundan tashqari, ular “islimi” va “girih” turlarini, ularning bir-biridan farqli va umumiy belgilarini, ularni yaratishda qoʻllanilgan asosiy elementlarni (“girih”da geometrik shakllar, “islimi”da esa stilize qilingan tabiiy shakllar, yaʼni oʻsimlik va hayvonlarning anʼanaviy tasvirlarini), shuningdek, ranglar va tasviriy vositalardan ularning diapazoni, rangi, ritmimetriyasi, ritmmetriyasi va boshqalarni oʻrinli ishlatishni oʻzlashtiradilar. Ibragimov Sobir o‘quvchilarga bezak berish sirlarini o‘rgatadi."
                             },
                             "costume-designer": {
                                 title: "Tarixiy teatr liboslari san’ati rassomi",
-                                desc: "Sahna, tarixiy va zamonaviy liboslarni dizayn qilish va yaratish.",
-                                name: "I.F",
-                                quote: "Libos — bu qahramonning birinchi replikasi."
+                                desc: "Ushbu yo‘nalishda ikki mutaxassislik bo‘yicha kadrlar tayyorlanadi: teatr kostyumi rassomi va tasviriy san’at to‘garagi rahbari. Talabalar jamiyatda kiyimning o‘rni va ahamiyati, kostyum yaratish san’ati, Qadimgi Sharq, O‘rta Osiyo, antik Yunoniston va Rim, O‘rta asrlar Yevropasi, Yaqin Sharq, Uyg‘onish davri, Yevropa hamda Rossiyaning yangi davri kostyumlarining o‘ziga xos xususiyatlari haqida bilim oladilar, shuningdek zamonaviy texnologiyalar asosida tarixiy kostyumlarni tikish bo‘yicha kasbiy ko‘nikmalarga ega bo‘ladilar.Bundan tashqari, ular dunyo xalqlarining etnografik va tarixiy kostyum kompozitsiyalarini yaratish, zamonaviy hamda tarixiy teatr kostyumlarini modellashtirish va tikish texnologiyasi, matolarni badiiy bezash, trafaret-bosma usulida matoga naqsh tushirish hamda batik texnologiyasi, badiiy to‘rlar, parcha (brokat) va zar tikish mahsulotlarini yaratish, shuningdek “shibori” va “bandhani” usullarida matoni bo‘yash orqali sharflar kabi aksessuarlar tayyorlash san’atini egallaydilar. Shuningdek, ular milliy, tarixiy va ertak qahramonlari kostyum kompozitsiyalarini yaratish mahoratini ham o‘zlashtiradilar.",
+                                desc1: "Kasbni egallagan rassom-o‘qituvchilar o‘z shogirdlariga milliy, tarixiy va zamonaviy kiyimlarni modellashtirishni, shuningdek, tikuvchilik kasbining asoslarini o‘rgatadilar. Hozirgi kunda teatr va kino san’ati uchun juda katta talabga ega bo‘lgan ushbu mutaxassislikni yosh avlodga quyidagi mohir ustozlar o‘rgatmoqdalar: Ignatyeva Olga, Alimova Gulchehra, Saidberdiyeva Saodat, Ziyaeva Dildora, Ergashova Oqibat, Ermatova Dilfuza, Kuzieva Malika, Rashidova Durdona, Rahmatullayeva Shahnosa, Rashidxo‘jayeva Nodira, Tojiboyeva Nigora, Zokirjonova Malika, Sadirova Shahnosa, Hamidova Dilnoza, Kuchkarova Nargiza, Sagatova Gavhar, Yadiyarova Sitora, Qayumova Dildora, Chibisova Mayre, Holmatova Ma’mura, Askarova Shahnosa, Safiyeva Nilufar, Mahkamova Jamila, Zokirova Ma’mura."
                             },
                             "interior-designer": {
                                 title: "Interyer dizayni",
-                                desc: "Yashash va ishlash uchun qulay hamda estetik makonlarni loyihalash.",
-                                name: "I.F",
-                                quote: "Interyer — bu egasining ruhiy portreti."
+                                desc: "Yashash va ishlash uchun qulay hamda estetik makonlarni loyihalash."
                             },
                             "computer-graphics-designer": {
                                 title: "Kompyuter grafikasi dizayni",
-                                desc: "Raqamli dizayn, veb-grafika va zamonaviy vizual kommunikatsiyalar.",
-                                name: "I.F",
-                                quote: "Texnologiyalar — bu yangi davrning mo‘yqalamidir."
+                                desc: "Raqamli dizayn, veb-grafika va zamonaviy vizual kommunikatsiyalar."
                             },
                             "artistic-ceramics": {
                                 title: "Badiiy kulolchilik usta-rassomi",
-                                shortDesc: "Loy, shakl va sir bilan ishlash. Mualliflik idishlari va haykallar yaratish.",
-                                name: "I.F",
-                                quote: "Loy ijodkor qo‘lida jonlanadi."
+                                desc: "Loy, shakl va sir bilan ishlash. Mualliflik idishlari va haykallar yaratish."
                             },
                             "sculpture": {
                                 title: "Haykaltaroshlik",
-                                desc: "Tosh, gips va metallardan monumental va dastgohli haykallar yaratish.",
-                                name: "I.F",
-                                quote: "Men shunchaki ortiqchasini olib tashlayman."
+                                desc: "Haykaltarosh va me’moriy-dekorativ plastika rassomi mutaxassisliklari bo‘yicha faoliyat yurituvchi pedagoglar haykaltaroshlik san’atini rivojlantirish ishiga milliy an’analarning eng yaxshi jihatlariga tayangan holda salmoqli hissa qo‘shmoqdalar. Talabalar haykaltaroshlik ustaxonalarida qo‘llaniladigan materiallar va asbob-uskunalar bilan ishlash bo‘yicha bilim oladilar, elim qoliplar tayyorlash, gips modellari yasash, turli geometrik shakldagi gips qoliplarini tayyorlash, oddiy va murakkab rozettalarni qolipdan olishning zamonaviy texnologiyalarini qo‘llash kabi ko‘nikmalarni egallaydilar.Talabalar turli rozettalar yasash, antik haykallar va ularning qismlaridan — ko‘z, quloq, burun, bosh bo‘laklari, antik portretlar va byustlar nusxalarini yaratish, shuningdek, naturadan portret va byustlar ishlashni o‘rganadilar. Ularning ustozlari iste’dodli haykaltaroshlar: Pashayev Furqat, Otonazarov Ulug‘bek va Bokiev Yigitali.",
+                                desc1: "Haykaltaroshlik bo‘limi talabalari va bitiruvchilari tomonidan yaratilgan asarlar O‘zbekistonning ko‘plab shaharlari maydonlarini bezab turibdi."
                             },
                             "artist-restorer": {
                                 title: "Rangtasvir va amaliy san’at asarlarini qayta tiklash rassomi",
-                                desc: "San’at asarlari va tarixiy yodgorliklarni professional tiklash va saqlash.",
-                                name: "I.F",
-                                quote: "Biz san’atga ikkinchi hayot baxsh etamiz."
+                                desc: "Ushbu yo‘nalishda ikki mutaxassislik bo‘yicha kadrlar tayyorlanadi: tasviriy san’at asarlarini restavrator-rassomi va san’at asarlarini saqlash bo‘yicha mutaxassis. Talabalarda tasviriy va amaliy san’at asarlarini saqlash, asrash, restavratsiya qilish va ularni muhofaza etish bo‘yicha bilim va ko‘nikmalar shakllantiriladi.Shuningdek, ular tasviriy va amaliy san’at asarlarini yaratishda qo‘llaniladigan materiallar bilan ishlashni o‘rganadilar, ularning texnologik tarkibi haqida ma’lumot oladilar, me’moriy bezaklar bilan ishlash loyihalarini ishlab chiqadilar, kulolchilik san’ati namunalari bilan ishlashni o‘zlashtiradilar, kartogrammalar bilan ishlash texnikasi, o‘quv qo‘llanmalari va materiallar bilan ishlash usullarini o‘rganadilar.Talabalar mozaika san’atining o‘ziga xos jihatlari, materiallar texnologiyasi, faktura bilan ishlash texnikasi, o‘yma yog‘och buyumlarni qayta tiklash texnologiyalari, dastgoh rangtasviri asarlarini restavratsiya qilish va ularning restavratsiyagacha bo‘lgan holatini o‘rganish, fotosuratga olish, restavratsiya va profilaktika ishlarini olib borish, nuqsonlar dalolatnomalari va kartogrammalar tuzish, shuningdek zamonaviy texnologiyalar asosida rangtasvir asarlarini o‘rganish bilan ham shug‘ullanadilar.",
+                                desc1: "Ayni paytda ushbu mutaxassislik bo‘yicha Ahmadxo‘jayev Amir, Jonxo‘jaev Ilyos, Maxsudova Guyo kabi yetuk mutaxassislar saboq bermoqda."
                             }
                         }
                     },
@@ -920,6 +972,102 @@ i18n
                                 desc: "Pavel Benkov nomidagi Respublika ixtisoslashtirilgan san’at maktabi Alisher Navoiy nomidagi O‘zbekiston Milliy kutubxonasi tomonidan II Kitobxonlik haftaligi doirasida o‘tkazilgan tadbirlarni yuqori saviyada tashkil etish va faol ishtiroki uchun Minnatdorchilik yorlig‘i bilan taqdirlandi."
                             }
                         ]
+                    },
+                    infrastructure: {
+                        span: "Arxitektura va tabiat",
+                        title: "Maktab tashqi ko‘rinishi",
+                        desc: "Fasadlarning akademik qat’iyligi va ichki hovlining sokin yashilligi uyg‘unligi.",
+                        yard: "Ichki hovli",
+                        facade: "Maktab fasadi",
+                        entrance: "Asosiy kirish",
+                        learnmore: "Yo‘nalishlar haqida batafsil",
+                        hall: {
+                            title: "Akt zali",
+                            desc: "Ijodiy tadbirlar markazi. Bu yerda konsertlar, ko‘rgazmalar va teatr sahnalari o‘tkaziladi. Zal professional akustika va sahna bilan jihozlangan bo‘lib, u yosh iste’dodlar avlodlarini eslab turadi."
+                        },
+                        art: {
+                            title: "San’at xonalari",
+                            desc: "Shimoliy yorug‘lik bilan to‘ldirilgan, ijod uchun yaratilgan makonlar."
+                        },
+                        paint: {
+                            title: "Rassomchilik xonasi",
+                            desc: "Moy va akvarel bilan ishlash uchun makon"
+                        },
+                        costume: {
+                            title: "Kostyum dizayni xonasi",
+                            desc: "Kostyum dizayni ustaxonasi"
+                        },
+                        sculpture: {
+                            title: "Haykaltaroshlik xonasi",
+                            desc: "Loy, gips va hajm bilan ishlash"
+                        },
+                        science: {
+                            title: "Raqamli san’at",
+                            desc: "Zamonaviy kompyuter xonasi — klassik maktab va kelajak texnologiyalari o‘rtasidagi ko‘prik. Bu yerda o‘quvchilar grafik dizayn va 3D modellashtirishni o‘rganadilar.",
+                            span: "TEXNOLOGIYALAR"
+                        },
+                        library: {
+                            title: "Bilimlar maskani",
+                            desc: "Sukunat, eski kitoblar hidi va cheksiz ilhom",
+                            span: "Asosiy zal"
+                        },
+                        dining: {
+                            span: "Sog‘liq haqida g‘amxo‘rlik",
+                            title: "Maktab oshxonasi",
+                            desc: "Yorug‘ va qulay oshxona, bu yerda o‘quvchilar kuchini tiklaydi. Biz ovqat sifati va muhit estetikasiга alohida e’tibor beramiz.",
+                            span1: "Muvozanatli menyu",
+                            span2: "Tozalik va qulaylik",
+                            span3: "Har kuni yangi mahsulotlar"
+                        },
+                        exhibition: {
+                            title: "Jonli galereya",
+                            desc: "Ikkinchi qavat yo‘laklari — o‘quvchilarimizning eng yaxshi ishlaridan iborat ekspozitsiya"
+                        },
+                        general: {
+                            title: "Umumta’lim bloki",
+                            desc: "Xona to‘liq jihozlangan",
+                            about1: "Matematika",
+                            about2: "Fizika",
+                            about3: "Kimyo"
+                        },
+                        gallery: {
+                            title: "Ishlar galereyasi",
+                            desc: "Har bir ish — bu mahorat sari qadam. Sizni o‘quvchilarimizning eng yaxshi ishlarini to‘liq ko‘rishga taklif qilamiz.",
+                            learnmore: "Galereyaga o‘tish"
+                        }
+                    },
+                    admission: {
+                        title: "Qabul",
+                        labelName: "Abituriyentning F.I.SH.",
+                        labelPhone: "Telefon raqami",
+                        labelDirection: "Ta'lim yo'nalishi",
+                        placeholderDirection: "Ro'yxatdan tanlang...",
+                        searchPlaceholder: "Yo'nalishni qidirish...",
+                        notFound: "Hech narsa topilmadi",
+                        submitBtn: "ARIZA YUBORISH",
+                        sending: "YUBORILMOQDA...",
+                        successTitle: "ARIZA QABUL QILINDI!",
+                        successAlert: "⚠️ DIQQAT: IMTIHONLAR SANASI HAQIDAGI YANGILIKLARNI TELEGRAM KANALIMIZ VA SAYTIMIZDA KUZATIB BORING!",
+                        backHome: "Bosh sahifaga qaytish",
+                        error: "Yuborishda xatolik yuz berdi.",
+                        selectAlert: "Iltimos, yo'nalishni tanlang",
+                        directions: [
+                            "Kino va televideniye rassomi", "Laka miniatyurasi rassomi", "Rassom-grafik",
+                            "Dastgohli rangtasvir", "Mahobatli rangtasvir", "Teatr rassomi-dekoratori",
+                            "Teatr butaforiyasi", "Yog'och o'ymakorligi ustasi",
+                            "Ganch o'ymakorligi ustasi",
+                            "Liboslar bo'yicha rassom", "Interyer dizayni", "Kompyuter grafikasi dizayni",
+                            "Badiiy kulolchilik", "Haykaltaroshlik", "Rangtasvir va amaliy san'at asarlari rassom-restavratori"
+                        ]
+                    },
+                    gallery: {
+                        span: "Tarbiyalanuvchilarimiz ijodi",
+                        title: "Galereya",
+                        directionLabel: "Ta'lim yo'nalishi",
+                        projectTitle: "Ijodiy loyiha №",
+                        prev: "← Oldingi",
+                        next: "Keyingi →",
+                        footerText: "{{total}} ta ishdan {{start}} — {{end}} tasi ko'rsatilgan"
                     }
                 }
             },
@@ -1038,7 +1186,9 @@ i18n
                         data: {
                             title: "Our Study directions",
                             desc: "Professional education in all fields of visual and applied arts. Choose your specialization.",
-                            btn: "Learn More"
+                            btn: "Learn More",
+                            back: "back to directions",
+                            undefined: "Direction not found"
                         },
                         categories: {
                             cinema: "CINEMA AND TELEVISION ART",
@@ -1060,99 +1210,75 @@ i18n
                         items: {
                             "cinema-artist": {
                                 title: "Film and Television Production Designer",
-                                desc: "Study of artistic design for film and television projects. Work on creating visual style, sets, and the overall atmosphere of a scene.",
-                                name: "N.V",
-                                quote: "Cinema is the art of seeing the world differently."
+                                desc: "Students in this department master the secrets of film and television art, and, in particular, acquire skills in visual composition, particularly in such important aspects of film and television as life and image, frame and composition, and frame and design. They also acquire knowledge and skills in such areas as the types and genres of fine art and their use in film and television, mastering the fundamentals of composition, color, the influence of painting on the television screen, and more. Film and television artists must deeply understand the compositional structure of a work, methods for revealing characters' emotions, genre features, and the ability to convey them in their work.",
+                                desc1: "Among the specialists passing on their knowledge to students are art teachers Kora-Boe Murod, Gofurova Zukhra, and Ubaidullaev Khashim. Graduates of the department, production designers and art directors, work at state and private film studios and various television channels in Uzbekistan."
                             },
                             "lacquer-miniature": {
                                 title: "Lacquer Miniature Artist",
-                                desc: "Study of traditional painting techniques, working with papier-mâché and intricate ornamental details.",
-                                name: "N.V",
-                                quote: "In small forms lies the great soul of a people."
+                                desc: "The Lacquer Miniature Department trains master lacquer miniature artists who work both in our republic and abroad. Thanks to the dedicated creative and pedagogical work of these specialists, the ancient national art of miniature painting, which forms the foundation of national fine art, is being revived from generation to generation, enriching centuries-old traditions with new creative approaches and new technologies.",
+                                desc1: "College students, acquiring knowledge about the ancient traditions of lacquer miniatures and harmoniously combining them with modern techniques, acquire the skills to create compositions and use them for decoration."
                             },
                             "graphic-artist": {
                                 title: "Graphic Artist",
-                                desc: "Mastery of printmaking, lithography, and book illustration. Focus on line, contrast, and composition.",
-                                name: "N.V",
-                                quote: "Graphics is the music of black and white."
+                                desc: "Graphic artists are in demand in such fields as advertising, book design, and easel graphics. The department trains graphic artists skilled in using graphic media to design books and posters, create emblems, company logos, and bookplates for organizations, concerns, firms, and other institutions.",
+                                desc1: "Such renowned artists and teachers as Viktor Lebedev, Anvar Mamadzhanov, Anatoly Chibisov, Lekim Ibragimov, Boriy Makhkamov, Khursanoy Inagamova, Rivkat Azikhanov, Dilafruz Mamarasulova, Kamila Galitskaya, Maria Kryukova, Mafirat Shozhalilova, Feruza Dzhabbarova, Svetlana Abdumuminova, Maria Vorobyova, Kamola Subkhonova, Gulirano Mirkhamidova, Shukhrat Khushvaktov, Odiljon Umirzokov teach students the secrets of mastery."
                             },
                             "easel-painting": {
                                 title: "Easel Painting",
-                                desc: "Classical training in oil painting on canvas. Creation of portraits, landscapes, and still lifes.",
-                                name: "N.V",
-                                quote: "Painting is a frozen moment of life."
+                                desc: "The instructors in this program train easel painters based on the traditions of national and international fine art schools. They have developed a number of teaching aids for the specialized subjects, drawing on the theoretical foundations of contemporary fine art and their extensive creative and teaching experience. Their students master the techniques of working with oil and water-based paints, consolidating their acquired theoretical knowledge through practical work.",
+                                desc1: "Among the teachers in these specialties are such artist-teachers as Aminov Khusan, Makhkamov Bakhtiyor, Mullajanov Biloliddin, Akromov Rikhsitilla, Mirsaidov Mirvohid, Turdaliev Abdulla, Usmonov Jamol, Islamshikov Zukhriddin, Nosirov Jamshid, Egamberdiev Hasan, Kosimov Abdugani, Zoirov Mukhtor, Minosyants Arminak, Khakimov Shavkat, Mavlonov Farrukh, Yuldashev Muhammad, Makhkamov Bekzod, Adilkhuzhaev Makhmud."
                             },
                             "monumental-painting": {
                                 title: "Monumental Painting",
-                                desc: "Work with large-scale forms such as frescoes, mosaics, and architectural painting.",
-                                name: "N.V",
-                                quote: "Art should be part of the space."
+                                desc: "This program trains students in two specialties: mural artist and fine arts club leader. During their studies, students learn the techniques of mural painting, master the practical skills of using appropriate materials, and are also trained in such skills as copying monumental murals by famous artists, painting, sgraffito, mosaics, and creating individual sections of stained glass compositions on various materials.",
+                                desc1: "Currently, such accomplished artists and educators as Tulkin Zokirov, Igor Shin, Dilshod Nuriddinov, and Doniyor Umrzokov teach this specialty.Graduates of this college department, having received a degree in monumental painting and design, will primarily work in private firms as stained-glass designers, mosaic makers, and mural artists."
                             },
                             "theatrical-set-designer": {
                                 title: "Theatrical Set Designer",
-                                desc: "Designing stage sets and creating scenic environments for theatrical productions.",
-                                name: "N.V",
-                                quote: "The stage is a world we create from scratch."
+                                desc: "Students in this program study painting and material technology, design, theater models, and stage technology, mastering the techniques of creating sketches and models based on the ideas and scripts of dramatic works and developing their figurative and compositional solutions. While preparing a model of a single stage act for a selected production, students develop the skills to visualize and realize ideas at scale.",
+                                desc1: "While creating each individual model element, students complete a full cycle of work, including carpentry, cutting and sewing, and prop making, as well as cosmetics and makeup, while also acquiring skills in general assembly work.Experienced art teachers Vladimir Mazitov, Otabek Nomozov, Kamola Abdukodirova, Mirkomil Zokirov, and Nargis Bozorova pass on their knowledge and accumulated experience to their students. Graduates of this department work as stage designers in theaters across the Republic."
                             },
                             "theatrical-props": {
                                 title: "Theatrical Props Artist",
-                                desc: "Skill of material imitation and creation of props for stage performances.",
-                                name: "N.V",
-                                quote: "In props, every object gains a touch of magic."
+                                desc: "This program trains students in two specialties: theater prop designer and fine arts club director. To ensure a thorough understanding of the profession, students study workshop work, design, the art of theater props, fabric patterning techniques, and theater model making. During these classes, they create soft toys, papier-mâché molds, paint and varnish models, imitate jewelry, and more. The creative work of a prop designer greatly influences the appeal of a stage production.",
+                                desc1: "Dedicated, caring teachers and hardworking art teachers Nina Petrova, Galina Klyaier, Elena Dementyeva, and Dilnora Egamberdieva help students master the secrets of this profession. Graduates of this specialty work in theaters throughout Uzbekistan.The P. Benkov Republican Art College is the only educational institution that trains specialists in this field."
                             },
                             "wood-carving": {
                                 title: "Wood Carving Artist",
-                                desc: "Artistic wood processing, creation of ornaments and three-dimensional compositions.",
-                                name: "N.V",
-                                quote: "Wood remembers the warmth of the craftsman's hands."
+                                desc: "Wood carving is one of the oldest and most widespread crafts developed in Uzbekistan. Residential buildings, columns, ceilings, windows, and doors of various structures were decorated with carved woodwork.Students in this department learn the secrets of woodworking, applying patterns to wooden surfaces, and creating various shapes and designs, including 'handasaviy' (used for making lattices, railings, and fences), as well as floral and geometric patterns.",
+                                desc1: "Skilled craftsmen and experts in their field, Turab Turaev and Bakhodir Mirzaev, teach their students the traditions of ancient wood carving masters. Graduates of this department work in state and private craft enterprises."
                             },
                             "ganch-carving": {
                                 title: "Ganch Carving Artist",
-                                desc: "Traditional Uzbek gypsum carving used for interior decoration.",
-                                name: "N.V",
-                                quote: "Ganch is lace frozen in stone."
-                            },
-                            "embroidery": {
-                                title: "Art Embroidery Artist",
-                                desc: "Learning gold and silk embroidery techniques and creating unique textile works.",
-                                name: "N.V",
-                                quote: "Thread connects the past and the future."
+                                desc: "Students in the department are taught interior design, the use of color in ornamental compositions, the secrets of using natural color shades, the conventions of color and form, and the skillful use of natural textures of materials.",
+                                desc1: "In addition, they master the types of 'islimi' and 'girih', their different and common features, the basic elements used in their creation (geometric shapes in 'girih', and stylized natural forms in 'islimi', that is, conventional images of plants and animals), as well as the appropriate use of colors and such pictorial means as their range, color, rhythm, symmetry and asymmetry, etc. The talented artist Ibragimov Sobir teaches students the secrets of ornamentation."
                             },
                             "costume-designer": {
                                 title: "Costume Designer",
-                                desc: "Design and creation of stage, historical, and contemporary costumes.",
-                                name: "N.V",
-                                quote: "A costume is the character’s first line."
+                                desc: "In this field, specialists are trained in two directions: theatrical costume designer and leader of an art club. Students gain knowledge about the role and place of clothing in society, the art of costume creation, and the characteristics of costumes of Ancient Eastern civilizations, Central Asia, Ancient Greece and Rome, Medieval Europe, the Middle East, the Renaissance era, as well as modern Europe and Russia. They also acquire professional skills in sewing historical costumes based on modern technologies.In addition, they master the creation of ethnographic and historical costume compositions of the world’s peoples, modeling and production technologies for modern and historical theatrical costumes, artistic textile decoration, stencil printing techniques, batik technology, the creation of artistic lace, brocade, and gold embroidery items, as well as accessories (such as scarves) made through fabric dyeing methods like “shibori” and “bandhani.” They also develop skills in creating costume compositions for national, historical, and fairy-tale characters.",
+                                deesc1: "Over the course of mastering the profession, teacher-artists train their students in modeling national, historical, and contemporary costumes, as well as in the basics of the tailoring profession. At present, this highly in-demand specialty in theatrical and film arts is taught to the younger generation by such skilled masters as Ignatyeva Olga, Alimova Gulchehra, Saidberdieva Saodat, Ziyaeva Dildora, Ergashova Oqibat, Ermatova Dilfuza, Kuzieva Malika, Rashidova Durdona, Rahmatullayeva Shahnosa, Rashidkhojaeva Nodira, Tojiboyeva Nigora, Zokirjonova Malika, Sadirova Shahnosa, Hamidova Dilnoza, Kuchkarova Nargiza, Sagatova Gavhar, Yadiyarova Sitora, Kayumova Dildora, Chibisova Mayre, Kholmatova Ma’mura, Askarova Shahnosa, Safieva Nilufar, Makhkamova Jamila, Zokirova Ma’mura."
                             },
                             "interior-designer": {
                                 title: "Interior Designer",
-                                desc: "Designing comfortable and aesthetically pleasing spaces for living and working.",
-                                name: "N.V",
-                                quote: "An interior is a portrait of its owner's soul."
+                                desc: "Designing comfortable and aesthetically pleasing spaces for living and working."
                             },
                             "computer-graphics-designer": {
                                 title: "Computer Graphics Designer",
-                                desc: "Digital design, web graphics, and modern visual communication.",
-                                name: "N.V",
-                                quote: "Technology is the brush of a new era."
+                                desc: "Digital design, web graphics, and modern visual communication."
                             },
                             "artistic-ceramics": {
                                 title: "Art Ceramics Artist",
-                                shortDesc: "Working with clay, forms, and glazes. Creation of original tableware and sculptures.",
-                                name: "N.V",
-                                quote: "Clay comes to life in the hands of the creator."
+                                desc: "Working with clay, forms, and glazes. Creation of original tableware and sculptures."
                             },
                             "sculpture": {
                                 title: "Sculpture",
-                                desc: "Creation of monumental and easel sculptures from stone, plaster, and metal.",
-                                name: "N.V",
-                                quote: "I simply remove everything unnecessary."
+                                desc: "Teachers working in the department of the specialties sculptor and artist of architectural and decorative plastics make a significant contribution to the development of the art of sculpture, relying on the best national traditions in this field. Students gain knowledge of working with materials and tools used in sculpture workshops, acquiring skills in producing adhesive molds, plaster models, as well as plaster forms of various geometric configurations, and in using modern technologies for casting simple and complex rosettes, and so on.Students are trained in making various rosettes, copies of antique sculptures and their parts: eyes, ears, noses, head fragments, antique portraits and busts, as well as creating portraits and busts from life. Their instructors are talented sculptors: Pashaev Furkat, Otonazarov Ulugbek, and Bokiev Yigitali.",
+                                desc1: "Works created by students and graduates of the sculpture department adorn the squares of many cities in Uzbekistan."
                             },
                             "artist-restorer": {
                                 title: "Art Restorer",
-                                desc: "Professional restoration and preservation of artworks and historical heritage.",
-                                name: "N.V",
-                                quote: "We give art a second life."
+                                desc: "In this field, specialists are trained in two areas: restoration artist of fine art works and specialist in the storage of artworks. Students develop knowledge and skills in the preservation, storage, restoration, and conservation of fine and applied art objects.They also learn to work with materials used in the creation of fine and applied art, gain knowledge of their technological composition, and develop skills in designing architectural decoration projects. They work with ceramic art exhibits, learn techniques for working with cartograms, and study instructional materials and resources.Students become familiar with the features of mosaic art, material technologies, texture-handling techniques, and technologies for restoring carved wooden artifacts. They study the restoration of easel painting works and their pre-restoration condition, photography documentation, conducting restoration and preventive work, compiling defect reports and cartograms, and analyzing paintings using modern technologies.",
+                                desc1: "Such mature specialists as Akhmadkhuzhaev Amir, Zhonkhuzhaev Ilyos, and Makhsudova Guyo are currently teaching in this specialty."
                             }
                         }
                     },
@@ -1375,6 +1501,102 @@ i18n
                                 desc: "The Republican Specialized Art School named after Pavel Benkov was awarded a Letter of Appreciation by the Alisher Navoi National Library of Uzbekistan for active participation and high-level organization of events within the framework of the II Reading Week."
                             }
                         ]
+                    },
+                    infrastructure: {
+                        span: "Architecture and Nature",
+                        title: "School Exterior",
+                        desc: "A harmonious blend of academic architectural rigor and the calming greenery of the inner courtyard.",
+                        yard: "Inner Courtyard",
+                        facade: "School Facade",
+                        entrance: "Main Entrance",
+                        learnmore: "Learn more about programs",
+                        hall: {
+                            title: "Assembly Hall",
+                            desc: "The center of creative events. Concerts, exhibitions, and theatrical performances take place here. The hall is equipped with professional acoustics and a stage that holds the memory of generations of young talents."
+                        },
+                        art: {
+                            title: "Art Classrooms",
+                            desc: "Spaces filled with northern light, designed especially for creativity."
+                        },
+                        paint: {
+                            title: "Painting Studio",
+                            desc: "A space for working with oil and watercolor"
+                        },
+                        costume: {
+                            title: "Costume Design Room",
+                            desc: "A workshop for costume design"
+                        },
+                        sculpture: {
+                            title: "Sculpture Studio",
+                            desc: "Working with clay, plaster, and volume"
+                        },
+                        science: {
+                            title: "Digital Art",
+                            desc: "A modern computer lab — a bridge between classical education and future technologies. Students learn graphic design and 3D modeling here.",
+                            span: "TECHNOLOGIES"
+                        },
+                        library: {
+                            title: "Temple of Knowledge",
+                            desc: "Silence, the scent of old books, and endless inspiration",
+                            span: "Main Hall"
+                        },
+                        dining: {
+                            span: "Health & Care",
+                            title: "School Cafeteria",
+                            desc: "A bright and cozy dining space where students can recharge. We pay special attention to food quality and the atmosphere to make even lunch breaks enjoyable.",
+                            span1: "Balanced menu",
+                            span2: "Cleanliness and comfort",
+                            span3: "Fresh products daily"
+                        },
+                        exhibition: {
+                            title: "Living Gallery",
+                            desc: "The second-floor corridors showcase the best works of our students"
+                        },
+                        general: {
+                            title: "General Education Block",
+                            desc: "The classroom is fully equipped",
+                            about1: "Mathematics",
+                            about2: "Physics",
+                            about3: "Chemistry"
+                        },
+                        gallery: {
+                            title: "Gallery of Works",
+                            desc: "Each piece is a step toward mastery. We invite you to explore the best creations of our students in full.",
+                            learnmore: "Go to gallery"
+                        }
+                    },
+                    admission: {
+                        title: "Admission",
+                        labelName: "Full Name of Applicant",
+                        labelPhone: "Phone Number",
+                        labelDirection: "Field of Study",
+                        placeholderDirection: "Select from the list...",
+                        searchPlaceholder: "Search direction...",
+                        notFound: "Nothing found",
+                        submitBtn: "SUBMIT APPLICATION",
+                        sending: "SENDING...",
+                        successTitle: "APPLICATION RECEIVED!",
+                        successAlert: "⚠️ ATTENTION: FOLLOW THE NEWS ABOUT THE EXAM DATES IN OUR TELEGRAM CHANNEL AND ON THE WEBSITE!",
+                        backHome: "Back to Home",
+                        error: "Error while sending.",
+                        selectAlert: "Please select a field of study",
+                        directions: [
+                            "Film and Television Artist", "Lacquer Miniature Artist", "Graphic Artist",
+                            "Easel Painting", "Monumental Painting", "Theatrical Set Designer",
+                            "Theatrical Props Master", "Wood Carving Master Artist",
+                            "Ganch (Gypsum) Carving Master Artist",
+                            "Costume Designer", "Interior Design", "Computer Graphics Design",
+                            "Artistic Ceramics", "Sculpture", "Restorer of Painting and Applied Arts"
+                        ]
+                    },
+                    gallery: {
+                        span: "Creativity of our students",
+                        title: "Gallery",
+                        directionLabel: "Field of Study",
+                        projectTitle: "Creative Project №",
+                        prev: "← Prev",
+                        next: "Next →",
+                        footerText: "Showing {{start}} — {{end}} of {{total}} works"
                     }
                 }
             }

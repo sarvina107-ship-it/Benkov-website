@@ -11,47 +11,20 @@ const DirectionsDetail = () => {
     const data = directionsData[id];
 
     // Если данных нет, показываем заглушку
-    if (!data) return <div className="pt-24 text-center font-serif text-[#0E1A2B]">Направление не найдено</div>;
+    if (!data) return <div className="pt-24 text-center font-serif text-[#0E1A2B]">{t('directions.data.undefined')}</div>;
 
     return (
         <div className="min-h-screen bg-[#F8F6F2] pb-24 text-[#0E1A2B]">
             {/* Навигация */}
-            <div className="max-w-7xl mx-auto px-6 pt-28">
+            <div className="max-w-7xl mx-auto px-6 pt-28 py-6">
                 <button
                     onClick={() => navigate(-1)}
                     className="flex items-center gap-2 text-[#0E1A2B]/70 hover:text-[#D4A259] transition-all font-medium uppercase tracking-widest text-xs group"
                 >
                     <span className="text-lg transition-transform group-hover:-translate-x-1">←</span>
-                    Назад к направлениям
+                    {t('directions.data.back')}
                 </button>
             </div>
-
-            {/* Блок Главы Кафедры */}
-            <section className="max-w-7xl mx-auto px-6 mt-12 mb-20">
-                <div className="relative bg-white shadow-[0_20px_50px_rgba(0,0,0,0.05)] rounded-[40px] p-10 md:p-16 border border-[#D4A259]/10">
-                    <div className="flex flex-col md:flex-row items-center gap-12">
-                        <div className="relative">
-                            <div className="w-56 h-72 rounded-[30px] overflow-hidden border-[6px] border-[#F8F6F2] shadow-xl">
-                                <img src={data.head.photo} alt={t(`directions.items.${id}.name`)} className="w-full h-full object-cover" />
-                            </div>
-                            <div className="absolute -bottom-4 -right-4 bg-[#D4A259] text-white px-5 py-3 rounded-2xl shadow-lg">
-                                <p className="text-[10px] uppercase tracking-tighter opacity-80">{t('directions.about.founded')}</p>
-                                <p className="text-xl font-bold">{data.founded}</p>
-                            </div>
-                        </div>
-
-                        <div className="flex-1 relative">
-                            <span className="absolute -top-10 -left-4 text-[120px] text-[#D4A259]/10 font-serif leading-none select-none">“</span>
-                            <p className="relative z-10 text-2xl md:text-3xl font-serif italic leading-relaxed text-[#0E1A2B] mb-8">
-                                {t(`directions.items.${id}.quote`)}
-                            </p>
-                            <div className="h-[2px] w-20 bg-[#D4A259] mb-4"></div>
-                            <h2 className="text-xl font-bold uppercase tracking-widest">{t(`directions.items.${id}.name`)}</h2>
-                            <p className="text-[#D4A259] font-medium">{t('directions.about.head')}</p>
-                        </div>
-                    </div>
-                </div>
-            </section>
 
             {/* Галерея */}
             <section className="max-w-7xl mx-auto px-6 mb-20">
@@ -78,7 +51,7 @@ const DirectionsDetail = () => {
                         <div className="space-y-4">
                             <div className="flex items-center gap-4">
                                 <div className="w-12 h-[1px] bg-[#D4A259]"></div>
-                                <h3 className="text-[#D4A259] text-xs font-bold uppercase tracking-[0.3em]">{t('directions.about.direc')}</h3>
+                                <h3 className="text-[#D4A259] text-xs font-bold uppercase tracking-[0.3em]">{t('directions.about.deric')}</h3>
                             </div>
                             <h1 className="text-4xl md:text-6xl font-serif font-bold leading-[1.1] text-[#0E1A2B]">
                                 {t(`directions.items.${id}.title`)}
@@ -94,6 +67,9 @@ const DirectionsDetail = () => {
                                 first-letter:text-[#D4A259] first-letter:mr-2 first-letter:float-left 
                                 first-letter:leading-[0.8] first-letter:mt-2">
                                 {t(`directions.items.${id}.desc`)}
+                                <br />
+                                <br />
+                                {t(`directions.items.${id}.desc1`)}
                             </p>
                             <div className="mt-16 w-full h-[1px] bg-gradient-to-r from-[#D4A259]/30 to-transparent"></div>
                         </div>
