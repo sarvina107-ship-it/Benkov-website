@@ -661,6 +661,28 @@ i18n
 
                         // Контакты
                         phone_label: "Для справок:"
+                    },
+                    titles: {
+                        about: "История школы",
+                        achievements: "Достижения школы",
+                        admission: "Подать заявку",
+                        contacts: "Контакты",
+                        conditions: "Условия поступления",
+                        documents: "Необходимые документы",
+                        infrastructure: "Инфраструктура",
+                        studyplan: "Учебный план",
+                        schedule: "Расписание",
+                        management: "Руководство",
+                        newssection: "Новости",
+                        newslist: "Список новостей",
+                        adminnews: "Управление новостями",
+                        newsdetail: "Новость",
+                        login: "Вход",
+                        gallery: "Галерея",
+                        directions: "Направления",
+                        director: "Директор",
+                        deputy: "Заместитель директора",
+                        directionsdetail: "Подробности направления"
                     }
 
                 }
@@ -1314,6 +1336,28 @@ i18n
 
                         // Aloqa
                         phone_label: "Ma’lumot uchun:"
+                    },
+                    titles: {
+                        about: "Maktab tarixi",
+                        achievements: "Maktab yutuqlari",
+                        admission: "Ariza topshirish",
+                        contacts: "Kontaktlar",
+                        conditions: "Qabul shartlari",
+                        documents: "Kerakli hujjatlar",
+                        infrastructure: "Infratuzilma",
+                        studyplan: "O‘quv rejasi",
+                        schedule: "Dars jadvali",
+                        management: "Rahbariyat",
+                        newssection: "Yangiliklar",
+                        newslist: "Yangiliklar ro‘yxati",
+                        adminnews: "Yangiliklarni boshqarish",
+                        newsdetail: "Yangilik",
+                        login: "Kirish",
+                        gallery: "Galereya",
+                        directions: "Yo‘nalishlar",
+                        director: "Direktor",
+                        deputy: "Direktor o‘rinbosari",
+                        directionsdetail: "Yo‘nalish tafsilotlari"
                     }
                 }
             },
@@ -1966,6 +2010,28 @@ i18n
 
                         // Contacts
                         phone_label: "For inquiries:"
+                    },
+                    titles: {
+                        about: "School History",
+                        achievements: "School Achievements",
+                        admission: "Apply Now",
+                        contacts: "Contacts",
+                        conditions: "Admission Conditions",
+                        documents: "Required Documents",
+                        infrastructure: "Infrastructure",
+                        studyplan: "Study Plan",
+                        schedule: "Schedule",
+                        management: "Management",
+                        newssection: "News",
+                        newslist: "News List",
+                        adminnews: "News Management",
+                        newsdetail: "News Details",
+                        login: "Login",
+                        gallery: "Gallery",
+                        directions: "Directions",
+                        director: "Director",
+                        deputy: "Deputy Director",
+                        directionsdetail: "Direction Details"
                     }
                 }
             }

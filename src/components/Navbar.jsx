@@ -10,28 +10,31 @@ import BenkovImg from '../assets/img/BenkovImg.png'
 const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
+
+  const { t, i18n } = useTranslation();
   const titles = {
-    [ROUTES.ABOUT]: 'История школы',
-    [ROUTES.ACHIEVEMENTS]: 'Достижения школы',
-    [ROUTES.ADMISSION]: 'Подать заяку',
-    [ROUTES.CONTACTS]: 'Контакты',
-    [ROUTES.CONDITIONS]: 'Условия',
-    [ROUTES.DOCUMENTS]: 'Документы',
-    [ROUTES.INFRASTRUCTURE]: 'Инфраструктура',
-    [ROUTES.STUDYPLAN]: 'Учебный план',
-    [ROUTES.SCHEDULE]: 'Расписание',
-    [ROUTES.MANAGEMENT]: 'Руководство',
-    [ROUTES.NEWSSECTION]: 'Новости',
-    [ROUTES.NEWSLIST]: 'Лента новостей',
-    [ROUTES.ADMINNEWS]: 'Админ',
-    [ROUTES.NEWSDETAIL]: 'Детали новостей',
-    [ROUTES.LOGIN]: 'Логин',
-    [ROUTES.GALLERY]: 'Галерея учеников',
-    [ROUTES.DIRECTIONS]: 'Направления',
-    [ROUTES.DIRECTOR]: 'Директор',
-    [ROUTES.DEPUTY]: 'Заместитель',
-    [ROUTES.DIRECTIONSDETAIL]: 'Направления',
+    [ROUTES.ABOUT]: t('titles.about'),
+    [ROUTES.ACHIEVEMENTS]: t('titles.achievements'),
+    [ROUTES.ADMISSION]: t('titles.admission'),
+    [ROUTES.CONTACTS]: t('titles.contacts'),
+    [ROUTES.CONDITIONS]: t('titles.conditions'),
+    [ROUTES.DOCUMENTS]: t('titles.documents'),
+    [ROUTES.INFRASTRUCTURE]: t('titles.infrastructure'),
+    [ROUTES.STUDYPLAN]: t('titles.studyplan'),
+    [ROUTES.SCHEDULE]: t('titles.schedule'),
+    [ROUTES.MANAGEMENT]: t('titles.management'),
+    [ROUTES.NEWSSECTION]: t('titles.newssection'),
+    [ROUTES.NEWSLIST]: t('titles.newslist'),
+    [ROUTES.ADMINNEWS]: t('titles.adminnews'),
+    [ROUTES.NEWSDETAIL]: t('titles.newsdetail'),
+    [ROUTES.LOGIN]: t('titles.login'),
+    [ROUTES.GALLERY]: t('titles.gallery'),
+    [ROUTES.DIRECTIONS]: t('titles.directions'),
+    [ROUTES.DIRECTOR]: t('titles.director'),
+    [ROUTES.DEPUTY]: t('titles.deputy'),
+    [ROUTES.DIRECTIONSDETAIL]: t('titles.directionsdetail'),
   };
+
 
   const searchData = [
     { title: 'История школы', path: ROUTES.ABOUT, content: 'Основание, традиции Павла Бенькова, академическая живопись' },
@@ -68,8 +71,6 @@ const Navbar = () => {
       setSearchResults([]);
     }
   };
-
-  const { t, i18n } = useTranslation(); // 2. Берем функцию 't' (translate) и сам 'i18n'
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng); // 3. Функция для смены
