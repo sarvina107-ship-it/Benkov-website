@@ -44,7 +44,7 @@ const Home = () => {
     const observer = new IntersectionObserver((entries) => {
       entries.forEach((entry) => {
         if (entry.isIntersecting) {
-          entry.target.classList.add('opacity-100', 'translate-y-0');
+          entry.target.classList.add('opacity-100', 'scale-100');
           observer.unobserve(entry.target);
         }
       });
@@ -69,7 +69,7 @@ const Home = () => {
       {/* --- История школы --- */}
       <section
         ref={el => sectionsRef.current[0] = el}
-        className="relative px-4 sm:px-8 md:px-[50px] py-[60px] sm:py-[100px] md:py-[150px] bg-[#FAF9F6] overflow-x-hidden opacity-0 translate-y-10 transition-all duration-1000 ease-out"
+        className="relative px-4 sm:px-8 md:px-[50px] py-[60px] sm:py-[100px] md:py-[150px] bg-white overflow-x-hidden opacity-0 translate-y-10 transition-all duration-1000 ease-out"
       >
         {/* Декоративные элементы скрываем на мобилках */}
         <div className="absolute top-20 -left-10 w-[300px] h-[300px] bg-[#D4A259]/10 rounded-full blur-[100px] -z-0 rotate-12 pointer-events-none hidden md:block"></div>
@@ -460,7 +460,6 @@ const Home = () => {
         </div>
       </section>
 
-      {/* --- Почему выбирают нас --- */}
       {/* --- Почему выбирают нас --- */}
       <section
         className="py-[60px] sm:py-[100px] md:py-[140px] lg:py-[180px] bg-white relative overflow-hidden opacity-0 translate-y-10 transition-all duration-1000 ease-out"

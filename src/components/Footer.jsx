@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import Logo from '../assets/icon/Logo.png';
+import { ROUTES } from '../paths';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -112,7 +113,7 @@ const Footer = () => {
             </h3>
             <div className="grid grid-cols-2 gap-x-6 sm:gap-x-10 gap-y-3 sm:gap-y-4 text-gray-400 text-xs sm:text-sm">
               <Link to="/" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.home')}</Link>
-              <Link to="/news" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.news')}</Link>
+              <Link to={ROUTES.NEWSLIST} className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.news')}</Link>
               <Link to="/contacts" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.contacts')}</Link>
               <Link to="/gallery" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.gallery')}</Link>
             </div>

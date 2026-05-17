@@ -53,7 +53,8 @@ const Navbar = () => {
 
   // Refs
   const mobileMenuRef = useRef(null);
-  const langRef = useRef(null);
+  const desktopLangRef = useRef(null);
+  const mobileLangRef = useRef(null);
 
   // Настройка Fuse
   const fuse = new Fuse(searchData, {
@@ -85,16 +86,30 @@ const Navbar = () => {
   // Закрытие меню при клике вне
   useEffect(() => {
     const handleClickOutside = (event) => {
-      if (mobileMenuRef.current && !mobileMenuRef.current.contains(event.target)) {
+      if (
+        mobileMenuRef.current &&
+        !mobileMenuRef.current.contains(event.target)
+      ) {
         setMobileMenuOpen(false);
         setActiveMobileDropdown(null);
       }
-      if (langRef.current && !langRef.current.contains(event.target)) {
+
+      const clickedOutsideDesktop =
+        desktopLangRef.current &&
+        !desktopLangRef.current.contains(event.target);
+
+      const clickedOutsideMobile =
+        mobileLangRef.current &&
+        !mobileLangRef.current.contains(event.target);
+
+      if (clickedOutsideDesktop && clickedOutsideMobile) {
         setLangDropdownOpen(false);
       }
     };
+
     document.addEventListener('mousedown', handleClickOutside);
-    return () => document.removeEventListener('mousedown', handleClickOutside);
+    return () =>
+      document.removeEventListener('mousedown', handleClickOutside);
   }, []);
 
   // Блокировка скролла
@@ -130,7 +145,7 @@ const Navbar = () => {
   return (
     <header className="mt-[20px]">
       {/* Верхняя часть с логотипом и кнопкой */}
-      <div className="flex items-center justify-between mx-[60px] mb-5 max-lg:mx-6 max-md:mx-4 max-sm:flex-col max-sm:gap-4">
+      <div className="flex items-center justify-between mx-[60px] max-lg:mx-6 max-md:mx-4 max-sm:flex-col max-sm:gap-4">
         <div className="flex items-center gap-[30px] max-sm:flex-col max-sm:text-center">
           <img className="w-[100px] h-[100px] max-sm:w-[70px] max-sm:h-[70px]" src={Logo} alt="Logo" />
           <h2
@@ -247,7 +262,7 @@ const Navbar = () => {
               </div>
 
               {/* Переключатель языков - десктоп */}
-              <div className="relative" ref={langRef}>
+              <div className="relative" ref={desktopLangRef}>
                 <button
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                   className="text-[15px] font-bold hover:text-[#D4A259] transition flex items-center gap-1 uppercase tracking-wider"
@@ -271,7 +286,7 @@ const Navbar = () => {
           <div></div>
           <div className="flex items-center gap-3">
             <button onClick={() => setMobileSearchOpen(!mobileSearchOpen)} className="text-white text-lg">🔍</button>
-            <div className="relative" ref={langRef}>
+            <div className="relative" ref={mobileLangRef}>
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
                 className="text-white text-sm font-bold uppercase hover:text-[#D4A259] transition"
@@ -401,9 +416,9 @@ const Navbar = () => {
 
       {/* Hero секция */}
       <section className={`relative ${isHome ? 'h-[85vh] max-lg:h-[70vh] max-md:h-[60vh]' : 'h-[40vh]'} overflow-hidden`}>
-        <div className="absolute inset-0 z-0">
+        <div className="absolute -top-[1px] inset-0 z-0">
           {isHome ? (
-            <video autoPlay loop muted playsInline className="w-full h-full object-cover">
+            <video autoPlay loop muted playsInline className="absolute inset-0 block w-full h-full object-cover">
               <source src={NavbarVideo} type="video/mp4" />
             </video>
           ) : (
