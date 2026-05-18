@@ -145,7 +145,7 @@ const Navbar = () => {
   return (
     <header className="mt-[20px]">
       {/* Верхняя часть с логотипом и кнопкой */}
-      <div className="flex items-center justify-between mx-[60px] max-lg:mx-6 max-md:mx-4 max-sm:flex-col max-sm:gap-4">
+      <div className="flex items-center justify-between mx-[60px] mb-5 max-lg:mx-6 max-md:mx-4 max-sm:flex-col max-sm:gap-4">
         <div className="flex items-center gap-[30px] max-sm:flex-col max-sm:text-center">
           <img className="w-[100px] h-[100px] max-sm:w-[70px] max-sm:h-[70px]" src={Logo} alt="Logo" />
           <h2

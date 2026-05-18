@@ -311,26 +311,18 @@ const Home = () => {
                 {/* Overlay с информацией - ВСЕГДА ВИДЕН на мобилках и планшетах */}
                 {/* На десктопе - появляется при ховере */}
                 <div className={`
-            absolute inset-0 bg-gradient-to-t from-[#1B2A44]/90 via-[#1B2A44]/40 to-transparent
-            transition-all duration-500 z-10 flex flex-col justify-end p-5 sm:p-6 md:p-8
-            ${index === 1 ? 'lg:opacity-0 lg:group-hover:opacity-100' : 'lg:opacity-0 lg:group-hover:opacity-100'}
-            opacity-100
-          `}>
+                absolute inset-0 bg-gradient-to-t from-[#1B2A44]/90 via-[#1B2A44]/40 to-transparent
+                transition-all duration-500 z-10 flex flex-col justify-end p-5 sm:p-6 md:p-8
+                ${index === 1 ? 'lg:opacity-0 lg:group-hover:opacity-100' : 'lg:opacity-0 lg:group-hover:opacity-100'}
+                opacity-100`}>
 
                   <div className={`
-              transform transition-transform duration-500
-              ${index === 1 ? 'lg:translate-y-6 lg:group-hover:translate-y-0' : 'lg:translate-y-6 lg:group-hover:translate-y-0'}
-              translate-y-0
-            `}>
+                     transform transition-transform duration-500
+                     ${index === 1 ? 'lg:translate-y-6 lg:group-hover:translate-y-0' : 'lg:translate-y-6 lg:group-hover:translate-y-0'}
+                     translate-y-0`}>
                     <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#FAF9F6]/80 mb-1 sm:mb-2 font-semibold block">
                       {t('home.gallery.card_badge')}
                     </span>
-                    <h3
-                      className="text-lg sm:text-xl md:text-2xl text-white font-bold mb-2 sm:mb-3"
-                      style={{ fontFamily: "'Playfair Display', serif" }}
-                    >
-                      {t('home.gallery.card_title')}
-                    </h3>
                     {/* Линия */}
                     <div className="w-6 h-[1px] bg-[#D4A259] lg:group-hover:w-full transition-all duration-500 sm:duration-700"></div>
                   </div>

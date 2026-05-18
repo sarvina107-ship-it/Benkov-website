@@ -42,6 +42,10 @@ import Sculpture1 from '../assets/directions/image40.png'
 import Sculpture2 from '../assets/directions/image41.png'
 import Sculpture3 from '../assets/directions/image42.png'
 import Sculpture4 from '../assets/directions/image43.png'
+import Interior1 from '../assets/directions/image44.png'
+import Interior2 from '../assets/directions/image45.png'
+import Interior3 from '../assets/directions/image46.png'
+import Interior4 from '../assets/directions/image47.png'
 
 export const directionsCategories = [
     {
@@ -120,8 +124,8 @@ export const directionsData = {
         images: [Costume1, Costume2, Costume3, Costume4]
     },
     "interior-designer": {
-        image: "/images/directions/interior.jpg",
-        images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]
+        image: Interior2,
+        images: [Interior1, Interior2, Interior3, Interior4]
     },
     "computer-graphics-designer": {
         image: "/images/directions/digital.jpg",

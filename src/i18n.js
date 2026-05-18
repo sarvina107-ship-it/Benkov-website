@@ -84,7 +84,6 @@ i18n
                             subtitle: "Экспозиция работ",
                             title: "Галерея учеников",
                             card_badge: "Учебная программа",
-                            card_title: "Избранное",
                             btn_all: "Смотреть всю галерею"
                         },
                         director: {
@@ -206,7 +205,8 @@ i18n
                             },
                             "interior-designer": {
                                 title: "Дизайн интерьера",
-                                desc: "Проектирование комфортных и эстетичных пространств для жизни и работы."
+                                desc: "Направление «Дизайн интерьера» в специализированной школе имени П. П. Бенькова ориентировано на формирование у учащихся художественного вкуса, пространственного мышления и профессиональных навыков проектирования.Обучение сочетает теоретические знания и практическую деятельность. Учащиеся изучают основы композиции, цветоведения, материаловедения и проектирования, а также осваивают навыки создания интерьерных решений от идеи до готового проекта.",
+                                desc1: "В процессе обучения учащиеся выполняют чертежи, эскизы, цветовые решения и макеты, что позволяет им получить полноценную подготовку в области интерьерного дизайна и подготовиться к дальнейшему профессиональному образованию."
                             },
                             "computer-graphics-designer": {
                                 title: "Дизайн компьютерной графики",
@@ -241,40 +241,40 @@ i18n
                     },
                     about: {
                         quote: "«Искусство рождается там, где встречаются традиции и смелость»",
-                        intro: "Республиканская специализированная художественная школа имени Павла Бенкова играет непосредственную роль в становлении и формировании художественного образования в области изобразительного и прикладного искусства в Узбекистане и бывшем Туркестане.",
+                        intro: "Когда речь заходит об истории изобразительного искусства Узбекистана, особое место занимает Республиканская специализированная художественная школа имени П. Бенькова. Это учебное заведение — не просто школа, а творческая лаборатория, которая на протяжении более века стала местом становления сотен художников, скульпторов, дизайнеров и искусствоведов.",
+                        intro1: "И сегодня название «Беньковская школа» ассоциируется с профессиональным художественным образованием, сильными академическими традициями и свободой творческого мышления. Её 107-летняя история неразрывно связана с формированием профессиональной школы изобразительного и декоративно-прикладного искусства в Центральной Азии.",
                         stages: {
                             one: {
                                 tag: "Этап I",
-                                title: "1918 – 1924: Фундамент",
-                                text1: "2 октября 1918 года по инициативе творческих интеллектуалов и ряда педагогов-художников, таких как Л.Л. Буре и З. Вишневская, туркестанское правительство основало в Самарканде специальную художественную школу.",
-                                text2: "На заседании 16 февраля 1919 года Совет Туркестанского комиссариата народного образования рассмотрел предложение о создании в Ташкенте средней специализированной художественной школы. 14 марта 1919 года началась регистрация желающих учиться в этом новом учебном заведении.",
-                                text3: "По распоряжению Народного художественного комитета Туркестанской Республики от 19 февраля 1919 года, с 20 марта 1919 года Адель Станиславовна Рамановская была назначена директором Туркестанской областной художественной школы. 15 апреля 1919 года состоялась торжественная церемония открытия Туркестанской областной художественной школы.",
-                                text4: "29 сентября 1922 года решением правительства Республики это учебное заведение было преобразовано в Туркестанскую художественную школу, Туркестанский художественный колледж. В 1924 году, в результате разделения Туркестанской Республики на ряд независимых республик, Туркестанский художественный колледж был переименован в Ташкентский художественный колледж."
+                                title: "1918 – 1930: Фундамент",
+                                text1: "История школы начинается 2 октября 1918 года. Именно в этот день в Самарканд по инициативе местной интеллигенции и русских художников было создано специальное художественное учебное заведение. Это был период, когда в Туркестане формировалась новая культурная среда, а искусство рассматривалось как средство обновления общества.",
+                                text2: "15 апреля 1919 года состоялось торжественное открытие Туркестанской краевой народной художественной школы. Это учебное заведение не только обучало рисованию, но и стало центром формирования нового эстетического мировоззрения. Именно поэтому история школы имени Павла Бенькова тесно связана с историей профессионального изобразительного искусства Узбекистана.",
+                                text3: "В 1920–1930-х годах учебное заведение неоднократно реорганизовывалось. В 1928 году оно было преобразовано в Самаркандский техникум изобразительных искусств. Позднее учреждение функционировало как Самаркандский художественный техникум, а затем как художественное училище.",
+                                text4: "Не случайно это учебное заведение в народе называли просто «Узбекское художественное училище». Именно здесь сформировалось первое профессиональное поколение национальной школы живописи."
                             },
                             two: {
                                 tag: "Этап II",
-                                title: "1928 – 1949: Школа Бенкова",
-                                text1: "7 октября 1928 года Самаркандская специальная художественная школа была преобразована в Самаркандский колледж изящных искусств. С 1930 по 1939 год этот колледж назывался Самаркандским художественным колледжем, а с 1939 по 1949 год - Самаркандской художественной школой.",
-                                text2: "26 июля 1941 года приказом № 502 Управления по делам искусств Совета народных комиссариатов Узбекской ССР была создана Республиканская школа изящных искусств на базе Ташкентской и Самаркандской художественных школ. Директор Ташкентской школы изящных искусств Жемчужников передал имущество школы директору Самаркандской художественной школы Мясникову.",
-                                text3: "В 1949 году по решению правительства Узбекистана Самаркандская художественная школа имени П. Бенкова и Ташкентское художественное училище были объединены и реорганизованы в Республиканскую художественную школу имени Павла Петровича Бенкова в Ташкенте.",
-                                text4: "Это учебное заведение всегда называлось в народе «Узбекской школой искусств». В соответствии с постановлением Правительства Узбекистана от 1949 года Самаркандская школа искусств была названа в честь народного художника Узбекистана, деятеля искусства Павла Петровича Бенкова, которому он посвятил свою творческую и педагогическую жизнь, чтобы почтить его вклад в развитие узбекского изобразительного искусства и увековечить имя известного мастера живописи."
+                                title: "1949 – 1950: Начало наследия Бенькова",
+                                text1: "В 1949 году училищу было присвоено имя известного художника Павел Петрович Беньков. Это решение имело символическое значение, поскольку Беньков был одним из художников, с большой любовью изображавших природу Узбекистана, его людей и неповторимую восточную атмосферу.Это учебное заведение многие называли «фабрикой художников». Причина в том, что его выпускники впоследствии определили целую эпоху в искусстве Узбекистана.",
+                                text2: "Одной из важнейших особенностей школы стало гармоничное сочетание академического образования и национальной эстетики. Здесь студенты изучали не только анатомию и композицию, но и анализировали восточную миниатюру, народное декоративно-прикладное искусство, сценические костюмы и архитектурный декор.",
+                                text3: "В середине XX века Беньковская школа стала одним из ведущих центров профессионального художественного образования в Узбекистане. Особенно значительным было её влияние в области монументального искусства, театрально-декорационного оформления, кинохудожества и скульптуры.",
+                                text4: "Даже в годы Второй мировой войны учебный процесс не прекращался. Напротив, через фронтовые сюжеты, патриотические плакаты и исторические композиции искусство проявило себя как важная общественная сила."
                             },
                             three: {
                                 tag: "Этап III",
-                                title: "1995 – 1997: Новое время",
-                                text1: "28 августа 1995 года Республиканская художественная школа имени Павла Бенкова была переименована в Республиканскую художественную школу имени Павла Бенкова и зарегистрирована в Министерстве культуры Узбекистана.",
-                                text2: "Республиканская художественная школа имени Павла Бенкова была переименована в Республиканское художественное училище в соответствии с Указом Президента Республики Узбекистан «Об учреждении Академии художеств Узбекистана» от 23 января 1997 года № ПФ-1701, Постановлением Кабинета Министров «Об организации деятельности Академии художеств Узбекистана» от 11 марта 1997 года № 131, Приказом Академии художеств Узбекистана от 12 мая 1997 года № 20 и Постановлением Хокима Шайхонтахурского района города Ташкента от 19 мая 1997 года № 612/5."
+                                title: "1960 – 1980: Новая творческая эпоха",
+                                text1: "В 1960–1980-е годы в школе усиливаются модернистские тенденции, новые пластические поиски и монументальное мышление.В этот период выпускники активно участвовали в крупных проектах, связанных с городской средой, архитектурой и оформлением общественных зданий."
                             },
                             four: {
                                 tag: "Этап IV",
-                                title: "2017 – 2019: Цифра и Традиция",
-                                text1: "Республиканский художественный колледж был создан в соответствии с пунктом 1, первым абзацем, Постановления Президента Республики Узбекистан «О дополнительных мерах по развитию и дальнейшему совершенствованию деятельности Академии художеств Узбекистана» № ПК-3219 от 16 августа 2017 года и Приказа Академии художеств Узбекистана «О переименовании учебного заведения и организации при Академии художеств Узбекистана» № И-444 от 18 августа 2017 года.",
-                                text2: "Республиканское художественное училище имени П.П. Бенкова было переименовано в Республиканское специализированное художественное училище в соответствии с Постановлением Президента Республики Узбекистан «Об улучшении деятельности Центра среднего специализированного и профессионального образования Министерства высшего и среднего специализированного образования Республики Узбекистан» № ПК-3504 от 3 февраля 2018 года, Постановлением Кабинета Министров Республики Узбекистан «Об организации деятельности специализированных художественно-культурных училищ и школ-интернатов» № 9 от 9 января 2019 года и Приказом Академии художеств Узбекистана № И-497 от 11 января 2019 года."
+                                title: "1995 – 2019:  Новое имя, новый статус",
+                                text1: "В 1995–2019 годах учебное заведение несколько раз меняло своё название: Республиканское художественное училище, Республиканский художественный колледж, а с 2019 года оно носит название Республиканская специализированная художественная школа имени Павла Бенькова и находится в ведении Академия художеств Узбекистана.",
                             },
                             five: {
                                 tag: "Этап V",
-                                title: "2017 – 2020: Переобразование в школу",
-                                text1: "Республиканская специализированная художественная школа была переименована в Республиканскую специализированную художественную школу имени Павла Бенкова в соответствии с пунктом 10 Постановления Президента Республики Узбекистан № ПК-4688 от 21 апреля 2020 года «О мерах по дальнейшему повышению эффективности изобразительного и прикладного искусства»."
+                                title: "2021 – 2026: Переобразование в школу",
+                                text1: "За последние пять лет Республиканская специализированная художественная школа имени Павла Бенькова стала ярким примером обновляющейся модели художественного образования в Узбекистане. Школа является не только учебным заведением, где преподают академическое изобразительное искусство, но и творческой платформой, объединяющей современное искусство, экологическое мышление, международное сотрудничество и традиции «учитель–ученик».",
+                                text2:"В школе предпринимаются значительные шаги по переходу на современные образовательные стандарты, расширению международного сотрудничества и активизации творческих проектов."
                             }
                         },
                         faculties: {
@@ -704,7 +704,6 @@ i18n
                             subtitle: "Ishlar ekspozitsiyasi",
                             title: "O'quvchilar galereyasi",
                             card_badge: "O'quv dasturi",
-                            card_title: "Saralangan ishlar",
                             btn_all: "Barcha galereyani ko'rish"
                         },
                         director: {
@@ -826,7 +825,8 @@ i18n
                             },
                             "interior-designer": {
                                 title: "Interyer dizayni",
-                                desc: "Yashash va ishlash uchun qulay hamda estetik makonlarni loyihalash."
+                                desc: "“Interyer dizayni” yo‘nalishi P. P. Benkov nomidagi ixtisoslashtirilgan maktabda o‘quvchilarda badiiy did, fazoviy fikrlash va professional loyihalash ko‘nikmalarini shakllantirishga qaratilgan.Ta’lim jarayoni nazariy bilimlar va amaliy mashg‘ulotlarni uyg‘unlashtiradi. O‘quvchilar kompozitsiya, rangshunoslik, materialshunoslik va loyihalash asoslarini o‘rganadilar hamda interyer yechimlarini g‘oyadan tayyor loyihagacha ishlab chiqishni o‘zlashtiradilar.",
+                                desc1: "O‘qish jarayonida o‘quvchilar chizmalar, eskizlar, rangli yechimlar va maketlar yaratib, interyer dizayni sohasida puxta tayyorgarlikka ega bo‘ladilar."
                             },
                             "computer-graphics-designer": {
                                 title: "Kompyuter grafikasi dizayni",
@@ -861,40 +861,40 @@ i18n
                     },
                     about: {
                         quote: "«San’at an’analar va jasorat uchrashgan joyda tug‘iladi»",
-                        intro: "Pavel Benkov nomidagi Respublika ixtisoslashtirilgan rassomlik maktabi O‘zbekistonda va sobiq Turkiston hududida tasviriy va amaliy san’at yo‘nalishida badiiy ta’limning shakllanishi va rivojlanishida muhim o‘rin tutadi.",
+                        intro: "O‘zbekiston tasviriy san’ati tarixi haqida gap ketganda, P. Benkov nomidagi Respublika ixtisoslashtirilgan rassomlik maktabi alohida o‘rin tutadi. Bu dargoh shunchaki o‘quv muassasasi emas — u bir asr davomida yuzlab rassomlar, haykaltaroshlar, dizaynerlar va san’atshunoslar uchun ijodiy laboratoriya vazifasini bajargan maktabdir. ",
+                        intro1:"Bugungi kunda ham “Benkov maktabi” nomi professional badiiy ta’lim, kuchli akademik an’ana va erkin ijodiy fikr bilan bog‘lanadi. Uning 107 yillik tarixi Markaziy Osiyoda professional tasviriy va amaliy san’at maktabining shakllanishi bilan chambarchas bog‘liq.",
                         stages: {
                             one: {
                                 tag: "I-bosqich",
-                                title: "1918 – 1924: Poydevor",
-                                text1: "1918 yil 2 oktabrda ijodkor ziyolilar hamda L.L.Bure va Z.Vishnevskaya kabi bir necha pedagog rassomlar tashabbusi bilan Turkiston hukumati tomonidan Samarqandda maxsus rassomlik bilim yurti tashkil etilgan.",
-                                text2: "Turkiston Xalq Ta’limi Komissariati Kollegiyasi 1919 yil 16 fevraldagi yig`ilishida Toshkent shaxrida o`rta maxsus rassomlik bilim yurtini tashkil qilish xaqidagi taklifni ko`rib chiqdi. 1919 yil 14 mart kuni bu yangi o`quv yurtida ta`lim olishni istovchilarni ro`yxatga olish boshlandi.",
-                                text3: "Turkiston Respublikasi Xalq ya`limi qo`mitasining 1919 yil 19 fevraldagi buyrug`iga asosan 1919 yil 20 martdan Adel Stanislavovna Ramanovskaya Turkiston o`lka rassomlik maktabining mudirasi etib tayinlandi.1919 yil 15 aprelda Turkiston o`lkasi xalq rassomlik maktabining tantanali ochilish marosimi bo`ldi. ",
-                                text4: "1922 yil 29 sentabrda Jumxuriyat hukumatining qaroriga asosan bu maktab Turkiston rassomlik о‘quv yurti Turkiston rassomlik texnikumiga aylantirildi. 1924 yilda Turkiston Respublikasi qator mustaqil jumxuriyatlarga bо‘linishi oqibatida Turkiston rassomlik texnikumi Toshkent rassomlik texnikumi deb qayta nomlandi. "
+                                title: "1918 – 1930: Poydevor",
+                                text1: "Maktab tarixi 1918-yil 2-oktabrdan boshlanadi. Aynan shu kuni Samarqandda mahalliy ziyolilar va rus rassomlari tashabbusi bilan maxsus rassomlik bilim yurti tashkil etiladi. Bu davr Turkistonda yangi madaniy muhit shakllanayotgan, san’at esa jamiyatni yangilash vositasi sifatida ko‘rilayotgan yillar edi.",
+                                text2: "1919-yil 15-aprelda Turkiston o‘lka xalq rassomlik maktabining tantanali ochilishi bo‘lib o‘tadi. Bu maktab nafaqat rasm chizishni o‘rgatgan, balki yangi estetik dunyoqarashni shakllantirgan markazga aylanadi. Shu bois Pavel Benkov maktabi tarixi O‘zbekiston professional tasviriy san’ati tarixi bilan chambarchas bog‘liqlikda rivojlagan.",
+                                text3: "1920–1930 yillarda o‘quv yurti bir necha bor qayta tashkil etiladi. 1928 yilda u Samarqand tasviriy san’at texnikumiga aylantiriladi. Keyinchalik Samarqand rassomlik texnikumi, so‘ngra rassomlik bilim yurti sifatida faoliyat yuritadi.",
+                                text4: "Bu muassasa xalq orasida oddiy qilib “O‘zbek rassomlik bilim yurti” deb atalgani bejiz emas. Chunki aynan shu yerda milliy rassomchilik maktabining ilk professional avlodi shakllangan."
                             },
                             two: {
                                 tag: "II-bosqich",
-                                title: "1928 – 1949: Benkov maktabi",
-                                text1: "1928 yil 7 oktabrda Samarqanddagi maxsus rassomlik maktabi Samarqand tasviriy san’at texnikumiga aylantirilgan.Mazkur texnikum 1930 yildan 1939 yilgacha Samarqand rassomlik texnikumi, 1939 yildan 1949 yilgacha Samarqand rassomlik bilim yurti deb yuritilgan.",
-                                text2: "941 yil 26 iyulda O`zSSR Xalq komissariati Kengahi qoshidagi San`at ishlari boshqarmasining 502-sonli buyrug`iga ko`ra Toshkent va Samarqand rassomlik bilim yurti bazasida Respublika tasviriy san`at bilim yurti tashkil etildi. Toshkent tasviriy san`at  bilim yurti direktori Jemchujnikov bilim yurti mol-mulkini Samarqand rassomlik bilim yurti direktori Myasnikovga topshirdi.",
-                                text3: "1949 yilda О‘zbekiston hukumati qaroriga asosan P.Benkov nomidagi Samarqand rassomlik bilim yurti hamda Toshkent rassomlik texnikumi birlashtirilib, Toshkent shaxrida Pavel Petrovich Benkov nomidagi Respublika rassomlik bilim yurti deb qayta tashkil qilindi.",
-                                text4: "Bu bilim yurti xalq orasida doimo “O`zbek rassomlik bilim yurti” deb atalardi. О‘zbekiston hukumatining 1949 yildagi qaroriga muvofiq, О‘zbekiston halq rassomi, san’at arbobi Pavel Petrovich Benkovning о‘zbek tasviriy san’ati rivojiga qо‘shgan hissasini taqdirlash hamda mashhur rangtasvir ustasining nomini abadiylashtirish maqsadida ijodiy va pedagogik umrini baxshida etgan Samarqand rassomlik bilim yurtiga uning nomi berildi."
+                                title: "1949 – 1950: Benkov merosining boshlanishi",
+                                text1: "1949 yilda bilim yurti mashhur rassom Pavel Benkov nomi bilan ataladi. Bu qaror ramziy ahamiyatga ega edi. Chunki Benkov O‘zbekiston tabiati, odamlari va sharqona muhitni katta mehr bilan tasvirlagan rassomlardan biri bo‘lgan.Bu dargohni ko‘pchilik “rassomlar fabrikasi” deb ham atagan. Sababi — bu yerdan chiqqan ijodkorlar keyinchalik O‘zbekiston san’atida butun bir davrni belgilab bergan.",
+                                text2: "Maktabning eng muhim xususiyati — akademik ta’lim va milliy estetikaning uyg‘unligi. Bu yerda talabalar nafaqat anatomiya yoki kompozitsiyani o‘rganishgan, balki sharq miniatyurasi, xalq amaliy san’ati, sahna liboslari va me’moriy bezaklarni ham tahlil qilishgan.",
+                                text3: "XX asr o‘rtalarida Benkov maktabi O‘zbekistonda professional badiiy ta’limning asosiy markazlaridan biriga aylanadi. Ayniqsa monumental san’at, teatr-dekoratsiya, kino rassomchiligi va haykaltaroshlik sohasida bu maktab katta ta’sir ko‘rsatgan.",
+                                text4: "Ikkinchi jahon urushi yillarida ham o‘quv jarayoni to‘xtab qolmagan. Aksincha, front mavzulari, vatanparvarlik plakatlari va tarixiy kompozitsiyalar orqali san’at ijtimoiy kuch sifatida namoyon bo‘lgan."
                             },
                             three: {
                                 tag: "III-bosqich",
-                                title: "1995 – 1997: Yangi davr",
-                                text1: "1995 yil 28 avgustda Pavel Benkov nomidagi Respublika rassomlik bilim yurti Pavel Benkov nomidagi Respublika badiiy bilim yurti deb qayta nomlangan hamda О‘zbekiston Madaniyat ishlari vazirligiga rо‘yxatga olingan.",
-                                text2: "Pavel Benkov nomidagi Respublika badiiy bilim yurti О‘zbekiston Respublikasi Prezdentining “О‘zbekiston Badiiy akademiyasini tashkil etish haqida” 1997 yil 23 yanvardagi PF-1701-sonli farmoni, Vazirlar Mahkamasining “О‘zbekiston Badiiy akademiyasining faoliyatini tashkil etish tо‘g‘risida” 1997 yil 11 martdagi 131-sonli qarori, О‘zbekiston Badiiy akademiyasining 1997 yil 12 maydagi 20-sonli buyrug‘i hamda Toshkent shahar Shayxontoxur tumani hokimining 1997 yil 19 maydagi 612/5-son qaroriga muvofiq Respublika rassomlik kolleji deb qayta nomlangan."
+                                title: "1960 – 1980: Yangi ijodiy davr",
+                                text1: "1960–1980 yillarda esa maktabda modernistik qarashlar, yangi plastik izlanishlar va monumental fikrlash kuchayadi. Bu davrda bitiruvchilar shahar muhiti, arxitektura va jamoat binolari bilan bog‘liq katta loyihalarda ishtirok etishadi.",
                             },
                             four: {
                                 tag: "IV-bosqich",
-                                title: "2017 – 2019: Raqam va an’ana",
-                                text1: "Respublika rassomlik kolleji О‘zbekiston Respublikasi Prezidentining “О‘zbekiston Badiiy Akademiyasi faoliyatini rivojlantirish va yanada takomillashtirishga doir qо‘shimcha chora-tadbirlar tо‘g‘risida” 2017 yil 16 avgustdagi PQ-3219-sonli qarorining 1 bandi, birinchi xatboshisi hamda О‘zbekiston Badiiy Akademiyasining “О‘zbekiston Badiiy akademiyasi tasarrufidagi ta’lim muassasasi va tashkilot nomini о‘zgartirish tо‘g‘risida” 2017 yil 18 avgustdagi I-444-sonli buyrug‘iga asosan P.P.Benkov nomidagi Respublika ",
-                                text2: "P.P.Benkov nomidagi Respublika rassomlik kolleji О‘zbekiston Respublikasi Prezidentining “О‘zbekiston Respublikasi Oliy va о‘rta maxsus ta’lim vazirligining О‘rta maxsus, kasb-hunar ta’limi markazi faoliyatini takomillashtirish tо‘g‘risida” 2018 yil 3 fevraldagi PQ-3504-son qarori, О‘zbekiston Respublikasi Vazirlar Mahkamasining 2019 yil 9 yanvardagi “Ixtisoslashtirilgan san’at va madaniyat maktablari hamda maktab-internatlarning faoliyatini tashkil etish tо‘g‘risida”gi 9-sonli qarori hamda О‘zbekiston Badiiy akademiyasining 2019 yil 11 yanvardagi I-497-sonli buyrug‘iga asosan Respublika ixtisoslashtirilgan rassomlik maktabi deb nomlandi."
+                                title: "1995 – 2019: Yangi nom, yangi maqom",
+                                text1: "1995–2019 yillarda maktab bir necha marta qayta nomlangan: Respublika badiy bilim yurti, Respublika rassomlik kolleji, 2019 yildan esa Pavel Benkov nomidagi Respublika ixtisoslashtirilgan rassomlik maktabi deb yuritiladi (О‘zbekiston Badiy akademiyasi tasarrufida).",
                             },
                             five: {
                                 tag: "V-bosqich",
                                 title: "2017 – 2020: Maktabga aylanish",
-                                text1: "Respublika ixtisoslashtirilgan rassomlik maktabi О‘zbekiston Respublikasi Prezidentining “Tasviriy va amaliy san’at sohasi samaradorlini yanada oshirishga doir choratadbirlar tо‘g‘risida” 2020 yil 21 apreldagi PQ-4688-son qarorining 10-  bandiga asosan Pavel Benkov nomidagi Respublika ixtisoslashtirilgan rassomlik maktabi yangi tahrirda qayta nomlandi."
+                                text1: "So‘nggi besh yil davomida Pavel Benkov nomidagi Respublika ixtisoslashtirilgan rassomlik maktabi faoliyati Oʻzbekistonda badiiy ta’lim tizimining yangilanayotgan modeli sifatida namoyon bo‘ldi. Maktab faqat akademik tasviriy san’atni o‘qituvchi muassasa emas, balki zamonaviy san’at, ekologik tafakkur, xalqaro hamkorlik va “ustoz-shogird” an’analarini birlashtirgan ijodiy platformaga aylandi.",
+                                text2: "Maktabda zamonaviy ta’lim standartlariga о‘tish, xalqaro hamkorlikni kengaytirish va ijodiy loyihalarni faollashtirish yо‘lida katta qadamlar qо‘yilmoqda."
                             }
                         },
                         faculties: {
@@ -1323,7 +1323,6 @@ i18n
                             subtitle: "Exposition of Works",
                             title: "Student Gallery",
                             card_badge: "Educational Program",
-                            card_title: "Featured Works",
                             btn_all: "View Full Gallery"
                         },
                         director: {
@@ -1445,7 +1444,8 @@ i18n
                             },
                             "interior-designer": {
                                 title: "Interior Designer",
-                                desc: "Designing comfortable and aesthetically pleasing spaces for living and working."
+                                desc: "The “Interior Design” program at the P. P. Benkov Specialized School is aimed at developing students’ artistic taste, spatial thinking, and professional design skills.The educational process combines theoretical knowledge with practical work. Students study the fundamentals of composition, color theory, materials, and design, while also learning to create interior solutions from concept to final project.",
+                                desc1: "During their studies, students create drawings, sketches, color solutions, and models, gaining solid preparation in the field of interior design."
                             },
                             "computer-graphics-designer": {
                                 title: "Computer Graphics Designer",
@@ -1480,40 +1480,40 @@ i18n
                     },
                     about: {
                         quote: "“Art is born where tradition and courage meet”",
-                        intro: "The Republican Specialized Art School named after Pavel Benkov plays a direct role in the establishment and formation of art education in the field of fine and applied arts in Uzbekistan and the former Turkestan.",
+                        intro: "When discussing the history of fine arts in Uzbekistan, the Pavel Benkov Republican Specialized School of Arts holds a special place. This institution is more than just an educational establishment — for over a century, it has served as a creative laboratory for hundreds of painters, sculptors, designers, and art historians.",
+                        intro1: "Even today, the name “Benkov School” is associated with professional art education, strong academic traditions, and freedom of creative expression. Its 107-year history is closely intertwined with the development of professional fine and applied arts education in Central Asia.",
                         stages: {
                             one: {
                                 tag: "Stage I",
-                                title: "1918 – 1924: Foundation",
-                                text1: "On October 2, 1918, on the initiative of creative intellectuals and a number of artist-educators such as L.L. Bure and Z. Vishnevskaya, the Turkestan government founded a specialized art school in Samarkand.",
-                                text2: "At the meeting on February 16, 1919, the Council of the Turkestan People's Commissariat of Education considered the proposal to establish a secondary specialized art school in Tashkent. On March 14, 1919, the registration of those wishing to study at this new educational institution began.",
-                                text3: "By order of the People's Art Committee of the Turkestan Republic dated February 19, 1919, starting from March 20, 1919, Adel Stanislavovna Ramanovskaya was appointed director of the Turkestan Regional Art School. On April 15, 1919, the official opening ceremony of the Turkestan Regional Art School took place.",
-                                text4: "On September 29, 1922, by decision of the government of the Republic, this educational institution was transformed into the Turkestan Art School, the Turkestan Art College. In 1924, as a result of the division of the Turkestan Republic into a number of independent republics, the Turkestan Art College was renamed the Tashkent Art College."
+                                title: "1918 – 1930: Foundation",
+                                text1: "The history of the school began on October 2, 1918. On that day, a specialized art school was established in Samarkand through the initiative of local intellectuals and Russian artists. This was a period when a new cultural environment was emerging in Turkestan, and art was regarded as a means of renewing society.",
+                                text2: "On April 15, 1919, the Turkestan Regional People's Art School was officially inaugurated. This institution not only taught drawing and painting, but also became a center for shaping a new aesthetic worldview. For this reason, the history of the Pavel Benkov School is closely intertwined with the history of professional fine arts in Uzbekistan.",
+                                text3: "During the 1920s and 1930s, the institution underwent several reorganizations. In 1928, it was transformed into the Samarkand College of Fine Arts. Later, it operated as the Samarkand Art College and subsequently as an art school.",
+                                text4: "It is no coincidence that this institution became popularly known as the “Uzbek Art School.” It was here that the first professional generation of the national school of painting was formed."
                             },
                             two: {
                                 tag: "Stage II",
-                                title: "1928 – 1949: Benkov School",
-                                text1: "On October 7, 1928, the Samarkand specialized art school was transformed into the Samarkand College of Fine Arts. From 1930 to 1939, this college was called the Samarkand Art College, and from 1939 to 1949 - the Samarkand Art School.",
-                                text2: "On July 26, 1941, by Order No. 502 of the Administration for Arts Affairs of the Council of People's Commissars of the Uzbek SSR, the Republican School of Fine Arts was established on the basis of the Tashkent and Samarkand art schools. The director of the Tashkent School of Fine Arts, Zhemchuzhnikov, transferred the school's property to the director of the Samarkand Art School, Myasnikov.",
-                                text3: "In 1949, by decision of the Government of Uzbekistan, the Samarkand Art School named after P. Benkov and the Tashkent Art College were merged and reorganized into the Republican Art School named after Pavel Petrovich Benkov in Tashkent.",
-                                text4: "This educational institution was always popularly called the “Uzbek School of Arts.” In accordance with the Resolution of the Government of Uzbekistan of 1949, the Samarkand School of Arts was named after the People's Artist of Uzbekistan, art figure Pavel Petrovich Benkov, who devoted his creative and pedagogical life to it, in order to honor his contribution to the development of Uzbek fine art and to perpetuate the name of the famous master of painting."
+                                title: "1949 – 1950: The Benkov Legacy Begins",
+                                text1: "In 1949, the school was named after the renowned artist Pavel Petrovich Benkov. This decision carried symbolic significance, as Benkov was one of the artists who depicted the nature of Uzbekistan, its people, and its distinctive Eastern atmosphere with great affection.The institution was often referred to as a “factory of artists.” This was because its graduates went on to shape an entire era in Uzbek art.",
+                                text2: "One of the school’s most important features has been the harmonious combination of academic training and national aesthetics. Students studied not only anatomy and composition, but also analyzed Eastern miniature painting, traditional applied arts, stage costumes, and architectural ornamentation.",
+                                text3: "By the mid-20th century, the Benkov School had become one of the leading centers of professional art education in Uzbekistan. Its influence was particularly strong in the fields of monumental art, theater set design, film art direction, and sculpture.",
+                                text4: "Even during the years of World War II, the educational process did not stop. On the contrary, through wartime subjects, patriotic posters, and historical compositions, art demonstrated its power as an important social force."
                             },
                             three: {
                                 tag: "Stage III",
-                                title: "1995 – 1997: New Era",
-                                text1: "On August 28, 1995, the Republican Art School named after Pavel Benkov was renamed the Republican Art School named after Pavel Benkov and registered with the Ministry of Culture of Uzbekistan.",
-                                text2: "The Republican Art School named after Pavel Benkov was renamed the Republican Art College in accordance with the Decree of the President of the Republic of Uzbekistan “On the Establishment of the Academy of Arts of Uzbekistan” dated January 23, 1997 No. PF-1701, the Resolution of the Cabinet of Ministers “On the Organization of the Activities of the Academy of Arts of Uzbekistan” dated March 11, 1997 No. 131, the Order of the Academy of Arts of Uzbekistan dated May 12, 1997 No. 20, and the Resolution of the Hokim of Shaykhantakhur District of the city of Tashkent dated May 19, 1997 No. 612/5."
+                                title: "1960 – 1980: A New Creative Era",
+                                text1: "During the 1960s–1980s, the school saw a growing emphasis on modernist ideas, new plastic explorations, and monumental thinking. During this period, its graduates actively participated in large-scale projects related to the urban environment, architecture, and public buildings.",
                             },
                             four: {
                                 tag: "Stage IV",
-                                title: "2017 – 2019: Digital and Tradition",
-                                text1: "The Republican Art College was established in accordance with paragraph 1, subparagraph one, of the Resolution of the President of the Republic of Uzbekistan “On additional measures for the development and further improvement of the activities of the Academy of Arts of Uzbekistan” No. PK-3219 dated August 16, 2017, and the Order of the Academy of Arts of Uzbekistan “On renaming the educational institution and organizing it under the Academy of Arts of Uzbekistan” No. I-444 dated August 18, 2017.",
-                                text2: "The Republican Art College named after P.P. Benkov was renamed the Republican Specialized Art College in accordance with the Resolution of the President of the Republic of Uzbekistan “On improving the activities of the Center for Secondary Specialized and Vocational Education of the Ministry of Higher and Secondary Specialized Education of the Republic of Uzbekistan” No. PK-3504 dated February 3, 2018, the Resolution of the Cabinet of Ministers of the Republic of Uzbekistan “On organizing the activities of specialized art and cultural colleges and boarding schools” No. 9 dated January 9, 2019, and the Order of the Academy of Arts of Uzbekistan No. I-497 dated January 11, 2019."
+                                title: "1995 – 2019: A New Name, A New Statusё",
+                                text1: "Between 1995 and 2019, the institution underwent several name changes: it was known as the Republican Art School, the Republican College of Art, and since 2019 it has been officially called the Pavel Benkov Republican Specialized School of Arts, operating under the authority of the Academy of Arts of Uzbekistan."
                             },
                             five: {
                                 tag: "Stage V",
                                 title: "2017 – 2020: Transformation into a School",
-                                text1: "The Republican Specialized Art College was renamed the Republican Specialized Art School named after Pavel Benkov in accordance with paragraph 10 of the Resolution of the President of the Republic of Uzbekistan No. PK-4688 dated April 21, 2020 “On measures for further increasing the effectiveness of fine and applied arts.”"
+                                text1: "Over the past five years, the Pavel Benkov Republican Specialized School of Arts has emerged as a model of the evolving art education system in Uzbekistan. The school is not only an institution dedicated to teaching academic fine arts, but also a creative platform that brings together contemporary art, environmental awareness, international collaboration, and the traditional mentor–apprentice approach.",
+                                text2: "The school has taken significant steps toward adopting modern educational standards, expanding international partnerships, and strengthening creative projects."
                             }
                         },
                         faculties: {

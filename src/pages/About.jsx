@@ -3,15 +3,14 @@ import { ROUTES } from '../paths';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import HistoryImg from '../assets/img/HistoryImg.png';
-import BenkovTarixi1 from '../assets/img/BenkovTarixi1.jpg';
-import BenkovTarixi2 from '../assets/img/BenkovTarixi2.jpg';
-import BenkovTarixi3 from '../assets/img/BenkovTarixi3.jpg';
+import BenkovTarixi1 from '../assets/img/BenkovTarixi1.png';
+import BenkovTarixi2 from '../assets/img/BenkovTarixi2.png';
+import BenkovTarixi3 from '../assets/img/BenkovTarixi3.png';
 import BenkovTarixi4 from '../assets/img/BenkovTarixi4.png';
-import BenkovTarixi5 from '../assets/img/BenkovTarixi5.png';
 
 const About = () => {
   const { t } = useTranslation();
-  const images = [HistoryImg, BenkovTarixi1, BenkovTarixi2, BenkovTarixi3, BenkovTarixi4, BenkovTarixi5];
+  const images = [HistoryImg, BenkovTarixi1, BenkovTarixi2, BenkovTarixi3, BenkovTarixi4];
   const [currentIndex, setCurrentIndex] = useState(0);
 
   useEffect(() => {
@@ -27,7 +26,7 @@ const About = () => {
 
         {/* --- КАРУСЕЛЬ С ПОЛНЫМ КОНТРОЛЕМ --- */}
         <div className="mb-12 sm:mb-16 md:mb-20 relative group px-0">
-          <div className="w-full h-[280px] sm:h-[380px] md:h-[450px] lg:h-[500px] bg-gray-200 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-lg relative">
+          <div className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] bg-gray-200 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-lg relative">
 
             {/* Слайды */}
             {images.map((img, index) => (
@@ -90,6 +89,10 @@ const About = () => {
           <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
             {t('about.intro')}
           </p>
+          <br />
+          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+            {t('about.intro1')}
+          </p>
         </div>
 
         {/* --- ИСТОРИЯ ПО ПОЛОЧКАМ --- */}
@@ -146,9 +149,6 @@ const About = () => {
             </h3>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               {t(`about.stages.three.text1`)}
-              <br />
-              <br />
-              {t(`about.stages.three.text2`)}
             </p>
           </div>
 
@@ -162,9 +162,6 @@ const About = () => {
             </h3>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               {t(`about.stages.four.text1`)}
-              <br />
-              <br />
-              {t(`about.stages.four.text2`)}
             </p>
           </div>
 
@@ -178,6 +175,9 @@ const About = () => {
             </h3>
             <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
               {t(`about.stages.five.text1`)}
+              <br />
+              <br />
+              {t(`about.stages.five.text2`)}
             </p>
           </div>
         </div>
