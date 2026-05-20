@@ -1,0 +1,50 @@
+<?xml version="1.0" encoding="utf-8"?>
+<rss version="2.0">
+    <channel>
+        <title>Республиканская специализированная художественная школа им. П. Бенькова</title>
+        <link>https://benkov-website.vercel.app</link>
+        <description>Новости, объявления и события школы Бенькова в Ташкенте</description>
+        <lastBuildDate>Wed, 20 May 2026 15:49:59 GMT</lastBuildDate>
+        <docs>https://validator.w3.org/feed/docs/rss2.html</docs>
+        <generator>https://github.com/jpmonette/feed</generator>
+        <language>ru</language>
+        <image>
+            <title>Республиканская специализированная художественная школа им. П. Бенькова</title>
+            <url>https://benkov-website.vercel.app/logo.png</url>
+            <link>https://benkov-website.vercel.app</link>
+        </image>
+        <copyright>All rights reserved 2026, Benkov Art School</copyright>
+        <item>
+            <title><![CDATA[Радость Навруза в нашей школе!]]></title>
+            <link>https://benkov-website.vercel.app/news/69da470302159010e6c0d4b4</link>
+            <guid isPermaLink="false">https://benkov-website.vercel.app/news/69da470302159010e6c0d4b4</guid>
+            <pubDate>Sun, 05 Apr 2026 00:00:00 GMT</pubDate>
+            <description><![CDATA[В нашей школе отметили самый прекрасный весенний праздник — Навруз...]]></description>
+        </item>
+        <item>
+            <title><![CDATA[test]]></title>
+            <link>https://benkov-website.vercel.app/news/69e8b8e3b320f937fc3e2bb0</link>
+            <guid isPermaLink="false">https://benkov-website.vercel.app/news/69e8b8e3b320f937fc3e2bb0</guid>
+            <pubDate>Wed, 20 May 2026 15:49:59 GMT</pubDate>
+            <description><![CDATA[test]]></description>
+        </item>
+        <item>
+            <title><![CDATA[Без названия]]></title>
+            <link>https://benkov-website.vercel.app/news/69fae20bf7e1bdd5073383ef</link>
+            <guid isPermaLink="false">https://benkov-website.vercel.app/news/69fae20bf7e1bdd5073383ef</guid>
+            <pubDate>Fri, 08 May 2026 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Без названия]]></title>
+            <link>https://benkov-website.vercel.app/news/69fccd8af7e1bdd5073383f0</link>
+            <guid isPermaLink="false">https://benkov-website.vercel.app/news/69fccd8af7e1bdd5073383f0</guid>
+            <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+        </item>
+        <item>
+            <title><![CDATA[Без названия]]></title>
+            <link>https://benkov-website.vercel.app/news/69fccd9ff7e1bdd5073383f1</link>
+            <guid isPermaLink="false">https://benkov-website.vercel.app/news/69fccd9ff7e1bdd5073383f1</guid>
+            <pubDate>Thu, 07 May 2026 00:00:00 GMT</pubDate>
+        </item>
+    </channel>
+</rss>
