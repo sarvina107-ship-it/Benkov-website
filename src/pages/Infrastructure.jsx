@@ -49,7 +49,7 @@ const Infrastructure = () => {
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 md:grid-cols-3 gap-6 sm:gap-8 md:gap-10 items-start">
           <div className="group relative">
             <div className="overflow-hidden rounded-xl sm:rounded-2xl aspect-[4/5] shadow-xl border-[8px] sm:border-[12px] border-white transition-transform duration-700 group-hover:-translate-y-2">
-              <img src={Yard} alt="Двор" className="w-full h-full object-cover" />
+              <img src={Yard} alt="" loading="lazy" className="w-full h-full object-cover" />
             </div>
             <p className="mt-3 sm:mt-4 text-center font-medium tracking-wider uppercase text-[10px] sm:text-xs text-[#D4A259]">
               {t('infrastructure.yard')}
@@ -58,7 +58,7 @@ const Infrastructure = () => {
 
           <div className="group relative md:mt-12">
             <div className="overflow-hidden rounded-xl sm:rounded-2xl aspect-[3/4] shadow-2xl border-[8px] sm:border-[12px] border-white transition-transform duration-700 group-hover:-translate-y-2">
-              <img src={Facade} alt="Фасад" className="w-full h-full object-cover" />
+              <img src={Facade} alt="" loading="lazy" className="w-full h-full object-cover" />
             </div>
             <p className="mt-3 sm:mt-4 text-center font-medium tracking-wider uppercase text-[10px] sm:text-xs text-[#D4A259]">
               {t('infrastructure.facade')}
@@ -67,7 +67,7 @@ const Infrastructure = () => {
 
           <div className="group relative">
             <div className="overflow-hidden rounded-xl sm:rounded-2xl aspect-[4/5] shadow-xl border-[8px] sm:border-[12px] border-white transition-transform duration-700 group-hover:-translate-y-2">
-              <img src={Entrance} alt="Вход" className="w-full h-full object-cover" />
+              <img src={Entrance} alt="" loading="lazy" className="w-full h-full object-cover" />
             </div>
             <p className="mt-3 sm:mt-4 text-center font-medium tracking-wider uppercase text-[10px] sm:text-xs text-[#D4A259]">
               {t('infrastructure.entrance')}
@@ -95,7 +95,7 @@ const Infrastructure = () => {
               <div className="relative group">
                 <div className="absolute -inset-2 sm:-inset-3 md:-inset-4 border border-[#D4A259]/30 rounded-xl sm:rounded-2xl translate-x-2 sm:translate-x-3 md:translate-x-4 translate-y-2 sm:translate-y-3 md:translate-y-4"></div>
                 <div className="relative h-[250px] sm:h-[350px] md:h-[450px] lg:h-[550px] bg-gray-500 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-                  <img src={Hall} className="w-full h-full object-cover" alt="Зал" />
+                  <img src={Hall} loading="lazy" className="w-full h-full object-cover" alt="" />
                 </div>
               </div>
             </div>
@@ -121,7 +121,7 @@ const Infrastructure = () => {
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg sm:rounded-xl mb-4 sm:mb-6">
                 <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] bg-gray-200 transition-all duration-700 group-hover:scale-105">
-                  <img src={Art} alt="Живопись" className="w-full h-full object-cover" />
+                  <img src={Art} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute inset-2 sm:inset-3 md:inset-4 border border-[#D4A259] transition-all duration-500 group-hover:inset-1 sm:group-hover:inset-2"></div>
               </div>
@@ -135,7 +135,7 @@ const Infrastructure = () => {
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg sm:rounded-xl mb-4 sm:mb-6">
                 <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] bg-gray-200 transition-all duration-700 group-hover:scale-105">
-                  <img src={Costume} alt="Костюмы" className="w-full h-full object-cover" />
+                  <img src={Costume} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute inset-2 sm:inset-3 md:inset-4 border border-[#D4A259] transition-all duration-500 group-hover:inset-1 sm:group-hover:inset-2"></div>
               </div>
@@ -149,7 +149,7 @@ const Infrastructure = () => {
             <div className="group cursor-pointer">
               <div className="relative overflow-hidden rounded-lg sm:rounded-xl mb-4 sm:mb-6">
                 <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] bg-gray-200 transition-all duration-700 group-hover:scale-105">
-                  <img src={Sculpture} alt="Скульптура" className="w-full h-full object-cover" />
+                  <img src={Sculpture} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="absolute inset-2 sm:inset-3 md:inset-4 border border-[#D4A259] transition-all duration-500 group-hover:inset-1 sm:group-hover:inset-2"></div>
               </div>
@@ -189,7 +189,8 @@ const Infrastructure = () => {
                 <div className="w-1/2 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform md:-translate-y-12 border-4 border-white transition-transform duration-500 hover:md:-translate-y-16">
                   <img
                     src={Computure1}
-                    alt="IT класс"
+                    alt=""
+                    loading="lazy"
                     className="w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px] object-cover"
                   />
                 </div>
@@ -198,7 +199,8 @@ const Infrastructure = () => {
                 <div className="w-1/2 rounded-2xl sm:rounded-3xl overflow-hidden shadow-2xl transform md:translate-y-12 border-4 border-white transition-transform duration-500 hover:md:translate-y-16">
                   <img
                     src={Computure2}
-                    alt="Ученики"
+                    alt=""
+                    loading="lazy"
                     className="w-full h-[250px] sm:h-[300px] md:h-[400px] lg:h-[450px] object-cover"
                   />
                 </div>
@@ -246,7 +248,7 @@ const Infrastructure = () => {
             <div className="lg:col-span-7 relative group mb-6 lg:mb-0">
               <div className="absolute inset-0 border-2 border-[#D4A259] translate-x-2 sm:translate-x-3 translate-y-2 sm:translate-y-3 rounded-xl opacity-50 group-hover:translate-x-0 group-hover:translate-y-0 transition-transform duration-500"></div>
               <div className="relative h-[300px] sm:h-[400px] lg:h-[500px] bg-gray-200 rounded-xl overflow-hidden shadow-2xl border border-[#D4A259]/20">
-                <img src={Library} alt="Зал библиотеки" className="w-full h-full object-cover" />
+                <img src={Library} alt="" loading="lazy" className="w-full h-full object-cover" />
                 <div className="absolute bottom-4 left-4 bg-[#1B2A44] border-l-4 border-[#D4A259] px-3 py-1.5 sm:px-4 sm:py-2">
                   <span className="text-[#D4A259] text-[10px] sm:text-xs font-bold tracking-tighter uppercase">
                     {t('infrastructure.library.span')}
@@ -259,12 +261,12 @@ const Infrastructure = () => {
             <div className="lg:col-span-5 grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-1 gap-6">
               <div className="relative group">
                 <div className="h-[200px] sm:h-[220px] lg:h-[230px] bg-gray-300 rounded-xl overflow-hidden border-b-4 border-[#D4A259] shadow-lg">
-                  <img src={Library1} alt="Книжные полки" className="w-full h-full object-cover" />
+                  <img src={Library1} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
               </div>
               <div className="relative group lg:translate-y-8">
                 <div className="h-[200px] sm:h-[220px] lg:h-[230px] bg-gray-400 rounded-xl overflow-hidden border-t-4 border-[#D4A259] shadow-lg">
-                  <img src={Library2} alt="Учебная зона" className="w-full h-full object-cover" />
+                  <img src={Library2} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
               </div>
             </div>
@@ -306,7 +308,7 @@ const Infrastructure = () => {
             <div className="order-1 lg:order-2 relative group w-full">
               <div className="absolute inset-0 border-2 border-[#D4A259] translate-x-2 sm:translate-x-3 translate-y-2 sm:translate-y-3 rounded-xl sm:rounded-2xl group-hover:translate-x-1 sm:group-hover:translate-x-2 group-hover:translate-y-1 sm:group-hover:translate-y-2 transition-all"></div>
               <div className="relative h-[250px] sm:h-[300px] md:h-[350px] lg:h-[400px] bg-gray-300 rounded-xl sm:rounded-2xl overflow-hidden shadow-2xl">
-                <img src={Dining} alt="Столовая" className="w-full h-full object-cover" />
+                <img src={Dining} alt="" loading="lazy" className="w-full h-full object-cover" />
               </div>
             </div>
           </div>
@@ -335,7 +337,7 @@ const Infrastructure = () => {
             <div className="break-inside-avoid group">
               <div className="bg-white p-4 sm:p-6 shadow-[0_20px_50px_rgba(0,0,0,0.1)] border-t-4 border-[#D4A259] transition-all duration-500 group-hover:-translate-y-2">
                 <div className="relative overflow-hidden bg-gray-200 aspect-[3/4] mb-3 sm:mb-4 outline outline-1 outline-offset-[10px] sm:outline-offset-[15px] outline-gray-100">
-                  <img src={Paint1} alt="Работа 1" className="w-full h-full object-cover" />
+                  <img src={Paint1} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="pt-3 sm:pt-4 border-t border-gray-100 flex justify-between items-end">
                   <span className="text-[#D4A259] text-base sm:text-lg font-serif">01</span>
@@ -347,7 +349,7 @@ const Infrastructure = () => {
             <div className="break-inside-avoid group">
               <div className="bg-[#1B2A44] p-4 sm:p-5 shadow-2xl transition-all duration-500 group-hover:rotate-1">
                 <div className="bg-gray-300 aspect-square mb-4 sm:mb-6 border border-[#D4A259]/30">
-                  <img src={Paint4} alt="Работа 2" className="w-full h-full object-cover" />
+                  <img src={Paint4} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="pt-3 sm:pt-4 border-t border-gray-100 flex justify-between items-end">
                   <span className="text-[#D4A259] text-base sm:text-lg font-serif">02</span>
@@ -359,7 +361,7 @@ const Infrastructure = () => {
             <div className="break-inside-avoid group">
               <div className="bg-white p-6 sm:p-8 md:p-10 shadow-xl border border-gray-100 transition-all duration-500 group-hover:scale-[1.02]">
                 <div className="bg-gray-200 aspect-[4/5] shadow-inner relative">
-                  <img src={Paint2} alt="Работа 3" className="w-full h-full object-cover" />
+                  <img src={Paint2} alt="" loading="lazy" className="w-full h-full object-cover" />
                   <div className="absolute inset-0 border-[8px] sm:border-[12px] border-white/20"></div>
                 </div>
                 <div className="pt-3 sm:pt-4 border-t border-gray-100 flex justify-between items-end">
@@ -373,7 +375,7 @@ const Infrastructure = () => {
               <div className="relative p-1 bg-gradient-to-br from-[#D4A259] to-[#1B2A44] shadow-2xl transition-all duration-700 group-hover:shadow-[#D4A259]/20">
                 <div className="bg-white p-3 sm:p-4">
                   <div className="bg-gray-300 aspect-[3/2]">
-                    <img src={Paint5} alt="Работа 4" className="w-full h-full object-cover" />
+                    <img src={Paint5} alt="" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="pt-3 sm:pt-4 border-t border-gray-100 flex justify-between items-end">
                     <span className="text-[#D4A259] text-base sm:text-lg font-serif">04</span>
@@ -386,7 +388,7 @@ const Infrastructure = () => {
             <div className="break-inside-avoid group">
               <div className="bg-white p-4 sm:p-6 shadow-md border-b-2 border-[#D4A259]/50 transition-all duration-300 group-hover:shadow-orange-100">
                 <div className="bg-gray-200 aspect-[3/4] mb-3 sm:mb-4">
-                  <img src={Paint3} alt="Работа 5" className="w-full h-full object-cover" />
+                  <img src={Paint3} alt="" loading="lazy" className="w-full h-full object-cover" />
                 </div>
                 <div className="pt-3 sm:pt-4 border-t border-gray-100 flex justify-between items-end">
                   <span className="text-[#D4A259] text-base sm:text-lg font-serif">05</span>
@@ -399,7 +401,7 @@ const Infrastructure = () => {
               <div className="bg-white p-2 shadow-2xl border border-gray-200">
                 <div className="border border-gray-100 p-4 sm:p-6 transition-colors duration-500 group-hover:bg-[#FAF9F6]">
                   <div className="bg-gray-400 aspect-video mb-3 sm:mb-4 transition-all duration-1000">
-                    <img src={Paint6} alt="Работа 6" className="w-full h-full object-cover" />
+                    <img src={Paint6} alt="" loading="lazy" className="w-full h-full object-cover" />
                   </div>
                   <div className="pt-3 sm:pt-4 border-t border-gray-100 flex justify-between items-end">
                     <span className="text-[#D4A259] text-base sm:text-lg font-serif">06</span>
@@ -425,7 +427,7 @@ const Infrastructure = () => {
             ].map((item, idx) => (
               <div key={idx} className="bg-[#FAF9F6] rounded-xl sm:rounded-2xl overflow-hidden shadow-sm border border-gray-100 group hover:shadow-md transition-all">
                 <div className="h-40 sm:h-48 bg-gray-200 overflow-hidden">
-                  <img src={item.img} className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt={item.title} />
+                  <img src={item.img} loading="lazy" className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-105" alt={item.title} />
                 </div>
                 <div className="p-4 sm:p-6">
                   <h4 className="text-lg sm:text-xl font-bold text-[#1B2A44] group-hover:text-[#D4A259] transition-colors">{item.title}</h4>

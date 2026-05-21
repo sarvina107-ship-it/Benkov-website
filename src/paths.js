@@ -12,6 +12,7 @@ export const ROUTES = {
   STUDYPLAN: '/studyplan',
   STUDYDETAIL: '/studydetail',
   SCHEDULE: '/schedule',
+  FAQ: '/faq',
   MANAGEMENT: '/management',
   GALLERY: '/gallery',
   CONDITIONS: '/conditions',

@@ -57,7 +57,7 @@ const AdminNews = () => {
             return res.data.data.url;
         } catch (err) {
             console.error("Ошибка ImgBB:", err);
-            throw new Error("Не удалось загрузить фото");
+            throw new Error("Failed to upload photo");
         }
     };
 

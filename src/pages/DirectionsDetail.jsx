@@ -71,6 +71,7 @@ const DirectionsDetail = () => {
                             src={allImages[currentImageIndex]}
                             className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                             alt={`Изображение ${currentImageIndex + 1}`}
+                            loading="lazy"
                         />
 
                         {/* Затемнение для лучшей видимости кнопок */}
@@ -124,7 +125,7 @@ const DirectionsDetail = () => {
                                     : 'opacity-60 hover:opacity-100'
                                 }`}
                         >
-                            <img src={img} className="w-full h-full object-cover" alt={`Миниатюра ${idx + 1}`} />
+                            <img src={img} loading="lazy" className="w-full h-full object-cover" alt={`Миниатюра ${idx + 1}`} />
                         </button>
                     ))}
                 </div>

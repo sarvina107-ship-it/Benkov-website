@@ -118,6 +118,7 @@ const NewsList = () => {
                                 <img
                                     src={item.image ? item.image.split(',')[0].trim() : null}
                                     alt={item.title}
+                                    loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
                                 />
                                 {item.createdAt && (

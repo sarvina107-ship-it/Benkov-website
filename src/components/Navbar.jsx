@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
 import { useLocation, Link } from 'react-router-dom';
 import Logo from '../assets/icon/Logo.png';
-import NavbarVideo from '../assets/video/NavbarVideo.mp4';
 import BenkovImg from '../assets/img/BenkovImg.png';
 
 const Navbar = () => {
@@ -22,6 +21,7 @@ const Navbar = () => {
     [ROUTES.STUDYPLAN]: t('titles.studyplan'),
     [ROUTES.STUDYDETAIL]: t('titles.studydetail'),
     [ROUTES.SCHEDULE]: t('titles.schedule'),
+    [ROUTES.FAQ]: t('titles.faq'),
     [ROUTES.MANAGEMENT]: t('titles.management'),
     [ROUTES.NEWSSECTION]: t('titles.newssection'),
     [ROUTES.NEWSLIST]: t('titles.newslist'),
@@ -128,13 +128,13 @@ const Navbar = () => {
 
   if (!pageTitle) {
     if (location.pathname.includes('/management/deputy/')) {
-      pageTitle = 'Заместитель';
+      pageTitle = t('pageTitles.deputy');
     } else if (location.pathname.includes('/news/')) {
-      pageTitle = 'Новости';
+      pageTitle = t('pageTitles.news');
     } else if (location.pathname.includes('/directions/')) {
-      pageTitle = 'Направления';
+      pageTitle = t('pageTitles.directions');
     } else {
-      pageTitle = "Страница";
+      pageTitle = t('pageTitles.default');
     }
   }
 
@@ -187,6 +187,7 @@ const Navbar = () => {
                     <Link to={ROUTES.ABOUT} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.history')}</Link>
                     <Link to={ROUTES.MANAGEMENT} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.management')}</Link>
                     <Link to={ROUTES.INFRASTRUCTURE} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.infrastructure')}</Link>
+                    <Link to={ROUTES.ACHIEVEMENTS} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.achievements')}</Link>
                     <Link to={ROUTES.CONTACTS} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.contacts')}</Link>
                   </div>
                 </div>
@@ -201,7 +202,7 @@ const Navbar = () => {
                     <Link to={ROUTES.DIRECTIONS} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.directions')}</Link>
                     <Link to={ROUTES.STUDYPLAN} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.study_plan')}</Link>
                     <Link to={ROUTES.SCHEDULE} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.schedule')}</Link>
-                    <Link to={ROUTES.ACHIEVEMENTS} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.achievements')}</Link>
+                    <Link to={ROUTES.FAQ} className="block px-5 py-3 hover:bg-[#F5EFE6] whitespace-nowrap">{t('nav.faq')}</Link>
                   </div>
                 </div>
               </div>
@@ -354,7 +355,7 @@ const Navbar = () => {
             <div ref={mobileMenuRef} className="fixed top-0 right-0 h-full w-[300px] bg-[#1B2A44] shadow-2xl z-[101] lg:hidden overflow-y-auto">
               <div className="p-5">
                 <div className="flex justify-between items-center mb-6 pb-4 border-b border-white/20">
-                  <img className="w-[50px] h-[50px]" src={Logo} alt="Logo" />
+                  <img className="w-[50px] h-[50px]" src={Logo} alt="Logo" loading="lazy" />
                   <button onClick={() => setMobileMenuOpen(false)} className="text-white text-2xl">✕</button>
                 </div>
 
@@ -418,11 +419,9 @@ const Navbar = () => {
       <section className={`relative ${isHome ? 'h-[85vh] max-lg:h-[70vh] max-md:h-[60vh]' : 'h-[40vh]'} overflow-hidden`}>
         <div className="absolute -top-[1px] inset-0 z-0">
           {isHome ? (
-            <video autoPlay loop muted playsInline className="absolute inset-0 block w-full h-full object-cover">
-              <source src={NavbarVideo} type="video/mp4" />
-            </video>
+            <video src="/videos/NavbarVideo.mp4" autoPlay loop muted playsInline className="absolute inset-0 block w-full h-full object-cover"/>
           ) : (
-            <img src={BenkovImg} className="w-full h-full object-cover" alt="background" />
+            <img src={BenkovImg} className="w-full h-full object-cover" alt="background" loading="lazy" />
           )}
           <div className="absolute inset-0 bg-black/40"></div>
           <div className="absolute inset-0 bg-gradient-to-t from-[#1B2A44] via-transparent to-transparent opacity-80"></div>

@@ -28,6 +28,7 @@ const Director = () => {
                             <img
                                 src={data.photo}
                                 alt={data.name}
+                                loading="lazy"
                                 className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                             />
                         </div>

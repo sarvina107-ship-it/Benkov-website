@@ -47,7 +47,7 @@ const Deputy = () => {
                             {person.photo ? (
                                 <img
                                     src={person.photo}
-                                    alt={person.name}
+                                    alt={person.name} loading="lazy"
                                     className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
                                 />
                             ) : (

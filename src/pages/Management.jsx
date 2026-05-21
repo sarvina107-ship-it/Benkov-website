@@ -64,6 +64,7 @@ const Management = () => {
                     src="URL_ФОТО_ДИРЕКТОРА"
                     className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                     alt="Director"
+                    loading="lazy"
                   />
                 </div>
 
@@ -119,6 +120,7 @@ const Management = () => {
                           src={dep.photo}
                           className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
                           alt={dep.name}
+                          loading="lazy"
                         />
                       ) : (
                         <div className="w-full h-full flex items-center justify-center text-gray-200 bg-[#FDFCFB]">

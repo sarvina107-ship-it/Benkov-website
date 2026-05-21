@@ -58,15 +58,30 @@ const Footer = () => {
 
           {/* КАРТА */}
           <div className="relative group">
+            {/* Эффект свечения при наведении */}
             <div className="absolute -inset-2 bg-[#D4A259]/10 blur-xl rounded-3xl opacity-50 group-hover:opacity-100 transition"></div>
+            {/* Основной контейнер карты */}
             <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/5 h-[250px] sm:h-[280px] md:h-[300px]">
+              {/* Ссылки для SEO, которые требует Яндекс (скрываем их визуально, чтобы не портили дизайн) */}
+              <div className="absolute opacity-0 pointer-events-none">
+                <a href="https://yandex.uz/maps/org/139373972732/?utm_medium=mapframe&utm_source=maps">
+                  Республиканский художественный колледж имени П.П. Бенькова
+                </a>
+                <a href="https://yandex.uz/maps/10335/tashkent/category/school_of_the_arts/184106246/?utm_medium=mapframe&utm_source=maps">
+                  Школа искусств в Ташкенте
+                </a>
+                <a href="https://yandex.uz/maps/10335/tashkent/category/college/184106236/?utm_medium=mapframe&utm_source=maps">
+                  Колледж в Ташкенте
+                </a>
+              </div>
+              {/* Сам iframe Яндекса, растянутый на всю ширину и высоту карточки */}
               <iframe
+                src="https://yandex.uz/map-widget/v1/org/139373972732/?ll=69.240921%2C41.317897&z=16"
                 className="w-full h-full"
-                src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d2998.243542287823!2d69.255!3d41.285!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x0%3A0x0!2zNDHCsDE3JzA2LjAiTiA2OcKwMTUnMTguMCJF!5e0!3m2!1sru!2suz!4v1620000000000!5m2!1sru!2suz"
-                style={{ border: 0 }}
-                allowFullScreen=""
+                frameBorder="0"
+                allowFullScreen={true}
                 loading="lazy"
-                title="map"
+                title="yandex-map"
               ></iframe>
             </div>
           </div>
@@ -86,7 +101,7 @@ const Footer = () => {
             <div className="relative group">
               <div className="absolute inset-0 bg-[#D4A259]/20 rounded-full blur-md group-hover:blur-xl transition-all"></div>
               <div className="bg-white rounded-full p-2 w-[100px] h-[100px] sm:w-[120px] sm:h-[120px] md:w-[140px] md:h-[140px] flex items-center justify-center shadow-2xl relative">
-                <img className="w-[70px] h-[70px] sm:w-[85px] sm:h-[85px] md:w-[100px] md:h-[100px] object-contain" src={Logo} alt="School Logo" />
+                <img className="w-[70px] h-[70px] sm:w-[85px] sm:h-[85px] md:w-[100px] md:h-[100px] object-contain" src={Logo} alt="School Logo" loading="lazy" />
               </div>
             </div>
             <p className="text-[#D4A259] font-bold tracking-[0.3em] sm:tracking-[0.5em] text-[8px] sm:text-[10px] mt-1 sm:mt-2 uppercase text-center sm:text-left">
@@ -116,6 +131,7 @@ const Footer = () => {
               <Link to={ROUTES.NEWSLIST} className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.news')}</Link>
               <Link to="/contacts" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.contacts')}</Link>
               <Link to="/gallery" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.gallery')}</Link>
+              <Link to="/faq" className="hover:text-[#D4A259] transition-all text-center sm:text-left">{t('nav.faq')}</Link>
             </div>
           </div>
 

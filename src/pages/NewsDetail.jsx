@@ -112,6 +112,7 @@ const NewsDetail = () => {
                                                 <img
                                                     src={imgUrl}
                                                     alt={`Изображение ${index + 1}`}
+                                                    loading="lazy"
                                                     className="w-full h-auto max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] object-contain"
                                                 />
                                             </div>

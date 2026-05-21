@@ -88,7 +88,8 @@ const Home = () => {
                 <img
                   className="h-[300px] sm:h-[380px] md:h-[450px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                   src={History}
-                  alt="История школы"
+                  alt=""
+                  loading="lazy"
                 />
                 <div className="absolute inset-0 bg-gradient-to-tr from-[#1B2A44]/20 to-transparent"></div>
               </div>
@@ -196,6 +197,7 @@ const Home = () => {
                   <img
                     src={item.image}
                     alt={t(`directions.items.${key}.title`)}
+                    loading="lazy"
                     className="w-full h-56 sm:h-72 md:h-80 object-cover transition-transform duration-1000 group-hover:scale-110"
                   />
 
@@ -304,7 +306,8 @@ const Home = () => {
 
                 <img
                   src={src}
-                  alt={`Лучшая работа ${index + 1}`}
+                  alt={` ${index + 1}`}
+                  loading="lazy"
                   className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-700 sm:duration-[1.2s] group-hover:scale-105"
                 />
 
@@ -374,7 +377,8 @@ const Home = () => {
               <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)]">
                 <img
                   src="/images/director.jpg"
-                  alt="Директор школы"
+                  alt=""
+                  loading="lazy"
                   className="w-full h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] object-cover object-top transition-transform duration-[2s] group-hover:scale-110"
                 />
 
