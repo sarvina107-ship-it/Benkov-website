@@ -31,46 +31,49 @@ import PageLoader from './components/PageLoader';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import NotFound from './components/NotFound';
+import ErrorBoundary from './components/ErrorBoundary';
 
 const App = () => {
   const location = useLocation();
   return (
     <div>
-      <ScrollToTop />
-      <ScrollProgress />
-      <Navbar />
-      <Suspense fallback={<PageLoader />}>
-        <AnimatePresence mode="wait">
-          <Routes location={location} key={location.pathname}>
-            <Route path="/" element={<Home />} />
-            <Route path="/admin" element={<AdminNews />} />
-            <Route path="/news/:id" element={<NewsDetail />} />
-            <Route path="/login" element={<Login />} />
-            <Route path={ROUTES.ABOUT} element={<About />} />
-            <Route path={ROUTES.DIRECTIONS} element={<Directions />} />
-            <Route path={`${ROUTES.DIRECTIONS}/:id`} element={<DirectionsDetail />} />
-            <Route path={ROUTES.ACHIEVEMENTS} element={<Achievments />} />
-            <Route path={ROUTES.CONDITIONS} element={<Conditions />} />
-            <Route path={ROUTES.CONTACTS} element={<Contacts />} />
-            <Route path={ROUTES.DOCUMENTS} element={<Documents />} />
-            <Route path={ROUTES.GALLERY} element={<Gallery />} />
-            <Route path={ROUTES.INFRASTRUCTURE} element={<Infrastructure />} />
-            <Route path={ROUTES.MANAGEMENT} element={<Management />} />
-            <Route path={ROUTES.STUDYPLAN} element={<StudyPlan />} />
-            <Route path={ROUTES.SCHEDULE} element={<Schedule />} />
-            <Route path={ROUTES.FAQ} element={<FAQ />} />
-            <Route path={`${ROUTES.STUDYPLAN}/:id`} element={<StudyDetail />} />
-            <Route path={ROUTES.NEWSSECTION} element={<NewsSection />} />
-            <Route path={ROUTES.NEWSLIST} element={<NewsList />} />
-            <Route path={ROUTES.DIRECTOR} element={<Director />} />
-            <Route path="/management/deputy/:id" element={<Deputy />} />
-            <Route path="*" element={<NotFound />} />
-          </Routes>
-        </AnimatePresence>
-      </Suspense>
+      <ErrorBoundary>
+        <ScrollToTop />
+        <ScrollProgress />
+        <Navbar />
+        <Suspense fallback={<PageLoader />}>
+          <AnimatePresence mode="wait">
+            <Routes location={location} key={location.pathname}>
+              <Route path="/" element={<Home />} />
+              <Route path="/admin" element={<AdminNews />} />
+              <Route path="/news/:id" element={<NewsDetail />} />
+              <Route path="/login" element={<Login />} />
+              <Route path={ROUTES.ABOUT} element={<About />} />
+              <Route path={ROUTES.DIRECTIONS} element={<Directions />} />
+              <Route path={`${ROUTES.DIRECTIONS}/:id`} element={<DirectionsDetail />} />
+              <Route path={ROUTES.ACHIEVEMENTS} element={<Achievments />} />
+              <Route path={ROUTES.CONDITIONS} element={<Conditions />} />
+              <Route path={ROUTES.CONTACTS} element={<Contacts />} />
+              <Route path={ROUTES.DOCUMENTS} element={<Documents />} />
+              <Route path={ROUTES.GALLERY} element={<Gallery />} />
+              <Route path={ROUTES.INFRASTRUCTURE} element={<Infrastructure />} />
+              <Route path={ROUTES.MANAGEMENT} element={<Management />} />
+              <Route path={ROUTES.STUDYPLAN} element={<StudyPlan />} />
+              <Route path={ROUTES.SCHEDULE} element={<Schedule />} />
+              <Route path={ROUTES.FAQ} element={<FAQ />} />
+              <Route path={`${ROUTES.STUDYPLAN}/:id`} element={<StudyDetail />} />
+              <Route path={ROUTES.NEWSSECTION} element={<NewsSection />} />
+              <Route path={ROUTES.NEWSLIST} element={<NewsList />} />
+              <Route path={ROUTES.DIRECTOR} element={<Director />} />
+              <Route path="/management/deputy/:id" element={<Deputy />} />
+              <Route path="*" element={<NotFound />} />
+            </Routes>
+          </AnimatePresence>
+        </Suspense>
 
-      <Footer />
-      <BackToTop />
+        <Footer />
+        <BackToTop />
+      </ErrorBoundary>
     </div>
   )
 }

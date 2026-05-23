@@ -51,10 +51,22 @@ export default function NotFound() {
             setTimeLeft((prev) => {
                 if (prev <= 1) {
                     clearInterval(interval);
-                    // Умный редирект с учетом языкового префикса
-                    if (i18n.language?.startsWith('uz')) navigate('/uz');
-                    else if (i18n.language?.startsWith('en')) navigate('/en');
-                    else navigate('/');
+
+                    // Получаем язык прямо в момент срабатывания таймера, без завязки на замыкание
+                    const currentLang = i18n.language || 'ru';
+
+                    if (currentLang.startsWith('uz')) {
+                        navigate('/uz');
+                        // Подстраховка: если SPA-роутер не отработал, толкаем браузер силой
+                        setTimeout(() => { if (window.location.pathname !== '/uz') window.location.href = '/index.html?lng=uz'; }, 100);
+                    } else if (currentLang.startsWith('en')) {
+                        navigate('/en');
+                        setTimeout(() => { if (window.location.pathname !== '/en') window.location.href = '/index.html?lng=en'; }, 100);
+                    } else {
+                        navigate('/');
+                        setTimeout(() => { if (window.location.pathname !== '/') window.location.href = '/index.html'; }, 100);
+                    }
+
                     return 0;
                 }
                 return prev - 1;
