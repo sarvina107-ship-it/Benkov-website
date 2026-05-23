@@ -1,1 +1,109 @@
 @import "tailwindcss";
+
+/* Регистрируем dark mode вариант для Tailwind CSS v4 */
+@custom-variant dark (&:where(.dark, .dark *));
+
+/* Базовые стили для темной темы */
+:root {
+    --color-primary: #1B2A44;
+    --color-primary-dark: #0f172a;
+    --color-secondary: var(--gold-primary);
+    --color-secondary-dark: #c9943a;
+    --color-bg-light: #ffffff;
+    --color-bg-dark: #1e293b;
+    --color-text-light: #1B2A44;
+    --color-text-dark: #f1f5f9;
+    --color-hover: #F5EFE6;
+    --color-hover-dark: #334155;
+}
+
+/* Кастомные стили для скроллбара в темной теме */
+.dark ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+    background: #1e293b;
+}
+
+.dark ::-webkit-scrollbar-thumb {
+    background: #475569;
+    border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+    background: #64748b;
+}
+
+/* Базовые стили для body */
+body {
+    @apply bg-white dark:bg-gray-950 text-gray-900 dark:text-gray-100;
+    font-family: system-ui, -apple-system, 'Segoe UI', Roboto, 'Helvetica Neue', sans-serif;
+}
+
+/* Стили для input в темной теме */
+input,
+textarea,
+select {
+    @apply bg-white dark:bg-gray-900 border-gray-200 dark:border-gray-800;
+}
+
+/* ДОПОЛНИТЕЛЬНЫЕ СТИЛИ ДЛЯ ТЕМНОЙ ТЕМЫ */
+
+/* Контраст для навигации */
+.dark .bg-\[#1B2A44\] {
+    background-color: #0a0f1c !important;
+    border-bottom: 1px solid rgba(212, 162, 89, 0.15);
+}
+
+/* Улучшенный фон для выпадающих меню */
+.dark .bg-white {
+    background-color: #1a1f2e !important;
+    border: 1px solid rgba(212, 162, 89, 0.2);
+}
+
+/* Ховер эффекты в темной теме */
+.dark .hover\:bg-\[\#F5EFE6\]:hover {
+    background-color: rgba(212, 162, 89, 0.1) !important;
+}
+
+/* Контрастный текст в темной теме */
+.dark .text-\[\#1B2A44\] {
+    color: #e2e8f0 !important;
+}
+
+/* Градиенты в темной теме */
+.dark .bg-gradient-to-t {
+    background: linear-gradient(to top, #0a0f1c, transparent) !important;
+}
+
+/* Hero секция в темной теме */
+.dark .bg-black\/40 {
+    background-color: rgba(0, 0, 0, 0.7);
+}
+
+/* Мобильное меню в темной теме */
+.dark .bg-\[\#1B2A44\]\/95,
+.dark .bg-\[\#1B2A44\] {
+    background-color: #0a0f1c !important;
+}
+
+/* Текст в мобильном меню */
+.dark .text-white\/80 {
+    color: #94a3b8;
+}
+
+.dark .text-white {
+    color: #f1f5f9;
+}
+
+:root {
+    --gold-primary: #D4A259;
+}
+
+@media (max-width: 768px) {
+    :root {
+        --gold-primary: #E2B36C;
+    }
+}

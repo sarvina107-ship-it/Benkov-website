@@ -21,12 +21,12 @@ const About = () => {
   }, [images.length]);
 
   return (
-    <section className="bg-[#F8F6F2] py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 text-[#1B2A44]">
+    <section className="bg-[#F8F6F2] dark:bg-gray-950 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 text-[#1B2A44] dark:text-gray-100">
       <div className="max-w-7xl mx-auto">
 
         {/* --- КАРУСЕЛЬ С ПОЛНЫМ КОНТРОЛЕМ --- */}
         <div className="mb-12 sm:mb-16 md:mb-20 relative group px-0">
-          <div className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] bg-gray-200 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-lg relative">
+          <div className="w-full h-[300px] sm:h-[380px] md:h-[450px] lg:h-[500px] bg-gray-200 dark:bg-gray-800 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] overflow-hidden shadow-lg relative">
 
             {/* Слайды */}
             {images.map((img, index) => (
@@ -47,7 +47,7 @@ const About = () => {
             {/* Кнопка Влево */}
             <button
               onClick={() => setCurrentIndex((currentIndex - 1 + images.length) % images.length)}
-              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 backdrop-blur-md p-2 sm:p-3 md:p-4 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40"
+              className="absolute left-3 sm:left-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 dark:bg-black/50 backdrop-blur-md p-2 sm:p-3 md:p-4 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40 dark:hover:bg-black/70"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M15.75 19.5L8.25 12l7.5-7.5" />
@@ -57,7 +57,7 @@ const About = () => {
             {/* Кнопка Вправо */}
             <button
               onClick={() => setCurrentIndex((currentIndex + 1) % images.length)}
-              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 backdrop-blur-md p-2 sm:p-3 md:p-4 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40"
+              className="absolute right-3 sm:right-6 top-1/2 -translate-y-1/2 z-20 bg-white/20 dark:bg-black/50 backdrop-blur-md p-2 sm:p-3 md:p-4 rounded-full text-white opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-white/40 dark:hover:bg-black/70"
             >
               <svg xmlns="http://www.w3.org/2000/svg" fill="none" viewBox="0 0 24 24" strokeWidth={2.5} stroke="currentColor" className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6">
                 <path strokeLinecap="round" strokeLinejoin="round" d="M8.25 4.5l7.5 7.5-7.5 7.5" />
@@ -71,8 +71,8 @@ const About = () => {
                   key={index}
                   onClick={() => setCurrentIndex(index)}
                   className={`transition-all duration-500 rounded-full h-1.5 sm:h-2 ${index === currentIndex
-                    ? 'bg-[#D4A259] w-6 sm:w-8 md:w-10'
-                    : 'bg-white/40 w-1.5 sm:w-2 hover:bg-white/70'
+                    ? 'bg-[var(--gold-primary)] w-6 sm:w-8 md:w-10'
+                    : 'bg-white/40 w-1.5 sm:w-2 hover:bg-white/70 dark:hover:bg-white/50'
                     }`}
                   aria-label={`Go to slide ${index + 1}`}
                 />
@@ -83,14 +83,14 @@ const About = () => {
 
         {/* --- ОСНОВНОЙ ТЕКСТ (ИНТРО) --- */}
         <div className="max-w-4xl mx-auto text-center mb-16 sm:mb-20 md:mb-24 px-4">
-          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 italic text-[#D4A259]">
+          <h2 className="text-2xl sm:text-3xl md:text-4xl font-bold mb-4 sm:mb-6 italic text-[var(--gold-primary)]">
             {t('about.quote')}
           </h2>
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {t('about.intro')}
           </p>
           <br />
-          <p className="text-base sm:text-lg text-gray-600 leading-relaxed">
+          <p className="text-base sm:text-lg text-gray-600 dark:text-gray-400 leading-relaxed">
             {t('about.intro1')}
           </p>
         </div>
@@ -99,14 +99,14 @@ const About = () => {
         <div className="grid md:grid-cols-2 gap-x-8 md:gap-x-12 lg:gap-x-16 gap-y-16 sm:gap-y-20 md:gap-y-24 mb-24 sm:mb-28 md:mb-32 px-4 md:px-0">
 
           {/* Секция 1918-1924 */}
-          <div className="border-t border-gray-200 pt-6 sm:pt-8">
-            <span className="text-[#D4A259] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8">
+            <span className="text-[var(--gold-primary)] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
               {t(`about.stages.one.tag`)}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 dark:text-gray-100">
               {t(`about.stages.one.title`)}
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t(`about.stages.one.text1`)}
               <br />
               <br />
@@ -120,14 +120,14 @@ const About = () => {
           </div>
 
           {/* Секция 1928-1949 */}
-          <div className="border-t border-gray-200 pt-6 sm:pt-8">
-            <span className="text-[#D4A259] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8">
+            <span className="text-[var(--gold-primary)] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
               {t(`about.stages.two.tag`)}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 dark:text-gray-100">
               {t(`about.stages.two.title`)}
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t(`about.stages.two.text1`)}
               <br />
               <br />
@@ -140,40 +140,40 @@ const About = () => {
           </div>
 
           {/* Секция 1995-1997 */}
-          <div className="border-t border-gray-200 pt-6 sm:pt-8">
-            <span className="text-[#D4A259] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8">
+            <span className="text-[var(--gold-primary)] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
               {t(`about.stages.three.tag`)}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 dark:text-gray-100">
               {t(`about.stages.three.title`)}
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t(`about.stages.three.text1`)}
             </p>
           </div>
 
           {/* Секция 2017-2019 */}
-          <div className="border-t border-gray-200 pt-6 sm:pt-8">
-            <span className="text-[#D4A259] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8">
+            <span className="text-[var(--gold-primary)] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
               {t(`about.stages.four.tag`)}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 dark:text-gray-100">
               {t(`about.stages.four.title`)}
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t(`about.stages.four.text1`)}
             </p>
           </div>
 
           {/* Секция 2020 */}
-          <div className="border-t border-gray-200 pt-6 sm:pt-8">
-            <span className="text-[#D4A259] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
+          <div className="border-t border-gray-200 dark:border-gray-800 pt-6 sm:pt-8">
+            <span className="text-[var(--gold-primary)] font-mono text-[11px] sm:text-sm tracking-widest uppercase mb-2 block">
               {t(`about.stages.five.tag`)}
             </span>
-            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4">
+            <h3 className="text-xl sm:text-2xl font-bold mb-3 sm:mb-4 dark:text-gray-100">
               {t(`about.stages.five.title`)}
             </h3>
-            <p className="text-sm sm:text-base text-gray-600 leading-relaxed">
+            <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed">
               {t(`about.stages.five.text1`)}
               <br />
               <br />
@@ -183,7 +183,7 @@ const About = () => {
         </div>
 
         {/* --- МЕСТО ДЛЯ ФАКУЛЬТЕТОВ --- */}
-        <div className="bg-[#1B2A44] rounded-[24px] sm:rounded-[32px] md:rounded-[40px] p-6 sm:p-8 md:p-12 lg:p-16 text-white mb-16 sm:mb-20 md:mb-24 mx-4 md:mx-0">
+        <div className="bg-[#1B2A44] dark:bg-gray-900 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] p-6 sm:p-8 md:p-12 lg:p-16 text-white mb-16 sm:mb-20 md:mb-24 mx-4 md:mx-0">
           <div className="flex flex-col md:flex-row justify-between items-start md:items-center mb-8 sm:mb-10 md:mb-12 gap-4 sm:gap-6">
             <div>
               <h2 className="text-2xl sm:text-3xl font-bold mb-1 sm:mb-2">
@@ -199,7 +199,7 @@ const About = () => {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-8 md:gap-10">
             {t('about.faculties.items', { returnObjects: true }).map((item, index) => (
               <div key={index} className="space-y-2 sm:space-y-3">
-                <div className="text-[#D4A259] font-bold text-sm sm:text-base">
+                <div className="text-[var(--gold-primary)] font-bold text-sm sm:text-base">
                   {item.year}
                 </div>
                 <h4 className="text-base sm:text-lg font-semibold">
@@ -216,13 +216,13 @@ const About = () => {
         {/* --- ФИНАЛ --- */}
         <div className="text-center px-4">
           <Link to={ROUTES.CONDITIONS}>
-            <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[#D4A259] text-[#1B2A44] rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm border border-[#D4A259]/30 transition-all duration-300 hover:border-[#1B2A44]">
-              <span className="absolute inset-0 border border-[#1B2A44] rounded-xl opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></span>
+            <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[var(--gold-primary)] text-[#1B2A44] dark:text-gray-900 rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm border border-[var(--gold-primary)]/30 hover:border-[#1B2A44] dark:hover:border-gray-700 transition-colors duration-300">
+              <span className="absolute inset-0 border border-[#1B2A44] dark:border-gray-700 rounded-xl opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></span>
               <span className="relative z-10 flex items-center gap-2">
                 {t('about.button')}
                 <span className="relative w-3 h-3">
-                  <span className="absolute top-1/2 left-0 w-full h-[1px] bg-[#1B2A44] transition-transform group-hover:rotate-90"></span>
-                  <span className="absolute top-1/2 left-0 w-full h-[1px] bg-[#1B2A44]"></span>
+                  <span className="absolute top-1/2 left-0 w-full h-[1px] bg-[#1B2A44] dark:bg-gray-700 transition-transform group-hover:rotate-90"></span>
+                  <span className="absolute top-1/2 left-0 w-full h-[1px] bg-[#1B2A44] dark:bg-gray-700"></span>
                 </span>
               </span>
             </button>

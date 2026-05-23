@@ -1,7 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
+import { useTranslation } from 'react-i18next';
 
 const Login = () => {
+    const { t } = useTranslation();
     const [login, setLogin] = useState('');
     const [password, setPassword] = useState('');
     const [isBlocked, setIsBlocked] = useState(false);
@@ -68,34 +70,34 @@ const Login = () => {
                 localStorage.setItem('blockedUntil', blockUntil.toString());
                 setIsBlocked(true);
                 setTimeLeft(BLOCK_TIME_MS / 1000);
-                alert('Доступ заблокирован на 1 час из-за подозрительной активности!');
+                alert(t('lodin.attempt'));
             } else {
-                alert(`Неверные данные! Осталось попыток: ${MAX_ATTEMPTS - attempts}`);
+                alert(`${t('login.false')} ${MAX_ATTEMPTS - attempts}`);
             }
         }
     };
 
     return (
-        <div className="min-h-screen flex items-center justify-center bg-[#0E1A2B] px-4">
-            <div className="bg-white p-10 rounded-3xl shadow-2xl w-full max-w-md text-center">
+        <div className="min-h-screen flex items-center justify-center bg-[#0E1A2B] dark:bg-gray-950 px-4">
+            <div className="bg-white dark:bg-gray-900 p-10 rounded-3xl shadow-2xl w-full max-w-md text-center">
                 <div className="mb-8">
-                    <div className="w-20 h-20 bg-[#F4F6F9] rounded-full flex items-center justify-center mx-auto mb-4">
-                        <svg className="w-10 h-10 text-[#0E1A2B]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                    <div className="w-20 h-20 bg-[#F4F6F9] dark:bg-gray-800 rounded-full flex items-center justify-center mx-auto mb-4">
+                        <svg className="w-10 h-10 text-[#0E1A2B] dark:text-gray-200" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 15v2m-6 4h12a2 2 0 002-2v-6a2 2 0 00-2-2H6a2 2 0 00-2 2v6a2 2 0 002 2zm10-10V7a4 4 0 00-8 0v4h8z" />
                         </svg>
                     </div>
-                    <h1 className="text-2xl font-bold text-[#0E1A2B]">Панель управления</h1>
-                    <p className="text-gray-500 text-sm mt-2">Введите данные для входа в систему</p>
+                    <h1 className="text-2xl font-bold text-[#0E1A2B] dark:text-gray-100">{t('login.panel')}</h1>
+                    <p className="text-gray-500 dark:text-gray-400 text-sm mt-2">{t('login.data')}</p>
                 </div>
 
                 {isBlocked ? (
-                    <div className="p-6 bg-red-50 text-red-600 rounded-2xl border border-red-100 animate-pulse">
+                    <div className="p-6 bg-red-50 dark:bg-red-950/30 text-red-600 dark:text-red-400 rounded-2xl border border-red-100 dark:border-red-900/50 animate-pulse">
                         <svg className="w-12 h-12 mx-auto mb-3" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                             <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M12 8v4m0 4h.01M21 12a9 9 0 11-18 0 9 9 0 0118 0z" />
                         </svg>
-                        <p className="font-bold text-lg">Вход заблокирован</p>
-                        <p className="text-sm mt-1">Слишком много неудачных попыток.</p>
-                        <div className="mt-4 py-2 px-4 bg-white rounded-xl font-mono font-bold shadow-sm">
+                        <p className="font-bold text-lg">{t('login.block')}</p>
+                        <p className="text-sm mt-1">{t('login.error')}</p>
+                        <div className="mt-4 py-2 px-4 bg-white dark:bg-gray-800 rounded-xl font-mono font-bold shadow-sm dark:text-gray-200">
                             {formatTime(timeLeft)}
                         </div>
                     </div>
@@ -105,7 +107,7 @@ const Login = () => {
                             <input
                                 type="text"
                                 placeholder="Логин"
-                                className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-[#D4A259] focus:bg-white transition-all shadow-sm"
+                                className="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl outline-none focus:border-[var(--gold-primary)] focus:bg-white dark:focus:bg-gray-800 transition-all shadow-sm dark:text-gray-200 dark:placeholder-gray-500"
                                 value={login}
                                 onChange={(e) => setLogin(e.target.value)}
                                 required
@@ -115,7 +117,7 @@ const Login = () => {
                             <input
                                 type="password"
                                 placeholder="Пароль"
-                                className="w-full p-4 bg-gray-50 border border-gray-100 rounded-2xl outline-none focus:border-[#D4A259] focus:bg-white transition-all shadow-sm"
+                                className="w-full p-4 bg-gray-50 dark:bg-gray-800 border border-gray-100 dark:border-gray-700 rounded-2xl outline-none focus:border-[var(--gold-primary)] focus:bg-white dark:focus:bg-gray-800 transition-all shadow-sm dark:text-gray-200 dark:placeholder-gray-500"
                                 value={password}
                                 onChange={(e) => setPassword(e.target.value)}
                                 required
@@ -124,12 +126,12 @@ const Login = () => {
 
                         <button
                             type="submit"
-                            className="w-full py-4 bg-[#0E1A2B] text-white rounded-2xl font-bold hover:bg-[#D4A259] hover:shadow-[#D4A259]/20 transition-all shadow-lg active:scale-95"
+                            className="w-full py-4 bg-[#0E1A2B] dark:bg-gray-800 text-white rounded-2xl font-bold hover:bg-[var(--gold-primary)] dark:hover:bg-[var(--gold-primary)] hover:text-[#0E1A2B] dark:hover:text-gray-900 hover:shadow-[var(--gold-primary)]/20 transition-all shadow-lg active:scale-95"
                         >
-                            Войти в систему
+                            {t('login.enter')}
                         </button>
 
-                        <p className="text-[10px] text-gray-400 uppercase tracking-widest pt-4">
+                        <p className="text-[10px] text-gray-400 dark:text-gray-600 uppercase tracking-widest pt-4">
                             Protected by Railway Firewall
                         </p>
                     </form>

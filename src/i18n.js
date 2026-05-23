@@ -10,7 +10,53 @@ i18n
         resources: {
             ru: {
                 translation: {
-                    // Навигация
+                    admin: {
+                        panel: "Панель управления",
+                        logout: "Выйти из системы",
+                        show_list: "📋 Показать список новостей",
+                        hide_list: "📋 Скрыть список новостей",
+                        new_publication: "📝 Новая публикация",
+                        editing: "✏️ Редактирование",
+                        cancel: "Отменить / Создать новую",
+                        tip: "💡 Подсказка: скопируй картинку и нажми Ctrl+V (или выбери фото с телефона)",
+                        date: "📅 Дата публикации",
+                        russian_version: "🇷🇺 Русская версия (RU)",
+                        uzbek_version: "🇺🇿 Узбекский (UZ)",
+                        english_version: "🇬🇧 Английский (EN)",
+                        title_ru: "Заголовок (Русский)",
+                        description_ru: "Текст новости (Русский)",
+                        title_uz: "Заголовок (Узбекский)",
+                        description_uz: "Описание (Узбекский)",
+                        title_en: "Заголовок (Английский)",
+                        description_en: "DОписание (Английский)",
+                        photos: "🖼️ Фотографии",
+                        select_photo: "📱 Выбрать фото с устройства",
+                        photo_links: "Ссылки на фото (добавляются автоматически при вставке или выборе фото)",
+                        processing: "⏳ Обработка...",
+                        save_changes: "💾 Сохранить изменения",
+                        publish: "🚀 Опубликовать новость",
+                        photo_added: "✅ Фото добавлено!",
+                        photo_error: "❌ Ошибка загрузки фото",
+                        updating: "Обновление...",
+                        sending: "Отправка...",
+                        update_success: "✅ Новость успешно обновлена!",
+                        create_success: "✅ Новость успешно добавлена!",
+                        error: "❌ Ошибка: ",
+                        delete_confirm: "Вы уверены, что хотите удалить эту новость?",
+                        delete_error: "Ошибка при удалении.",
+                        news_list: "📰 Список новостей",
+                        no_news: "Нет новостей",
+                        click_to_edit: "📝 Нажмите, чтобы изменить"
+                    },
+                    login: {
+                        attempt: "Доступ заблокирован на 1 час из-за подозрительной активности!",
+                        false: "Неверные данные! Осталось попыток:",
+                        panel: "Панель управления",
+                        data: "Введите данные для входа в систему",
+                        block: "Вход заблокирован",
+                        error: "Слишком много неудачных попыток.",
+                        enter: "Войти в систему"
+                    },
                     nav: {
                         home: "Главная",
                         about: "О школе",
@@ -39,18 +85,15 @@ i18n
                         directions: "Направления",
                         default: "Страница"
                     },
-                    // Кнопки
                     btn_apply: "Условия Поступления",
                     btn: {
                         more: "Узнать больше",
                         apply_short: "Условия"
                     },
-                    // Поиск
                     search_placeholder: "Поиск...",
                     search: {
                         found: "Найдено в разделах"
                     },
-                    // Hero секция
                     hero: {
                         welcome: "ДОБРО ПОЖАЛОВАТЬ В",
                         school_name: "ШКОЛУ ИСКУССТВ",
@@ -108,16 +151,28 @@ i18n
                             btn_achievements: "Посмотреть наши достижения",
                             items: {
                                 one: {
-                                    title: "Академический фундамент",
-                                    desc: "Мы бережно храним традиции классической школы рисунка, живописи и композиции. Наши студенты получают базу, которая позволяет им в будущем работать в любом стиле и технике.",
-                                    list_1: "Авторские программы",
-                                    list_2: "Работа с натурой"
+                                    title: "Академическое образование",
+                                    desc: "Обучение основано на лучших традициях художественной школы и сочетает фундаментальную подготовку с развитием творческого мышления. Учащиеся последовательно осваивают рисунок, живопись и композицию под руководством опытных педагогов.",
+                                    tag_1: "Рисунок",
+                                    tag_2: "живопись"
                                 },
                                 two: {
-                                    title: "Свобода творчества",
-                                    desc: "Школа Бенькова - это место, где поощряются смелые эксперименты. Мы создаем среду, в которой студент не боится ошибаться и искать свой уникальный почерк.",
+                                    title: "Творческие мастерские",
+                                    desc: "Школа предоставляет комфортную среду для практической работы и экспериментов в различных направлениях искусства. Оснащённые мастерские помогают ученикам раскрывать потенциал и совершенствовать профессиональные навыки.",
                                     tag_1: "Мастерские",
-                                    tag_2: "Выставки"
+                                    tag_2: "Практика"
+                                },
+                                three: {
+                                    title: "Выставочная деятельность",
+                                    desc: "Учащиеся регулярно представляют свои работы на школьных, городских и республиканских выставках. Это помогает получить ценный опыт публичной презентации и творческого общения.",
+                                    tag_1: "Выставки",
+                                    tag_2: "Конкурсы"
+                                },
+                                four: {
+                                    title: "Профессиональное развитие",
+                                    desc: "Школа помогает подготовиться к поступлению в профильные учебные заведения и построению будущей карьеры в сфере искусства. Особое внимание уделяется формированию сильного портфолио и развитию авторского стиля.",
+                                    tag_1: "Портфолио",
+                                    tag_2: "Карьера"
                                 }
                             }
                         },
@@ -240,6 +295,9 @@ i18n
                         loading: "Загрузка ленты...",
                         read_full: "Читать полностью",
                         placeholder_desc: "Нажмите подробнее, чтобы узнать детали новости...",
+                        showing: "показывает",
+                        of: "от",
+                        news: "новостей"
                     },
                     newsDetail: {
                         loading: "Загрузка новости...",
@@ -496,7 +554,7 @@ i18n
                         title: "Учебный план",
                         department: "Специальность"
                     },
-                    stude_detail: {
+                    study_detail: {
                         not_found: "Направление не найдено",
                         back_to_list: "Вернуться к списку",
                         back: "Назад",
@@ -504,7 +562,7 @@ i18n
                         grade_suffix: "КЛАСС"
                     },
                     subjects: {
-                        draftsman: "Черчение",
+                        draftsman: "Рисунок",
                         painting: "Живопись",
                         composition: "Композиция",
                         film_and_television_decoration: "Оформление кино и ТВ",
@@ -533,7 +591,7 @@ i18n
                         modeling: "Моделирование",
                         matolarga_ishlov_berish: "Обработка тканей",
                         practice_training: "Учебная практика",
-                        construction: "Конструирование",
+                        construction: "Конструкция",
                         shtift: "Шрифт",
                         working_with_materials: "Работа в материале",
                         clay_modeling: "Работа с глиной",
@@ -680,7 +738,7 @@ i18n
                             a14: "3 дня в неделю вы углублённо занимаетесь своей специальностью в мастерских, и ещё 3 дня изучаете обычные общеобразовательные школьные предметы.",
                             q15: "15. Как выглядит расписание одного учебного дня?",
                             a15: "Уроки идут с 8:30 до 14:50. Одна пара длится 80 минут. После первой пары в 9:50 — 10-минутная перемена, а в 11:20 начинается большая 40-минутная перемена на обед. После третьей пары тоже есть 10-минутный перерыв.",
-                            q16: "16. Всегда ли открыты все шесть направлений?",
+                            q16: "16. Всегда ли открыты все направлений?",
                             a16: "Нет, каждый год набор открывается на разные направления. Какие именно специальности будут доступны в этом году — мы заранее объявляем в соцсетях и новостях школы, обязательно следите за обновлениями.",
                             q17: "17. Как оценивают успехи по художественным предметам?",
                             a17: "После каждой четверти проводится обязательный просмотр. Вы выставляете все свои работы за этот период, и перед вами их оценивает специальная комиссия преподавателей.",
@@ -725,6 +783,53 @@ i18n
             },
             uz: {
                 translation: {
+                    admin: {
+                        panel: "Boshqaruv paneli",
+                        logout: "Tizimdan chiqish",
+                        show_list: "📋 Yangiliklar ro'yxatini ko'rsatish",
+                        hide_list: "📋 Yangiliklar ro'yxatini yashirish",
+                        new_publication: "📝 Yangi nashr",
+                        editing: "✏️ Tahrirlash",
+                        cancel: "Bekor qilish / Yangi yaratish",
+                        tip: "💡 Maslahat: rasmni nusxalab Ctrl+V bosing (yoki telefondan surat tanlang)",
+                        date: "📅 Nashr sanasi",
+                        russian_version: "🇷🇺 Ruscha versiya (RU)",
+                        uzbek_version: "🇺🇿 O'zbekcha versiya (UZ)",
+                        english_version: "🇬🇧 Inglizcha versiya (EN)",
+                        title_ru: "Sarlavha (Ruscha)",
+                        description_ru: "Yangilik matni (Ruscha)",
+                        title_uz: "Sarlavha (O'zbekcha)",
+                        description_uz: "Tavsif (O'zbekcha)",
+                        title_en: "Sarlavha (Inglizcha)",
+                        description_en: "Tavsif (Inglizcha)",
+                        photos: "🖼️ Rasmlar",
+                        select_photo: "📱 Qurilmadan rasm tanlash",
+                        photo_links: "Rasm havolalari (rasm qo‘shilganda yoki tanlanganda avtomatik kiritiladi)",
+                        processing: "⏳ Qayta ishlanmoqda...",
+                        save_changes: "💾 O'zgarishlarni saqlash",
+                        publish: "🚀 Yangilikni nashr qilish",
+                        photo_added: "✅ Rasm qo‘shildi!",
+                        photo_error: "❌ Rasm yuklashda xatolik",
+                        updating: "Yangilanmoqda...",
+                        sending: "Yuborilmoqda...",
+                        update_success: "✅ Yangilik muvaffaqiyatli yangilandi!",
+                        create_success: "✅ Yangilik muvaffaqiyatli qo‘shildi!",
+                        error: "❌ Xatolik: ",
+                        delete_confirm: "Ushbu yangilikni o‘chirishni xohlaysizmi?",
+                        delete_error: "O‘chirishda xatolik yuz berdi.",
+                        news_list: "📰 Yangiliklar ro‘yxati",
+                        no_news: "Yangiliklar mavjud emas",
+                        click_to_edit: "📝 Tahrirlash uchun bosing"
+                    },
+                    login: {
+                        attempt: "Shubhali faollik sababli kirish 1 soatga bloklandi!",
+                        false: "Noto‘g‘ri ma’lumotlar! Qolgan urinishlar:",
+                        panel: "Boshqaruv paneli",
+                        data: "Tizimga kirish uchun ma'lumotlarni kiriting",
+                        block: "Kirish bloklangan",
+                        error: "Juda ko‘p muvaffaqiyatsiz urinishlar.",
+                        enter: "Tizimga kirish"
+                    },
                     nav: {
                         home: "Bosh sahifa",
                         about: "Maktab haqida",
@@ -819,16 +924,28 @@ i18n
                             btn_achievements: "Yutuqlarimizni ko'rish",
                             items: {
                                 one: {
-                                    title: "Akademik poydevor",
-                                    desc: "Biz klassik rasm, rangtasvir va kompozitsiya maktabi an'analarini asrab-avaylaymiz. Talabalarimiz kelajakda har qanday uslub va texnikada ishlash imkonini beruvchi bazaga ega bo'ladilar.",
-                                    list_1: "Mualliflik dasturlari",
-                                    list_2: "Natura bilan ishlash"
+                                    title: "Akademik ta’lim",
+                                    desc: "Ta’lim jarayoni badiiy maktabning eng yaxshi an’analariga asoslanib, fundamental tayyorgarlik va ijodiy fikrlashni rivojlantirishni uyg‘unlashtiradi. O‘quvchilar tajribali ustozlar rahbarligida rasm, rangtasvir va kompozitsiya asoslarini chuqur o‘zlashtiradilar.",
+                                    list_1: "Rasm",
+                                    list_2: "Rangtasvir"
                                 },
                                 two: {
-                                    title: "Ijod erkinligi",
-                                    desc: "Benkov maktabi - bu dadil tajribalar rag'batlantiriladigan joy. Biz talaba xato qilishdan qo'rqmaydigan va o'ziga xos uslubini izlaydigan muhitni yaratamiz.",
+                                    title: "Ijodiy ustaxonalar",
+                                    desc: "Maktab san’atning turli yo‘nalishlarida amaliy mashg‘ulotlar va ijodiy izlanishlar uchun qulay muhit yaratadi. Zamonaviy jihozlangan ustaxonalar o‘quvchilarning salohiyatini ochish va kasbiy mahoratini oshirishga yordam beradi.",
                                     tag_1: "Ustaxonalar",
-                                    tag_2: "Ko'rgazmalar"
+                                    tag_2: "Amaliyot"
+                                },
+                                three: {
+                                    title: "Ko‘rgazma faoliyati",
+                                    desc: "O‘quvchilar o‘z ijodiy ishlarini maktab, shahar va respublika miqyosidagi ko‘rgazmalarda muntazam namoyish etadilar. Bu ularga asarlarini keng auditoriyaga taqdim etish va muhim tajriba orttirish imkonini beradi.",
+                                    tag_1: "Ko‘rgazmalar",
+                                    tag_2: "Tanlovlar"
+                                },
+                                four: {
+                                    title: "Kasbiy rivojlanish",
+                                    desc: "Maktab san’at va dizayn sohasidagi oliy ta’lim muassasalariga kirish hamda kelajakdagi kasbiy faoliyat uchun mustahkam poydevor yaratadi. O‘quvchilarning portfolio tayyorlashi va o‘ziga xos uslubini rivojlantirishga alohida e’tibor qaratiladi.",
+                                    list_1: "Portfolio",
+                                    list_2: "Karyera"
                                 }
                             }
                         },
@@ -951,6 +1068,9 @@ i18n
                         loading: "Yangiliklar yuklanmoqda...",
                         read_full: "To'liq o'qish",
                         placeholder_desc: "Batafsil ma'lumot olish uchun tugmani bosing...",
+                        showing: "ko‘rsatmoqda",
+                        of: "dan",
+                        news: "yangiliklar"
                     },
                     newsDetail: {
                         loading: "Yangilik yuklanmoqda...",
@@ -1392,7 +1512,7 @@ i18n
                             a14: "Haftaning 3 kuni mutaxassislik bo‘yicha ustaxonalarda mashg‘ulotlar o‘tiladi, qolgan 3 kuni esa umumiy maktab fanlari o‘qitiladi.",
                             q15: "15. Oddiy o‘quv kuni qanday o‘tadi?",
                             a15: "Darslar 8:30 dan 14:50 gacha davom etadi. Har bir juftlik 80 daqiqa davom etadi. Birinchi juftlikdan keyin 10 daqiqalik tanaffus, 11:20 da esa 40 daqiqalik tushlik tanaffusi bo‘ladi.",
-                            q16: "16. Har yili barcha olti yo‘nalish ochiladimi?",
+                            q16: "16. Har yili barcha yo‘nalish ochiladimi?",
                             a16: "Yo‘q, yo‘nalishlar har yili o‘zgarishi mumkin. Qaysi mutaxassisliklar ochilishi haqida oldindan maktabning ijtimoiy tarmoqlari va yangiliklarida e’lon qilinadi.",
                             q17: "17. San’at fanlari bo‘yicha baholash qanday amalga oshiriladi?",
                             a17: "Har chorak oxirida majburiy ko‘rik o‘tkaziladi. O‘quvchilar o‘z ishlarini namoyish etadilar va ular o‘qituvchilar komissiyasi tomonidan baholanadi.",
@@ -1436,6 +1556,53 @@ i18n
             },
             en: {
                 translation: {
+                    admin: {
+                        panel: "Admin Panel",
+                        logout: "Log Out",
+                        show_list: "📋 Show News List",
+                        hide_list: "📋 Hide News List",
+                        new_publication: "📝 New Publication",
+                        editing: "✏️ Editing",
+                        cancel: "Cancel / Create New",
+                        tip: "💡 Tip: copy an image and press Ctrl+V (or select a photo from your phone)",
+                        date: "📅 Publication Date",
+                        russian_version: "🇷🇺 Russian Version (RU)",
+                        uzbek_version: "🇺🇿 Uzbek Version (UZ)",
+                        english_version: "🇬🇧 English Version (EN)",
+                        title_ru: "Title (Russian)",
+                        description_ru: "News Text (Russian)",
+                        title_uz: "Title (Uzbek)",
+                        description_uz: "Description (Uzbek)",
+                        title_en: "Title (English)",
+                        description_en: "Description (English)",
+                        photos: "🖼️ Photos",
+                        select_photo: "📱 Select Photo from Device",
+                        photo_links: "Photo links (added automatically when a photo is pasted or selected)",
+                        processing: "⏳ Processing...",
+                        save_changes: "💾 Save Changes",
+                        publish: "🚀 Publish News",
+                        photo_added: "✅ Photo Added!",
+                        photo_error: "❌ Error Uploading Photo",
+                        updating: "Updating...",
+                        sending: "Sending...",
+                        update_success: "✅ News Successfully Updated!",
+                        create_success: "✅ News Successfully Added!",
+                        error: "❌ Error: ",
+                        delete_confirm: "Are you sure you want to delete this news item?",
+                        delete_error: "Error while deleting.",
+                        news_list: "📰 News List",
+                        no_news: "No News",
+                        click_to_edit: "📝 Click to Edit"
+                    },
+                    login: {
+                        attempt: "Access blocked for 1 hour due to suspicious activity!",
+                        false: "Incorrect data! Attempts remaining:",
+                        panel: "Control panel",
+                        data: "Enter login details",
+                        block: "Login blocked",
+                        error: "Too many failed attempts.",
+                        enter: "Sign in"
+                    },
                     nav: {
                         home: "Home",
                         about: "About",
@@ -1530,16 +1697,28 @@ i18n
                             btn_achievements: "View Our Achievements",
                             items: {
                                 one: {
-                                    title: "Academic Foundation",
-                                    desc: "We carefully preserve the traditions of the classical school of drawing, painting, and composition. Our students receive a foundation that allows them to work in any style and technique in the future.",
-                                    list_1: "Author's programs",
-                                    list_2: "Life drawing"
+                                    title: "Academic Education",
+                                    desc: "The educational process is based on the best traditions of classical art education, combining strong academic training with the development of creative thinking. Students master drawing, painting, and composition under the guidance of experienced teachers.",
+                                    list_1: "Drawing",
+                                    list_2: "Painting"
                                 },
                                 two: {
-                                    title: "Creative Freedom",
-                                    desc: "The Benkov School is a place where bold experiments are encouraged. We create an environment where students are not afraid to make mistakes and find their unique style.",
-                                    tag_1: "Workshops",
-                                    tag_2: "Exhibitions"
+                                    title: "Creative Studios",
+                                    desc: "The school provides an inspiring environment for practical work and artistic exploration across various fields of art. Well-equipped studios help students develop their skills and unlock their creative potential.",
+                                    tag_1: "Studios",
+                                    tag_2: "Practice"
+                                },
+                                three: {
+                                    title: "Exhibition Activities",
+                                    desc: "Students regularly present their artworks at school, city, and national exhibitions. This experience helps them gain confidence, showcase their talent, and engage with the artistic community.",
+                                    tag_1: "Exhibitions",
+                                    tag_2: "Competitions"
+                                },
+                                four: {
+                                    title: "Professional Development",
+                                    desc: "The school prepares students for admission to higher education institutions in art and design while building a strong foundation for future careers. Special attention is given to portfolio development and the growth of each student's individual artistic style.",
+                                    list_1: "Portfolio",
+                                    list_2: "Career"
                                 }
                             }
                         },
@@ -1662,6 +1841,9 @@ i18n
                         loading: "Loading feed...",
                         read_full: "Read Full Story",
                         placeholder_desc: "Click read more to find out the news details...",
+                        showing: "showing",
+                        of: "of",
+                        news: "news"
                     },
                     newsDetail: {
                         loading: "Loading news...",
@@ -2102,7 +2284,7 @@ i18n
                             a14: "Students spend 3 days a week studying their artistic specialization in workshops and another 3 days studying general academic subjects.",
                             q15: "15. What does a typical school day look like?",
                             a15: "Classes run from 8:30 AM to 2:50 PM. One lesson block lasts 80 minutes. After the first block at 9:50 AM, there is a 10-minute break, and at 11:20 AM there is a longer 40-minute lunch break. After the third block, students also have a 10-minute break.",
-                            q16: "16. Are all six specializations available every year?",
+                            q16: "16. Are all specializations available every year?",
                             a16: "No, the available specializations may vary each year. Information about open programs is announced in advance on the school’s social media and news pages.",
                             q17: "17. How are artistic subjects evaluated?",
                             a17: "At the end of every term, students participate in a mandatory review session. All works completed during the term are displayed and evaluated by a commission of teachers.",

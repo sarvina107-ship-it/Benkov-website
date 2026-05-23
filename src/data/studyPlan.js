@@ -123,10 +123,10 @@ export const DIRECTIONS = [
         id: 'computer-graphics-designer',
         title: 'computer-graphics-designer',
         grades: {
-            8: ['Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Practice'],
-            9: ['Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Plastic anatomy', 'Practice training'],
-            10: ['Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Plastic anatomy', 'Practice training'],
-            11: ['Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Plastic anatomy', 'Practice training']
+            8: ['Composition','Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Practice'],
+            9: ['Composition','Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Plastic anatomy', 'Practice training'],
+            10: ['Composition','Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Plastic anatomy', 'Practice training'],
+            11: ['Composition','Projecting', 'Computer graphics', 'Shtift', 'Construction', 'Draftsman', 'Painting', 'Plastic anatomy', 'Practice training']
         }
     },
     {
