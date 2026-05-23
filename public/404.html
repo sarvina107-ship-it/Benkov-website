@@ -80,7 +80,7 @@
                 «Я так вижу, и точка» — ответил веб-разработчик.
             </p>
             <div class="pt-4">
-                <a href="/"
+                <a href="/index.html"
                     class="inline-block bg-transparent border-2 border-[#D4A259] text-[#D4A259] hover:bg-[#D4A259] hover:text-[#1B2A44] font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-md shadow-[0_4px_20px_rgba(212,162,89,0.1)] hover:shadow-[0_4px_25px_rgba(212,162,89,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
                     Смыть краску (На главную)
                 </a>
@@ -105,7 +105,7 @@
                 «Men buni shunday ko‘ryapman, tamom» — deb javob berdi veb-dasturchi.
             </p>
             <div class="pt-4">
-                <a href="/uz"
+                <a href="/uz/index.html" id="btn-uz"
                     class="inline-block bg-transparent border-2 border-[#D4A259] text-[#D4A259] hover:bg-[#D4A259] hover:text-[#1B2A44] font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-md shadow-[0_4px_20px_rgba(212,162,89,0.1)] hover:shadow-[0_4px_25px_rgba(212,162,89,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
                     Bo‘yoqni yuvish (Asosiy sahifa)
                 </a>
@@ -130,7 +130,7 @@
                 “That's my vision, period” — replied the web developer.
             </p>
             <div class="pt-4">
-                <a href="/en"
+                <a href="/en/index.html" id="btn-en"
                     class="inline-block bg-transparent border-2 border-[#D4A259] text-[#D4A259] hover:bg-[#D4A259] hover:text-[#1B2A44] font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-md shadow-[0_4px_20px_rgba(212,162,89,0.1)] hover:shadow-[0_4px_25px_rgba(212,162,89,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
                     Wash the canvas (Go Home)
                 </a>
@@ -189,6 +189,26 @@
         // Включаем нужный языковой контейнер
         document.getElementById(`lang-${lang}`).style.display = 'block';
 
+        // Корректируем ссылки под специфику SPA-роутинга (если пути /uz/index.html не существует, кинет просто на корень)
+        // Но index.html заставит Vercel отдать чистый билд, сбросив ошибочный URL
+        const btnUz = document.getElementById('btn-uz');
+        const btnEn = document.getElementById('btn-en');
+
+        // Если у тебя в проекте пути для языков строятся как site.com?lng=en или просто через хэш, 
+        // эти строки подстрахуют, чтобы кнопка точно сработала:
+        if (btnUz && !window.location.host.includes('localhost')) {
+            btnUz.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = '/index.html?lng=uz';
+            });
+        }
+        if (btnEn && !window.location.host.includes('localhost')) {
+            btnEn.addEventListener('click', (e) => {
+                e.preventDefault();
+                window.location.href = '/index.html?lng=en';
+            });
+        }
+
         // 3. Общий скрипт авто-возврата для всех таймеров
         let timeLeft = 15;
         const timers = document.querySelectorAll('.countdown-timer');
@@ -199,10 +219,10 @@
 
             if (timeLeft <= 0) {
                 clearInterval(interval);
-                // Редирект на главную страницу соответствующего языка
-                if (lang === 'uz') window.location.href = '/uz';
-                else if (lang === 'en') window.location.href = '/en';
-                else window.location.href = '/';
+                // Жесткий сброс на корневой index.html с флагом языка, ломающий зацикливание роутера
+                if (lang === 'uz') window.location.href = '/index.html?lng=uz';
+                else if (lang === 'en') window.location.href = '/index.html?lng=en';
+                else window.location.href = '/index.html';
             }
         }, 1000);
     </script>
