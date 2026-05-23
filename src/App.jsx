@@ -30,6 +30,7 @@ const FAQ = lazy(() => import('./pages/FAQ'));
 import PageLoader from './components/PageLoader';
 import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
+import NotFound from './components/NotFound';
 
 const App = () => {
   const location = useLocation();
@@ -63,6 +64,7 @@ const App = () => {
             <Route path={ROUTES.NEWSLIST} element={<NewsList />} />
             <Route path={ROUTES.DIRECTOR} element={<Director />} />
             <Route path="/management/deputy/:id" element={<Deputy />} />
+            <Route path="*" element={<NotFound />} />
           </Routes>
         </AnimatePresence>
       </Suspense>
