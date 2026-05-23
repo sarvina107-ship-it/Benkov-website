@@ -1,12 +1,14 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Brush, Palette, Phone, Heart, Sparkles, Pencil, ArrowUpRight } from 'lucide-react';
+import PageWrapper from '../components/PageWrapper';
 
 const Conditions = () => {
   const { t } = useTranslation();
   const steps = ['step_1', 'step_2', 'step_3'];
 
   return (
+    <PageWrapper>
     <div className="bg-[#FDFCFB] dark:bg-gray-950 min-h-screen pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 relative overflow-hidden">
       {/* Фоновые элементы - адаптив */}
       <div className="absolute top-0 left-0 w-full h-full pointer-events-none">
@@ -135,6 +137,7 @@ const Conditions = () => {
         </div>
       </div>
     </div>
+    </PageWrapper>
   );
 };
 

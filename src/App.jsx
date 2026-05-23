@@ -1,5 +1,6 @@
 import React, { lazy, Suspense } from 'react';
-import { BrowserRouter as Router, Routes, Route } from 'react-router-dom'
+import { AnimatePresence } from 'framer-motion';
+import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-router-dom'
 import { ROUTES } from './paths'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
@@ -26,40 +27,48 @@ const Deputy = lazy(() => import('./pages/Deputy'));
 const DirectionsDetail = lazy(() => import('./pages/DirectionsDetail'));
 const Schedule = lazy(() => import('./pages/Schedule'));
 const FAQ = lazy(() => import('./pages/FAQ'));
+import PageLoader from './components/PageLoader';
+import ScrollProgress from './components/ScrollProgress';
+import BackToTop from './components/BackToTop';
 
 const App = () => {
+  const location = useLocation();
   return (
     <div>
       <ScrollToTop />
+      <ScrollProgress />
       <Navbar />
-      <Suspense fallback={<div style={{ padding: '2rem', textAlign: 'center' }}>loading</div>}>
-        <Routes>
-          <Route path="/" element={<Home />} />
-          <Route path="/admin" element={<AdminNews />} />
-          <Route path="/news/:id" element={<NewsDetail />} />
-          <Route path="/login" element={<Login />} />
-          <Route path={ROUTES.ABOUT} element={<About />} />
-          <Route path={ROUTES.DIRECTIONS} element={<Directions />} />
-          <Route path={`${ROUTES.DIRECTIONS}/:id`} element={<DirectionsDetail />} />
-          <Route path={ROUTES.ACHIEVEMENTS} element={<Achievments />} />
-          <Route path={ROUTES.CONDITIONS} element={<Conditions />} />
-          <Route path={ROUTES.CONTACTS} element={<Contacts />} />
-          <Route path={ROUTES.DOCUMENTS} element={<Documents />} />
-          <Route path={ROUTES.GALLERY} element={<Gallery />} />
-          <Route path={ROUTES.INFRASTRUCTURE} element={<Infrastructure />} />
-          <Route path={ROUTES.MANAGEMENT} element={<Management />} />
-          <Route path={ROUTES.STUDYPLAN} element={<StudyPlan />} />
-          <Route path={ROUTES.SCHEDULE} element={<Schedule />} />
-          <Route path={ROUTES.FAQ} element={<FAQ />} />
-          <Route path={`${ROUTES.STUDYPLAN}/:id`} element={<StudyDetail />} />
-          <Route path={ROUTES.NEWSSECTION} element={<NewsSection />} />
-          <Route path={ROUTES.NEWSLIST} element={<NewsList />} />
-          <Route path={ROUTES.DIRECTOR} element={<Director />} />
-          <Route path="/management/deputy/:id" element={<Deputy />} />
-        </Routes>
+      <Suspense fallback={<PageLoader />}>
+        <AnimatePresence mode="wait">
+          <Routes location={location} key={location.pathname}>
+            <Route path="/" element={<Home />} />
+            <Route path="/admin" element={<AdminNews />} />
+            <Route path="/news/:id" element={<NewsDetail />} />
+            <Route path="/login" element={<Login />} />
+            <Route path={ROUTES.ABOUT} element={<About />} />
+            <Route path={ROUTES.DIRECTIONS} element={<Directions />} />
+            <Route path={`${ROUTES.DIRECTIONS}/:id`} element={<DirectionsDetail />} />
+            <Route path={ROUTES.ACHIEVEMENTS} element={<Achievments />} />
+            <Route path={ROUTES.CONDITIONS} element={<Conditions />} />
+            <Route path={ROUTES.CONTACTS} element={<Contacts />} />
+            <Route path={ROUTES.DOCUMENTS} element={<Documents />} />
+            <Route path={ROUTES.GALLERY} element={<Gallery />} />
+            <Route path={ROUTES.INFRASTRUCTURE} element={<Infrastructure />} />
+            <Route path={ROUTES.MANAGEMENT} element={<Management />} />
+            <Route path={ROUTES.STUDYPLAN} element={<StudyPlan />} />
+            <Route path={ROUTES.SCHEDULE} element={<Schedule />} />
+            <Route path={ROUTES.FAQ} element={<FAQ />} />
+            <Route path={`${ROUTES.STUDYPLAN}/:id`} element={<StudyDetail />} />
+            <Route path={ROUTES.NEWSSECTION} element={<NewsSection />} />
+            <Route path={ROUTES.NEWSLIST} element={<NewsList />} />
+            <Route path={ROUTES.DIRECTOR} element={<Director />} />
+            <Route path="/management/deputy/:id" element={<Deputy />} />
+          </Routes>
+        </AnimatePresence>
       </Suspense>
 
       <Footer />
+      <BackToTop />
     </div>
   )
 }

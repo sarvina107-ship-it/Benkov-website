@@ -7,6 +7,7 @@ import { Navigation, Pagination } from 'swiper/modules';
 import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
+import PageWrapper from '../components/PageWrapper';
 
 const NewsDetail = () => {
     const { id } = useParams();
@@ -54,96 +55,97 @@ const NewsDetail = () => {
     const images = item.image ? item.image.split(',').map(img => img.trim()) : [];
 
     return (
-        <div className="min-h-screen bg-white dark:bg-gray-950">
-            <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
+        <PageWrapper>
+            <div className="min-h-screen bg-white dark:bg-gray-950">
+                <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
 
-                {/* Кнопка назад - для мобилок сверху */}
-                <div className="mb-6 lg:hidden">
-                    <Link to="/news" className="inline-flex items-center gap-2 text-[var(--gold-primary)] font-bold hover:underline">
-                        <span>←</span> {t('newsDetail.back_to_news') || 'Назад к новостям'}
-                    </Link>
-                </div>
+                    {/* Кнопка назад - для мобилок сверху */}
+                    <div className="mb-6 lg:hidden">
+                        <Link to="/news" className="inline-flex items-center gap-2 text-[var(--gold-primary)] font-bold hover:underline">
+                            <span>←</span> {t('newsDetail.back_to_news') || 'Назад к новостям'}
+                        </Link>
+                    </div>
 
-                <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] gap-8 sm:gap-10 md:gap-12">
+                    <div className="grid grid-cols-1 lg:grid-cols-[2fr,1fr] gap-8 sm:gap-10 md:gap-12">
 
-                    {/* ЛЕВАЯ КОЛОНКА - ОСНОВНОЙ КОНТЕНТ */}
-                    <div className="prose prose-lg max-w-none dark:prose-invert">
+                        {/* ЛЕВАЯ КОЛОНКА - ОСНОВНОЙ КОНТЕНТ */}
+                        <div className="prose prose-lg max-w-none dark:prose-invert">
 
-                        {/* ЗАГОЛОВОК */}
-                        <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0E1A2B] dark:text-gray-100 mb-4 sm:mb-6 leading-tight text-center sm:text-left" style={{ fontFamily: "'Playfair Display', serif" }}>
-                            {getLocalizedField(item, 'title')}
-                        </h1>
+                            {/* ЗАГОЛОВОК */}
+                            <h1 className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-extrabold text-[#0E1A2B] dark:text-gray-100 mb-4 sm:mb-6 leading-tight text-center sm:text-left" style={{ fontFamily: "'Playfair Display', serif" }}>
+                                {getLocalizedField(item, 'title')}
+                            </h1>
 
-                        {/* ДАТА */}
-                        <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-500 dark:text-gray-400 mb-8 sm:mb-10 border-b border-gray-200 dark:border-gray-800 pb-5 sm:pb-6">
-                            <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--gold-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
-                            </svg>
-                            <span className="text-sm sm:text-base font-medium">{formattedDate}</span>
-                        </div>
-
-                        {/* КАРУСЕЛЬ КАРТИНОК - АДАПТИВНАЯ */}
-                        {images.length > 0 && (
-                            <div className="mb-8 sm:mb-10 md:mb-12 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-800">
-                                <Swiper
-                                    modules={[Navigation, Pagination]}
-                                    navigation={images.length > 1}
-                                    pagination={{ clickable: true }}
-                                    loop={images.length > 1}
-                                    className="news-swiper"
-                                    breakpoints={{
-                                        320: {
-                                            slidesPerView: 1,
-                                            spaceBetween: 10,
-                                        },
-                                        768: {
-                                            slidesPerView: 1,
-                                            spaceBetween: 15,
-                                        },
-                                        1024: {
-                                            slidesPerView: 1,
-                                            spaceBetween: 20,
-                                        },
-                                    }}
-                                >
-                                    {images.map((imgUrl, index) => (
-                                        <SwiperSlide key={index}>
-                                            <div className="flex justify-center items-center bg-gray-100 dark:bg-gray-800 min-h-[250px] sm:min-h-[350px] md:min-h-[450px] lg:min-h-[500px]">
-                                                <img
-                                                    src={imgUrl}
-                                                    alt={`Изображение ${index + 1}`}
-                                                    loading="lazy"
-                                                    className="w-full h-auto max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] object-contain"
-                                                />
-                                            </div>
-                                        </SwiperSlide>
-                                    ))}
-                                </Swiper>
+                            {/* ДАТА */}
+                            <div className="flex items-center justify-center sm:justify-start gap-2 text-gray-500 dark:text-gray-400 mb-8 sm:mb-10 border-b border-gray-200 dark:border-gray-800 pb-5 sm:pb-6">
+                                <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--gold-primary)]" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth="2" d="M8 7V3m8 4V3m-9 8h10M5 21h14a2 2 0 002-2V7a2 2 0 00-2-2H5a2 2 0 00-2 2v12a2 2 0 002 2z" />
+                                </svg>
+                                <span className="text-sm sm:text-base font-medium">{formattedDate}</span>
                             </div>
-                        )}
 
-                        {/* ОПИСАНИЕ */}
-                        <div className="text-gray-800 dark:text-gray-300 leading-relaxed space-y-4 sm:space-y-5 md:space-y-6" style={{ fontFamily: "'Merriweather', serif", fontSize: '1rem' }}>
-                            {getLocalizedField(item, 'description')?.split('\n').map((paragraph, i) => (
-                                paragraph.trim() && <p key={i} className="text-sm sm:text-base md:text-lg">{paragraph}</p>
-                            ))}
+                            {/* КАРУСЕЛЬ КАРТИНОК - АДАПТИВНАЯ */}
+                            {images.length > 0 && (
+                                <div className="mb-8 sm:mb-10 md:mb-12 rounded-xl sm:rounded-2xl overflow-hidden shadow-xl bg-gray-100 dark:bg-gray-800">
+                                    <Swiper
+                                        modules={[Navigation, Pagination]}
+                                        navigation={images.length > 1}
+                                        pagination={{ clickable: true }}
+                                        loop={images.length > 1}
+                                        className="news-swiper"
+                                        breakpoints={{
+                                            320: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 10,
+                                            },
+                                            768: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 15,
+                                            },
+                                            1024: {
+                                                slidesPerView: 1,
+                                                spaceBetween: 20,
+                                            },
+                                        }}
+                                    >
+                                        {images.map((imgUrl, index) => (
+                                            <SwiperSlide key={index}>
+                                                <div className="flex justify-center items-center bg-gray-100 dark:bg-gray-800 min-h-[250px] sm:min-h-[350px] md:min-h-[450px] lg:min-h-[500px]">
+                                                    <img
+                                                        src={imgUrl}
+                                                        alt={`Изображение ${index + 1}`}
+                                                        loading="lazy"
+                                                        className="w-full h-auto max-h-[250px] sm:max-h-[350px] md:max-h-[450px] lg:max-h-[500px] object-contain"
+                                                    />
+                                                </div>
+                                            </SwiperSlide>
+                                        ))}
+                                    </Swiper>
+                                </div>
+                            )}
+
+                            {/* ОПИСАНИЕ */}
+                            <div className="text-gray-800 dark:text-gray-300 leading-relaxed space-y-4 sm:space-y-5 md:space-y-6" style={{ fontFamily: "'Merriweather', serif", fontSize: '1rem' }}>
+                                {getLocalizedField(item, 'description')?.split('\n').map((paragraph, i) => (
+                                    paragraph.trim() && <p key={i} className="text-sm sm:text-base md:text-lg">{paragraph}</p>
+                                ))}
+                            </div>
                         </div>
-                    </div>
 
-                    {/* ПРАВАЯ КОЛОНКА */}
-                    <div className="hidden lg:block">
-                        <div className="sticky top-24 p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800">
-                            <Link to="/newslist" className="text-[var(--gold-primary)] font-bold hover:underline flex items-center gap-2">
-                                <span>←</span> {t('newsDetail.back_to_news') || 'Назад к новостям'}
-                            </Link>
+                        {/* ПРАВАЯ КОЛОНКА */}
+                        <div className="hidden lg:block">
+                            <div className="sticky top-24 p-6 bg-gray-50 dark:bg-gray-900 rounded-2xl border border-gray-100 dark:border-gray-800">
+                                <Link to="/newslist" className="text-[var(--gold-primary)] font-bold hover:underline flex items-center gap-2">
+                                    <span>←</span> {t('newsDetail.back_to_news') || 'Назад к новостям'}
+                                </Link>
+                            </div>
                         </div>
-                    </div>
 
+                    </div>
                 </div>
-            </div>
 
-            {/* СТИЛИ ДЛЯ КАРУСЕЛИ - УЛУЧШЕННЫЕ С DARK MODE */}
-            <style>{`
+                {/* СТИЛИ ДЛЯ КАРУСЕЛИ - УЛУЧШЕННЫЕ С DARK MODE */}
+                <style>{`
     .news-swiper {
       width: 100%;
       height: auto;
@@ -231,7 +233,8 @@ const NewsDetail = () => {
       }
     }
   `}</style>
-        </div>
+            </div>
+        </PageWrapper>
     );
 };
 

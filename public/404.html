@@ -1,0 +1,211 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>404 — Ошибка в композиции / Kompozitsiyada xatolik / Composition Error</title>
+    <script src="https://cdn.jsdelivr.net/npm/@tailwindcss/browser@4"></script>
+    <style>
+        /* Текстура художественного холста на фоне */
+        .canvas-grid {
+            background-size: 20px 20px;
+            background-image: linear-gradient(to right, rgba(212, 162, 89, 0.02) 1px, transparent 1px),
+                linear-gradient(to bottom, rgba(212, 162, 89, 0.02) 1px, transparent 1px);
+        }
+
+        @keyframes paint-drip {
+
+            0%,
+            100% {
+                transform: translateY(0) scaleY(1);
+            }
+
+            50% {
+                transform: translateY(8px) scaleY(1.05);
+            }
+        }
+
+        .animate-drip {
+            animation: paint-drip 5s ease-in-out infinite;
+        }
+
+        /* Прячем блоки языков до отработки скрипта */
+        .lang-block {
+            display: none;
+        }
+    </style>
+</head>
+
+<body
+    class="bg-[#1B2A44] text-[#E2E8F0] min-h-screen flex flex-col items-center justify-center p-6 font-sans relative canvas-grid overflow-hidden select-none">
+
+    <div
+        class="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#D4A259] opacity-[0.03] rounded-full blur-[120px] pointer-events-none transform rotate-45">
+    </div>
+    <div
+        class="absolute -bottom-20 -left-20 w-96 h-96 bg-[#D4A259] opacity-[0.05] rounded-full blur-[80px] pointer-events-none">
+    </div>
+
+    <div class="max-w-xl w-full text-center z-10 space-y-6">
+
+        <!-- ВЕРХНИЙ БЕЙДЖ (МЕНЯЕТСЯ) -->
+        <div
+            class="inline-flex items-center gap-2 bg-[#D4A259]/10 text-[#D4A259] text-xs font-mono tracking-widest uppercase px-4 py-1.5 rounded-full border border-[#D4A259]/20">
+            <span class="w-2 h-2 rounded-full bg-[#D4A259] animate-pulse"></span>
+            <span id="badge-text">Холст не найден / Мазок мимо кассы</span>
+        </div>
+
+        <!-- ЦИФРЫ 404 -->
+        <div class="relative inline-block select-none my-2 animate-drip">
+            <h1
+                class="text-[120px] sm:text-[150px] font-black tracking-tighter leading-none text-[#D4A259] font-serif italic drop-shadow-[0_10px_30px_rgba(212,162,89,0.2)]">
+                404
+            </h1>
+            <div id="art-signature" class="absolute -bottom-2 right-4 text-[10px] font-mono text-slate-500 italic">
+                «Потерянная страница»
+            </div>
+        </div>
+
+        <!-- ================= БЛОК НА РУССКОМ (RU) ================= -->
+        <div id="lang-ru" class="lang-block space-y-3 max-w-md mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+                Ой! Кто-то пролил растворитель...
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Похоже, этот URL ушел в чистый кубизм, или его случайно закрасили белилами. Наш худсовет постановил:
+                данной композиции на сайте не существует.
+            </p>
+            <p class="text-[#D4A259] text-xs italic font-medium">
+                «Я так вижу, и точка» — ответил веб-разработчик.
+            </p>
+            <div class="pt-4">
+                <a href="/"
+                    class="inline-block bg-transparent border-2 border-[#D4A259] text-[#D4A259] hover:bg-[#D4A259] hover:text-[#1B2A44] font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-md shadow-[0_4px_20px_rgba(212,162,89,0.1)] hover:shadow-[0_4px_25px_rgba(212,162,89,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
+                    Смыть краску (На главную)
+                </a>
+            </div>
+            <div class="text-[11px] text-slate-500 tracking-wider uppercase pt-6">
+                До начала просмотра осталось: <span
+                    class="countdown-timer text-[#D4A259] font-mono font-bold text-xs">15</span> секунд
+            </div>
+        </div>
+
+        <!-- ================= БЛОК НА УЗБЕКСКОМ (UZ) ================= -->
+        <div id="lang-uz" class="lang-block space-y-3 max-w-md mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+                Voy! Kimdir erituvchini to‘kib yubordi...
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                Aftidan, bu URL sof kubizmga o‘tib ketgan yoki adashib oq bo‘yoq bilan bo‘yalgan. Badiiy kengashimiz
+                qaror qildi:
+                saytda ushbu kompozitsiya mavjud emas.
+            </p>
+            <p class="text-[#D4A259] text-xs italic font-medium">
+                «Men buni shunday ko‘ryapman, tamom» — deb javob berdi veb-dasturchi.
+            </p>
+            <div class="pt-4">
+                <a href="/uz"
+                    class="inline-block bg-transparent border-2 border-[#D4A259] text-[#D4A259] hover:bg-[#D4A259] hover:text-[#1B2A44] font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-md shadow-[0_4px_20px_rgba(212,162,89,0.1)] hover:shadow-[0_4px_25px_rgba(212,162,89,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
+                    Bo‘yoqni yuvish (Asosiy sahifa)
+                </a>
+            </div>
+            <div class="text-[11px] text-slate-500 tracking-wider uppercase pt-6">
+                Ko‘rik boshlanishiga qoldi: <span
+                    class="countdown-timer text-[#D4A259] font-mono font-bold text-xs">15</span> soniya
+            </div>
+        </div>
+
+        <!-- ================= БЛОК НА АНГЛИЙСКОМ (EN) ================= -->
+        <div id="lang-en" class="lang-block space-y-3 max-w-md mx-auto">
+            <h2 class="text-2xl sm:text-3xl font-serif font-bold text-white tracking-tight">
+                Oh! Someone spilled the solvent...
+            </h2>
+            <p class="text-slate-400 text-sm sm:text-base leading-relaxed">
+                It seems this URL went into pure cubism or was accidentally painted over with zinc white. Our art
+                committee ruled:
+                this composition does not exist on the website.
+            </p>
+            <p class="text-[#D4A259] text-xs italic font-medium">
+                “That's my vision, period” — replied the web developer.
+            </p>
+            <div class="pt-4">
+                <a href="/en"
+                    class="inline-block bg-transparent border-2 border-[#D4A259] text-[#D4A259] hover:bg-[#D4A259] hover:text-[#1B2A44] font-bold text-sm tracking-wider uppercase px-8 py-3.5 rounded-md shadow-[0_4px_20px_rgba(212,162,89,0.1)] hover:shadow-[0_4px_25px_rgba(212,162,89,0.3)] transition-all duration-300 transform hover:-translate-y-0.5">
+                    Wash the canvas (Go Home)
+                </a>
+            </div>
+            <div class="text-[11px] text-slate-500 tracking-wider uppercase pt-6">
+                Exhibition starts in: <span class="countdown-timer text-[#D4A259] font-mono font-bold text-xs">15</span>
+                seconds
+            </div>
+        </div>
+
+    </div>
+
+    <!-- НИЖНЯЯ ПАСХАЛКА -->
+    <div id="footer-hint" class="absolute bottom-4 text-[10px] text-slate-600 font-mono">
+        Не забудьте помыть кисти.
+    </div>
+
+    <script>
+        // 1. Определение текущего языка приложения
+        function getLanguage() {
+            const path = window.location.pathname;
+
+            // Проверка префиксов путей роутера
+            if (path.startsWith('/uz/') || path === '/uz') return 'uz';
+            if (path.startsWith('/en/') || path === '/en') return 'en';
+
+            // Проверка хранилища i18nextLng
+            try {
+                const locale = localStorage.getItem('i18nextLng');
+                if (locale) {
+                    if (locale.startsWith('uz')) return 'uz';
+                    if (locale.startsWith('en')) return 'en';
+                }
+            } catch (e) { console.error(e); }
+
+            return 'ru'; // По умолчанию русский
+        }
+
+        const lang = getLanguage();
+
+        // 2. Локализация динамических элементов, которые вне блоков
+        const badgeText = document.getElementById('badge-text');
+        const artSignature = document.getElementById('art-signature');
+        const footerHint = document.getElementById('footer-hint');
+
+        if (lang === 'uz') {
+            badgeText.textContent = "Polotno topilmadi / Mo‘yqalam xatosi";
+            artSignature.textContent = "«Yo‘qolgan sahifa»";
+            footerHint.textContent = "Mo‘yqalamlarni yuvishni unutmang.";
+        } else if (lang === 'en') {
+            badgeText.textContent = "Canvas not found / Brush stroke missed";
+            artSignature.textContent = "«The Missing Page»";
+            footerHint.textContent = "Don't forget to wash your brushes.";
+        }
+
+        // Включаем нужный языковой контейнер
+        document.getElementById(`lang-${lang}`).style.display = 'block';
+
+        // 3. Общий скрипт авто-возврата для всех таймеров
+        let timeLeft = 15;
+        const timers = document.querySelectorAll('.countdown-timer');
+
+        const interval = setInterval(() => {
+            timeLeft--;
+            timers.forEach(timer => timer.textContent = timeLeft);
+
+            if (timeLeft <= 0) {
+                clearInterval(interval);
+                // Редирект на главную страницу соответствующего языка
+                if (lang === 'uz') window.location.href = '/uz';
+                else if (lang === 'en') window.location.href = '/en';
+                else window.location.href = '/';
+            }
+        }, 1000);
+    </script>
+</body>
+
+</html>

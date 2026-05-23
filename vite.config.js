@@ -71,6 +71,24 @@ export default defineConfig(async () => {
   ];
 
   return {
+    // ВСТАВЛЯЕМ НАСТРОЙКИ СЕРВЕРА ДЛЯ РАЗРАБОТКИ СЮДА:
+    server: {
+      headers: {
+        'Content-Security-Policy-Report-Only':
+          "default-src 'self'; " +
+          // 1. Добавили хэш для того самого инлайн-скрипта + аналитику
+          "script-src 'self' 'unsafe-eval' 'sha256-Z2/iFzh9VMlVkEOar1f/oSHWwQk3ve1qk/C2WdsC4Xk=' https://www.google-analytics.com; " +
+          // 2. Разрешили загрузку CSS-файлов шрифтов от Google
+          "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
+          // 3. Разрешили скачивание самих файлов шрифтов (они качаются с gstatic)
+          "font-src 'self' https://fonts.gstatic.com; " +
+          "connect-src 'self' https://sarvina-production.up.railway.app ws://localhost:* http://localhost:*; " +
+          "img-src 'self' data: https://sarvina-production.up.railway.app *; " +
+          // 4. Разрешили встраивать карты/фреймы Яндекса
+          "frame-src 'self' https://yandex.uz https://*.yandex.uz;"
+      }
+    },
+
     plugins: [
       react(),
       tailwindcss(),
