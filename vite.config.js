@@ -71,9 +71,9 @@ export default defineConfig(async () => {
           "script-src 'self' 'unsafe-eval' 'sha256-Z2/iFzh9VMlVkEOar1f/oSHWwQk3ve1qk/C2WdsC4Xk=' https://www.google-analytics.com; " +
           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
           "font-src 'self' https://fonts.gstatic.com; " +
-          "media-src 'self' https://*.public.blob.vercel-storage.com; " +
+          "media-src 'self' https://*.public.blob.vercel-storage.com; " + // <-- КЛЮЧЕВОЕ ИСПРАВЛЕНИЕ
           "connect-src 'self' https://sarvina-production.up.railway.app ws://localhost:* http://localhost:*; " +
-          "img-src 'self' data: https://sarvina-production.up.railway.app *; " +
+          "img-src 'self' data: https://sarvina-production.up.railway.app https://benkov-website.vercel.app *; " + // <-- Добавил свой домен
           "frame-src 'self' https://yandex.uz https://*.yandex.uz;"
       },
       proxy: {
