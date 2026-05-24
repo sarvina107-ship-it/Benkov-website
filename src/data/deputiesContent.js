@@ -1,5 +1,6 @@
-import Deputy1 from '../assets/img/Deputy1.jpg';
-import Deputy3 from '../assets/img/Deputy3.jpg';
+import Deputy1 from '../assets/img/Deputy1.webp';
+import Deputy3 from '../assets/img/Deputy3.webp';
+import Director from '../assets/img/Director.webp';
 
 export const getDeputiesContent = (t, lang) => {
     const getLangNames = (ru, uz, en) => {
@@ -136,7 +137,7 @@ export const getDirectorContent = (t) => {
     return {
         name: t('director.director_name'),
         role: t('director.director_label'),
-        photo: "",
+        photo: Director,
         birthDate: "27.11.1974",
         nationality: t('director.director_nationality'),
         languages: t('director.director_languages'),

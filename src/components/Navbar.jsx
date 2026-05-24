@@ -4,8 +4,9 @@ import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
 import { useLocation, Link } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
-import Logo from '../assets/icon/Logo.png';
-import BenkovImg from '../assets/img/BenkovImg.png';
+import Logo from '../assets/icon/Logo.webp';
+import BenkovImg from '../assets/img/BenkovImg.webp';
+import Poster from '../assets/img/Poster.webp';
 
 const Navbar = () => {
   const location = useLocation();
@@ -139,6 +140,17 @@ const Navbar = () => {
     }
   }
 
+  const [isMobile, setIsMobile] = useState(false);
+
+  useEffect(() => {
+    const checkMobile = () => {
+      setIsMobile(window.innerWidth < 768);
+    };
+    checkMobile();
+    window.addEventListener('resize', checkMobile);
+    return () => window.removeEventListener('resize', checkMobile);
+  }, []);
+
   const toggleMobileDropdown = (name) => {
     setActiveMobileDropdown(activeMobileDropdown === name ? null : name);
   };
@@ -148,7 +160,7 @@ const Navbar = () => {
       {/* Верхняя часть с логотипом и кнопкой */}
       <div className="flex items-center justify-between mx-[60px] mb-5 max-lg:mx-6 max-md:mx-4 max-sm:flex-col max-sm:gap-4">
         <div className="flex items-center gap-[30px] max-sm:flex-col max-sm:text-center">
-          <img className="w-[100px] h-[100px] max-sm:w-[70px] max-sm:h-[70px]" src={Logo} alt="Logo" />
+          <img className="w-[100px] h-[100px] max-sm:w-[70px] max-sm:h-[70px]" priority src={Logo} alt="Logo" />
           <h2
             className="text-[#1B2A44] dark:text-gray-200 font-bold text-[20px] w-[500px] leading-tight max-lg:w-auto max-lg:text-base"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -426,7 +438,29 @@ const Navbar = () => {
       <section className={`relative ${isHome ? 'h-[85vh] max-lg:h-[70vh] max-md:h-[60vh]' : 'h-[40vh]'} overflow-hidden`}>
         <div className="absolute -top-[1px] inset-0 z-0">
           {isHome ? (
-            <video src="/videos/NavbarVideo.mp4" autoPlay loop muted playsInline className="absolute inset-0 block w-full h-full object-cover" />
+            <>
+              {!isMobile && (
+                <video
+                  src="/videos/NavbarVideo.webm"
+                  autoPlay
+                  loop
+                  muted
+                  playsInline
+                  poster={Poster}
+                  preload="none"
+                  className="absolute inset-0 w-full h-full object-cover hero-video"
+                />
+              )}
+
+              {/* Мобилка: картинка */}
+              <img
+                src={Poster}
+                alt="Hero background"
+                className="absolute inset-0 w-full h-full object-cover hero-image-mobile"
+                loading="eager"
+                fetchpriority="high"
+              />
+            </>
           ) : (
             <img src={BenkovImg} className="w-full h-full object-cover" alt="background" loading="lazy" />
           )}

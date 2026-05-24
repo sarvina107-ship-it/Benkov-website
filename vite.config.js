@@ -5,31 +5,26 @@ import { VitePWA } from 'vite-plugin-pwa'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import Sitemap from 'vite-plugin-sitemap';
 
-
 async function getDynamicRoutes() {
-  const API_URL = 'https://sarvina-production.up.railway.app/api/news'; // Твой адрес API
+  const API_URL = 'https://sarvina-production.up.railway.app/api/news';
 
   try {
     const response = await fetch(API_URL);
     const newsData = await response.json();
 
-    // 1. Проверяем, если сервер СРАЗУ вернул чистый массив
     let postsArray = [];
     if (Array.isArray(newsData)) {
       postsArray = newsData;
     }
-    // 2. Если вернулся объект, ищем массив внутри популярных ключей (news, data, posts)
     else if (newsData && typeof newsData === 'object') {
       postsArray = newsData.news || newsData.data || newsData.posts || [];
     }
 
-    // Проверяем, нашли ли мы массив в итоге
     if (!Array.isArray(postsArray)) {
       console.warn('Предупреждение: API вернул данные, но массив новостей не найден.', newsData);
       return [];
     }
 
-    // Формируем ссылки: /news/1, /news/2
     const newsRoutes = postsArray.map(post => `/news/${post.id}`);
     console.log(`Успешно добавлено ${newsRoutes.length} новостей в Sitemap!`);
     return newsRoutes;
@@ -41,10 +36,8 @@ async function getDynamicRoutes() {
 }
 
 export default defineConfig(async () => {
-  // Получаем динамические пути перед началом сборки
   const newsRoutes = await getDynamicRoutes();
 
-  // Все статичные страницы школы Бенькова
   const staticRoutes = [
     '/',
     '/about',
@@ -71,93 +64,166 @@ export default defineConfig(async () => {
   ];
 
   return {
-    // ВСТАВЛЯЕМ НАСТРОЙКИ СЕРВЕРА ДЛЯ РАЗРАБОТКИ СЮДА:
     server: {
       headers: {
         'Content-Security-Policy-Report-Only':
           "default-src 'self'; " +
-          // 1. Добавили хэш для того самого инлайн-скрипта + аналитику
           "script-src 'self' 'unsafe-eval' 'sha256-Z2/iFzh9VMlVkEOar1f/oSHWwQk3ve1qk/C2WdsC4Xk=' https://www.google-analytics.com; " +
-          // 2. Разрешили загрузку CSS-файлов шрифтов от Google
           "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
-          // 3. Разрешили скачивание самих файлов шрифтов (они качаются с gstatic)
           "font-src 'self' https://fonts.gstatic.com; " +
           "connect-src 'self' https://sarvina-production.up.railway.app ws://localhost:* http://localhost:*; " +
           "img-src 'self' data: https://sarvina-production.up.railway.app *; " +
-          // 4. Разрешили встраивать карты/фреймы Яндекса
           "frame-src 'self' https://yandex.uz https://*.yandex.uz;"
-      }
+      },
+      proxy: {
+        '/api': {
+          target: 'https://sarvina-production.up.railway.app',
+          changeOrigin: true,
+          secure: false,
+        },
+      },
     },
 
     plugins: [
-      react(),
+      react({ fastRefresh: true }),
       tailwindcss(),
-
-      // Автоматическая генерация карты сайта (Sitemap)
       Sitemap({
-        hostname: 'https://benkov-website.vercel.app', // Укажи здесь реальный будущий домен школы
-        dynamicRoutes: [
-          ...staticRoutes,
-          ...newsRoutes // Объединяем статичные страницы и новости из API
-        ],
+        hostname: 'https://benkov-website.vercel.app',
+        dynamicRoutes: [...staticRoutes, ...newsRoutes],
+        generateRobotsTxt: false,
       }),
-
-      // Оптимизатор картинок (сохранили все твои настройки)
       ViteImageOptimizer({
         test: /\.(jpe?g|png|gif|tiff|webp|svg)$/i,
-        webp: {
-          quality: 80,
-        },
-        png: {
-          quality: 80,
-        },
-        jpeg: {
-          quality: 80,
-        },
+        exclude: [
+          'Entrance',      // уже сжата вручную
+          'Paint3',        // уже сжата вручную  
+          'image38',       // уже сжата вручную
+          'Yard',          // уже сжата вручную
+          'image37'        // уже сжата вручную
+        ],
+        webp: { quality: 75 },
+        png: { quality: 75, compressionLevel: 9 },
+        jpeg: { quality: 75, progressive: true },
+        svg: { multipass: true },
       }),
-
-      // Настройка PWA (сохранили полностью твой манифест и кэш)
       VitePWA({
         registerType: 'autoUpdate',
         workbox: {
-          globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webmanifest}'],
-          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024, // 5 МБ
+          globPatterns: ['**/*.{js,css,html,ico,png,svg,jpg,jpeg,webmanifest,webp}'],
+          maximumFileSizeToCacheInBytes: 5 * 1024 * 1024,
+          runtimeCaching: [
+            {
+              urlPattern: /\.(?:png|jpg|jpeg|svg|gif|webp)$/,
+              handler: 'CacheFirst',
+              options: {
+                cacheName: 'images',
+                expiration: {
+                  maxEntries: 60,
+                  maxAgeSeconds: 30 * 24 * 60 * 60,
+                },
+              },
+            },
+            {
+              urlPattern: /\.(?:js|css)$/,
+              handler: 'StaleWhileRevalidate',
+              options: {
+                cacheName: 'static-resources',
+                expiration: {
+                  maxEntries: 50,
+                  maxAgeSeconds: 24 * 60 * 60,
+                },
+              },
+            },
+            {
+              urlPattern: /^https:\/\/sarvina-production\.up\.railway\.app\/api\/news/,
+              handler: 'NetworkFirst',
+              options: {
+                cacheName: 'api-cache',
+                expiration: {
+                  maxEntries: 20,
+                  maxAgeSeconds: 60 * 60,
+                },
+              },
+            },
+          ],
         },
         manifest: {
           name: 'Республиканская специализированная художественная школа имени П. Бенькова',
           short_name: 'Школа Бенькова',
           description: 'Официальный сайт Художественной Школы имени П. Бенькова в Ташкенте',
           theme_color: '#0E1A2B',
-          background_color: '#ffff',
+          background_color: '#ffffff',
           display: 'standalone',
           orientation: 'portrait',
           start_url: '/',
+          scope: '/',
           icons: [
             {
-              src: 'pwa-192x192.png',
+              src: 'pwa-192x192.webp',
               sizes: '192x192',
-              type: 'image/png'
+              type: 'image/webp',
+              purpose: 'any maskable'
             },
             {
-              src: 'pwa-512x512.png',
+              src: 'pwa-512x512.webp',
               sizes: '512x512',
-              type: 'image/png'
+              type: 'image/webp',
+              purpose: 'any maskable'
             }
           ]
         }
       })
     ],
+
     build: {
+      minify: 'esbuild',
+      target: 'es2020',
+      reportCompressedSize: true,
+      chunkSizeWarningLimit: 500,
+      sourcemap: false,
+      cssCodeSplit: true,
+      cssMinify: true,
+
       rollupOptions: {
         output: {
-          manualChunks(id) {
-            // Если библиотека лежит в node_modules, выносим её в отдельный чанк vendor
+          manualChunks: (id) => {
             if (id.includes('node_modules')) {
+              if (id.includes('react-dom') || id.includes('react-router-dom')) {
+                return 'vendor-react';
+              }
+              if (id.includes('framer-motion')) {
+                return 'vendor-framer';
+              }
+              if (id.includes('swiper')) {
+                return 'vendor-swiper';
+              }
+              if (id.includes('i18next')) {
+                return 'vendor-i18n';
+              }
               return 'vendor';
             }
-          }
-        }
-      }
-    }
+          },
+          chunkFileNames: 'assets/js/[name]-[hash].js',
+          entryFileNames: 'assets/js/[name]-[hash].js',
+          assetFileNames: 'assets/[ext]/[name]-[hash].[ext]',
+        },
+      },
+    },
+
+    optimizeDeps: {
+      include: [
+        'react',
+        'react-dom',
+        'react-router-dom',
+        'framer-motion',
+        'axios',
+        'i18next',
+        'react-i18next'
+      ],
+    },
+
+    css: {
+      devSourcemap: false,
+    },
   };
 });

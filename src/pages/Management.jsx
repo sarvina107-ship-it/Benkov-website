@@ -2,8 +2,9 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
-import Deputy1 from '../assets/img/Deputy1.jpg'
-import Deputy3 from '../assets/img/Deputy3.jpg'
+import Deputy1 from '../assets/img/Deputy1.webp'
+import Deputy3 from '../assets/img/Deputy3.webp'
+import Director from '../assets/img/Director.webp'
 import PageWrapper from '../components/PageWrapper';
 
 const Management = () => {
@@ -63,7 +64,7 @@ const Management = () => {
                   {/* Фото директора */}
                   <div className="md:w-2/5 lg:w-[45%] h-[320px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-800">
                     <img
-                      src="URL_ФОТО_ДИРЕКТОРА"
+                      src={Director}
                       className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
                       alt="Director"
                       loading="lazy"

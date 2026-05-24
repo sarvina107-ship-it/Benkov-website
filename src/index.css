@@ -107,3 +107,23 @@ select {
         --gold-primary: #E2B36C;
     }
 }
+
+/* По умолчанию (десктоп): показываем видео, скрываем мобильную картинку */
+.hero-video {
+  display: block;
+}
+
+.hero-image-mobile {
+  display: none;
+}
+
+/* На мобилках (ширина экрана меньше 768px): скрываем видео, показываем картинку */
+@media (max-width: 768px) {
+  .hero-video {
+    display: none;
+  }
+  
+  .hero-image-mobile {
+    display: block;
+  }
+}

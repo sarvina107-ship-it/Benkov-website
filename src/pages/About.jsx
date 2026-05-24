@@ -3,11 +3,11 @@ import { ROUTES } from '../paths';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
-import HistoryImg from '../assets/img/HistoryImg.png';
-import BenkovTarixi1 from '../assets/img/BenkovTarixi1.png';
-import BenkovTarixi2 from '../assets/img/BenkovTarixi2.png';
-import BenkovTarixi3 from '../assets/img/BenkovTarixi3.png';
-import BenkovTarixi4 from '../assets/img/BenkovTarixi4.png';
+import HistoryImg from '../assets/img/HistoryImg.webp';
+import BenkovTarixi1 from '../assets/img/BenkovTarixi1.webp';
+import BenkovTarixi2 from '../assets/img/BenkovTarixi2.webp';
+import BenkovTarixi3 from '../assets/img/BenkovTarixi3.webp';
+import BenkovTarixi4 from '../assets/img/BenkovTarixi4.webp';
 
 const About = () => {
   const { t } = useTranslation();

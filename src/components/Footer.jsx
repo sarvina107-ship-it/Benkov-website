@@ -1,8 +1,9 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
-import Logo from '../assets/icon/Logo.png';
+import Logo from '../assets/icon/Logo.webp';
 import { ROUTES } from '../paths';
+import LazyYandexMap from './LazyYandexMap';
 
 const Footer = () => {
   const { t } = useTranslation();
@@ -11,8 +12,6 @@ const Footer = () => {
 
       {/* ===== СЕКЦИЯ 1: КОНТАКТЫ И КАРТА ===== */}
       <div className="bg-[#1B2A44] dark:bg-gray-900 text-white py-12 sm:py-16 md:py-20 relative">
-        <div className="absolute inset-0 opacity-[0.03] dark:opacity-[0.02] pointer-events-none"
-          style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/canvas-orange.png')` }}></div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 grid grid-cols-1 lg:grid-cols-2 gap-10 md:gap-12 items-center relative z-10">
 
@@ -57,30 +56,7 @@ const Footer = () => {
           </div>
 
           {/* КАРТА */}
-          <div className="relative group">
-            <div className="absolute -inset-2 bg-[var(--gold-primary)]/10 dark:bg-[var(--gold-primary)]/5 blur-xl rounded-3xl opacity-50 group-hover:opacity-100 transition"></div>
-            <div className="relative rounded-2xl overflow-hidden shadow-2xl border-2 border-white/5 dark:border-gray-700/30 h-[250px] sm:h-[280px] md:h-[300px]">
-              <div className="absolute opacity-0 pointer-events-none">
-                <a href="https://yandex.uz/maps/org/139373972732/?utm_medium=mapframe&utm_source=maps">
-                  Республиканский художественный колледж имени П.П. Бенькова
-                </a>
-                <a href="https://yandex.uz/maps/10335/tashkent/category/school_of_the_arts/184106246/?utm_medium=mapframe&utm_source=maps">
-                  Школа искусств в Ташкенте
-                </a>
-                <a href="https://yandex.uz/maps/10335/tashkent/category/college/184106236/?utm_medium=mapframe&utm_source=maps">
-                  Колледж в Ташкенте
-                </a>
-              </div>
-              <iframe
-                src="https://yandex.uz/map-widget/v1/org/139373972732/?ll=69.240921%2C41.317897&z=16"
-                className="w-full h-full"
-                frameBorder="0"
-                allowFullScreen={true}
-                loading="lazy"
-                title="yandex-map"
-              ></iframe>
-            </div>
-          </div>
+          <LazyYandexMap />
         </div>
       </div>
 

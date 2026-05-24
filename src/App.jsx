@@ -4,8 +4,8 @@ import { BrowserRouter as Router, Routes, Route, useLocation } from 'react-route
 import { ROUTES } from './paths'
 import Navbar from './components/Navbar';
 import Footer from './components/Footer';
-import NewsSection from './components/NewsSection';
 import ScrollToTop from './components/ScrollToTop';
+const NewsSection = lazy(() => import('./components/NewsSection'));
 const Home = lazy(() => import('./pages/Home'));
 const About = lazy(() => import('./pages/About'));
 const Achievments = lazy(() => import('./pages/Achievements'));

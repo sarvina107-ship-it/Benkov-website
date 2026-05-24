@@ -12,7 +12,7 @@ async function generateRss() {
         id: SITE_URL,
         link: SITE_URL,
         language: "ru",
-        image: `${SITE_URL}/logo.png`,
+        image: `${SITE_URL}/logo.webp`,
         favicon: `${SITE_URL}/favicon.ico`,
         copyright: `All rights reserved ${new Date().getFullYear()}, Benkov Art School`,
     });

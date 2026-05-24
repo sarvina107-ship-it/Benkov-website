@@ -2,10 +2,11 @@ import React, { useEffect, useRef, useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../paths';
-import History from '../assets/img/HistoryImg.png'
+import History from '../assets/img/HistoryImg.webp'
 import NewsSection from '../components/NewsSection';
 import { directionsData } from '../data/directionsData';
 import CardSkeleton from '../components/CardSkeleton';
+import Director from '../assets/img/Director.webp'
 import PageWrapper from '../components/PageWrapper';
 
 const Home = () => {
@@ -281,10 +282,6 @@ const Home = () => {
           ref={el => sectionsRef.current[2] = el}
           className="py-[60px] sm:py-[100px] md:py-[150px] lg:py-[180px] bg-white dark:bg-gray-950 relative overflow-hidden opacity-0 translate-y-10 transition-all duration-1000 ease-out"
         >
-          {/* Текстура фона */}
-          <div className="absolute inset-0 opacity-[0.02] dark:opacity-[0.01] pointer-events-none"
-            style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/canvas-orange.png')` }}>
-          </div>
 
           {/* Декоративные пятна */}
           <div className="absolute top-10 left-[-5%] w-64 sm:w-80 h-64 sm:h-80 bg-[var(--gold-primary)]/5 dark:bg-[var(--gold-primary)]/3 rounded-full blur-[120px] pointer-events-none hidden sm:block"></div>
@@ -392,7 +389,7 @@ const Home = () => {
 
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
                   <img
-                    src="/images/director.jpg"
+                    src={Director}
                     alt=""
                     loading="lazy"
                     className="w-full h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] object-cover object-top transition-transform duration-[2s] group-hover:scale-110"
