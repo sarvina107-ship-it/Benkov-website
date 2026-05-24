@@ -441,7 +441,7 @@ const Navbar = () => {
             <>
               {!isMobile && (
                 <video
-                  src="https://bsq4kt5astjt7959.public.blob.vercel-storage.com/NavbarVideo.webm"
+                  src="/videos/NavbarVideo.webm"
                   autoPlay
                   loop
                   muted
