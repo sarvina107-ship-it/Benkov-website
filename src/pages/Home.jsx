@@ -99,7 +99,7 @@ const Home = () => {
                   <img
                     className="h-[300px] sm:h-[380px] md:h-[450px] w-full object-cover transition-transform duration-700 group-hover:scale-105"
                     src={History}
-                    alt=""
+                    alt="Pavel Benkov Art School building - founded in 1918"
                     loading="lazy"
                     decoding="async"
                   />
@@ -391,7 +391,7 @@ const Home = () => {
                 <div className="relative rounded-2xl sm:rounded-3xl overflow-hidden shadow-[0_20px_50px_rgba(0,0,0,0.5)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.8)]">
                   <img
                     src={Director}
-                    alt=""
+                    alt="School director"
                     loading="lazy"
                     className="w-full h-[350px] sm:h-[450px] md:h-[500px] lg:h-[600px] object-cover object-top transition-transform duration-[2s] group-hover:scale-110"
                   />

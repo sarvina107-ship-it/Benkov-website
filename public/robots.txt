@@ -3,4 +3,4 @@ Disallow: /login/
 Disallow: /admin/
 Disallow: /dist/
 
-Sitemap: https://benkov-website.vercel.app
+Sitemap: https://benkov-website.vercel.app/sitemap.xml

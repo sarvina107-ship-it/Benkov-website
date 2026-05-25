@@ -119,6 +119,7 @@ const Footer = () => {
                 href="https://www.facebook.com/people/Pavel-Benkov-nomidagi-Respublika-ixtisoslashtirilgan-rassomlik-maktabi/61553361282120/?mibextid=ZbWKwL"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Facebook"
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border border-[var(--gold-primary)]/30 flex items-center justify-center hover:bg-[var(--gold-primary)] hover:border-[var(--gold-primary)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--gold-primary)] group-hover:text-[#0B1524] dark:group-hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -129,6 +130,7 @@ const Footer = () => {
                 href="https://www.instagram.com/benkov_maktabi"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Instagram"
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border border-[var(--gold-primary)]/30 flex items-center justify-center hover:bg-[var(--gold-primary)] hover:border-[var(--gold-primary)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--gold-primary)] group-hover:text-[#0B1524] dark:group-hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">
@@ -139,6 +141,7 @@ const Footer = () => {
                 href="https://t.me/benkovmaktabi"
                 target="_blank"
                 rel="noopener noreferrer"
+                aria-label="Telegram"
                 className="w-8 h-8 sm:w-10 sm:h-10 rounded-lg border border-[var(--gold-primary)]/30 flex items-center justify-center hover:bg-[var(--gold-primary)] hover:border-[var(--gold-primary)] hover:-translate-y-1 transition-all duration-300 group"
               >
                 <svg className="w-4 h-4 sm:w-5 sm:h-5 text-[var(--gold-primary)] group-hover:text-[#0B1524] dark:group-hover:text-gray-900 transition-colors" fill="currentColor" viewBox="0 0 24 24" aria-hidden="true">

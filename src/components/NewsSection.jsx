@@ -76,15 +76,17 @@ const NewsSection = () => {
                             <div className="flex gap-3">
                                 <button
                                     onClick={prevSlide}
+                                    aria-label="Previous news"
                                     className="w-10 h-10 rounded-full border border-[var(--gold-primary)] text-[var(--gold-primary)] text-xl hover:bg-[var(--gold-primary)] hover:text-[#0E1A2B] dark:hover:text-gray-900 transition-all duration-300 flex items-center justify-center"
                                 >
-                                    ‹
+                                    <span aria-hidden="true">‹</span>
                                 </button>
                                 <button
                                     onClick={nextSlide}
+                                    aria-label="Next news"
                                     className="w-10 h-10 rounded-full border border-[var(--gold-primary)] text-[var(--gold-primary)] text-xl hover:bg-[var(--gold-primary)] hover:text-[#0E1A2B] dark:hover:text-gray-900 transition-all duration-300 flex items-center justify-center"
                                 >
-                                    ›
+                                    <span aria-hidden="true">›</span>
                                 </button>
                             </div>
                         )}
@@ -95,15 +97,17 @@ const NewsSection = () => {
                             <>
                                 <button
                                     onClick={prevSlide}
+                                    aria-label="Previous news"
                                     className="hidden xl:flex absolute -left-4 lg:-left-8 xl:-left-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-[var(--gold-primary)] text-[var(--gold-primary)] text-xl lg:text-2xl hover:bg-[var(--gold-primary)] hover:text-[#0E1A2B] dark:hover:text-gray-900 transition-all duration-300 z-20 items-center justify-center bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
                                 >
-                                    ‹
+                                    <span aria-hidden="true">‹</span>
                                 </button>
                                 <button
                                     onClick={nextSlide}
+                                    aria-label="Next news"
                                     className="hidden xl:flex absolute -right-4 lg:-right-8 xl:-right-12 top-1/2 -translate-y-1/2 w-10 h-10 lg:w-12 lg:h-12 rounded-full border border-[var(--gold-primary)] text-[var(--gold-primary)] text-xl lg:text-2xl hover:bg-[var(--gold-primary)] hover:text-[#0E1A2B] dark:hover:text-gray-900 transition-all duration-300 z-20 items-center justify-center bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm"
                                 >
-                                    ›
+                                    <span aria-hidden="true">›</span>
                                 </button>
                             </>
                         )}
@@ -141,15 +145,15 @@ const NewsSection = () => {
                                             </p>
 
                                             <Link to={`/news/${item._id}`} className="mt-auto">
-                                                <button className="group/btn relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[var(--gold-primary)] text-white hover:text-[var(--gold-primary)] rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-sm border border-[var(--gold-primary)]/50 transition-colors duration-500 hover:border-[var(--gold-primary)] hover:bg-[var(--gold-primary)]/5">
+                                                <button className="group/btn relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[var(--gold-primary)] text-[#1B2A44] dark:text-gray-900 hover:text-[var(--gold-primary)] rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-sm border border-[var(--gold-primary)]/50 transition-colors duration-500 hover:border-[var(--gold-primary)] hover:bg-[var(--gold-primary)]/5">
                                                     <span className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-tl-lg"></span>
                                                     <span className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-br-lg"></span>
 
                                                     <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
                                                         {t('home.news.read_more')}
                                                         <span className="relative flex items-center justify-center">
-                                                            <span className="w-3 sm:w-4 h-[1px] bg-white group-hover/btn:bg-[var(--gold-primary)] transform origin-right transition-transform duration-300 group-hover/btn:scale-x-125"></span>
-                                                            <span className="absolute right-0 w-1 h-1 sm:w-1.5 sm:h-1.5 border-t border-r border-white group-hover/btn:border-[var(--gold-primary)] rotate-45 transition-transform duration-300 group-hover/btn:translate-x-1"></span>
+                                                            <span className="w-3 sm:w-4 h-[1px] bg-[#1B2A44] dark:bg-gray-900 group-hover/btn:bg-[var(--gold-primary)] transform origin-right transition-transform duration-300 group-hover/btn:scale-x-125"></span>
+                                                            <span className="absolute right-0 w-1 h-1 sm:w-1.5 sm:h-1.5 border-t border-r border-[#1B2A44] dark:border-gray-900 group-hover/btn:border-[var(--gold-primary)] rotate-45 transition-transform duration-300 group-hover/btn:translate-x-1"></span>
                                                         </span>
                                                     </span>
 
@@ -169,6 +173,8 @@ const NewsSection = () => {
                                     <button
                                         key={idx}
                                         onClick={() => setCurrentIndex(idx)}
+                                        aria-label={`Go to slide ${idx + 1}`}
+                                        aria-current={currentIndex === idx ? 'true' : undefined}
                                         className={`transition-all duration-300 rounded-full ${currentIndex === idx
                                             ? 'w-8 h-2 bg-[var(--gold-primary)]'
                                             : 'w-2 h-2 bg-[var(--gold-primary)]/40 dark:bg-[var(--gold-primary)]/20 hover:bg-[var(--gold-primary)]/70'

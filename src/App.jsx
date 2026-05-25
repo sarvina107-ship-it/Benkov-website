@@ -41,6 +41,7 @@ const App = () => {
         <ScrollToTop />
         <ScrollProgress />
         <Navbar />
+        <main>
         <Suspense fallback={<PageLoader />}>
           <AnimatePresence mode="wait">
             <Routes location={location} key={location.pathname}>
@@ -70,6 +71,7 @@ const App = () => {
             </Routes>
           </AnimatePresence>
         </Suspense>
+        </main>
 
         <Footer />
         <BackToTop />

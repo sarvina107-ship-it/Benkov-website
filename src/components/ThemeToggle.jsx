@@ -4,20 +4,16 @@ export default function ThemeToggle() {
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedTheme = localStorage.getItem('theme');
-            console.log('Saved theme:', savedTheme);
             if (savedTheme) {
                 return savedTheme === 'dark';
             }
-            const systemDark = window.matchMedia('(prefers-color-scheme: dark)').matches;
-            console.log('System dark:', systemDark);
-            return systemDark;
+            return window.matchMedia('(prefers-color-scheme: dark)').matches;
         }
         return false;
     });
 
     useEffect(() => {
         const root = window.document.documentElement;
-        console.log('Changing theme to:', isDark ? 'dark' : 'light');
         if (isDark) {
             root.classList.add('dark');
             localStorage.setItem('theme', 'dark');
@@ -25,15 +21,11 @@ export default function ThemeToggle() {
             root.classList.remove('dark');
             localStorage.setItem('theme', 'light');
         }
-        console.log('Current classes on html:', root.classList);
     }, [isDark]);
 
     return (
         <button
-            onClick={() => {
-                console.log('Button clicked, current isDark:', isDark);
-                setIsDark(!isDark);
-            }}
+            onClick={() => setIsDark(!isDark)}
             className="relative p-2 rounded-xl bg-white/10 hover:bg-white/20 dark:bg-gray-800/50 dark:hover:bg-gray-700 text-white dark:text-gray-200 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center group"
             aria-label="Toggle Theme"
         >

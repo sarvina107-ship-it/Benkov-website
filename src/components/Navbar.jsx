@@ -126,6 +126,15 @@ const Navbar = () => {
     };
   }, [mobileMenuOpen]);
 
+  // bf-cache: pause video on page hide so browser can cache the page
+  useEffect(() => {
+    const handlePageHide = () => {
+      document.querySelectorAll('video').forEach(v => v.pause());
+    };
+    window.addEventListener('pagehide', handlePageHide);
+    return () => window.removeEventListener('pagehide', handlePageHide);
+  }, []);
+
   let pageTitle = titles[location.pathname];
 
   if (!pageTitle) {
@@ -140,13 +149,10 @@ const Navbar = () => {
     }
   }
 
-  const [isMobile, setIsMobile] = useState(false);
+  const [isMobile, setIsMobile] = useState(() => window.innerWidth < 768);
 
   useEffect(() => {
-    const checkMobile = () => {
-      setIsMobile(window.innerWidth < 768);
-    };
-    checkMobile();
+    const checkMobile = () => setIsMobile(window.innerWidth < 768);
     window.addEventListener('resize', checkMobile);
     return () => window.removeEventListener('resize', checkMobile);
   }, []);
@@ -321,8 +327,8 @@ const Navbar = () => {
               )}
             </div>
 
-            <button onClick={() => setMobileMenuOpen(true)} className="text-white dark:text-gray-200 focus:outline-none">
-              <div className="space-y-1.5">
+            <button onClick={() => setMobileMenuOpen(true)} aria-label="Open navigation menu" aria-expanded={mobileMenuOpen} className="text-white dark:text-gray-200 focus:outline-none">
+              <div className="space-y-1.5" aria-hidden="true">
                 <span className="block w-6 h-0.5 bg-white dark:bg-gray-200"></span>
                 <span className="block w-6 h-0.5 bg-white dark:bg-gray-200"></span>
                 <span className="block w-6 h-0.5 bg-white dark:bg-gray-200"></span>
@@ -343,7 +349,7 @@ const Navbar = () => {
                 className="w-full bg-white/10 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-[var(--gold-primary)] placeholder:text-white/40 dark:placeholder:text-gray-400 text-white dark:text-gray-200"
                 autoFocus
               />
-              <button onClick={() => setMobileSearchOpen(false)} className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 dark:text-gray-400">✕</button>
+              <button onClick={() => setMobileSearchOpen(false)} aria-label="Close search" className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 dark:text-gray-400">✕</button>
             </div>
             {searchResults.length > 0 && (
               <div className="mt-3 bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-xl shadow-xl overflow-hidden">
@@ -375,7 +381,7 @@ const Navbar = () => {
               <div className="p-5">
                 <div className="flex justify-between items-center mb-6 pb-4 border-b border-white/20 dark:border-gray-800">
                   <img className="w-[50px] h-[50px]" src={Logo} alt="Logo" loading="lazy" />
-                  <button onClick={() => setMobileMenuOpen(false)} className="text-white dark:text-gray-200 text-2xl">✕</button>
+                  <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" className="text-white dark:text-gray-200 text-2xl">✕</button>
                 </div>
 
                 <div className="flex flex-col space-y-2">
