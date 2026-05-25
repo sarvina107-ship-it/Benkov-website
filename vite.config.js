@@ -87,6 +87,26 @@ export default defineConfig(async () => {
     plugins: [
       react({ fastRefresh: true }),
       tailwindcss(),
+      // Defer registerSW.js to prevent render-blocking (runs after PWA plugin)
+      {
+        name: 'defer-register-sw',
+        enforce: 'post',
+        closeBundle: {
+          sequential: true,
+          async handler() {
+            const { readFileSync, writeFileSync } = await import('fs');
+            const path = 'dist/index.html';
+            try {
+              const html = readFileSync(path, 'utf-8');
+              const updated = html.replace(
+                /(<script id="vite-plugin-pwa:register-sw" src="\/registerSW\.js")>/,
+                '$1 defer>'
+              );
+              if (updated !== html) writeFileSync(path, updated, 'utf-8');
+            } catch {}
+          }
+        }
+      },
       Sitemap({
         hostname: 'https://benkov-website.vercel.app',
         dynamicRoutes: [...staticRoutes, ...newsRoutes],

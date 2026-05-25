@@ -154,7 +154,7 @@ const Footer = () => {
 
         {/* НИЖНЯЯ ЛИНИЯ */}
         <div className="mt-12 sm:mt-16 md:mt-20 pt-8 sm:pt-10 border-t border-white/5 dark:border-gray-800">
-          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-[9px] sm:text-[11px] text-gray-500 dark:text-gray-600 uppercase tracking-widest">
+          <div className="max-w-7xl mx-auto px-4 sm:px-6 flex flex-col md:flex-row justify-between items-center gap-3 sm:gap-4 text-[11px] sm:text-[12px] text-gray-400 dark:text-gray-400 uppercase tracking-widest">
             <p className="text-center md:text-left">{t('footer.rights')}</p>
             <div className="flex items-center gap-2 group">
               <span>Design & Dev:</span>
