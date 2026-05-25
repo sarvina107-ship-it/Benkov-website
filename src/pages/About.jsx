@@ -40,6 +40,8 @@ const About = () => {
                   <img
                     src={img}
                     alt={`Слайд ${index + 1}`}
+                    loading="lazy"
+                    decoding="async"
                     className="w-full h-full object-cover grayscale-[10%] brightness-90"
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/40 via-transparent to-transparent"></div>

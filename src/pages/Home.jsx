@@ -101,6 +101,7 @@ const Home = () => {
                     src={History}
                     alt=""
                     loading="lazy"
+                    decoding="async"
                   />
                   <div className="absolute inset-0 bg-gradient-to-tr from-[#1B2A44]/20 dark:from-[#1B2A44]/40 to-transparent"></div>
                 </div>

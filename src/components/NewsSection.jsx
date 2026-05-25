@@ -4,6 +4,8 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../paths';
 import PageWrapper from './PageWrapper';
+// 1. ИМПОРТИРУЙ СВОЙ КОМПОНЕНТ СКЕЛЕТОНА ТУТ (исправь путь, если он другой)
+import CardSkeleton from './CardSkeleton';
 
 const NewsSection = () => {
     const { t, i18n } = useTranslation();
@@ -17,7 +19,6 @@ const NewsSection = () => {
         return item[`${field}_${lang}`] || item[field];
     };
 
-    // Функция для определения количества новостей на слайд в зависимости от ширины экрана
     const getItemsPerSlide = () => {
         const width = window.innerWidth;
         if (width < 640) return 1;      // Мобилки: 1 новость
@@ -25,18 +26,16 @@ const NewsSection = () => {
         return 4;                        // Десктоп: 4 новости
     };
 
-    // Отслеживаем изменение размера окна
     useEffect(() => {
         const handleResize = () => {
             const newItemsPerSlide = getItemsPerSlide();
             if (newItemsPerSlide !== itemsPerSlide) {
                 setItemsPerSlide(newItemsPerSlide);
-                setCurrentIndex(0); // Сбрасываем индекс при изменении количества
+                setCurrentIndex(0);
             }
         };
 
         window.addEventListener('resize', handleResize);
-        // Вызываем сразу при монтировании
         handleResize();
 
         return () => window.removeEventListener('resize', handleResize);
@@ -58,24 +57,26 @@ const NewsSection = () => {
             });
     }, []);
 
-    const totalSlides = Math.ceil(news.length / itemsPerSlide);
+    // 2. УБРАЛИ ДИРЕКТИВНЫЙ RETURN ПРИ LOADING, НО ОСТАВИЛИ ДЛЯ ПУСТОГО МАССИВА ПОСЛЕ ЗАГРУЗКИ
+    if (!loading && news.length === 0) return null;
+
+    // Считаем слайды (если идет загрузка, берем itemsPerSlide как один слайд по умолчанию)
+    const totalSlides = loading ? 1 : Math.ceil(news.length / itemsPerSlide);
 
     const nextSlide = () => {
+        if (loading) return;
         setCurrentIndex((prev) => (prev + 1) % totalSlides);
     };
 
     const prevSlide = () => {
+        if (loading) return;
         setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
     };
 
-    if (loading) return <div className="py-20 text-center font-bold text-[#0E1A2B]">{t('home.news.loading')}</div>;
-    if (news.length === 0) return null;
-
-    // Выбираем новости для текущего слайда
-    const currentNews = news.slice(
-        currentIndex * itemsPerSlide,
-        currentIndex * itemsPerSlide + itemsPerSlide
-    );
+    // Выбираем новости для текущего слайда (только если загрузка завершена)
+    const currentNews = loading
+        ? []
+        : news.slice(currentIndex * itemsPerSlide, currentIndex * itemsPerSlide + itemsPerSlide);
 
     return (
         <PageWrapper>
@@ -91,7 +92,7 @@ const NewsSection = () => {
                             <div className="w-20 h-[3px] bg-[var(--gold-primary)] mt-4 rounded-full mx-auto sm:mx-0"></div>
                         </div>
 
-                        {/* Кнопки навигации под заголовком на мобилках */}
+                        {/* Кнопки навигации */}
                         {totalSlides > 1 && (
                             <div className="flex gap-3">
                                 <button
@@ -111,7 +112,6 @@ const NewsSection = () => {
                     </div>
 
                     <div className="relative">
-                        {/* Кнопки управления - на десктопе по бокам */}
                         {totalSlides > 1 && (
                             <>
                                 <button
@@ -129,52 +129,60 @@ const NewsSection = () => {
                             </>
                         )}
 
-                        {/* Сетка новостей - адаптивная */}
+                        {/* Сетка новостей */}
                         <div className={`
-        grid gap-6 md:gap-8
-        ${itemsPerSlide === 1 ? 'grid-cols-1' : ''}
-        ${itemsPerSlide === 2 ? 'grid-cols-1 sm:grid-cols-2' : ''}
-        ${itemsPerSlide === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
-      `}>
-                            {currentNews.map((item, index) => (
-                                <div
-                                    key={item._id || index}
-                                    className="bg-white dark:bg-gray-900 relative group rounded-2xl overflow-hidden shadow-xl dark:shadow-gray-900/50 hover:shadow-2xl transition-shadow duration-500 flex flex-col h-full"
-                                >
-                                    <div className="overflow-hidden h-[200px] sm:h-[220px]">
-                                        <img
-                                            src={item.image || null}
-                                            alt={item.title || "News"}
-                                            className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
-                                        />
-                                    </div>
-                                    <div className="p-4 sm:p-6 flex flex-col flex-grow">
-                                        <h3 className="text-lg sm:text-xl font-bold text-[#0E1A2B] dark:text-gray-100 mb-2 line-clamp-2 sm:line-clamp-1" style={{ fontFamily: "'Playfair Display', serif" }}>
-                                            {getLocalizedField(item, 'title')}
-                                        </h3>
-                                        <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-2 flex-grow" style={{ fontFamily: "'Merriweather', serif" }}>
-                                            {getLocalizedField(item, 'description') || t('home.news.placeholder_desc')}
-                                        </p>
+                            grid gap-6 md:gap-8
+                            ${itemsPerSlide === 1 ? 'grid-cols-1' : ''}
+                            ${itemsPerSlide === 2 ? 'grid-cols-1 sm:grid-cols-2' : ''}
+                            ${itemsPerSlide === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
+                        `}>
+                            {/* 3. ЕСЛИ ИДЕТ ЗАГРУЗКА, РЕНДЕРИМ СКЕЛЕТОНЫ */}
+                            {loading ? (
+                                Array.from({ length: itemsPerSlide }).map((_, idx) => (
+                                    <CardSkeleton key={idx} />
+                                ))
+                            ) : (
+                                // ЕСЛИ ЗАГРУЗКА ЗАКОНЧИЛАСЬ, РЕНДЕРИМ НАСТОЯЩИЕ КАРТОЧКИ
+                                currentNews.map((item, index) => (
+                                    <div
+                                        key={item._id || index}
+                                        className="bg-white dark:bg-gray-900 relative group rounded-2xl overflow-hidden shadow-xl dark:shadow-gray-900/50 hover:shadow-2xl transition-shadow duration-500 flex flex-col h-full"
+                                    >
+                                        <div className="overflow-hidden h-[200px] sm:h-[220px]">
+                                            <img
+                                                src={item.image || null}
+                                                alt={item.title || "News"}
+                                                className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
+                                            />
+                                        </div>
+                                        <div className="p-4 sm:p-6 flex flex-col flex-grow">
+                                            <h3 className="text-lg sm:text-xl font-bold text-[#0E1A2B] dark:text-gray-100 mb-2 line-clamp-2 sm:line-clamp-1" style={{ fontFamily: "'Playfair Display', serif" }}>
+                                                {getLocalizedField(item, 'title')}
+                                            </h3>
+                                            <p className="text-xs sm:text-sm text-gray-600 dark:text-gray-400 mb-4 sm:mb-6 line-clamp-3 sm:line-clamp-2 flex-grow" style={{ fontFamily: "'Merriweather', serif" }}>
+                                                {getLocalizedField(item, 'description') || t('home.news.placeholder_desc')}
+                                            </p>
 
-                                        <Link to={`/news/${item._id}`} className="mt-auto">
-                                            <button className="group/btn relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[var(--gold-primary)] text-white hover:text-[var(--gold-primary)] rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-sm border border-[var(--gold-primary)]/50 transition-colors duration-500 hover:border-[var(--gold-primary)] hover:bg-[var(--gold-primary)]/5">
-                                                <span className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-tl-lg"></span>
-                                                <span className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-br-lg"></span>
+                                            <Link to={`/news/${item._id}`} className="mt-auto">
+                                                <button className="group/btn relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[var(--gold-primary)] text-white hover:text-[var(--gold-primary)] rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-sm border border-[var(--gold-primary)]/50 transition-colors duration-500 hover:border-[var(--gold-primary)] hover:bg-[var(--gold-primary)]/5">
+                                                    <span className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-tl-lg"></span>
+                                                    <span className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-br-lg"></span>
 
-                                                <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
-                                                    {t('home.news.read_more')}
-                                                    <span className="relative flex items-center justify-center">
-                                                        <span className="w-3 sm:w-4 h-[1px] bg-white group-hover/btn:bg-[var(--gold-primary)] transform origin-right transition-transform duration-300 group-hover/btn:scale-x-125"></span>
-                                                        <span className="absolute right-0 w-1 h-1 sm:w-1.5 sm:h-1.5 border-t border-r border-white group-hover/btn:border-[var(--gold-primary)] rotate-45 transition-transform duration-300 group-hover/btn:translate-x-1"></span>
+                                                    <span className="relative z-10 flex items-center justify-center gap-2 sm:gap-3">
+                                                        {t('home.news.read_more')}
+                                                        <span className="relative flex items-center justify-center">
+                                                            <span className="w-3 sm:w-4 h-[1px] bg-white group-hover/btn:bg-[var(--gold-primary)] transform origin-right transition-transform duration-300 group-hover/btn:scale-x-125"></span>
+                                                            <span className="absolute right-0 w-1 h-1 sm:w-1.5 sm:h-1.5 border-t border-r border-white group-hover/btn:border-[var(--gold-primary)] rotate-45 transition-transform duration-300 group-hover/btn:translate-x-1"></span>
+                                                        </span>
                                                     </span>
-                                                </span>
 
-                                                <span className="absolute inset-0 rounded-xl opacity-0 group-hover/btn:opacity-100 shadow-[0_0_20px_rgba(212,162,89,0.1)] transition-opacity duration-500"></span>
-                                            </button>
-                                        </Link>
+                                                    <span className="absolute inset-0 rounded-xl opacity-0 group-hover/btn:opacity-100 shadow-[0_0_20px_rgba(212,162,89,0.1)] transition-opacity duration-500"></span>
+                                                </button>
+                                            </Link>
+                                        </div>
                                     </div>
-                                </div>
-                            ))}
+                                ))
+                            )}
                         </div>
 
                         {/* Индикаторы слайдов */}
