@@ -4,7 +4,6 @@ import { useTranslation } from 'react-i18next';
 import { Link } from 'react-router-dom';
 import { ROUTES } from '../paths';
 import PageWrapper from './PageWrapper';
-// 1. ИМПОРТИРУЙ СВОЙ КОМПОНЕНТ СКЕЛЕТОНА ТУТ (исправь путь, если он другой)
 import CardSkeleton from './CardSkeleton';
 
 const NewsSection = () => {
@@ -12,34 +11,15 @@ const NewsSection = () => {
     const [news, setNews] = useState([]);
     const [currentIndex, setCurrentIndex] = useState(0);
     const [loading, setLoading] = useState(true);
-    const [itemsPerSlide, setItemsPerSlide] = useState(4);
+
+    // Фиксированное число элементов на один шаг слайдера для десктопа. 
+    // Навигация считает страницы по десктопной сетке (по 4 штуки).
+    const itemsPerSlide = 4;
 
     const getLocalizedField = (item, field) => {
         const lang = i18n.language;
         return item[`${field}_${lang}`] || item[field];
     };
-
-    const getItemsPerSlide = () => {
-        const width = window.innerWidth;
-        if (width < 640) return 1;      // Мобилки: 1 новость
-        if (width < 1024) return 2;     // Планшеты: 2 новости
-        return 4;                        // Десктоп: 4 новости
-    };
-
-    useEffect(() => {
-        const handleResize = () => {
-            const newItemsPerSlide = getItemsPerSlide();
-            if (newItemsPerSlide !== itemsPerSlide) {
-                setItemsPerSlide(newItemsPerSlide);
-                setCurrentIndex(0);
-            }
-        };
-
-        window.addEventListener('resize', handleResize);
-        handleResize();
-
-        return () => window.removeEventListener('resize', handleResize);
-    }, [itemsPerSlide]);
 
     // Загрузка новостей
     useEffect(() => {
@@ -57,10 +37,9 @@ const NewsSection = () => {
             });
     }, []);
 
-    // 2. УБРАЛИ ДИРЕКТИВНЫЙ RETURN ПРИ LOADING, НО ОСТАВИЛИ ДЛЯ ПУСТОГО МАССИВА ПОСЛЕ ЗАГРУЗКИ
     if (!loading && news.length === 0) return null;
 
-    // Считаем слайды (если идет загрузка, берем itemsPerSlide как один слайд по умолчанию)
+    // Считаем слайды
     const totalSlides = loading ? 1 : Math.ceil(news.length / itemsPerSlide);
 
     const nextSlide = () => {
@@ -73,7 +52,7 @@ const NewsSection = () => {
         setCurrentIndex((prev) => (prev - 1 + totalSlides) % totalSlides);
     };
 
-    // Выбираем новости для текущего слайда (только если загрузка завершена)
+    // Выбираем новости для текущего слайда
     const currentNews = loading
         ? []
         : news.slice(currentIndex * itemsPerSlide, currentIndex * itemsPerSlide + itemsPerSlide);
@@ -129,16 +108,12 @@ const NewsSection = () => {
                             </>
                         )}
 
-                        {/* Сетка новостей */}
-                        <div className={`
-                            grid gap-6 md:gap-8
-                            ${itemsPerSlide === 1 ? 'grid-cols-1' : ''}
-                            ${itemsPerSlide === 2 ? 'grid-cols-1 sm:grid-cols-2' : ''}
-                            ${itemsPerSlide === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
-                        `}>
-                            {/* 3. ЕСЛИ ИДЕТ ЗАГРУЗКА, РЕНДЕРИМ СКЕЛЕТОНЫ */}
+                        {/* Сетка новостей на ЧИСТОМ CSS — убран JS-расчет колонок */}
+                        <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-6 md:gap-8">
+
+                            {/* ЕСЛИ ИДЕТ ЗАГРУЗКА, РЕНДЕРИМ СКЕЛЕТОНЫ */}
                             {loading ? (
-                                Array.from({ length: itemsPerSlide }).map((_, idx) => (
+                                Array.from({ length: 4 }).map((_, idx) => (
                                     <CardSkeleton key={idx} />
                                 ))
                             ) : (
@@ -152,6 +127,8 @@ const NewsSection = () => {
                                             <img
                                                 src={item.image || null}
                                                 alt={item.title || "News"}
+                                                loading="lazy"      // Оптимизация загрузки изображений
+                                                decoding="async"    // Асинхронное декодирование
                                                 className="w-full h-full object-cover transition-transform duration-500 group-hover:scale-110"
                                             />
                                         </div>

@@ -25,5 +25,6 @@ dist-ssr
 build
 .env
 .env.local
+public/videos/
 .vercel
 .env*
