@@ -372,10 +372,6 @@ const Home = () => {
           className="py-[60px] sm:py-[100px] md:py-[140px] lg:py-[180px] bg-[#0B1524] dark:bg-black relative overflow-hidden opacity-0 translate-y-10 transition-all duration-[1.2s] ease-out"
           ref={el => sectionsRef.current[3] = el}
         >
-          {/* Декоративный фон */}
-          <div className="absolute inset-0 opacity-5 dark:opacity-10 pointer-events-none"
-            style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/carbon-fibre.png')` }}>
-          </div>
 
           {/* Золотистое свечение за текстом */}
           <div className="absolute top-1/2 right-0 -translate-y-1/2 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-[var(--gold-primary)]/10 dark:bg-[var(--gold-primary)]/5 rounded-full blur-[150px] hidden md:block"></div>
@@ -475,10 +471,6 @@ const Home = () => {
           className="py-[60px] sm:py-[100px] md:py-[140px] lg:py-[180px] bg-white dark:bg-gray-950 relative overflow-hidden opacity-0 translate-y-10 transition-all duration-1000 ease-out"
           ref={el => sectionsRef.current[4] = el}
         >
-          {/* Декоративные элементы на фоне */}
-          <div className="absolute top-0 left-0 w-full h-full opacity-[0.03] dark:opacity-[0.01] pointer-events-none"
-            style={{ backgroundImage: `url('https://www.transparenttextures.com/patterns/cream-paper.png')` }}>
-          </div>
 
           <div className="absolute top-40 left-[-10%] w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-[var(--gold-primary)]/5 dark:bg-[var(--gold-primary)]/3 rounded-full blur-[120px] hidden sm:block"></div>
 

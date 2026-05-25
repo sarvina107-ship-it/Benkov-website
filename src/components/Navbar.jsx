@@ -1,5 +1,4 @@
-import React, { useState, useEffect, useRef } from 'react';
-import Fuse from 'fuse.js';
+import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
 import { useLocation, Link } from 'react-router-dom';
@@ -57,28 +56,27 @@ const Navbar = () => {
   const mobileMenuRef = useRef(null);
   const desktopLangRef = useRef(null);
   const mobileLangRef = useRef(null);
+  const fuseRef = useRef(null);
 
-  // Настройка Fuse
-  const fuse = new Fuse(searchData, {
-    keys: [
-      { name: 'title', weight: 0.7 },
-      { name: 'content', weight: 0.3 }
-    ],
-    threshold: 0.3
-  });
-
-  // Функция поиска
-  const handleSearch = (e) => {
+  // Lazy-load Fuse.js only when the user starts typing
+  const handleSearch = useCallback(async (e) => {
     const query = e.target.value;
     setSearchQuery(query);
 
     if (query.length > 1) {
-      const results = fuse.search(query);
+      if (!fuseRef.current) {
+        const { default: Fuse } = await import('fuse.js');
+        fuseRef.current = new Fuse(searchData, {
+          keys: [{ name: 'title', weight: 0.7 }, { name: 'content', weight: 0.3 }],
+          threshold: 0.3,
+        });
+      }
+      const results = fuseRef.current.search(query);
       setSearchResults(results.map(r => r.item).slice(0, 5));
     } else {
       setSearchResults([]);
     }
-  };
+  }, []);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
