@@ -414,6 +414,7 @@ const Navbar = () => {
                         <Link to={ROUTES.ABOUT} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.history')}</Link>
                         <Link to={ROUTES.MANAGEMENT} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.management')}</Link>
                         <Link to={ROUTES.INFRASTRUCTURE} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.infrastructure')}</Link>
+                        <Link to={ROUTES.ACHIEVEMENTS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.achievements')}</Link>
                         <Link to={ROUTES.CONTACTS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.contacts')}</Link>
                       </div>
                     )}
@@ -429,7 +430,7 @@ const Navbar = () => {
                         <Link to={ROUTES.DIRECTIONS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.directions')}</Link>
                         <Link to={ROUTES.STUDYPLAN} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.study_plan')}</Link>
                         <Link to={ROUTES.SCHEDULE} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.schedule')}</Link>
-                        <Link to={ROUTES.ACHIEVEMENTS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.achievements')}</Link>
+                        <Link to={ROUTES.FAQ} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.schedule')}</Link>
                       </div>
                     )}
                   </div>
