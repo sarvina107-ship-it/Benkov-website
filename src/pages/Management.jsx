@@ -2,9 +2,10 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
-import Deputy1 from '../assets/img/Deputy1.webp'
-import Deputy3 from '../assets/img/Deputy3.webp'
-import Director from '../assets/img/Director.webp'
+import Deputy1 from '../assets/deputy/Deputy1.webp'
+import Deputy2 from '../assets/deputy/Deputy2.webp'
+import Deputy3 from '../assets/deputy/Deputy3.webp'
+import Director from '../assets/deputy/Director.webp'
 import PageWrapper from '../components/PageWrapper';
 
 const Management = () => {
@@ -24,7 +25,7 @@ const Management = () => {
       name: t('management.names.radjabov'),
       role: t('management.deputy_role'),
       dept: t('management.depts.academic'),
-      photo: ""
+      photo: Deputy2
     },
     {
       id: 3,
@@ -65,7 +66,7 @@ const Management = () => {
                   <div className="md:w-2/5 lg:w-[45%] h-[320px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-800">
                     <img
                       src={Director}
-                      className="w-full h-full object-cover grayscale-[30%] group-hover:grayscale-0 transition-all duration-1000 group-hover:scale-105"
+                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
                       alt="Director"
                       loading="lazy"
                     />

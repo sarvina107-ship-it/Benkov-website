@@ -35,7 +35,7 @@ const Achievements = () => {
           {/* Центральная линия таймлайна - только на десктопе */}
           <div className="absolute left-1/2 transform -translate-x-1/2 h-full w-[1px] bg-gradient-to-b from-[var(--gold-primary)] via-[var(--gold-primary)]/50 to-transparent hidden md:block"></div>
 
-          <div className="space-y-16 sm:space-y-20 md:space-y-24">
+          <div className="space-y-2 md:space-y-8">
             {achievementsData.map((item, index) => (
               <AchievementItem
                 key={index}
@@ -70,7 +70,6 @@ const AchievementItem = ({ year, title, desc, align }) => {
   const isLeft = align === 'left';
 
   return (
-    <PageWrapper>
       <div className={`flex flex-col md:flex-row items-center w-full ${isLeft ? 'md:flex-row-reverse' : ''}`}>
 
         {/* Пустой блок для правильного позиционирования */}
@@ -131,7 +130,6 @@ const AchievementItem = ({ year, title, desc, align }) => {
           </div>
         </div>
       </div>
-    </PageWrapper>
   )
 }
 

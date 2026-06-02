@@ -127,3 +127,14 @@ select {
     display: block;
   }
 }
+
+/* ВРЕМЕННЫЙ ФИКС ДЛЯ ПОИСКА - потом удалить */
+input[type="text"] {
+    color: #1B2A44 !important;
+    background-color: #ffffff !important;
+}
+
+.dark input[type="text"] {
+    color: #f1f5f9 !important;
+    background-color: #1e293b !important;
+}

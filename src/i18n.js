@@ -379,6 +379,14 @@ i18n
                         }
                     },
                     deputy_page: {
+                        1: {
+                            awards_title: "Государственные награды и достижения",
+                            award_1: "Нагрудный знак «Преданный деятель Академии художеств Узбекистана»",
+                        },
+                        2: {
+                            awards_title: "Государственные награды и достижения",
+                            award_1: "«Нагрудный знак „Преданный деятель Академии художеств Узбекистана“»",
+                        },
                         base: {
                             back: "Вернуться к руководству",
                             not_found: "Заместитель не найден",
@@ -386,9 +394,7 @@ i18n
                             birth_date: "Дата рождения",
                             languages: "Знание языков",
                             awards: "Награды",
-                            education: "Образование",
-                            career: "Трудовая деятельность",
-                            present: "н.в."
+                            achievements_subtitle: "Признание и заслуги"
                         }
                     },
                     director: {
@@ -396,31 +402,19 @@ i18n
                         director_label: "Директор школы",
                         director_name: "Хакимов Умид Бахадирович",
                         director_nationality: "Узбек",
-                        director_languages: "Русский, английский",
+                        director_languages: "Русский, Узбекский",
                         director_extra: "Председатель избирательной комиссии народных депутатов Шайхонтохурского района",
                         back: "Вернуться к руководству",
                         birth: "Дата рождения",
                         nat_label: "Национальность",
                         lang_label: "Знание языков",
-                        edu_title: "Образование",
-                        work_title: "Трудовая деятельность",
-                        present: "н.в.",
-                        edu: {
-                            bachelor: "Бакалавриат",
-                            master: "Магистратура",
-                            tspu: "ТГПУ имени Низами",
-                            spec_applied: "Рисование, изобразительное и прикладное искусство",
-                            spec_fine_art: "Изобразительное искусство"
-                        },
-                        career_dir: {
-                            guard: "Охранник Архитектурного фонда Бухарской области",
-                            maksorat: "Сотрудник малого предприятия «Максорат» Олотского района",
-                            student: "Студент Республиканского художественного училища им. П. Бенкова",
-                            master_edu: "Магистр производственного образования колледжа дизайна",
-                            methodist: "Методист 1-й категории колледжа дизайна",
-                            deputy: "Заместитель директора по учебной работе колледжа дизайна",
-                            director: "Директор школы им. Павла Бенкова"
-                        }
+                        achievements_subtitle: "Признание и заслуги",
+                        awards_title: "Государственные награды и достижения",
+                        award_1: "Медаль Президента Республики Узбекистан «Шухрат»",
+                        award_2: "Памятный нагрудный знак Президента Республики Узбекистан «30-летие Конституции Узбекистана»",
+                        award_3: "Нагрудный знак «Преданный деятель Академии художеств Узбекистана»",
+                        award_4: "Серебряная медаль Академии художеств Узбекистана",
+                        award_5: "Золотая медаль Творческого союза художников Узбекистана"
                     },
                     achievements: {
                         title: "Достижения Школы им. П.П. Бенькова",
@@ -1152,6 +1146,14 @@ i18n
                         }
                     },
                     deputy_page: {
+                        1: {
+                            awards_title: "Davlat mukofotlari va yutuqlar",
+                            award_1: "«O‘zbekiston Badiiy akademiyasi fidoyisi» ko‘krak nishoni",
+                        },
+                        2: {
+                            awards_title: "Davlat mukofotlari va yutuqlar",
+                            award_1: "«O‘zbekiston Badiiy akademiyasi fidoyisi» ko‘krak nishoni",
+                        },
                         base: {
                             back: "Rahbariyatga qaytish",
                             not_found: "O'rinbosar topilmadi",
@@ -1159,9 +1161,7 @@ i18n
                             birth_date: "Tug'ilgan sanasi",
                             languages: "Tillar",
                             awards: "Yutuqlar",
-                            education: "Ma'lumot",
-                            career: "Mehnat faoliyati",
-                            present: "h.v."
+                            achievements_subtitle: "E’tirof va yutuqlar"
                         }
                     },
                     director: {
@@ -1175,25 +1175,13 @@ i18n
                         birth: "Tug'ilgan sanasi",
                         nat_label: "Millati",
                         lang_label: "Tillarni bilishi",
-                        edu_title: "Ma'lumoti",
-                        work_title: "Mehnat faoliyati",
-                        present: "h.v.",
-                        edu: {
-                            bachelor: "Bakalavriat",
-                            master: "Magistratura",
-                            tspu: "Nizomiy nomidagi TDPU",
-                            spec_applied: "Chizmachilik, tasviriy va amaliy san'at",
-                            spec_fine_art: "Tasviriy san'at"
-                        },
-                        career_dir: {
-                            guard: "Buxoro viloyati Me'morchilik jamg'armasi qo'riqchisi",
-                            maksorat: "Olot tumani «Maqsorat» korxonasi xodimi",
-                            student: "P. Benkov nomidagi bilim yurti talabasi",
-                            master_edu: "Dizayn kolleji ishlab chiqarish ta'limi ustasi",
-                            methodist: "Dizayn kolleji 1-toifali metodisti",
-                            deputy: "Dizayn kolleji o'quv ishlari bo'yicha direktor o'rinbosari",
-                            director: "P. Benkov nomidagi rassomlik maktabi direktori"
-                        }
+                        achievements_subtitle: "E’tirof va yutuqlar",
+                        awards_title: "Davlat mukofotlari va yutuqlar",
+                        award_1: "O‘zbekiston Respublikasi Prezidenti tomonidan berilgan «Shuhrat» medali",
+                        award_2: "O‘zbekiston Respublikasi Prezidenti tomonidan ta’sis etilgan «O‘zbekiston Konstitutsiyasining 30 yilligi» esdalik nishoni",
+                        award_3: "«O‘zbekiston Badiiy akademiyasi fidoiysi» ko‘krak nishoni",
+                        award_4: "O‘zbekiston Badiiy akademiyasining kumush medali",
+                        award_5: "O‘zbekiston Badiiy ijodkorlar uyushmasining oltin medali"
                     },
                     achievements: {
                         title: "P.P. Benkov nomidagi maktab yutuqlari",
@@ -1925,6 +1913,14 @@ i18n
                         }
                     },
                     deputy_page: {
+                        1: {
+                            awards_title: "State Awards and Achievements",
+                            award_1: "Badge 'Dedicated Contributor to the Academy of Arts of Uzbekistan'",
+                        },
+                        2: {
+                            awards_title: "State Awards and Achievements",
+                            award_1: "Badge 'Dedicated Contributor to the Academy of Arts of Uzbekistan'",
+                        },
                         base: {
                             back: "Back to Management",
                             not_found: "Deputy not found",
@@ -1932,9 +1928,7 @@ i18n
                             birth_date: "Date of Birth",
                             languages: "Languages",
                             awards: "Awards",
-                            education: "Education",
-                            career: "Career History",
-                            present: "present"
+                            achievements_subtitle: "Honors and Achievements",
                         }
                     },
                     director: {
@@ -1948,25 +1942,13 @@ i18n
                         birth: "Date of birth",
                         nat_label: "Nationality",
                         lang_label: "Languages",
-                        edu_title: "Education",
-                        work_title: "Career",
-                        present: "present",
-                        edu: {
-                            bachelor: "Bachelor's degree",
-                            master: "Master's degree",
-                            tspu: "Nizami TSPU",
-                            spec_applied: "Drawing, Fine and Applied Arts",
-                            spec_fine_art: "Fine Arts"
-                        },
-                        career_dir: {
-                            guard: "Security at Bukhara Architectural Fund",
-                            maksorat: "Employee of 'Maksorat' enterprise, Olot district",
-                            student: "Student at P. Benkov Art School",
-                            master_edu: "Master of education at the College of Design",
-                            methodist: "1st category Methodist at the College of Design",
-                            deputy: "Deputy Director at the College of Design",
-                            director: "Director of the P. Benkov Art School"
-                        }
+                        achievements_subtitle: "Honors and Achievements",
+                        awards_title: "National Awards and Distinctions",
+                        award_1: "Shukhrat Medal of the President of the Republic of Uzbekistan",
+                        award_2: "Commemorative Badge '30th Anniversary of the Constitution of Uzbekistan'",
+                        award_3: "Dedicated Contributor Badge of the Academy of Arts of Uzbekistan",
+                        award_4: "Silver Medal of the Academy of Arts of Uzbekistan",
+                        award_5: "Gold Medal of the Creative Union of Artists of Uzbekistan"
                     },
                     achievements: {
                         title: "Achievements of the P.P. Benkov \n School",

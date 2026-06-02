@@ -6,7 +6,7 @@ import History from '../assets/img/HistoryImg.webp'
 import NewsSection from '../components/NewsSection';
 import { directionsData } from '../data/directionsData';
 import CardSkeleton from '../components/CardSkeleton';
-import Director from '../assets/img/Director.webp'
+import Director from '../assets/deputy/Director.webp'
 import PageWrapper from '../components/PageWrapper';
 
 const Home = () => {

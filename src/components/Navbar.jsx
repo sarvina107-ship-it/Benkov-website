@@ -251,8 +251,27 @@ const Navbar = () => {
                   value={searchQuery}
                   onChange={handleSearch}
                   placeholder={t('search_placeholder')}
-                  className="bg-white/10 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700 rounded-xl px-4 py-1.5 text-sm focus:outline-none focus:border-[var(--gold-primary)] w-[140px] transition-[width] duration-300 focus:w-[250px] placeholder:text-gray-400 dark:placeholder:text-gray-500 text-gray-800 dark:text-gray-200"
+                  style={{
+                    backgroundColor: '#ffffff',
+                    color: '#1B2A44',
+                    border: '1px solid #d1d5db',
+                    borderRadius: '12px',
+                    padding: '6px 16px 6px 16px',
+                    fontSize: '14px',
+                    width: '140px',
+                    outline: 'none',
+                    fontFamily: 'inherit'
+                  }}
+                  onFocus={(e) => {
+                    e.target.style.width = '250px';
+                    e.target.style.borderColor = '#D4A259';
+                  }}
+                  onBlur={(e) => {
+                    e.target.style.width = '140px';
+                    e.target.style.borderColor = '#d1d5db';
+                  }}
                 />
+
                 {searchResults.length > 0 && (
                   <div className="absolute top-full right-0 mt-2 w-[280px] bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-[14px] shadow-2xl overflow-hidden z-[100] border border-[var(--gold-primary)]/20">
                     <div className="text-[10px] text-gray-400 dark:text-gray-500 px-4 py-2 uppercase font-bold tracking-widest bg-gray-50 dark:bg-gray-900/50 border-b dark:border-gray-700">

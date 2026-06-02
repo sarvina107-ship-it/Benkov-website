@@ -30,7 +30,7 @@ const PageWrapper = ({ children }) => {
             initial="initial"
             animate="animate"
             exit="exit"
-            className="w-full min-h-screen" // Сюда можно добавить базовые стили Tailwind
+            className="w-full" // Убрал min-h-screen
         >
             {children}
         </motion.div>
