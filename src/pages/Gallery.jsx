@@ -14,15 +14,15 @@ const Gallery = () => {
 
   // 2. Настройки пагинации - адаптивная (меняется количество на странице)
   const [currentPage, setCurrentPage] = useState(1);
-  const [imagesPerPage, setImagesPerPage] = useState(6);
+  const [imagesPerPage, setImagesPerPage] = useState(18);
 
   // Отслеживаем ширину экрана для адаптивной пагинации
   React.useEffect(() => {
     const updateImagesPerPage = () => {
       const width = window.innerWidth;
-      if (width < 640) setImagesPerPage(4);      // Мобилки: 4 фото
-      else if (width < 1024) setImagesPerPage(6); // Планшеты: 6 фото
-      else setImagesPerPage(9);                    // Десктоп: 9 фото
+      if (width < 640) setImagesPerPage(12);      // Мобилки: 4 фото
+      else if (width < 1024) setImagesPerPage(18); // Планшеты: 6 фото
+      else setImagesPerPage(24);                    // Десктоп: 9 фото
     };
 
     updateImagesPerPage();
@@ -114,9 +114,9 @@ const Gallery = () => {
               <div className="flex gap-1 sm:gap-2 flex-wrap justify-center">
                 {[...Array(totalPages)].map((_, i) => {
                   // Показываем только ближайшие страницы для мобилок
-                  const shouldShow = window.innerWidth < 640
-                    ? Math.abs(currentPage - (i + 1)) <= 2
-                    : true;
+                  const shouldShow = imagesPerPage === 12
+                    ? Math.abs(currentPage - (i + 1)) <= 1  // На мобилках покажет текущую, одну прошлую и одну следующую
+                    : Math.abs(currentPage - (i + 1)) <= 3;
 
                   if (!shouldShow) return null;
 

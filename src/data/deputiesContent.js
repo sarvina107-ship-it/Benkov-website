@@ -38,7 +38,7 @@ export const getDeputiesContent = (t, lang) => {
             role: t('management.deputy_role'),
             dept: t('management.depts.spiritual'),
             photo: photos["1"],
-            birthDate: "—",
+            birthDate: "20.11.1981",
             languages: getLangNames("Узбекский, Русский", "O'zbek, rus tillari", "Uzbek, Russian"),
             awardsTitle: t(`deputy_page.${1}.awards_title`),
             awards: getDeputyAwards("1"),
