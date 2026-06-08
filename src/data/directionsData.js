@@ -46,6 +46,11 @@ import Interior1 from '../assets/directions/image44.webp'
 import Interior2 from '../assets/directions/image45.webp'
 import Interior3 from '../assets/directions/image46.webp'
 import Interior4 from '../assets/directions/image47.webp'
+import Computer1 from '../assets/directions/image48.webp'
+import Ceramics1 from '../assets/directions/image52.webp'
+import Ceramics2 from '../assets/directions/image53.webp'
+import Ceramics3 from '../assets/directions/image54.webp'
+import Ceramics4 from '../assets/directions/image55.webp'
 
 export const directionsCategories = [
     {
@@ -66,7 +71,7 @@ export const directionsCategories = [
     },
     {
         category: "carving",
-        items: ["wood-carving", "ganch-carving", "monumental-decorative"]
+        items: ["wood-carving", "ganch-carving"]
     },
     {
         category: "designer",
@@ -115,12 +120,8 @@ export const directionsData = {
         image: Ganch1,
         images: [ Ganch4,Ganch1, Ganch3, Ganch2]
     },
-    "monumental-decorative": {
-        image: "/images/directions/monumental-decorative.jpg",
-        images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]
-    },
     "costume-designer": {
-        image: Costume1,
+        image: Costume3,
         images: [Costume1, Costume2, Costume3, Costume4]
     },
     "interior-designer": {
@@ -128,12 +129,12 @@ export const directionsData = {
         images: [Interior1, Interior2, Interior3, Interior4]
     },
     "computer-graphics-designer": {
-        image: "/images/directions/digital.jpg",
-        images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]
+        image: Computer1,
+        images: [Computer1, "/img2.jpg", "/img3.jpg", "/img4.jpg"]
     },
     "artistic-ceramics": {
-        image: "/images/directions/ceramics.jpg",
-        images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]
+        image: Ceramics2,
+        images: [Ceramics1, Ceramics2, Ceramics3, Ceramics4]
     },
     "sculpture": {
         image: Sculpture1,

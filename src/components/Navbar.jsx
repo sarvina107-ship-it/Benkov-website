@@ -245,37 +245,39 @@ const Navbar = () => {
             <div className="ml-auto flex items-center gap-6">
               <ThemeToggle />
 
+              {/* Поиск */}
               <div className="relative flex items-center">
-                <input
-                  type="text"
-                  value={searchQuery}
-                  onChange={handleSearch}
-                  placeholder={t('search_placeholder')}
-                  style={{
-                    backgroundColor: '#ffffff',
-                    color: '#1B2A44',
-                    border: '1px solid #d1d5db',
-                    borderRadius: '12px',
-                    padding: '6px 16px 6px 16px',
-                    fontSize: '14px',
-                    width: '140px',
-                    outline: 'none',
-                    fontFamily: 'inherit'
-                  }}
-                  onFocus={(e) => {
-                    e.target.style.width = '250px';
-                    e.target.style.borderColor = '#D4A259';
-                  }}
-                  onBlur={(e) => {
-                    e.target.style.width = '140px';
-                    e.target.style.borderColor = '#d1d5db';
-                  }}
-                />
+                <div className="relative">
+                  <input
+                    type="text"
+                    value={searchQuery}
+                    onChange={handleSearch}
+                    placeholder={t('search_placeholder')}
+                    className="px-4 py-2 pl-10 pr-4 text-sm bg-white/80 dark:bg-gray-800/80 backdrop-blur-sm border border-[#D4A259]/30 rounded-full focus:outline-none focus:border-[#D4A259] focus:ring-1 focus:ring-[#D4A259] transition-all duration-300 w-[140px] focus:w-[260px] text-[#2C2C2C] dark:text-gray-100 placeholder:text-gray-400 dark:placeholder:text-gray-500 font-light tracking-wide"
+                    onFocus={(e) => (e.target.style.width = '260px')}
+                    onBlur={(e) => (e.target.style.width = '140px')}
+                  />
+                  {/* Иконка поиска (SVG) */}
+                  <svg
+                    className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-[#D4A259] pointer-events-none"
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                    xmlns="http://www.w3.org/2000/svg"
+                  >
+                    <path
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                      strokeWidth={1.8}
+                      d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                    />
+                  </svg>
+                </div>
 
                 {searchResults.length > 0 && (
-                  <div className="absolute top-full right-0 mt-2 w-[280px] bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-[14px] shadow-2xl overflow-hidden z-[100] border border-[var(--gold-primary)]/20">
-                    <div className="text-[10px] text-gray-400 dark:text-gray-500 px-4 py-2 uppercase font-bold tracking-widest bg-gray-50 dark:bg-gray-900/50 border-b dark:border-gray-700">
-                      {t('search.found')}:
+                  <div className="absolute top-full right-0 mt-2 w-[300px] bg-white/95 dark:bg-gray-800/95 backdrop-blur-md text-[#2C2C2C] dark:text-gray-100 rounded-2xl shadow-2xl overflow-hidden z-[100] border border-[#D4A259]/30">
+                    <div className="text-[10px] text-[#D4A259] px-5 py-3 uppercase font-semibold tracking-widest bg-[#F9F5F0] dark:bg-gray-900/70 border-b border-[#D4A259]/20">
+                      {t('search.found')}
                     </div>
                     {searchResults.map((item) => (
                       <Link
@@ -285,9 +287,9 @@ const Navbar = () => {
                           setSearchQuery('');
                           setSearchResults([]);
                         }}
-                        className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 transition-colors border-b border-gray-100 dark:border-gray-700 last:border-none group/item"
+                        className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700/70 transition-colors border-b border-gray-100 dark:border-gray-700/50 last:border-none group"
                       >
-                        <div className="text-sm font-bold text-[#1B2A44] dark:text-gray-200 group-hover/item:text-[var(--gold-primary)] transition-colors">
+                        <div className="text-sm font-medium text-[#1B2A44] dark:text-gray-100 group-hover:text-[#D4A259] transition-colors">
                           {item.title}
                         </div>
                         <div className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-1 italic">
@@ -297,22 +299,45 @@ const Navbar = () => {
                     ))}
                   </div>
                 )}
-                <span className="absolute right-3 text-gray-400 dark:text-gray-500 pointer-events-none">🔍</span>
               </div>
 
               {/* Переключатель языков - десктоп */}
               <div className="relative" ref={desktopLangRef}>
                 <button
                   onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                  className="text-[15px] font-bold hover:text-[var(--gold-primary)] transition flex items-center gap-1 uppercase tracking-wider"
+                  className="text-sm font-medium text-[#D4A259] transition flex items-center gap-1 uppercase tracking-wider hover:text-white dark:text-gray-300"
                 >
-                  {i18n.language.substring(0, 2)} <span className="text-[10px] opacity-50">▼</span>
+                  {i18n.language.substring(0, 2)}
+                  <svg
+                    className={`w-3 h-3 transition-transform duration-200 ${langDropdownOpen ? 'rotate-180' : ''}`}
+                    fill="none"
+                    stroke="currentColor"
+                    viewBox="0 0 24 24"
+                  >
+                    <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                  </svg>
                 </button>
+
                 {langDropdownOpen && (
-                  <div className="absolute top-full right-0 mt-2 w-[120px] bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-[14px] shadow-xl overflow-hidden border border-[var(--gold-primary)]/20 z-50">
-                    <button onClick={() => changeLanguage('ru')} className="w-full text-left px-5 py-2.5 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 text-sm font-bold transition-colors border-b border-gray-100 dark:border-gray-700">Русский</button>
-                    <button onClick={() => changeLanguage('uz')} className="w-full text-left px-5 py-2.5 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 text-sm font-bold transition-colors border-b border-gray-100 dark:border-gray-700">O'zbek</button>
-                    <button onClick={() => changeLanguage('en')} className="w-full text-left px-5 py-2.5 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 text-sm font-bold transition-colors">English</button>
+                  <div className="absolute top-full right-0 mt-2 min-w-[110px] bg-white dark:bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden border border-[#D4A259]/30 z-50">
+                    <button
+                      onClick={() => changeLanguage('ru')}
+                      className="w-full text-left px-4 py-2 hover:bg-[#F5EFE6] dark:hover:bg-[#D4A259]/10 text-sm transition-colors text-[#333] dark:text-gray-200 first:border-b border-gray-100 dark:border-gray-800"
+                    >
+                      Русский
+                    </button>
+                    <button
+                      onClick={() => changeLanguage('uz')}
+                      className="w-full text-left px-4 py-2 hover:bg-[#F5EFE6] dark:hover:bg-[#D4A259]/10 text-sm transition-colors text-[#333] dark:text-gray-200 first:border-b border-gray-100 dark:border-gray-800"
+                    >
+                      O'zbek
+                    </button>
+                    <button
+                      onClick={() => changeLanguage('en')}
+                      className="w-full text-left px-4 py-2 hover:bg-[#F5EFE6] dark:hover:bg-[#D4A259]/10 text-sm transition-colors text-[#333] dark:text-gray-200"
+                    >
+                      English
+                    </button>
                   </div>
                 )}
               </div>
@@ -323,32 +348,81 @@ const Navbar = () => {
         {/* МОБИЛЬНАЯ НАВИГАЦИЯ - показывается на lg и меньше */}
         <div className="lg:hidden flex items-center justify-between px-4 py-3">
           <div></div>
-          <div className="flex items-center gap-2">
+          <div className="flex items-center gap-3">
             <ThemeToggle />
 
-            <button onClick={() => setMobileSearchOpen(!mobileSearchOpen)} className="text-white dark:text-gray-200 text-lg">🔍</button>
+            {/* Кнопка поиска */}
+            <button
+              onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+              className="text-white dark:text-gray-200 hover:text-[#D4A259] transition"
+            >
+              <svg
+                className="w-5 h-5"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+                xmlns="http://www.w3.org/2000/svg"
+              >
+                <path
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  strokeWidth={1.8}
+                  d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
+                />
+              </svg>
+            </button>
 
+            {/* Переключатель языков - мобильный */}
             <div className="relative" ref={mobileLangRef}>
               <button
                 onClick={() => setLangDropdownOpen(!langDropdownOpen)}
-                className="text-white dark:text-gray-200 text-sm font-bold uppercase hover:text-[var(--gold-primary)] transition"
+                className="text-white dark:text-gray-200 text-sm font-medium hover:text-[#D4A259] transition flex items-center gap-1 uppercase tracking-wider"
               >
-                {i18n.language.substring(0, 2)} ▼
+                {i18n.language.substring(0, 2)}
+                <svg
+                  className={`w-3 h-3 transition-transform duration-200 ${langDropdownOpen ? 'rotate-180' : ''}`}
+                  fill="none"
+                  stroke="currentColor"
+                  viewBox="0 0 24 24"
+                >
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.5} d="M19 9l-7 7-7-7" />
+                </svg>
               </button>
               {langDropdownOpen && (
-                <div className="absolute top-full right-0 mt-2 w-[100px] bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden z-50">
-                  <button onClick={() => changeLanguage('ru')} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">Русский</button>
-                  <button onClick={() => changeLanguage('uz')} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">O'zbek</button>
-                  <button onClick={() => changeLanguage('en')} className="w-full text-left px-4 py-2 text-sm hover:bg-gray-100 dark:hover:bg-gray-700 dark:text-gray-200">English</button>
+                <div className="absolute top-full right-0 mt-2 min-w-[110px] bg-white dark:bg-[#1A1A1A] rounded-lg shadow-lg overflow-hidden border border-[#D4A259]/30 z-50">
+                  <button
+                    onClick={() => changeLanguage('ru')}
+                    className="w-full text-left px-4 py-2 hover:bg-[#F5EFE6] dark:hover:bg-[#D4A259]/10 text-sm transition-colors text-[#333] dark:text-gray-200 border-b border-gray-100 dark:border-gray-800"
+                  >
+                    Русский
+                  </button>
+                  <button
+                    onClick={() => changeLanguage('uz')}
+                    className="w-full text-left px-4 py-2 hover:bg-[#F5EFE6] dark:hover:bg-[#D4A259]/10 text-sm transition-colors text-[#333] dark:text-gray-200 border-b border-gray-100 dark:border-gray-800"
+                  >
+                    O'zbek
+                  </button>
+                  <button
+                    onClick={() => changeLanguage('en')}
+                    className="w-full text-left px-4 py-2 hover:bg-[#F5EFE6] dark:hover:bg-[#D4A259]/10 text-sm transition-colors text-[#333] dark:text-gray-200"
+                  >
+                    English
+                  </button>
                 </div>
               )}
             </div>
 
-            <button onClick={() => setMobileMenuOpen(true)} aria-label="Open navigation menu" aria-expanded={mobileMenuOpen} className="text-white dark:text-gray-200 focus:outline-none">
+            {/* Бургер-меню */}
+            <button
+              onClick={() => setMobileMenuOpen(true)}
+              aria-label="Open navigation menu"
+              aria-expanded={mobileMenuOpen}
+              className="focus:outline-none"
+            >
               <div className="space-y-1.5" aria-hidden="true">
-                <span className="block w-6 h-0.5 bg-white dark:bg-gray-200"></span>
-                <span className="block w-6 h-0.5 bg-white dark:bg-gray-200"></span>
-                <span className="block w-6 h-0.5 bg-white dark:bg-gray-200"></span>
+                <span className="block w-6 h-0.5 bg-[#ffffff] dark:bg-[#D4A259] rounded-full"></span>
+                <span className="block w-6 h-0.5 bg-[#ffffff] dark:bg-[#D4A259] rounded-full"></span>
+                <span className="block w-6 h-0.5 bg-[#ffffff] dark:bg-[#D4A259] rounded-full"></span>
               </div>
             </button>
           </div>
@@ -363,13 +437,30 @@ const Navbar = () => {
                 value={searchQuery}
                 onChange={handleSearch}
                 placeholder={t('search_placeholder')}
-                className="w-full bg-white/10 dark:bg-gray-800/50 border border-white/20 dark:border-gray-700 rounded-xl px-4 py-2 text-sm focus:outline-none focus:border-[var(--gold-primary)] placeholder:text-white/40 dark:placeholder:text-gray-400 text-white dark:text-gray-200"
-                autoFocus
+                className="w-full bg-white dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-full px-10 py-2 text-sm focus:outline-none focus:border-[#D4A259] focus:ring-1 focus:ring-[#D4A259] placeholder:text-gray-400 dark:placeholder:text-gray-500 text-[#1B2A44] dark:text-gray-100"
               />
-              <button onClick={() => setMobileSearchOpen(false)} aria-label="Close search" className="absolute right-3 top-1/2 -translate-y-1/2 text-white/50 dark:text-gray-400">✕</button>
+              {/* Иконка поиска */}
+              <svg
+                className="absolute left-3 top-1/2 -translate-y-1/2 w-4 h-4 text-gray-400 dark:text-gray-500 pointer-events-none"
+                fill="none"
+                stroke="currentColor"
+                viewBox="0 0 24 24"
+              >
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z" />
+              </svg>
+              {/* Кнопка закрытия */}
+              <button
+                onClick={() => setMobileSearchOpen(false)}
+                aria-label="Close search"
+                className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-[#D4A259] transition"
+              >
+                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={1.8} d="M6 18L18 6M6 6l12 12" />
+                </svg>
+              </button>
             </div>
             {searchResults.length > 0 && (
-              <div className="mt-3 bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-xl shadow-xl overflow-hidden">
+              <div className="mt-3 bg-white dark:bg-gray-800 rounded-xl shadow-xl overflow-hidden border border-[#D4A259]/30">
                 {searchResults.map((item) => (
                   <Link
                     key={item.path}
@@ -379,10 +470,10 @@ const Navbar = () => {
                       setSearchResults([]);
                       setMobileSearchOpen(false);
                     }}
-                    className="block px-4 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-none"
+                    className="block px-4 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 border-b border-gray-100 dark:border-gray-700 last:border-none transition-colors"
                   >
-                    <div className="text-sm font-bold">{item.title}</div>
-                    <div className="text-[11px] text-gray-500 dark:text-gray-400">{item.content}</div>
+                    <div className="text-sm font-medium text-[#1B2A44] dark:text-gray-100">{item.title}</div>
+                    <div className="text-[11px] text-gray-500 dark:text-gray-400 line-clamp-1">{item.content}</div>
                   </Link>
                 ))}
               </div>
@@ -430,7 +521,7 @@ const Navbar = () => {
                         <Link to={ROUTES.DIRECTIONS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.directions')}</Link>
                         <Link to={ROUTES.STUDYPLAN} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.study_plan')}</Link>
                         <Link to={ROUTES.SCHEDULE} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.schedule')}</Link>
-                        <Link to={ROUTES.FAQ} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.schedule')}</Link>
+                        <Link to={ROUTES.FAQ} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.faq')}</Link>
                       </div>
                     )}
                   </div>

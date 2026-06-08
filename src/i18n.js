@@ -232,7 +232,7 @@ i18n
                                 desc1: "В числе преподавателей по этим специальностям такие художники-педагоги, как Аминов Хусан, Махкамов Бахтиёр,Муллажонов Билолиддин, Акромов Рихситилла, Мирсаидов Мирвохид, Турдалиев Абдулла, Усмонов Жамол, Исламшиков Зухриддин, Носиров Жамшид, Эгамбердиев Хасан, Косимов Абдугани, Зоиров Мухтор, Миносьянц Арминак, Хакимов Шавкат, Мавлонов Фаррух, Юлдашев Мухаммад, Махкамов Бекзод, Адилхужаев Махмуд."
                             },
                             "monumental-painting": {
-                                title: "Монумент живопись",
+                                title: "Монументальная живопись",
                                 desc: "В данном направлении готовятся кадры по двум специальностям: художник-монументалист и руководитель кружка изобразительного искусства. В процессе обучения по этому направлению ученики изучают технику монументальной живописи, овладевают навыками практического использования соответствующих материалов, а также обучаются таким работам, как копирование монументальных настенных картин знаменитых художников, роспись, сграффито, мозаика, написание отдельных частей витражных композиций на различные материалы.",
                                 desc1: "В настоящее время по этой специальности преподают такие зрелые художники-педагоги, как Зокиров Тулкин, Шин Игорь, Нуриддинов Дилшод, Умрзоков Дониёр.Выпускники данного отделения колледжа, получив специальность художника монументальной живописи и оформителя, в основном будут работать в частных фирмах в качестве оформителей витражей, изготовлением мозаик и настенных картин."
                             },
@@ -256,10 +256,6 @@ i18n
                                 desc: "Учащихся отделения обучают оформлению помещений, изучению особенностей использования цвета в орнаментальных композициях, постижению секретов использования естественных оттенков цвета, условностей использования цвета и форм, а также умелому использованию естественной фактуры материалов.",
                                 desc1: "Кроме того, они осваивают виды 'ислими', 'гирих', их разные и общие черты, основные элементы, используемые в их создании (геометрические формы в 'гирихе', а в 'ислими' - стилизованные природные формы, то есть условные изображения растений и животных), а также целесообразное использование цветов и таких изобразительных средств, как их гамма, колорит, ритм, симметрия и асимметрия и т.д. Секретам орнамента обучает учеников талантливый художник Ибрагимов Собир."
                             },
-                            "monumental-decorative": {
-                                title: "Монумент декоративное искусство",
-                                desc: "Работа с глиной, формами и глазурью. Создание авторской посуды и скульптур."
-                            },
                             "costume-designer": {
                                 title: "Художник по костюмам",
                                 desc: "В этом направлении готовятся кадры по двум специальностям: художник театрального костюма и руководитель кружка изобразительного искусства. Учащиеся получают знания о роли и месте одежды в обществе, искусстве создания костюмов, особенностях костюмов Древнего Востока, Средней Азии, античной Греции и Рима, Европейского средневековья, Ближнего Востока, эпохи Ренессанса, Европы и России нового времени, обретают профессиональные навыки шитья исторических костюмов на основе современных технологий. Кроме того, они овладевают мастерством создания композиций этнографических, исторических костюмов народов мира, моделирования и технологией создания и пошива современных и исторических театральных костюмов, художественной обработки тканей, нанесению узоров на ткани трафаретно-печатным способом и технологии батика, технологии создания художественных кружев, парчи и золотошвейных изделий, аксессуаров (шарфов) путём покраски ткани методами 'шибори и банддон', овладевают искусством создания композиций костюмов национальных, исторических и сказочных персонажей.",
@@ -276,7 +272,8 @@ i18n
                             },
                             "artistic-ceramics": {
                                 title: "Художественная керамика",
-                                desc: "Работа с глиной, формами и глазурью. Создание авторской посуды и скульптур."
+                                desc: "Воздвигнутые здания во времена правления Амира Тимура в Средней Азии невозможно представить без изразцово-облицовочного искусства, которое и сейчас имеет большое значение в воздвижении современных зданий, образовании садов и парков, украшении интерьеров, ландшафта, поскольку монумен-тальное орнаментальное искусство непосред-ственно связано с эстетическим украшением интерьера, архитектурных сооружений и окру жающей средой.",
+                                desc1:"В данном направлении готовятся кадры по двум специальностям: художник монументаль-ного декоративного искусства, руководитель кружка изобразительного искусства. Обучают секретам монументального декоративного искусства такие художники-педагоги, как Соседова Эвелина, Бойматов Содик, Талипов Азим, Мирзаев Нодир. Выпускники отделения трудятся во многих городах республики, внося свой вклад в украшение зданий и ландшафта."
                             },
                             "sculpture": {
                                 title: "Скульптура",
@@ -354,7 +351,30 @@ i18n
                                 { year: "1984-е", name: "Живопись и Рисунок", desc: "Факультет живописи и рисунка был закрыт и заменен факультетом декоративно-прикладного искусства." },
                             ]
                         },
-                        button: "Узнать условия поступления"
+                        button: "Узнать условия поступления",
+                        gallery: {
+                            tag: "Ретроспектива",
+                            title: "Архивные Снимки & Эпохи",
+                            subtitle: "Взгляд сквозь десятилетия на становление нашей академии",
+                            items: {
+                                stage1: {
+                                    title: "В кругу выдающихся мастеров искусства",
+                                    description: "Архивная фотография, на которой народный художник СССР и академик Рахим Ахмедов запечатлён вместе с народными художниками РСФСР Петром Оссовским и Геннадием Корнеевым."
+                                },
+                                stage2: {
+                                    title: "Встреча мастеров искусства на кинофестивале",
+                                    description: "Архивный снимок, на котором народные художники Узбекистана Рўзи Чориев, Жавлон Умарбеков и Виктор Апухтин запечатлены вместе с участниками кинофестиваля."
+                                },
+                                stage3: {
+                                    title: "Памяти Николая Туркестанского",
+                                    description: "Директор учебного заведения в 1931–1943 годах, Николай Степанович Туркестанский, героически погиб во время войны в 1945 году."
+                                },
+                                stage4: {
+                                    title: "Руководитель периода развития",
+                                    description: "Олег Константинович Апухтин возглавлял учебное заведение с 1950 по 1965 год, внося значительный вклад в его развитие и укрепление образовательных традиций."
+                                }
+                            }
+                        }
                     },
                     management: {
                         title: "Руководство школы",
@@ -1121,7 +1141,30 @@ i18n
                                 { year: "1984-yillar", name: "Rangtasvir va chizmachilik", desc: "Rangtasvir va chizmachilik fakulteti yopilib, o‘rniga amaliy san’at yo‘nalishi tashkil etildi." }
                             ]
                         },
-                        button: "Qabul shartlarini ko‘rish"
+                        button: "Qabul shartlarini ko‘rish",
+                        gallery: {
+                            tag: "Retrospektiva",
+                            title: "Arxiv Suratlari va Davrlar",
+                            subtitle: "Akademiyamizning shakllanish tarixiga o‘n yilliklar osha nazar",
+                            items: {
+                                stage1: {
+                                    title: "San’atning buyuk ustalari davrasida",
+                                    description: "Ushbu arxiv suratida SSSR xalq rassomi va akademik Rahim Ahmedov RSFSR xalq rassomlari Pyotr Ossovskiy va Gennadiy Korneyev bilan birga tasvirlangan."
+                                },
+                                stage2: {
+                                    title: "Kinofestivaldagi san’at ustalari uchrashuvi",
+                                    description: "Arxiv suratida O‘zbekiston xalq rassomlari Ro‘zi Choriyev, Javlon Umarbekov va Viktor Apuxtin kinofestival ishtirokchilari bilan birga tasvirlangan."
+                                },
+                                stage3: {
+                                    title: "Nikolay Turkestanskiy xotirasiga",
+                                    description: "1931–1943 yillarda o‘quv yurtiga rahbarlik qilgan Nikolay Stepanovich Turkestanskiy 1945 yilda urushda qahramonlarcha halok bo‘lgan."
+                                },
+                                stage4: {
+                                    title: "Taraqqiyot davri rahbari",
+                                    description: "Oleg Konstantinovich Apuxtin 1950–1965 yillarda o‘quv yurtiga rahbarlik qilib, uning rivojlanishi va ta’lim an’analarining mustahkamlanishiga katta hissa qo‘shgan."
+                                }
+                            }
+                        }
                     },
                     management: {
                         title: "Maktab rahbariyati",
@@ -1888,7 +1931,30 @@ i18n
                                 { year: "1984s", name: "Painting and Drawing", desc: "The faculty of painting and drawing was closed and replaced by the faculty of decorative and applied arts." }
                             ]
                         },
-                        button: "Learn Admission Requirements"
+                        button: "Learn Admission Requirements",
+                        gallery: {
+                            tag: "Retrospective",
+                            title: "Archival Photographs & Eras",
+                            subtitle: "A journey through the decades of our academy’s formation and growth",
+                            items: {
+                                stage1: {
+                                    title: "Among Distinguished Masters of Art",
+                                    description: "An archival photograph featuring People's Artist of the USSR and Academician Rakhim Akhmedov together with People's Artists of the RSFSR Pyotr Ossovsky and Gennady Korneyev."
+                                },
+                                stage2: {
+                                    title: "Gathering of Art Masters at a Film Festival",
+                                    description: "An archival photograph depicting People's Artists of Uzbekistan Rozi Choriyev, Javlon Umarbekov, and Viktor Apukhtin together with participants of a film festival."
+                                },
+                                stage3: {
+                                    title: "In Memory of Nikolai Turkestansky",
+                                    description: "Director of the educational institution from 1931 to 1943, Nikolai Stepanovich Turkestansky heroically lost his life during the war in 1945."
+                                },
+                                stage4: {
+                                    title: "A Leader of a Period of Growth",
+                                    description: "Oleg Konstantinovich Apukhtin served as director of the educational institution from 1950 to 1965, making a significant contribution to its development and educational traditions."
+                                }
+                            }
+                        }
                     },
                     management: {
                         title: "School Management",

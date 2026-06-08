@@ -8,11 +8,22 @@ import BenkovTarixi1 from '../assets/img/BenkovTarixi1.webp';
 import BenkovTarixi2 from '../assets/img/BenkovTarixi2.webp';
 import BenkovTarixi3 from '../assets/img/BenkovTarixi3.webp';
 import BenkovTarixi4 from '../assets/img/BenkovTarixi4.webp';
+import ArchiveImg1 from '../assets/img/ArchiveImg1.webp';
+import ArchiveImg2 from '../assets/img/ArchiveImg2.webp';
+import ArchiveImg3 from '../assets/img/ArchiveImg3.webp';
+import ArchiveImg4 from '../assets/img/ArchiveImg4.webp';
 
 const About = () => {
   const { t } = useTranslation();
   const images = [HistoryImg, BenkovTarixi1, BenkovTarixi2, BenkovTarixi3, BenkovTarixi4];
   const [currentIndex, setCurrentIndex] = useState(0);
+
+  const historyGallery = [
+    { img: ArchiveImg1, key: 'stage1' },
+    { img: ArchiveImg2, key: 'stage2' },
+    { img: ArchiveImg3, key: 'stage3' },
+    { img: ArchiveImg4, key: 'stage4' },
+  ];
 
   useEffect(() => {
     const timer = setInterval(() => {
@@ -184,6 +195,95 @@ const About = () => {
                 {t(`about.stages.five.text2`)}
               </p>
             </div>
+          </div>
+
+          {/* --- МОДЕРНИЗИРОВАННАЯ ИСТОРИЧЕСКАЯ ГАЛЕРЕЯ (РАЗДЕЛЬНЫЕ ФОРМАТЫ) --- */}
+          <div className="mb-32 px-4 md:px-0">
+
+            {/* Заголовок секции */}
+            <div className="text-center mb-16 relative">
+              <span className="text-[var(--gold-primary)] font-mono text-xs tracking-[0.3em] uppercase block mb-3">
+                {t('about.gallery.tag')}
+              </span>
+              <h2 className="text-3xl sm:text-4xl font-serif font-bold mb-4 text-[#1B2A44] dark:text-gray-100 tracking-tight">
+                {t('about.gallery.title')}
+              </h2>
+              <p className="text-gray-500 dark:text-gray-400 max-w-xl mx-auto text-sm sm:text-base font-light leading-relaxed">
+                {t('about.gallery.subtitle')}
+              </p>
+              <div className="flex items-center justify-center mt-6 gap-2">
+                <div className="w-12 h-[1px] bg-gray-300 dark:bg-gray-800"></div>
+                <div className="w-1.5 h-1.5 rounded-full bg-[var(--gold-primary)]"></div>
+                <div className="w-12 h-[1px] bg-gray-300 dark:bg-gray-800"></div>
+              </div>
+            </div>
+
+            {/* БЛОК 1: ГОРИЗОНТАЛЬНЫЕ ФОТО (Первые 2 элемента) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12 mb-16">
+              {historyGallery.slice(0, 2).map((item, index) => (
+                <div
+                  key={index}
+                  className="group bg-[#FDFDFD] dark:bg-gray-900/40 rounded-[32px] overflow-hidden 
+          border border-gray-200/50 dark:border-gray-800/80 
+          shadow-[0_4px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(27,42,68,0.06)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]
+          transition-all duration-700 ease-out"
+                >
+                  {/* Горизонтальное соотношение сторон (aspect-[16/10] или фиксированная высота) */}
+                  <div className="w-full h-[240px] sm:h-[300px] overflow-hidden relative bg-gray-900">
+                    <img
+                      src={item.img}
+                      alt={t(`about.gallery.items.${item.key}.title`)}
+                      className="w-full h-full object-cover grayscale-[35%] sepia-[10%] brightness-95 group-hover:grayscale-0 group-hover:sepia-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="p-6 sm:p-8 relative">
+                    <div className="absolute left-0 top-8 w-[3px] h-6 bg-[var(--gold-primary)] rounded-r"></div>
+                    <h4 className="text-xl font-bold text-[#1B2A44] dark:text-gray-100 mb-3 tracking-tight pl-3">
+                      {t(`about.gallery.items.${item.key}.title`)}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light pl-3">
+                      {t(`about.gallery.items.${item.key}.description`)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
+            {/* БЛОК 2: ВЕРТИКАЛЬНЫЕ ФОТО (Последние 2 элемента) */}
+            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-12">
+              {historyGallery.slice(2, 4).map((item, index) => (
+                <div
+                  key={index}
+                  className="group bg-[#FDFDFD] dark:bg-gray-900/40 rounded-[32px] overflow-hidden 
+          border border-gray-200/50 dark:border-gray-800/80 
+          shadow-[0_4px_30px_rgba(0,0,0,0.02)] hover:shadow-[0_20px_40px_rgba(27,42,68,0.06)] dark:hover:shadow-[0_20px_40px_rgba(0,0,0,0.4)]
+          transition-all duration-700 ease-out"
+                >
+                  {/* Увеличенная высота для вертикальных фото (h-[400px] или больше) */}
+                  <div className="w-full h-[420px] sm:h-[500px] overflow-hidden relative bg-gray-900">
+                    <img
+                      src={item.img}
+                      alt={t(`about.gallery.items.${item.key}.title`)}
+                      className="w-full h-full object-cover grayscale-[35%] sepia-[10%] brightness-95 group-hover:grayscale-0 group-hover:sepia-0 group-hover:brightness-100 group-hover:scale-105 transition-all duration-700 ease-out"
+                      loading="lazy"
+                    />
+                  </div>
+
+                  <div className="p-6 sm:p-8 relative">
+                    <div className="absolute left-0 top-8 w-[3px] h-6 bg-[var(--gold-primary)] rounded-r"></div>
+                    <h4 className="text-xl font-bold text-[#1B2A44] dark:text-gray-100 mb-3 tracking-tight pl-3">
+                      {t(`about.gallery.items.${item.key}.title`)}
+                    </h4>
+                    <p className="text-sm text-gray-600 dark:text-gray-400 leading-relaxed font-light pl-3">
+                      {t(`about.gallery.items.${item.key}.description`)}
+                    </p>
+                  </div>
+                </div>
+              ))}
+            </div>
+
           </div>
 
           {/* --- МЕСТО ДЛЯ ФАКУЛЬТЕТОВ --- */}
