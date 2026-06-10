@@ -16,13 +16,13 @@ const DirectionsDetail = () => {
     // Все изображения (основное + дополнительные)
     const allImages = data ? [data.images[0], ...data.images.slice(1, 5)] : [];
 
-    // Автопрокрутка каждые 5 секунд
+    // Автопрокрутка каждые 7 секунд
     useEffect(() => {
         if (!isAutoPlaying) return;
 
         const interval = setInterval(() => {
             setCurrentImageIndex((prev) => (prev + 1) % allImages.length);
-        }, 5000);
+        }, 7000);
 
         return () => clearInterval(interval);
     }, [isAutoPlaying, allImages.length]);
@@ -80,20 +80,26 @@ const DirectionsDetail = () => {
                             <div className="absolute inset-0 bg-black/10 group-hover:bg-black/20 transition-all duration-300"></div>
                         </div>
 
-                        {/* Кнопка "Назад" */}
+                        {/* Кнопка "Назад" - теперь постоянно видна на планшетах и выше */}
                         <button
                             onClick={prevImage}
-                            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-[var(--gold-primary)] hover:text-white group/btn"
+                            className="absolute left-3 sm:left-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 
+                                     bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg 
+                                     transition-all duration-300 hover:bg-[var(--gold-primary)] hover:text-white group/btn
+                                     opacity-100 sm:opacity-100 md:opacity-0 md:group-hover:opacity-100"
                         >
                             <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M15 19l-7-7 7-7" />
                             </svg>
                         </button>
 
-                        {/* Кнопка "Вперед" */}
+                        {/* Кнопка "Вперед" - теперь постоянно видна на планшетах и выше */}
                         <button
                             onClick={nextImage}
-                            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg opacity-0 group-hover:opacity-100 transition-all duration-300 hover:bg-[var(--gold-primary)] hover:text-white group/btn"
+                            className="absolute right-3 sm:right-5 top-1/2 -translate-y-1/2 w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 
+                                     bg-white/80 dark:bg-gray-900/80 backdrop-blur-sm rounded-full flex items-center justify-center shadow-lg 
+                                     transition-all duration-300 hover:bg-[var(--gold-primary)] hover:text-white group/btn
+                                     opacity-100 sm:opacity-100 md:opacity-0 md:group-hover:opacity-100"
                         >
                             <svg className="w-4 h-4 sm:w-5 sm:h-5 md:w-6 md:h-6" fill="none" stroke="currentColor" viewBox="0 0 24 24">
                                 <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />

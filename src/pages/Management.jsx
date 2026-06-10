@@ -113,12 +113,12 @@ const Management = () => {
                         {dep.name}
                       </h4>
 
-                      <p className="text-[var(--gold-primary)] font-semibold text-xs sm:text-sm md:text-base mb-4 sm:mb-5 md:mb-6 lg:mb-8 uppercase tracking-wider text-center sm:text-left">
+                      <p className="text-[var(--gold-primary)] font-semibold text-xs sm:text-sm md:text-base mb-4 sm:mb-5 md:mb-6 uppercase tracking-wider text-center sm:text-left">
                         {dep.role}
                       </p>
 
                       {/* Фото заместителя - БОЛЬШОЕ */}
-                      <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[380px] xl:h-[420px] bg-gray-50 dark:bg-gray-800 rounded-[20px] sm:rounded-[24px] mb-5 sm:mb-6 md:mb-7 lg:mb-8 overflow-hidden border border-gray-100 dark:border-gray-700">
+                      <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[380px] xl:h-[420px] bg-gray-50 dark:bg-gray-800 rounded-[20px] sm:rounded-[24px] mb-4 sm:mb-5 md:mb-6 overflow-hidden border border-gray-100 dark:border-gray-700">
                         {dep.photo ? (
                           <img
                             src={dep.photo}
@@ -136,14 +136,17 @@ const Management = () => {
                         )}
                       </div>
 
-                      {/* Отдел и стрелка */}
-                      <div className="mt-auto flex flex-col sm:flex-row justify-between items-center sm:items-end gap-3 sm:gap-0">
+                      {/* Отдел и кнопка */}
+                      <div className="mt-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-3">
                         <p className="text-gray-400 dark:text-gray-500 text-[10px] sm:text-xs md:text-sm uppercase tracking-[0.15em] sm:tracking-[0.2em] leading-relaxed text-center sm:text-left">
                           {dep.dept}
                         </p>
-                        <span className="text-[var(--gold-primary)] text-lg sm:text-xl md:text-2xl opacity-0 group-hover:opacity-100 transition-all transform translate-x-4 group-hover:translate-x-0">
-                          →
-                        </span>
+
+                        {/* Кнопка "Подробнее" */}
+                        <div className="flex items-center gap-2 text-[var(--gold-primary)] font-medium text-xs sm:text-sm uppercase tracking-wider group-hover:gap-3 transition-all duration-300">
+                          <span>{t('management.more')}</span>
+                          <span className="text-base sm:text-lg transition-transform group-hover:translate-x-1">→</span>
+                        </div>
                       </div>
                     </div>
                   </div>

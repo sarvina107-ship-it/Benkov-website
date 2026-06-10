@@ -396,7 +396,8 @@ i18n
                             academic: "по учебной работе",
                             fields: "по направлениям",
                             economic: "по экономическим вопросам"
-                        }
+                        },
+                        more:"Подробнее"
                     },
                     deputy_page: {
                         1: {
@@ -1186,7 +1187,8 @@ i18n
                             academic: "o'quv ishlari bo'yicha",
                             fields: "yo'nalishlar bo'yicha",
                             economic: "iqtisodiy masalalar bo'yicha"
-                        }
+                        },
+                        more:"Batafsil"
                     },
                     deputy_page: {
                         1: {
@@ -1976,7 +1978,8 @@ i18n
                             academic: "for academic affairs",
                             fields: "for specialized areas",
                             economic: "for economic issues"
-                        }
+                        },
+                        more:"Learn more"
                     },
                     deputy_page: {
                         1: {
