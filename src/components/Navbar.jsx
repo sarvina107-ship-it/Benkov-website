@@ -34,6 +34,7 @@ const Navbar = () => {
     [ROUTES.DIRECTOR]: t('titles.director'),
     [ROUTES.DEPUTY]: t('titles.deputy'),
     [ROUTES.DIRECTIONSDETAIL]: t('titles.directionsdetail'),
+    [ROUTES.ACADEMIC]: t('titles.academic'),
   };
 
   const searchData = [
@@ -217,6 +218,7 @@ const Navbar = () => {
                 <div className="absolute top-full left-0 mt-0 pt-3 w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
                   <div className="bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-[14px] shadow-xl overflow-hidden">
                     <Link to={ROUTES.DIRECTIONS} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.directions')}</Link>
+                    <Link to={ROUTES.ACADEMIC} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.academic')}</Link>
                     <Link to={ROUTES.STUDYPLAN} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.study_plan')}</Link>
                     <Link to={ROUTES.SCHEDULE} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.schedule')}</Link>
                     <Link to={ROUTES.FAQ} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.faq')}</Link>
@@ -519,6 +521,7 @@ const Navbar = () => {
                     {activeMobileDropdown === 'education' && (
                       <div className="pl-6 pb-2 space-y-1">
                         <Link to={ROUTES.DIRECTIONS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.directions')}</Link>
+                        <Link to={ROUTES.ACADEMIC} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.academic')}</Link>
                         <Link to={ROUTES.STUDYPLAN} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.study_plan')}</Link>
                         <Link to={ROUTES.SCHEDULE} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.schedule')}</Link>
                         <Link to={ROUTES.FAQ} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.faq')}</Link>

@@ -32,6 +32,7 @@ import ScrollProgress from './components/ScrollProgress';
 import BackToTop from './components/BackToTop';
 import NotFound from './components/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
+import Academic from './pages/Academic';
 
 const App = () => {
   const location = useLocation();
@@ -68,6 +69,7 @@ const App = () => {
                 <Route path={ROUTES.DIRECTOR} element={<Director />} />
                 <Route path="/management/deputy/:id" element={<Deputy />} />
                 <Route path="*" element={<NotFound />} />
+                <Route path={ROUTES.ACADEMIC} element={<Academic />} />
               </Routes>
             </AnimatePresence>
           </Suspense>

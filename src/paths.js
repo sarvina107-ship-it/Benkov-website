@@ -20,5 +20,6 @@ export const ROUTES = {
   NEWSLIST: '/newsList',
   NEWSDETAIL: '/newsDetail',
   LOGIN: '/login',
-  ADMINNEWS: '/adminNews'
+  ADMINNEWS: '/adminNews',
+  ACADEMIC: '/academic'
 };

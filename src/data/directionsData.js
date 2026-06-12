@@ -47,15 +47,25 @@ import Interior2 from '../assets/directions/image45.webp'
 import Interior3 from '../assets/directions/image46.webp'
 import Interior4 from '../assets/directions/image47.webp'
 import Computer1 from '../assets/directions/image48.webp'
+import Computer2 from '../assets/directions/image49.webp'
+import Computer3 from '../assets/directions/image50.webp'
+import Computer4 from '../assets/directions/image51.webp'
 import Ceramics1 from '../assets/directions/image52.webp'
 import Ceramics2 from '../assets/directions/image53.webp'
 import Ceramics3 from '../assets/directions/image54.webp'
 import Ceramics4 from '../assets/directions/image55.webp'
+import Makeup1 from '../assets/directions/image56.webp'
+import Makeup2 from '../assets/directions/image57.webp'
+import Makeup3 from '../assets/directions/image58.webp'
 
 export const directionsCategories = [
     {
         category: "cinema",
         items: ["cinema-artist"]
+    },
+    {
+        category: "makeup",
+        items: ["makeup-artist"]
     },
     {
         category: "graphics",
@@ -88,6 +98,10 @@ export const directionsData = {
         image: Cinema4,
         images: [Cinema1, Cinema2, Cinema3, Cinema4]
     },
+    "makeup-artist": {
+        image: Makeup3,
+        images: [Makeup1, Makeup3, Makeup2]
+    },
     "lacquer-miniature": {
         image: Lacquer1,
         images: [Lacquer1, Lacquer2, Lacquer3, Lacquer4]
@@ -118,7 +132,7 @@ export const directionsData = {
     },
     "ganch-carving": {
         image: Ganch1,
-        images: [ Ganch4,Ganch1, Ganch3, Ganch2]
+        images: [Ganch4, Ganch1, Ganch3, Ganch2]
     },
     "costume-designer": {
         image: Costume3,
@@ -130,7 +144,7 @@ export const directionsData = {
     },
     "computer-graphics-designer": {
         image: Computer1,
-        images: [Computer1, "/img2.jpg", "/img3.jpg", "/img4.jpg"]
+        images: [Computer1, Computer2, Computer3, Computer4]
     },
     "artistic-ceramics": {
         image: Ceramics2,
