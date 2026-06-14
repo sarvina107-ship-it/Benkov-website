@@ -35,6 +35,7 @@ const Navbar = () => {
     [ROUTES.DEPUTY]: t('titles.deputy'),
     [ROUTES.DIRECTIONSDETAIL]: t('titles.directionsdetail'),
     [ROUTES.ACADEMIC]: t('titles.academic'),
+    [ROUTES.BENKOV]: t('titles.benkov'),
   };
 
   const searchData = [
@@ -203,10 +204,21 @@ const Navbar = () => {
                 <div className="absolute top-full left-0 mt-0 pt-3 w-[220px] opacity-0 invisible group-hover:opacity-100 group-hover:visible transition-opacity duration-300 z-50">
                   <div className="bg-white dark:bg-gray-800 text-[#1B2A44] dark:text-gray-200 rounded-[14px] shadow-xl overflow-hidden">
                     <Link to={ROUTES.ABOUT} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.history')}</Link>
+                    <Link
+                      to={ROUTES.BENKOV}
+                      className="flex items-center gap-2 px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap"
+                    >
+                      <span>{t('nav.benkov')}</span>
+                      <svg
+                        className="w-3 h-3 text-[var(--gold-primary)] fill-current"
+                        viewBox="0 0 24 24"
+                      >
+                        <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+                      </svg>
+                    </Link>
                     <Link to={ROUTES.MANAGEMENT} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.management')}</Link>
                     <Link to={ROUTES.INFRASTRUCTURE} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.infrastructure')}</Link>
                     <Link to={ROUTES.ACHIEVEMENTS} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.achievements')}</Link>
-                    <Link to={ROUTES.CONTACTS} className="block px-5 py-3 hover:bg-[#F5EFE6] dark:hover:bg-gray-700 whitespace-nowrap">{t('nav.contacts')}</Link>
                   </div>
                 </div>
               </div>
@@ -505,10 +517,22 @@ const Navbar = () => {
                     {activeMobileDropdown === 'about' && (
                       <div className="pl-6 pb-2 space-y-1">
                         <Link to={ROUTES.ABOUT} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.history')}</Link>
+                        <Link
+                          to={ROUTES.BENKOV}
+                          onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }}
+                          className="flex items-center gap-2 text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg"
+                        >
+                          <span>{t('nav.benkov')}</span>
+                          <svg
+                            className="w-3 h-3 text-[var(--gold-primary)] fill-current shrink-0"
+                            viewBox="0 0 24 24"
+                          >
+                            <path d="M12 .587l3.668 7.431 8.2 1.192-5.934 5.784 1.4 8.168L12 18.896l-7.334 3.857 1.4-8.168L.132 9.21l8.2-1.192L12 .587z" />
+                          </svg>
+                        </Link>
                         <Link to={ROUTES.MANAGEMENT} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.management')}</Link>
                         <Link to={ROUTES.INFRASTRUCTURE} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.infrastructure')}</Link>
                         <Link to={ROUTES.ACHIEVEMENTS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.achievements')}</Link>
-                        <Link to={ROUTES.CONTACTS} onClick={() => { setMobileMenuOpen(false); setActiveMobileDropdown(null); }} className="block text-white/80 dark:text-gray-300 py-2 px-4 text-sm hover:text-[var(--gold-primary)] transition rounded-lg">{t('nav.contacts')}</Link>
                       </div>
                     )}
                   </div>

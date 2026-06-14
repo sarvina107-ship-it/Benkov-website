@@ -21,5 +21,6 @@ export const ROUTES = {
   NEWSDETAIL: '/newsDetail',
   LOGIN: '/login',
   ADMINNEWS: '/adminNews',
-  ACADEMIC: '/academic'
+  ACADEMIC: '/academic',
+  BENKOV: '/benkov',
 };

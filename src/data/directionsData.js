@@ -57,6 +57,10 @@ import Ceramics4 from '../assets/directions/image55.webp'
 import Makeup1 from '../assets/directions/image56.webp'
 import Makeup2 from '../assets/directions/image57.webp'
 import Makeup3 from '../assets/directions/image58.webp'
+import Restorer1 from '../assets/directions/image59.webp'
+import Restorer2 from '../assets/directions/image60.webp'
+import Restorer3 from '../assets/directions/image61.webp'
+import Restorer4 from '../assets/directions/image62.webp'
 
 export const directionsCategories = [
     {
@@ -115,7 +119,7 @@ export const directionsData = {
         images: [Easel1, Easel2, Easel3, Easel4]
     },
     "monumental-painting": {
-        image: Monumental3,
+        image: Monumental1,
         images: [Monumental1, Monumental3, Monumental4, Monumental2]
     },
     "theatrical-set-designer": {
@@ -155,7 +159,7 @@ export const directionsData = {
         images: [Sculpture1, Sculpture2, Sculpture3, Sculpture4]
     },
     "artist-restorer": {
-        image: "/images/directions/restoration.jpg",
-        images: ["/img1.jpg", "/img2.jpg", "/img3.jpg", "/img4.jpg"]
+        image: Restorer1,
+        images: [Restorer1, Restorer2, Restorer3, Restorer4]
     }
 };

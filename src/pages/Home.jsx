@@ -8,6 +8,9 @@ import { directionsData } from '../data/directionsData';
 import CardSkeleton from '../components/CardSkeleton';
 import Director from '../assets/deputy/Director.webp'
 import PageWrapper from '../components/PageWrapper';
+import Paint1 from '../assets/gallery/image1.webp'
+import Paint2 from '../assets/gallery/image2.webp'
+import Paint3 from '../assets/gallery/image18.webp'
 
 const Home = () => {
   const { t } = useTranslation();
@@ -306,46 +309,62 @@ const Home = () => {
 
             {/* Сетка галереи */}
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-8 sm:gap-10 md:gap-12 items-start">
-              {galleryPreview.map((src, index) => (
-                <div
-                  key={index}
-                  className={`relative group rounded-xl overflow-hidden bg-white dark:bg-gray-900 
-            shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.2)] 
-            hover:shadow-[0_25px_60px_rgba(212,162,89,0.15)] dark:hover:shadow-[0_25px_60px_rgba(212,162,89,0.1)] 
-            transition-shadow duration-700 sm:duration-1000 ease-in-out cursor-pointer 
-            ${index === 1 ? 'lg:mt-6 xl:mt-12' : ''}`}
-                >
-                  {/* Внутренний бордюр */}
-                  <div className="absolute inset-0 border-[0px] group-hover:border-[8px] sm:group-hover:border-[12px] border-white/20 dark:border-white/5 transition-all duration-500 z-20 pointer-events-none"></div>
 
-                  <img
-                    src={src}
-                    alt={` ${index + 1}`}
-                    loading="lazy"
-                    className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-700 sm:duration-[1.2s] group-hover:scale-105"
-                  />
+              {/* Карточка 1 */}
+              <div
+                className="relative group rounded-xl overflow-hidden bg-white dark:bg-gray-900 
+        shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.2)] 
+        hover:shadow-[0_25px_60px_rgba(212,162,89,0.15)] dark:hover:shadow-[0_25px_60px_rgba(212,162,89,0.1)] 
+        transition-shadow duration-700 sm:duration-1000 ease-in-out cursor-pointer"
+              >
+                {/* Внутренний бордюр */}
+                <div className="absolute inset-0 border-[0px] group-hover:border-[8px] sm:group-hover:border-[12px] border-white/20 dark:border-white/5 transition-all duration-500 z-20 pointer-events-none"></div>
 
-                  {/* Overlay с информацией - ВСЕГДА ВИДЕН на мобилках и планшетах */}
-                  {/* На десктопе - появляется при ховере */}
-                  <div className={`
-            absolute inset-0 bg-gradient-to-t from-[#1B2A44]/90 dark:from-gray-950/90 via-[#1B2A44]/40 dark:via-gray-950/40 to-transparent
-            transition-all duration-500 z-10 flex flex-col justify-end p-5 sm:p-6 md:p-8
-            ${index === 1 ? 'lg:opacity-0 lg:group-hover:opacity-100' : 'lg:opacity-0 lg:group-hover:opacity-100'}
-            opacity-100`}>
+                <img
+                  src={Paint1}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-700 sm:duration-[1.2s] group-hover:scale-105"
+                />
+              </div>
 
-                    <div className={`
-              transform transition-transform duration-500
-              ${index === 1 ? 'lg:translate-y-6 lg:group-hover:translate-y-0' : 'lg:translate-y-6 lg:group-hover:translate-y-0'}
-              translate-y-0`}>
-                      <span className="text-[10px] sm:text-xs uppercase tracking-widest text-[#FAF9F6]/80 dark:text-gray-300/80 mb-1 sm:mb-2 font-semibold block">
-                        {t('home.gallery.card_badge')}
-                      </span>
-                      {/* Линия */}
-                      <div className="w-6 h-[1px] bg-[var(--gold-primary)] lg:group-hover:w-full transition-all duration-500 sm:duration-700"></div>
-                    </div>
-                  </div>
-                </div>
-              ))}
+              {/* Карточка 2 (с оригинальным сдвигом lg:mt-6 xl:mt-12) */}
+              <div
+                className="relative group rounded-xl overflow-hidden bg-white dark:bg-gray-900 
+        shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.2)] 
+        hover:shadow-[0_25px_60px_rgba(212,162,89,0.15)] dark:hover:shadow-[0_25px_60px_rgba(212,162,89,0.1)] 
+        transition-shadow duration-700 sm:duration-1000 ease-in-out cursor-pointer 
+        lg:mt-6 xl:mt-12"
+              >
+                {/* Внутренний бордюр */}
+                <div className="absolute inset-0 border-[0px] group-hover:border-[8px] sm:group-hover:border-[12px] border-white/20 dark:border-white/5 transition-all duration-500 z-20 pointer-events-none"></div>
+
+                <img
+                  src={Paint2}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-700 sm:duration-[1.2s] group-hover:scale-105"
+                />
+              </div>
+
+              {/* Карточка 3 */}
+              <div
+                className="relative group rounded-xl overflow-hidden bg-white dark:bg-gray-900 
+        shadow-[0_10px_40px_rgba(0,0,0,0.04)] dark:shadow-[0_10px_40px_rgba(0,0,0,0.2)] 
+        hover:shadow-[0_25px_60px_rgba(212,162,89,0.15)] dark:hover:shadow-[0_25px_60px_rgba(212,162,89,0.1)] 
+        transition-shadow duration-700 sm:duration-1000 ease-in-out cursor-pointer"
+              >
+                {/* Внутренний бордюр */}
+                <div className="absolute inset-0 border-[0px] group-hover:border-[8px] sm:group-hover:border-[12px] border-white/20 dark:border-white/5 transition-all duration-500 z-20 pointer-events-none"></div>
+
+                <img
+                  src={Paint3}
+                  alt=""
+                  loading="lazy"
+                  className="w-full h-[280px] sm:h-[350px] md:h-[400px] lg:h-[450px] object-cover transition-transform duration-700 sm:duration-[1.2s] group-hover:scale-105"
+                />
+              </div>
+
             </div>
 
             {/* Кнопка "Вся галерея" */}

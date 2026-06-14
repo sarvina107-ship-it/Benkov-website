@@ -78,7 +78,8 @@ i18n
                         apply: "Подать заявку",
                         page: "Страница",
                         deputy: "Заместитель",
-                        academic: "Преподаватели"
+                        academic: "Преподаватели",
+                        benkov: "П.П. Беньков"
                     },
                     pageTitles: {
                         deputy: "Заместитель",
@@ -359,7 +360,7 @@ i18n
                                 { year: "1984-е", name: "Живопись и Рисунок", desc: "Факультет живописи и рисунка был закрыт и заменен факультетом декоративно-прикладного искусства." },
                             ]
                         },
-                        button: "Узнать условия поступления",
+                        button: "Узнать об П.П. Бенькове",
                         gallery: {
                             tag: "Ретроспектива",
                             title: "Архивные Снимки & Эпохи",
@@ -707,7 +708,8 @@ i18n
                         director: "Директор",
                         deputy: "Заместитель директора",
                         directionsdetail: "Подробности направления",
-                        academic: "Преподаватели"
+                        academic: "Преподаватели",
+                        benkov: "Имя школы"
                     },
                     contacts: {
                         badge: "Контакты школы",
@@ -826,6 +828,69 @@ i18n
                             award_1: "Нагрудный знак «Знак Узбекистана»",
                             award_2: "Нагрудный знак «Самоотверженный деятель культуры и искусства»"
                         }
+                    },
+                    benkov: {
+                        badge: "Имя, ставшее символом эпохи",
+                        titleFirst: "Pavel Petrovich",
+                        titleLast: "Benkov",
+                        quote: "«Человек, заново открывший солнце Средней Азии. Великий живописец, чей гений и страсть к свету навсегда изменили художественную летопись Востока».",
+                        description: "Наша художественная школа с гордостью носит имя Павла Петровича Бенькова. Он не был её основателем, но его творческий почерк, преданность искусству и колоссальное культурное наследие стали тем невидимым фундаментом и вечным ориентиром, по которому сверяют свой путь тысячи молодых художников и мастеров Узбекистана.",
+
+                        palette: {
+                            title: "Палитра, покорившая Восток",
+                            subtitle: "Цвета, которыми Беньков дышал и писал свои главные шедевры в Самарканде",
+                            color1: { name: "Полуденное солнце", desc: "Главный ориентир в импрессионизме Бенькова" },
+                            color2: { name: "Самаркандская бирюза", desc: "Цвет куполов и майолики Медресе" },
+                            color3: { name: "Горячая терракота", desc: "Оттенок глиняных дувалов и узбекских улочек" },
+                            color4: { name: "Глубокий ультрамарин", desc: "Благородная тень восточной прохлады" }
+                        },
+
+                        facts: {
+                            mainTitle: "Только самое важное о Мастере",
+                            fact1: {
+                                badge: "Корни и Академия",
+                                title: "Ученик великого Репина",
+                                desc: "Родился в Казани, окончил Высшее художественное училище при Императорской Академии художеств в Санкт-Петербурге. Его наставником был сам Илья Репин. Беньков впитал строгую классическую школу, которую позже виртуозно соединил со свободой импрессионизма."
+                            },
+                            fact2: {
+                                badge: "Переломный момент",
+                                title: "Встреча с Самаркандом",
+                                desc: "В 1928 году художник впервые приезжает в Узбекистан и влюбляется в него навсегда. С 1930 года Самарканд становится его домом. Именно здесь его мрачноватая европейская палитра взрывается ослепительным солнцем, сочными красками базаров и древней архитектуры."
+                            },
+                            fact3: {
+                                badge: "Магия Света",
+                                title: "Живопись «солнечного сплетения»",
+                                desc: "Беньков совершил революцию в среднеазиатской живописи: он научился передавать густой, раскаленный воздух Востока и вибрирующий свет. Его картины «Крытый базар», «Хауз с вербами» и портреты местных жителей признаны шедеврами мирового уровня."
+                            },
+                            fact4: {
+                                badge: "Учитель поколений",
+                                title: "Наследие и бессмертие",
+                                desc: "Будучи выдающимся педагогом, он воспитал первых профессиональных узбекских художников (среди которых Зинаида Ковалевская, Абдулхак Абдуллаев и многие другие). Присвоение школе его имени — это дань уважения человеку, который заложил высочайшие стандарты мастерства в нашей стране."
+                            }
+                        },
+
+                        gallery: {
+                            badge: "Избранная экспозиция",
+                            title: "Главные шедевры Бенькова",
+                            medium: "Холст, масло",
+                            art1: {
+                                title: "«Хауз с вербами»",
+                                year: "1929 г.",
+                                desc: "Одна из самых поэтичных работ художника. Беньков виртуозно передал вибрацию раскаленного воздуха, прохладу вековых верб и зеркальную гладь воды, в которой отражается старый Самарканд."
+                            },
+                            art2: {
+                                title: "«Старая Бухара»",
+                                year: "1934 г.",
+                                desc: "Монументальное полотно, в котором мастер передал дух древнего города. Беньков акцентирует внимание на игре света и тени на прогретых солнцем стенах, создавая ощущение застывшего времени."
+                            },
+                            art3: {
+                                title: "«Подруги» (Узбечки)",
+                                year: "1940 г.",
+                                desc: "Потрясающий образец портретной и бытовой живописи. Художник с огромной теплотой передал колорит традиционных нарядов, мягкий свет и искреннюю атмосферу девичьей беседы во дворике."
+                            }
+                        },
+
+                        footerQuote: "«Художник жив, пока жива преемственность школы и пока новые поколения берут в руки кисть, стремясь поймать то самое солнце...»"
                     }
 
                 }
@@ -900,7 +965,8 @@ i18n
                         apply: "Ariza topshirish",
                         page: "Sahifa",
                         deputy: "O'rinbosar",
-                        academic: "Pedagoglar"
+                        academic: "Pedagoglar",
+                        uz: "P.P. Benkov",
                     },
                     pageTitles: {
                         deputy: "O'rinbosar",
@@ -1181,7 +1247,7 @@ i18n
                                 { year: "1984-yillar", name: "Rangtasvir va chizmachilik", desc: "Rangtasvir va chizmachilik fakulteti yopilib, o‘rniga amaliy san’at yo‘nalishi tashkil etildi." }
                             ]
                         },
-                        button: "Qabul shartlarini ko‘rish",
+                        button: "P.P. Benkov haqida",
                         gallery: {
                             tag: "Retrospektiva",
                             title: "Arxiv Suratlari va Davrlar",
@@ -1529,7 +1595,8 @@ i18n
                         director: "Direktor",
                         deputy: "Direktor o‘rinbosari",
                         directionsdetail: "Yo‘nalish tafsilotlari",
-                        academic: "Pedagoglar"
+                        academic: "Pedagoglar",
+                        uz: "Maktab nomi",
                     },
                     contacts: {
                         badge: "Maktab kontaktlari",
@@ -1649,6 +1716,69 @@ i18n
                             award_1: "«O‘zbekiston belgisi» ko‘krak nishoni",
                             award_2: "«Madaniyat va san’at fidokori» ko‘krak nishoni"
                         }
+                    },
+                    benkov: {
+                        badge: "Bir davr ramziga aylangan ism",
+                        titleFirst: "Pavel Petrovich",
+                        titleLast: "Benkov",
+                        quote: "«Markaziy Osiyo quyoshini qayta kashf etgan inson. Iste'dodi va nurga bo'lgan cheksiz muhabbati Sharq san'ati tarixini abadiy o'zgartirgan buyuk rassom».",
+                        description: "Maktabimiz faxr bilan Pavel Petrovich Benkov nomini olib yuradi. U maktabning asoschisi bo'lmagan, ammo uning ijodiy uslubi, san'atga sadoqati va ulkan madaniy merosi O'zbekistonning minglab yosh rassomlari va ustalari uchun yo'l ko'rsatuvchi ma'naviy poydevorga aylangan.",
+
+                        palette: {
+                            title: "Sharqni maftun etgan palitra",
+                            subtitle: "Benkov Samarqanddagi eng mashhur asarlarini yaratishda ilhom olgan ranglar",
+                            color1: { name: "Peshin quyoshi", desc: "Benkov impressionizmining bosh ilhom manbai" },
+                            color2: { name: "Samarqand firuzasi", desc: "Madrasa gumbazlari va koshinlarining rangi" },
+                            color3: { name: "Qizg'in terrakota", desc: "Loy devorlar va o'zbek ko'chalarining ohangi" },
+                            color4: { name: "Chuqur ultramarin", desc: "Sharqona salqinlikning olijanob soyasi" }
+                        },
+
+                        facts: {
+                            mainTitle: "Ustoz haqida eng muhim ma'lumotlar",
+                            fact1: {
+                                badge: "Ildizlar va Akademiya",
+                                title: "Buyuk Repinning shogirdi",
+                                desc: "Qozonda tug'ilgan, Sankt-Peterburgdagi Imperator Badiiy Akademiyasi qoshidagi Oliy Badiiy bilim yurtini tamomlagan. Uning ustozlaridan biri mashhur Ilya Repin edi. Benkov klassik san'at maktabining an'analarini o'zlashtirib, keyinchalik ularni impressionizm erkinligi bilan mohirona uyg'unlashtirdi."
+                            },
+                            fact2: {
+                                badge: "Hayotidagi burilish",
+                                title: "Samarqand bilan uchrashuv",
+                                desc: "1928-yilda rassom ilk bor O'zbekistonga keladi va bu yurtni bir umrga sevib qoladi. 1930-yildan boshlab Samarqand uning uyiga aylanadi. Aynan shu yerda uning Yevropaga xos biroz xira palitrasi yorqin quyosh, serjilo bozorlar va qadimiy me'morchilik ranglari bilan boyiydi."
+                            },
+                            fact3: {
+                                badge: "Nur sehri",
+                                title: "«Quyosh nafasi» tasvirchisi",
+                                desc: "Benkov Markaziy Osiyo tasviriy san'atida haqiqiy burilish yasadi: u Sharqning qizigan havosi va tebranib turgan yorug'ligini tasvirlashga muvaffaq bo'ldi. Uning «Yopiq bozor», «Tol daraxtlari yonidagi hovuz» va mahalliy aholi portretlari jahon miqyosidagi durdonalar sifatida e'tirof etilgan."
+                            },
+                            fact4: {
+                                badge: "Avlodlar ustozı",
+                                title: "Meros va abadiylik",
+                                desc: "Buyuk pedagog sifatida u ilk professional o'zbek rassomlarini tarbiyaladi (ular orasida Zinaida Kovalevskaya, Abdulhaq Abdullayev va boshqalar bor). Maktabga uning nomi berilishi mamlakatimizda eng yuksak mahorat mezonlarini shakllantirgan insonga bo'lgan chuqur hurmat ifodasidir."
+                            }
+                        },
+
+                        gallery: {
+                            badge: "Tanlangan ekspozitsiya",
+                            title: "Benkovning eng mashhur asarlari",
+                            medium: "Tuval, moybo'yoq",
+                            art1: {
+                                title: "«Tol daraxtlari yonidagi hovuz»",
+                                year: "1929-y.",
+                                desc: "Rassomning eng lirik asarlaridan biri. Benkov qizigan havoning tebranishini, qadimiy tollarning salqinligini va eski Samarqand aks etgan suv yuzasining sokinligini mahorat bilan tasvirlagan."
+                            },
+                            art2: {
+                                title: "«Qadimiy Buxoro»",
+                                year: "1934-y.",
+                                desc: "Usta qadimiy shaharning ruhini aks ettirgan monumental asar. Quyosh nurida qizigan devorlardagi yorug'lik va soya o'yini orqali vaqt go'yo to'xtab qolgandek taassurot uyg'otadi."
+                            },
+                            art3: {
+                                title: "«Dugonalar» (O'zbek qizlari)",
+                                year: "1940-y.",
+                                desc: "Portret va maishiy janrning yorqin namunasi. Rassom milliy liboslar jozibasini, mayin yorug'likni va hovlidagi samimiy suhbat muhitini katta mehr bilan tasvirlagan."
+                            }
+                        },
+
+                        footerQuote: "«Rassom maktab an'analari yashar ekan va yangi avlodlar quyosh nurini tutishga intilib qo'llariga mo'yqalam olar ekan, u ham yashashda davom etadi...»"
                     }
                 }
             },
@@ -1722,7 +1852,8 @@ i18n
                         apply: "Apply Now",
                         page: "Page",
                         deputy: "Deputy",
-                        academic: "Faculty"
+                        academic: "Faculty",
+                        benkov: "P.P. Benkov"
                     },
                     pageTitles: {
                         deputy: "Deputy",
@@ -2003,7 +2134,7 @@ i18n
                                 { year: "1984s", name: "Painting and Drawing", desc: "The faculty of painting and drawing was closed and replaced by the faculty of decorative and applied arts." }
                             ]
                         },
-                        button: "Learn Admission Requirements",
+                        button: "About P.P. Benkov",
                         gallery: {
                             tag: "Retrospective",
                             title: "Archival Photographs & Eras",
@@ -2351,7 +2482,8 @@ i18n
                         director: "Director",
                         deputy: "Deputy Director",
                         directionsdetail: "Direction Details",
-                        academic: "Faculty"
+                        academic: "Faculty",
+                        benkov: "P.P. Benkov"
                     },
                     contacts: {
                         badge: "Art School Contacts",
@@ -2470,6 +2602,69 @@ i18n
                             award_1: "Badge of Honor 'Symbol of Uzbekistan'",
                             award_2: "Badge of Honor 'Dedicated Contributor to Culture and Arts'"
                         }
+                    },
+                    benkov: {
+                        badge: "A Name That Became a Symbol of an Era",
+                        titleFirst: "Pavel Petrovich",
+                        titleLast: "Benkov",
+                        quote: "“The man who rediscovered the sun of Central Asia. A great painter whose genius and passion for light forever transformed the artistic chronicle of the East.”",
+                        description: "Our art school proudly bears the name of Pavel Petrovich Benkov. He was not its founder, yet his artistic style, devotion to art, and immense cultural legacy became the invisible foundation and timeless guiding star for thousands of young artists and masters across Uzbekistan.",
+
+                        palette: {
+                            title: "The Palette That Captivated the East",
+                            subtitle: "The colors through which Benkov breathed life into his greatest masterpieces in Samarkand",
+                            color1: { name: "Midday Sun", desc: "The primary inspiration behind Benkov's impressionism" },
+                            color2: { name: "Samarkand Turquoise", desc: "The color of madrasa domes and glazed tiles" },
+                            color3: { name: "Warm Terracotta", desc: "The shade of clay walls and Uzbek streets" },
+                            color4: { name: "Deep Ultramarine", desc: "The noble shadow of Eastern coolness" }
+                        },
+
+                        facts: {
+                            mainTitle: "The Most Important Facts About the Master",
+                            fact1: {
+                                badge: "Origins and Academy",
+                                title: "A Student of the Great Repin",
+                                desc: "Born in Kazan, he graduated from the Higher Art School of the Imperial Academy of Arts in Saint Petersburg. One of his mentors was Ilya Repin himself. Benkov absorbed the strict traditions of classical art, later blending them masterfully with the freedom of Impressionism."
+                            },
+                            fact2: {
+                                badge: "A Turning Point",
+                                title: "Meeting Samarkand",
+                                desc: "In 1928, the artist first arrived in Uzbekistan and fell in love with it forever. From 1930 onward, Samarkand became his home. It was here that his somewhat restrained European palette burst into radiant sunlight, vibrant market colors, and the splendor of ancient architecture."
+                            },
+                            fact3: {
+                                badge: "The Magic of Light",
+                                title: "The Painter of Sunlit Atmospheres",
+                                desc: "Benkov revolutionized Central Asian painting by learning to capture the dense, sun-soaked air and shimmering light of the East. His works such as 'Covered Bazaar,' 'Pool with Willows,' and his portraits of local residents are recognized as masterpieces of world-class significance."
+                            },
+                            fact4: {
+                                badge: "Teacher of Generations",
+                                title: "Legacy and Immortality",
+                                desc: "As an outstanding educator, he trained some of the first professional Uzbek artists, including Zinaida Kovalevskaya, Abdulhaq Abdullayev, and many others. Naming the school after him is a tribute to a man who established the highest standards of artistic excellence in our country."
+                            }
+                        },
+
+                        gallery: {
+                            badge: "Selected Exhibition",
+                            title: "Benkov's Greatest Masterpieces",
+                            medium: "Oil on Canvas",
+                            art1: {
+                                title: "“Pool with Willows”",
+                                year: "1929",
+                                desc: "One of the artist's most poetic works. Benkov masterfully conveyed the shimmering heat of the air, the cool shade of ancient willows, and the mirror-like surface of the water reflecting old Samarkand."
+                            },
+                            art2: {
+                                title: "“Old Bukhara”",
+                                year: "1934",
+                                desc: "A monumental painting in which the master captured the spirit of the ancient city. Benkov focuses on the interplay of light and shadow across sun-warmed walls, creating a sense of time standing still."
+                            },
+                            art3: {
+                                title: "“Friends” (Uzbek Women)",
+                                year: "1940",
+                                desc: "A remarkable example of portrait and genre painting. The artist warmly portrayed the beauty of traditional clothing, soft lighting, and the sincere atmosphere of a friendly conversation in a courtyard."
+                            }
+                        },
+
+                        footerQuote: "“An artist remains alive as long as the traditions of the school endure and new generations take up the brush, striving to capture that very same sun...”"
                     }
                 }
             }

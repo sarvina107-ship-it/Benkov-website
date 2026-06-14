@@ -33,6 +33,7 @@ import BackToTop from './components/BackToTop';
 import NotFound from './components/NotFound';
 import ErrorBoundary from './components/ErrorBoundary';
 import Academic from './pages/Academic';
+import Benkov from './pages/Benkov';
 
 const App = () => {
   const location = useLocation();
@@ -70,6 +71,7 @@ const App = () => {
                 <Route path="/management/deputy/:id" element={<Deputy />} />
                 <Route path="*" element={<NotFound />} />
                 <Route path={ROUTES.ACADEMIC} element={<Academic />} />
+                <Route path={ROUTES.BENKOV} element={<Benkov />} />
               </Routes>
             </AnimatePresence>
           </Suspense>

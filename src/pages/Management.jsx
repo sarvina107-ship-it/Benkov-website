@@ -5,6 +5,7 @@ import { ROUTES } from '../paths';
 import Deputy1 from '../assets/deputy/Deputy1.webp'
 import Deputy2 from '../assets/deputy/Deputy2.webp'
 import Deputy3 from '../assets/deputy/Deputy3.webp'
+import Deputy4 from '../assets/deputy/Deputy4.webp'
 import Director from '../assets/deputy/Director.webp'
 import PageWrapper from '../components/PageWrapper';
 
@@ -39,7 +40,7 @@ const Management = () => {
       name: t('management.names.tagaev'),
       role: t('management.deputy_role'),
       dept: t('management.depts.economic'),
-      photo: ""
+      photo: Deputy4
     },
   ], [t]);
 

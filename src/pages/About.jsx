@@ -319,7 +319,7 @@ const About = () => {
 
           {/* --- ФИНАЛ --- */}
           <div className="text-center px-4">
-            <Link to={ROUTES.CONDITIONS}>
+            <Link to={ROUTES.BENKOV}>
               <button className="group relative px-6 sm:px-8 md:px-10 py-3 sm:py-4 bg-[var(--gold-primary)] text-[#1B2A44] dark:text-gray-900 rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-xs sm:text-sm border border-[var(--gold-primary)]/30 hover:border-[#1B2A44] dark:hover:border-gray-700 transition-colors duration-300">
                 <span className="absolute inset-0 border border-[#1B2A44] dark:border-gray-700 rounded-xl opacity-0 scale-100 group-hover:opacity-100 group-hover:scale-110 transition-all duration-500"></span>
                 <span className="relative z-10 flex items-center gap-2">

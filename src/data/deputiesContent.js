@@ -1,6 +1,7 @@
 import Deputy1 from '../assets/deputy/Deputy1.webp';
 import Deputy3 from '../assets/deputy/Deputy3.webp';
 import Deputy2 from '../assets/deputy/Deputy2.webp';
+import Deputy4 from '../assets/deputy/Deputy4.webp';
 import Director from '../assets/deputy/Director.webp';
 
 export const getDeputiesContent = (t, lang) => {
@@ -14,7 +15,7 @@ export const getDeputiesContent = (t, lang) => {
         "1": Deputy1,
         "2": Deputy2,
         "3": Deputy3,
-        "4": ""
+        "4": Deputy4
     };
 
     const getDeputyAwards = (id) => {
