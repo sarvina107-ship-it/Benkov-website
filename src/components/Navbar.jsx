@@ -7,6 +7,99 @@ import Logo from '../assets/icon/Logo.webp';
 import BenkovImg from '../assets/img/BenkovImg.webp';
 import Poster from '../assets/img/Poster.webp';
 
+const searchIndex = [
+  {
+    titleKey: 'nav.history',
+    subtitleKey: 'search.subtitles.about',
+    keywords: ['история', 'школа', 'Беньков', 'Бенькова', 'основание', 'традиции', 'живопись', '1918', 'tarix', 'maktab', 'Benkov', 'an\'ana', 'rassomlik', 'history', 'foundation', 'tradition', 'painting'],
+    path: ROUTES.ABOUT,
+  },
+  {
+    titleKey: 'nav.benkov',
+    subtitleKey: 'search.subtitles.benkov',
+    keywords: ['Беньков', 'Павел', 'Benkov', 'Pavel', 'nomidagi', 'rassom', 'artist', 'художник', 'имени'],
+    path: ROUTES.BENKOV,
+  },
+  {
+    titleKey: 'nav.management',
+    subtitleKey: 'search.subtitles.management',
+    keywords: ['руководство', 'директор', 'заместитель', 'администрация', 'Хакимов', 'rahbariyat', 'direktor', 'o\'rinbosar', 'management', 'director', 'deputy'],
+    path: ROUTES.MANAGEMENT,
+  },
+  {
+    titleKey: 'nav.infrastructure',
+    subtitleKey: 'search.subtitles.infrastructure',
+    keywords: ['инфраструктура', 'мастерская', 'класс', 'здание', 'infrastruktura', 'ustaxona', 'sinf', 'infrastructure', 'workshop', 'classroom'],
+    path: ROUTES.INFRASTRUCTURE,
+  },
+  {
+    titleKey: 'nav.achievements',
+    subtitleKey: 'search.subtitles.achievements',
+    keywords: ['достижения', 'выставки', 'конкурсы', 'награды', 'yutuqlar', 'ko\'rgazma', 'tanlov', 'achievements', 'exhibition', 'awards'],
+    path: ROUTES.ACHIEVEMENTS,
+  },
+  {
+    titleKey: 'nav.directions',
+    subtitleKey: 'search.subtitles.directions',
+    keywords: ['направления', 'дизайн', 'скульптура', 'графика', 'живопись', 'кино', 'yo\'nalishlar', 'dizayn', 'haykaltaroshlik', 'grafika', 'directions', 'design', 'sculpture', 'graphics', 'painting'],
+    path: ROUTES.DIRECTIONS,
+  },
+  {
+    titleKey: 'nav.academic',
+    subtitleKey: 'search.subtitles.academic',
+    keywords: ['преподаватели', 'педагоги', 'учителя', 'pedagoglar', 'o\'qituvchi', 'faculty', 'teachers', 'academic'],
+    path: ROUTES.ACADEMIC,
+  },
+  {
+    titleKey: 'nav.study_plan',
+    subtitleKey: 'search.subtitles.studyplan',
+    keywords: ['учебный план', 'программа', 'o\'quv rejasi', 'dastur', 'study plan', 'curriculum', 'program'],
+    path: ROUTES.STUDYPLAN,
+  },
+  {
+    titleKey: 'nav.schedule',
+    subtitleKey: 'search.subtitles.schedule',
+    keywords: ['расписание', 'занятия', 'уроки', 'jadval', 'dars', 'schedule', 'lessons', 'timetable'],
+    path: ROUTES.SCHEDULE,
+  },
+  {
+    titleKey: 'nav.faq',
+    subtitleKey: 'search.subtitles.faq',
+    keywords: ['вопросы', 'ответы', 'частые', 'savollar', 'javoblar', 'FAQ', 'questions', 'answers'],
+    path: ROUTES.FAQ,
+  },
+  {
+    titleKey: 'nav.conditions',
+    subtitleKey: 'search.subtitles.conditions',
+    keywords: ['условия', 'поступление', 'прием', 'заявка', 'qabul', 'shartlar', 'ariza', 'admission', 'conditions', 'apply', 'enrollment'],
+    path: ROUTES.CONDITIONS,
+  },
+  {
+    titleKey: 'nav.documents',
+    subtitleKey: 'search.subtitles.documents',
+    keywords: ['документы', 'устав', 'лицензия', 'свидетельство', 'комиссия', 'hujjatlar', 'nizom', 'litsenziya', 'documents', 'charter', 'license', 'certificate'],
+    path: ROUTES.DOCUMENTS,
+  },
+  {
+    titleKey: 'nav.contacts',
+    subtitleKey: 'search.subtitles.contacts',
+    keywords: ['контакты', 'адрес', 'телефон', 'Ташкент', 'Фурката', 'kontaktlar', 'manzil', 'telefon', 'Toshkent', 'contacts', 'address', 'phone', 'location'],
+    path: ROUTES.CONTACTS,
+  },
+  {
+    titleKey: 'nav.news',
+    subtitleKey: 'search.subtitles.news',
+    keywords: ['новости', 'события', 'yangiliklar', 'voqea', 'news', 'events'],
+    path: ROUTES.NEWSLIST,
+  },
+  {
+    titleKey: 'nav.gallery',
+    subtitleKey: 'search.subtitles.gallery',
+    keywords: ['галерея', 'работы', 'ученики', 'выставка', 'galereya', 'asarlar', 'gallery', 'works', 'students', 'exhibition'],
+    path: ROUTES.GALLERY,
+  },
+];
+
 const Navbar = () => {
   const location = useLocation();
   const isHome = location.pathname === '/';
@@ -38,14 +131,6 @@ const Navbar = () => {
     [ROUTES.BENKOV]: t('titles.benkov'),
   };
 
-  const searchData = [
-    { title: 'История школы', path: ROUTES.ABOUT, content: 'Основание, традиции Павла Бенькова, академическая живопись' },
-    { title: 'Направления', path: ROUTES.DIRECTIONS, content: 'Дизайн, скульптура, графика, прикладное искусство' },
-    { title: 'Документы', path: ROUTES.DOCUMENTS, content: 'Устав, лицензия, свидетельство, приемная комиссия' },
-    { title: 'Контакты', path: ROUTES.CONTACTS, content: 'Адрес, телефон, почта, локация школы' },
-    { title: 'Руководство', path: ROUTES.MANAGEMENT, content: 'Директор, заместители, администрация школы Бенькова' },
-  ];
-
   // Состояния
   const [searchQuery, setSearchQuery] = useState('');
   const [searchResults, setSearchResults] = useState([]);
@@ -58,32 +143,37 @@ const Navbar = () => {
   const mobileMenuRef = useRef(null);
   const desktopLangRef = useRef(null);
   const mobileLangRef = useRef(null);
-  const fuseRef = useRef(null);
 
-  // Lazy-load Fuse.js only when the user starts typing
-  const handleSearch = useCallback(async (e) => {
-    const query = e.target.value;
-    setSearchQuery(query);
-
+  const runSearch = useCallback((query) => {
     if (query.length > 1) {
-      if (!fuseRef.current) {
-        const { default: Fuse } = await import('fuse.js');
-        fuseRef.current = new Fuse(searchData, {
-          keys: [{ name: 'title', weight: 0.7 }, { name: 'content', weight: 0.3 }],
-          threshold: 0.3,
-        });
-      }
-      const results = fuseRef.current.search(query);
-      setSearchResults(results.map(r => r.item).slice(0, 5));
+      const q = query.toLowerCase();
+      const results = searchIndex.filter(item =>
+        item.keywords.some(k => k.toLowerCase().includes(q))
+      );
+      setSearchResults(
+        results.slice(0, 5).map(item => ({
+          path: item.path,
+          title: t(item.titleKey),
+          content: t(item.subtitleKey),
+        }))
+      );
     } else {
       setSearchResults([]);
     }
+  }, [t]);
+
+  const handleSearch = useCallback((e) => {
+    setSearchQuery(e.target.value);
   }, []);
 
   const changeLanguage = (lng) => {
     i18n.changeLanguage(lng);
     setLangDropdownOpen(false);
   };
+
+  useEffect(() => {
+    runSearch(searchQuery);
+  }, [i18n.language, runSearch, searchQuery]);
 
   // Закрытие меню при клике вне
   useEffect(() => {

@@ -94,7 +94,24 @@ i18n
                     },
                     search_placeholder: "Поиск...",
                     search: {
-                        found: "Найдено в разделах"
+                        found: "Найдено в разделах",
+                        subtitles: {
+                            about: "Основание, традиции Павла Бенькова, академическая живопись",
+                            benkov: "Павел Беньков, имя школы, художник",
+                            management: "Директор, заместители, администрация школы Бенькова",
+                            infrastructure: "Мастерские, классы, здания школы",
+                            achievements: "Выставки, конкурсы, награды учеников",
+                            directions: "Дизайн, скульптура, графика, прикладное искусство",
+                            academic: "Преподаватели и педагоги школы",
+                            studyplan: "Учебная программа и план обучения",
+                            schedule: "Расписание занятий и уроков",
+                            faq: "Частые вопросы о поступлении и обучении",
+                            conditions: "Условия поступления и приём документов",
+                            documents: "Устав, лицензия, свидетельство, приемная комиссия",
+                            contacts: "Адрес, телефон, локация школы",
+                            news: "Новости и события школы",
+                            gallery: "Работы учеников, галерея"
+                        }
                     },
                     hero: {
                         welcome: "ДОБРО ПОЖАЛОВАТЬ В",
@@ -811,22 +828,114 @@ i18n
                             subtitle: "Школа имени П. Бенькова"
                         },
                         names: {
+                            aminov_xasan: "Аминов Хасан Рашидович",
+                            avezova_alimova: "Авезова-Алимова Гульчехра Гафуровна",
+                            zokirjonov: "Закирджонов Фарходжон Закиржон угли",
+                            ignateva: "Игнатьева Ольга Васильевна",
+                            ibragimov: "Ибрагимов Леким Хакимович",
+                            isakdjanov: "Исакджанов Хасан",
+                            islamshikov: "Исламшиков Зухриддин",
+                            karabayev: "Карабаев Мурад Абдукасимович",
+                            lebedev: "Лебедев Виктор Алексеевич",
+                            mamadjanov: "Мамаджанов Анвар Алимжанович",
+                            saidberdiyev: "Саидбердиев Абдисамат Ахатович",
+                            usmanov: "Усманов Джамал Джалалович",
                             akramov: "Акрамов Рикситулла Тишабаевич",
-                            aminov: "Аминов Хусан Рашидович",
-                            aripova: "Арипова Мадина Турсуналиевна"
+                            aminov_xusan: "Аминов Хусан Рашидович",
+                            aripova: "Арипова Мадина Турсуналиевна",
+                            chibisov: "Чибисов Анатолий Константинович",
+                            kuziyeva: "Кузиева Шоира Ходиходжаевна"
                         },
                         1: {
                             awards_title: "Награды",
-                            award_1: "Золотая медаль Академия художеств Узбекистана."
+                            award_1: "Нагрудный знак «Самоотверженный деятель Академии художеств Узбекистана»"
                         },
+
                         2: {
                             awards_title: "Награды",
-                            award_1: "Нагрудный знак «Преданный служитель Академии художеств Узбекистана»"
+                            award_1: "Обладательница медали «Шухрат»"
                         },
+
                         3: {
+                            awards_title: "Награды",
+                            award_1: "Нагрудный знак «Подвижник духовности»"
+                        },
+
+                        4: {
+                            awards_title: "Награды",
+                            award_1: "Орден «Дружба» Президента Республики Узбекистан",
+                            award_2: "Нагрудный знак «Самоотверженный деятель Академии художеств Узбекистана»"
+                        },
+
+                        5: {
+                            awards_title: "Награды",
+                            award_1: "Академик Академии художеств Узбекистана"
+                        },
+
+                        6: {
+                            awards_title: "Награды",
+                            award_1: "Орден «Дружба» Президента Республики Узбекистан",
+                            award_2: "Почётный нагрудный знак Академии художеств Узбекистана"
+                        },
+
+                        7: {
+                            awards_title: "Награды",
+                            award_1: "Нагрудный знак «Самоотверженный деятель культуры и искусства»",
+                            award_2: "Золотая медаль Академии художеств Узбекистана"
+                        },
+
+                        8: {
+                            awards_title: "Награды",
+                            award_1: "Нагрудный знак «Самоотверженный деятель Академии художеств Узбекистана»",
+                            award_2: "Золотая медаль Академии художеств Узбекистана"
+                        },
+
+                        9: {
+                            awards_title: "Награды",
+                            award_1: "Нагрудный знак «Ветеран труда»"
+                        },
+
+                        10: {
+                            awards_title: "Награды",
+                            award_1: "Академик Академии художеств Узбекистана"
+                        },
+
+                        11: {
+                            awards_title: "Награды",
+                            award_1: "Нагрудный знак «Отличник среднего специального профессионального образования Республики Узбекистан»",
+                            award_2: "Нагрудный знак «Ветеран труда»"
+                        },
+
+                        12: {
+                            awards_title: "Награды",
+                            award_1: "Академик Академии художеств Узбекистана"
+                        },
+
+                        13: {
+                            awards_title: "Награды",
+                            award_1: "Золотая медаль Академии художеств Узбекистана"
+                        },
+
+                        14: {
+                            awards_title: "Награды",
+                            award_1: "Нагрудный знак «Самоотверженный деятель Академии художеств Узбекистана»"
+                        },
+
+                        15: {
                             awards_title: "Награды",
                             award_1: "Нагрудный знак «Знак Узбекистана»",
                             award_2: "Нагрудный знак «Самоотверженный деятель культуры и искусства»"
+                        },
+
+                        16: {
+                            awards_title: "Награды",
+                            award_1: "Орден «Дружба» Президента Республики Узбекистан",
+                            award_2: "Почётный нагрудный знак Академии художеств Узбекистана"
+                        },
+
+                        17: {
+                            awards_title: "Награды",
+                            award_1: "Орден «За здоровое поколение» I степени"
                         }
                     },
                     benkov: {
@@ -981,7 +1090,24 @@ i18n
                     },
                     search_placeholder: "Qidiruv...",
                     search: {
-                        found: "Bo'limlardan topildi"
+                        found: "Bo'limlardan topildi",
+                        subtitles: {
+                            about: "Asos solish, Pavel Benkov an'analari, akademik rassomlik",
+                            benkov: "Pavel Benkov, maktab nomi, rassom",
+                            management: "Direktor, o'rinbosarlar, maktab ma'muriyati",
+                            infrastructure: "Ustaxonalar, sinflar, maktab binolari",
+                            achievements: "Ko'rgazmalar, tanlovlar, o'quvchilar yutuqlari",
+                            directions: "Dizayn, haykaltaroshlik, grafika, amaliy san'at",
+                            academic: "Maktab pedagoglari va o'qituvchilari",
+                            studyplan: "O'quv dasturi va o'quv rejasi",
+                            schedule: "Darslar va mashg'ulotlar jadvali",
+                            faq: "Qabul va ta'lim haqida tez-tez beriladigan savollar",
+                            conditions: "Qabul shartlari va hujjatlar topshirish",
+                            documents: "Nizom, litsenziya, guvohnoma, qabul komissiyasi",
+                            contacts: "Manzil, telefon, maktab joylashuvi",
+                            news: "Maktab yangiliklari va voqealar",
+                            gallery: "O'quvchilar asarlari, galereya"
+                        }
                     },
                     hero: {
                         welcome: "XUSH KELIBSIZ",
@@ -1699,23 +1825,116 @@ i18n
                             subtitle: "P. Benkov nomidagi maktab"
                         },
                         names: {
+                            aminov_xasan: "Aminov Xasan Rashidovich",
+                            avezova_alimova: "Avezova-Alimova Gulchexra Gafurovna",
+                            zokirjonov: "Zokirjonov Farxodjon Zokirjon o‘g‘li",
+                            ignateva: "Ignateva Olga Vasilevna",
+                            ibragimov: "Ibragimov Lekim Hakimovich",
+                            isakdjanov: "Isakdjanov Xasan XXX",
+                            islamshikov: "Islamshikov Zuxriddin",
+                            karabayev: "Karabayev Murad Abduqosimovich",
+                            lebedev: "Lebedev Viktor Alekseyevich",
+                            mamadjanov: "Mamadjanov Anvar Alimjanovich",
+                            saidberdiyev: "Saidberdiyev Abdisamat Axatovich",
+                            usmanov: "Usmanov Jamal Jalalovich",
                             akramov: "Akramov Rixsitulla Tishabayevich",
-                            aminov: "Aminov Xusan Rashidovich",
-                            aripova: "Aripova Madina Tursunaliyevna"
+                            aminov_xusan: "Aminov Xusan Rashidovich",
+                            aripova: "Aripova Madina Tursunaliyevna",
+                            chibisov: "Chibisov Anatoliy Konstantinovich",
+                            kuziyeva: "Kuziyeva Shoira Xodixodjayevna"
                         },
                         1: {
                             awards_title: "Mukofotlar",
-                            award_1: "O‘zbekiston Badiiy Akademiyasining oltin medali"
+                            award_1: "«O‘zbekiston Badiiy akademiyasi fidoyisi» ko‘krak nishoni"
                         },
+
                         2: {
                             awards_title: "Mukofotlar",
-                            award_1: "«O‘zbekiston Badiiy Akademiyasi fidoiysi» ko‘krak nishoni"
+                            award_1: "«Shuhrat» medali sohibasi"
                         },
+
                         3: {
+                            awards_title: "Mukofotlar",
+                            award_1: "«Ma’naviyat fidoyisi» ko‘krak nishoni"
+                        },
+
+                        4: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Respublikasi Prezidentining «Do‘stlik» ordeni",
+                            award_2: "«O‘zbekiston Badiiy akademiyasi fidoyisi» ko‘krak nishoni"
+                        },
+
+                        5: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Badiiy akademiyasi akademigi"
+                        },
+
+                        6: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Respublikasi Prezidentining «Do‘stlik» ordeni",
+                            award_2: "O‘zbekiston Badiiy akademiyasining Faxriy ko‘krak nishoni"
+                        },
+
+                        7: {
+                            awards_title: "Mukofotlar",
+                            award_1: "«Madaniyat va san’at fidokori» ko‘krak nishoni",
+                            award_2: "O‘zbekiston Badiiy akademiyasining Oltin medali"
+                        },
+
+                        8: {
+                            awards_title: "Mukofotlar",
+                            award_1: "«O‘zbekiston Badiiy akademiyasi fidoyisi» ko‘krak nishoni",
+                            award_2: "O‘zbekiston Badiiy akademiyasining Oltin medali"
+                        },
+
+                        9: {
+                            awards_title: "Mukofotlar",
+                            award_1: "«Mehnat faxriysi» ko‘krak nishoni"
+                        },
+
+                        10: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Badiiy akademiyasi akademigi"
+                        },
+
+                        11: {
+                            awards_title: "Mukofotlar",
+                            award_1: "«O‘rta maxsus kasb-hunar ta’limi a’lochisi» ko‘krak nishoni",
+                            award_2: "«Mehnat faxriysi» ko‘krak nishoni"
+                        },
+
+                        12: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Badiiy akademiyasi akademigi"
+                        },
+
+                        13: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Badiiy akademiyasining Oltin medali"
+                        },
+
+                        14: {
+                            awards_title: "Mukofotlar",
+                            award_1: "«O‘zbekiston Badiiy akademiyasi fidoyisi» ko‘krak nishoni"
+                        },
+
+                        15: {
                             awards_title: "Mukofotlar",
                             award_1: "«O‘zbekiston belgisi» ko‘krak nishoni",
                             award_2: "«Madaniyat va san’at fidokori» ko‘krak nishoni"
+                        },
+
+                        16: {
+                            awards_title: "Mukofotlar",
+                            award_1: "O‘zbekiston Respublikasi Prezidentining «Do‘stlik» ordeni",
+                            award_2: "O‘zbekiston Badiiy akademiyasining Faxriy ko‘krak nishoni"
+                        },
+
+                        17: {
+                            awards_title: "Mukofotlar",
+                            award_1: "I darajali «Sog‘lom avlod uchun» ordeni"
                         }
+
                     },
                     benkov: {
                         badge: "Bir davr ramziga aylangan ism",
@@ -1868,7 +2087,24 @@ i18n
                     },
                     search_placeholder: "Search...",
                     search: {
-                        found: "Found in sections"
+                        found: "Found in sections",
+                        subtitles: {
+                            about: "Foundation, Pavel Benkov traditions, academic painting",
+                            benkov: "Pavel Benkov, school name, artist",
+                            management: "Director, deputies, school administration",
+                            infrastructure: "Workshops, classrooms, school buildings",
+                            achievements: "Exhibitions, competitions, student awards",
+                            directions: "Design, sculpture, graphics, applied arts",
+                            academic: "School teachers and faculty",
+                            studyplan: "Curriculum and study program",
+                            schedule: "Class and lesson timetable",
+                            faq: "Frequently asked questions about admission and studies",
+                            conditions: "Admission requirements and document submission",
+                            documents: "Charter, license, certificate, admissions committee",
+                            contacts: "Address, phone, school location",
+                            news: "School news and events",
+                            gallery: "Student works, gallery"
+                        }
                     },
                     hero: {
                         welcome: "WELCOME TO",
@@ -2581,26 +2817,119 @@ i18n
                     academic_page: {
                         base: {
                             page_title: "Distinguished Figures and Teachers",
-                            awards_default_title: "Awards",
+                            awards_default_title: "Awards and Honors",
                             subtitle: "P. Benkov School"
                         },
                         names: {
-                            akramov: "Rixsitulla Tishabayevich Akramov",
-                            aminov: "Khusan Rashidovich Aminov",
-                            aripova: "Madina Tursunaliyevna Aripova"
+                            aminov_xasan: "Khasan Rashidovich Aminov",
+                            avezova_alimova: "Gulchekhra Gafurovna Avezova-Alimova",
+                            zokirjonov: "Farkhodjon Zokirjon o‘g‘li Zokirjonov",
+                            ignateva: "Olga Vasilievna Ignateva",
+                            ibragimov: "Lekim Khakimovich Ibragimov",
+                            isakdjanov: "Khasan Isakdjanov",
+                            islamshikov: "Zukhriddin Islamshikov",
+                            karabayev: "Murad Abdukasimovich Karabayev",
+                            lebedev: "Viktor Alekseyevich Lebedev",
+                            mamadjanov: "Anvar Alimjanovich Mamadjanov",
+                            saidberdiyev: "Abdisamat Akhatovich Saidberdiyev",
+                            usmanov: "Jamal Jalalovich Usmanov",
+                            akramov: "Riksitulla Tishabayevich Akramov",
+                            aminov_xusan: "Khusan Rashidovich Aminov",
+                            aripova: "Madina Tursunalievna Aripova",
+                            chibisov: "Anatoly Konstantinovich Chibisov",
+                            kuziyeva: "Shoira Khodikhodjayevna Kuziyeva"
                         },
+
                         1: {
-                            awards_title: "Awards",
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Devoted Contributor to the Academy of Arts of Uzbekistan»"
+                        },
+
+                        2: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Recipient of the «Shuhrat» Medal"
+                        },
+
+                        3: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Devoted Contributor to Spiritual Enlightenment»"
+                        },
+
+                        4: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Order «Dustlik» (Friendship) of the President of the Republic of Uzbekistan",
+                            award_2: "Badge of Honor «Devoted Contributor to the Academy of Arts of Uzbekistan»"
+                        },
+
+                        5: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Academician of the Academy of Arts of Uzbekistan"
+                        },
+
+                        6: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Order «Dustlik» (Friendship) of the President of the Republic of Uzbekistan",
+                            award_2: "Honorary Badge of the Academy of Arts of Uzbekistan"
+                        },
+
+                        7: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Devoted Contributor to Culture and Arts»",
+                            award_2: "Gold Medal of the Academy of Arts of Uzbekistan"
+                        },
+
+                        8: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Devoted Contributor to the Academy of Arts of Uzbekistan»",
+                            award_2: "Gold Medal of the Academy of Arts of Uzbekistan"
+                        },
+
+                        9: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Veteran of Labor»"
+                        },
+
+                        10: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Academician of the Academy of Arts of Uzbekistan"
+                        },
+
+                        11: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Excellence in Secondary Specialized Vocational Education»",
+                            award_2: "Badge of Honor «Veteran of Labor»"
+                        },
+
+                        12: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Academician of the Academy of Arts of Uzbekistan"
+                        },
+
+                        13: {
+                            awards_title: "Awards and Honors",
                             award_1: "Gold Medal of the Academy of Arts of Uzbekistan"
                         },
-                        2: {
-                            awards_title: "Awards",
-                            award_1: "Badge of Honor 'Devotee of the Academy of Arts of Uzbekistan'"
+
+                        14: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Devoted Contributor to the Academy of Arts of Uzbekistan»"
                         },
-                        3: {
-                            awards_title: "Awards",
-                            award_1: "Badge of Honor 'Symbol of Uzbekistan'",
-                            award_2: "Badge of Honor 'Dedicated Contributor to Culture and Arts'"
+
+                        15: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Badge of Honor «Symbol of Uzbekistan»",
+                            award_2: "Badge of Honor «Devoted Contributor to Culture and Arts»"
+                        },
+
+                        16: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Order «Dustlik» (Friendship) of the President of the Republic of Uzbekistan",
+                            award_2: "Honorary Badge of the Academy of Arts of Uzbekistan"
+                        },
+
+                        17: {
+                            awards_title: "Awards and Honors",
+                            award_1: "Order «For a Healthy Generation», First Degree"
                         }
                     },
                     benkov: {
