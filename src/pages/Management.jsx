@@ -8,6 +8,7 @@ import Deputy3 from '../assets/deputy/Deputy3.webp'
 import Deputy4 from '../assets/deputy/Deputy4.webp'
 import Director from '../assets/deputy/Director.webp'
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Management = () => {
 
@@ -46,6 +47,10 @@ const Management = () => {
 
   return (
     <PageWrapper>
+       <Seo
+        title={t('titles.management')}
+        description={t('management.desc')}
+      />
       <main className="bg-[#F8F6F2] dark:bg-gray-950 min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 text-[#1B2A44] dark:text-gray-100 font-sans">
         <div className="max-w-7xl mx-auto">
 

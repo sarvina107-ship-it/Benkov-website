@@ -1,6 +1,7 @@
 import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Gallery = () => {
   const { t } = useTranslation();
@@ -49,6 +50,10 @@ const Gallery = () => {
 
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.gallery')}
+        description={t('gallery.span')}
+      />
       <section className="py-12 sm:py-16 md:py-20 lg:py-24 bg-[#FAF9F6] dark:bg-gray-950 relative overflow-hidden min-h-screen px-4 sm:px-6">
         <div className="absolute top-0 right-0 w-[300px] sm:w-[400px] md:w-[500px] h-[300px] sm:h-[400px] md:h-[500px] bg-[var(--gold-primary)]/5 dark:bg-[var(--gold-primary)]/3 rounded-full blur-[120px] pointer-events-none"></div>
 

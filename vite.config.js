@@ -4,6 +4,13 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import Sitemap from 'vite-plugin-sitemap';
+import path from 'path'; // Нужен для указания пути к папке dist
+
+// --- Безопасное подключение установленного пакета для ES-модулей ---
+import { createRequire } from 'module';
+const require = createRequire(import.meta.url);
+const vitePrerender = require('vite-plugin-prerender');
+// ------------------------------------------------------------------
 
 async function getDynamicRoutes() {
   const API_URL = 'https://sarvina-production.up.railway.app/api/news';
@@ -25,7 +32,7 @@ async function getDynamicRoutes() {
       return [];
     }
 
-    const newsRoutes = postsArray.map(post => `/news/${post.id}`);
+    const newsRoutes = postsArray.map(post => `/news/${post._id}`);
     console.log(`Успешно добавлено ${newsRoutes.length} новостей в Sitemap!`);
     return newsRoutes;
 
@@ -60,8 +67,27 @@ export default defineConfig(async () => {
     '/newsList',
     '/newsDetail',
     '/login',
-    '/adminNews'
+    '/adminNews',
+    '/academic',
+    '/benkov'
   ];
+
+  const dynamicRoutes = await getDynamicRoutes(); // Твои пути типа /news/123
+
+  // Генерируем массив всех комбинаций
+  const allRoutes = [];
+  staticRoutes.forEach(route => {
+    languages.forEach(lang => {
+      allRoutes.push(`${lang}${route === '/' ? '' : route}`);
+    });
+  });
+
+  // Добавляем новости для каждого языка
+  dynamicRoutes.forEach(route => {
+    languages.forEach(lang => {
+      allRoutes.push(`${lang}${route}`);
+    });
+  });
 
   return {
     server: {
@@ -103,15 +129,26 @@ export default defineConfig(async () => {
                 '$1 defer>'
               );
               if (updated !== html) writeFileSync(path, updated, 'utf-8');
-            } catch {}
+            } catch { }
           }
         }
       },
       Sitemap({
         hostname: 'https://benkov-website.vercel.app',
-        dynamicRoutes: [...staticRoutes, ...newsRoutes],
+        dynamicRoutes: allRoutes, // Передаем общий массив роутов
         generateRobotsTxt: false,
       }),
+
+      // Вызываем установленный vite-plugin-prerender
+      vitePrerender({
+        staticDir: path.join(__dirname, 'dist'),
+        routes: allRoutes,
+        rendererOptions: {
+          maxConcurrentRoutes: 4,
+          renderAfterTime: 500,
+        }
+      }),
+
       ViteImageOptimizer({
         test: /\.(jpe?g|png|gif|tiff|webp|svg)$/i,
         exclude: [

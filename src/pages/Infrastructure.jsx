@@ -25,11 +25,16 @@ import Facade from '../assets/Infrastructure/Facade.webp'
 import Yard from '../assets/Infrastructure/Yard.webp'
 import Entrance from '../assets/Infrastructure/Entrance.webp'
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Infrastructure = () => {
   const { t } = useTranslation();
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.infrastructure')}
+        description={t('infrastructure.desc')}
+      />
       <main className="bg-[#FAF9F6] dark:bg-gray-950 text-[#1B2A44] dark:text-gray-100 overflow-hidden">
 
         {/* --- Внешний вид школы --- */}

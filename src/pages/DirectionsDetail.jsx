@@ -1,18 +1,20 @@
 import React from 'react';
 import { useParams, useNavigate, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
-import { directionsData } from '../data/directionsData';
+import { directionsData, directionsCategories } from "../data/directionsData";
 import { ROUTES } from '../paths';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const DirectionsDetail = () => {
     const { id } = useParams();
     const navigate = useNavigate();
     const { t } = useTranslation();
-    const data = directionsData[id];
 
-    // Если данных нет, показываем заглушку
-    if (!data) {
+    const currentDirection = directionsData && directionsData[id];
+
+    // Если данных по такому id нет, показываем заглушку и не даем коду упасть
+    if (!currentDirection) {
         return (
             <div className="pt-24 text-center font-serif text-[#0E1A2B] px-4">
                 {t('directions.data.undefined')}
@@ -21,10 +23,14 @@ const DirectionsDetail = () => {
     }
 
     // Собираем все изображения направления
-    const allImages = data.images ? [data.images[0], ...data.images.slice(1, 5)] : [];
+    const allImages = currentDirection.images ? [currentDirection.images[0], ...currentDirection.images.slice(1, 5)] : [];
 
     return (
         <PageWrapper>
+            <Seo
+                title={`${t(`directions.items.${id}.title`)}`}
+                description={t(`directions.items.${id}.desc`)}
+            />
             <div className="min-h-screen bg-[#F8F6F2] dark:bg-gray-950 pb-16 sm:pb-20 md:pb-24 text-[#0E1A2B] dark:text-gray-100">
 
                 {/* Навигация */}
@@ -105,7 +111,7 @@ const DirectionsDetail = () => {
                                     <img
                                         src={img}
                                         className="w-full h-full object-cover transition-transform duration-1000 ease-out group-hover:scale-105"
-                                        alt={`${t('directions.data.work' || 'Работа')} ${idx + 1}`}
+                                        alt={`${t('directions.data.work')} ${idx + 1}`}
                                         loading="lazy"
                                     />
 

@@ -11,6 +11,7 @@ import PageWrapper from '../components/PageWrapper';
 import Paint1 from '../assets/gallery/image1.webp'
 import Paint2 from '../assets/gallery/image2.webp'
 import Paint3 from '../assets/gallery/image18.webp'
+import Seo from '../components/Seo';
 
 const Home = () => {
   const { t } = useTranslation();
@@ -79,6 +80,10 @@ const Home = () => {
   }, [directionsData]);
   return (
     <PageWrapper>
+      <Seo
+        title={t('home_page.seo_title')}
+        description={t('home_page.seo_description')}
+      />
       <div>
         {/* --- История школы --- */}
         <section

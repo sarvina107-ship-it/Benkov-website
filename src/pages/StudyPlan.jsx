@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
 import { DIRECTIONS } from '../data/studyPlan';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const StudyPlan = () => {
   const navigate = useNavigate();
@@ -11,6 +12,10 @@ const StudyPlan = () => {
 
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.studyplan')}
+        description={t('studyplan.department')}
+      />
       <div className="bg-[#FDFCFB] dark:bg-gray-950 min-h-screen pt-16 sm:pt-20 md:pt-24 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-7xl mx-auto">
 

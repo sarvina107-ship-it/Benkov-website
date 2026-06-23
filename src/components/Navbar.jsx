@@ -1,7 +1,7 @@
 import React, { useState, useEffect, useRef, useCallback } from 'react';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
-import { useLocation, Link } from 'react-router-dom';
+import { useLocation, Link, useNavigate } from 'react-router-dom';
 import ThemeToggle from './ThemeToggle';
 import Logo from '../assets/icon/Logo.webp';
 import BenkovImg from '../assets/img/BenkovImg.webp';
@@ -102,10 +102,15 @@ const searchIndex = [
 
 const Navbar = () => {
   const location = useLocation();
-  const isHome = location.pathname === '/';
+
+  // Создаем чистый путь без языковых префиксов для внутренних проверок Навбара
+  const cleanLocationPath = location.pathname.replace(/^\/(uz|en)/, '') || '/';
+
+  const isHome = cleanLocationPath === '/';
 
   const { t, i18n } = useTranslation();
   const titles = {
+    "/": t('titles.home'),
     [ROUTES.ABOUT]: t('titles.about'),
     [ROUTES.ACHIEVEMENTS]: t('titles.achievements'),
     [ROUTES.CONTACTS]: t('titles.contacts'),
@@ -166,9 +171,28 @@ const Navbar = () => {
     setSearchQuery(e.target.value);
   }, []);
 
-  const changeLanguage = (lng) => {
-    i18n.changeLanguage(lng);
+  const navigate = useNavigate();
+
+  const changeLanguage = (newLang) => {
+    // 1. Меняем язык в i18next
+    i18n.changeLanguage(newLang);
     setLangDropdownOpen(false);
+
+    // 2. Берем текущий путь напрямую из браузера
+    const currentPath = window.location.pathname;
+
+    // 3. Вырезаем старый язык из пути, если он там был
+    const cleanPath = currentPath.replace(/^\/(uz|en)/, '') || '/';
+
+    // 4. Делаем переход
+    if (newLang === 'ru') {
+      // Для русского — чистый URL
+      navigate(cleanPath === '/' ? '/' : cleanPath);
+    } else {
+      // Для uz и en — добавляем префикс в начало
+      const newPath = cleanPath === '/' ? `/${newLang}` : `/${newLang}${cleanPath}`;
+      navigate(newPath);
+    }
   };
 
   useEffect(() => {
@@ -225,14 +249,15 @@ const Navbar = () => {
     return () => window.removeEventListener('pagehide', handlePageHide);
   }, []);
 
-  let pageTitle = titles[location.pathname];
+  // Ищем заголовок по чистому пути, чтобы объект titles его нашёл!
+  let pageTitle = titles[cleanLocationPath];
 
   if (!pageTitle) {
-    if (location.pathname.includes('/management/deputy/')) {
+    if (cleanLocationPath.includes('/management/deputy/')) {
       pageTitle = t('pageTitles.deputy');
-    } else if (location.pathname.includes('/news/')) {
+    } else if (cleanLocationPath.includes('/news/')) {
       pageTitle = t('pageTitles.news');
-    } else if (location.pathname.includes('/directions/')) {
+    } else if (cleanLocationPath.includes('/directions/')) {
       pageTitle = t('pageTitles.directions');
     } else {
       pageTitle = t('pageTitles.default');
@@ -253,10 +278,9 @@ const Navbar = () => {
 
   return (
     <header className="mt-[20px]">
-      {/* Верхняя часть с логотипом и кнопкой */}
       <div className="flex items-center justify-between mx-[60px] mb-5 max-lg:mx-6 max-md:mx-4 max-sm:flex-col max-sm:gap-4">
         <div className="flex items-center gap-[30px] max-sm:flex-col max-sm:text-center">
-          <img className="w-[100px] h-[100px] max-sm:w-[70px] max-sm:h-[70px]" priority src={Logo} alt="Logo" />
+          <img className="w-[100px] h-[100px] max-sm:w-[70px] max-sm:h-[70px]" priority={true} src={Logo} alt="Logo" />
           <h2
             className="text-[#1B2A44] dark:text-gray-200 font-bold text-[20px] w-[500px] leading-tight max-lg:w-auto max-lg:text-base"
             style={{ fontFamily: "'Playfair Display', serif" }}
@@ -690,7 +714,7 @@ const Navbar = () => {
                 alt="Hero background"
                 className="absolute inset-0 w-full h-full object-cover hero-image-mobile"
                 loading="eager"
-                fetchpriority="high"
+                fetchPriority="high"
               />
             </>
           ) : (

@@ -63,103 +63,31 @@ import Restorer3 from '../assets/directions/image61.webp'
 import Restorer4 from '../assets/directions/image62.webp'
 
 export const directionsCategories = [
-    {
-        category: "cinema",
-        items: ["cinema-artist"]
-    },
-    {
-        category: "makeup",
-        items: ["makeup-artist"]
-    },
-    {
-        category: "graphics",
-        items: ["lacquer-miniature", "graphic-artist"]
-    },
-    {
-        category: "painting",
-        items: ["easel-painting", "monumental-painting"]
-    },
-    {
-        category: "theater",
-        items: ["theatrical-set-designer", "theatrical-props"]
-    },
-    {
-        category: "carving",
-        items: ["wood-carving", "ganch-carving"]
-    },
-    {
-        category: "designer",
-        items: ["costume-designer", "interior-designer", "computer-graphics-designer"]
-    },
-    {
-        category: "sculpture",
-        items: ["artistic-ceramics", "sculpture", "artist-restorer"]
-    }
+    { category: "cinema", items: ["cinema-artist"] },
+    { category: "makeup", items: ["makeup-artist"] },
+    { category: "graphics", items: ["lacquer-miniature", "graphic-artist"] },
+    { category: "painting", items: ["easel-painting", "monumental-painting"] },
+    { category: "theater", items: ["theatrical-set-designer", "theatrical-props"] },
+    { category: "carving", items: ["wood-carving", "ganch-carving"] },
+    { category: "designer", items: ["costume-designer", "interior-designer", "computer-graphics-designer"] },
+    { category: "sculpture", items: ["artistic-ceramics", "sculpture", "artist-restorer"] }
 ];
 
 export const directionsData = {
-    "cinema-artist": {
-        image: Cinema4,
-        images: [Cinema1, Cinema2, Cinema3, Cinema4]
-    },
-    "makeup-artist": {
-        image: Makeup3,
-        images: [Makeup1, Makeup3, Makeup2]
-    },
-    "lacquer-miniature": {
-        image: Lacquer1,
-        images: [Lacquer1, Lacquer2, Lacquer3, Lacquer4]
-    },
-    "graphic-artist": {
-        image: Graphic1,
-        images: [Graphic1, Graphic2, Graphic3, Graphic4]
-    },
-    "easel-painting": {
-        image: Easel4,
-        images: [Easel1, Easel2, Easel3, Easel4]
-    },
-    "monumental-painting": {
-        image: Monumental1,
-        images: [Monumental1, Monumental3, Monumental4, Monumental2]
-    },
-    "theatrical-set-designer": {
-        image: Set2,
-        images: [Set1, Set2, Set3, Set4]
-    },
-    "theatrical-props": {
-        image: Props1,
-        images: [Props1, Props3, Props4, Props2]
-    },
-    "wood-carving": {
-        image: Wood1,
-        images: [Wood2, Wood1, Wood3, Wood4]
-    },
-    "ganch-carving": {
-        image: Ganch1,
-        images: [Ganch4, Ganch1, Ganch3, Ganch2]
-    },
-    "costume-designer": {
-        image: Costume3,
-        images: [Costume1, Costume2, Costume3, Costume4]
-    },
-    "interior-designer": {
-        image: Interior2,
-        images: [Interior1, Interior2, Interior3, Interior4]
-    },
-    "computer-graphics-designer": {
-        image: Computer1,
-        images: [Computer1, Computer2, Computer3, Computer4]
-    },
-    "artistic-ceramics": {
-        image: Ceramics2,
-        images: [Ceramics1, Ceramics2, Ceramics3, Ceramics4]
-    },
-    "sculpture": {
-        image: Sculpture1,
-        images: [Sculpture1, Sculpture2, Sculpture3, Sculpture4]
-    },
-    "artist-restorer": {
-        image: Restorer1,
-        images: [Restorer1, Restorer2, Restorer3, Restorer4]
-    }
+    "cinema-artist": { image: Cinema4, images: [Cinema1, Cinema2, Cinema3, Cinema4] },
+    "makeup-artist": { image: Makeup3, images: [Makeup1, Makeup3, Makeup2] },
+    "lacquer-miniature": { image: Lacquer1, images: [Lacquer1, Lacquer2, Lacquer3, Lacquer4] },
+    "graphic-artist": { image: Graphic1, images: [Graphic1, Graphic2, Graphic3, Graphic4] },
+    "easel-painting": { image: Easel4, images: [Easel1, Easel2, Easel3, Easel4] },
+    "monumental-painting": { image: Monumental1, images: [Monumental1, Monumental3, Monumental4, Monumental2] },
+    "theatrical-set-designer": { image: Set2, images: [Set1, Set2, Set3, Set4] },
+    "theatrical-props": { image: Props1, images: [Props1, Props3, Props4, Props2] },
+    "wood-carving": { image: Wood1, images: [Wood2, Wood1, Wood3, Wood4] },
+    "ganch-carving": { image: Ganch1, images: [Ganch4, Ganch1, Ganch3, Ganch2] },
+    "costume-designer": { image: Costume3, images: [Costume1, Costume2, Costume3, Costume4] },
+    "interior-designer": { image: Interior2, images: [Interior1, Interior2, Interior3, Interior4] },
+    "computer-graphics-designer": { image: Computer1, images: [Computer1, Computer2, Computer3, Computer4] },
+    "artistic-ceramics": { image: Ceramics2, images: [Ceramics1, Ceramics2, Ceramics3, Ceramics4] },
+    "sculpture": { image: Sculpture1, images: [Sculpture1, Sculpture2, Sculpture3, Sculpture4] },
+    "artist-restorer": { image: Restorer1, images: [Restorer1, Restorer2, Restorer3, Restorer4] }
 };

@@ -8,6 +8,7 @@ import 'swiper/css';
 import 'swiper/css/navigation';
 import 'swiper/css/pagination';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const NewsDetail = () => {
     const { id } = useParams();
@@ -35,12 +36,23 @@ const NewsDetail = () => {
             })
             .catch(err => {
                 console.error("Ошибка API:", err);
+                setItem(null); // Явно сбрасываем в null при ошибке
                 setLoading(false);
             });
     }, [id]);
 
+    // --- СНАЧАЛА ПРОВЕРЯЕМ ЗАГРУЗКУ И НАЛИЧИЕ ДАННЫХ ---
     if (loading) return <div className="py-20 text-center text-xl text-[#0E1A2B] px-4">{t('newsDetail.loading')}</div>;
     if (!item) return <div className="py-20 text-center text-xl text-red-500 px-4">{t('newsDetail.not_found')}</div>;
+
+    // --- ТЕПЕРЬ ДАННЫЕ ТОЧНО ЕСТЬ, ВЫЧИСЛЯЕМ SEO БЕЗОПАСНО ---
+    const seoTitle = getLocalizedField(item, 'title') || 'Новость';
+
+    // Безопасно проверяем description или берем кусочек текста новости
+    const rawDescription = getLocalizedField(item, 'description') || getLocalizedField(item, 'text');
+    const seoDescription = rawDescription
+        ? rawDescription.substring(0, 150) + '...'
+        : 'Подробности новости';
 
     const dateLocale = currentLang === 'uz' ? 'uz-UZ' : currentLang === 'en' ? 'en-US' : 'ru-RU';
 
@@ -56,6 +68,8 @@ const NewsDetail = () => {
 
     return (
         <PageWrapper>
+            <Seo title={seoTitle} description={seoDescription} />
+            
             <div className="min-h-screen bg-white dark:bg-gray-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
 

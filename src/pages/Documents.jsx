@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { FileText, FolderOpen, Phone, Scissors } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Documents = () => {
   const { t } = useTranslation();
@@ -14,6 +15,10 @@ const Documents = () => {
 
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.documents')}
+        description={t('documents.subtitle')}
+      />
       <div className="bg-[#eaeae8] dark:bg-gray-950 min-h-screen pt-20 sm:pt-24 md:pt-28 lg:pt-32 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 relative overflow-hidden">
         {/* Фоновые артефакты */}
         <div className="absolute top-40 -left-20 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-[var(--gold-primary)]/5 dark:bg-[var(--gold-primary)]/3 rounded-full blur-[120px] pointer-events-none"></div>

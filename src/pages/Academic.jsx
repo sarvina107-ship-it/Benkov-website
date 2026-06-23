@@ -3,16 +3,21 @@ import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getAcademicsContent } from '../data/academicsContent';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Academic = () => {
-    const { t } = useTranslation();
+    const { t, i18n } = useTranslation(); // Обязательно достаньте i18n здесь
 
     const academicsList = useMemo(() => {
-        return getAcademicsContent(t);
-    }, [t]);
+        return getAcademicsContent(t, i18n); // Передаем вторым аргументом
+    }, [t, i18n.language, i18n]);
 
     return (
         <PageWrapper>
+            <Seo
+                title={t('titles.academic')}
+                description={t('academic_page.base.page_title')} // Теперь путь совпадает с JSON!
+            />
             <main className="bg-[#FBFBFA] dark:bg-gray-950 min-h-screen py-16 sm:py-24 px-4 sm:px-6 md:px-8 text-[#1B2A44] dark:text-gray-100 relative overflow-hidden">
 
                 {/* Тонкие дизайнерские фоновые линии, как в галереях */}

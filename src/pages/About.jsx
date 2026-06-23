@@ -12,6 +12,7 @@ import ArchiveImg1 from '../assets/img/ArchiveImg1.webp';
 import ArchiveImg2 from '../assets/img/ArchiveImg2.webp';
 import ArchiveImg3 from '../assets/img/ArchiveImg3.webp';
 import ArchiveImg4 from '../assets/img/ArchiveImg4.webp';
+import Seo from '../components/Seo';
 
 const About = () => {
   const { t } = useTranslation();
@@ -34,6 +35,10 @@ const About = () => {
 
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.about')}
+        description={t('about.intro')}
+      />
       <section className="bg-[#F8F6F2] dark:bg-gray-950 py-12 sm:py-16 md:py-20 px-4 sm:px-6 md:px-8 text-[#1B2A44] dark:text-gray-100">
         <div className="max-w-7xl mx-auto">
 

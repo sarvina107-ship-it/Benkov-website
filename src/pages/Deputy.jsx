@@ -3,16 +3,16 @@ import { useParams, Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { getDeputiesContent } from '../data/deputiesContent';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Deputy = () => {
     const { id } = useParams();
     const { t, i18n } = useTranslation();
 
-    // Получаем данные
     const person = useMemo(() => {
-        const data = getDeputiesContent(t, i18n.language);
+        const data = getDeputiesContent(t, i18n.language, i18n);
         return data[id];
-    }, [id, t, i18n.language]);
+    }, [id, t, i18n.language, i18n]);
 
     // Если зам не найден
     if (!person) {
@@ -38,6 +38,10 @@ const Deputy = () => {
 
     return (
         <PageWrapper>
+            <Seo
+                title={`${person.name} — ${person.role}`}
+                description={`${person.dept}. ${t('deputy_page.base.birth_date')}: ${person.birthDate}`}
+            />
             <main className="bg-[#F8F6F2] dark:bg-gray-950 min-h-screen py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 text-[#1B2A44] dark:text-gray-100">
                 <div className="max-w-5xl mx-auto">
                     {/* Кнопка назад */}
@@ -117,7 +121,7 @@ const Deputy = () => {
                                     className="text-2xl sm:text-3xl md:text-4xl lg:text-5xl font-bold text-[#1B2A44] dark:text-gray-100 leading-tight"
                                     style={{ fontFamily: "'Playfair Display', serif" }}
                                 >
-                                    {person.awardsTitle}
+                                    {person.awardsTitle || t('deputy_page.base.awards_title')}
                                 </h2>
                                 <div className="w-16 sm:w-20 h-[2px] sm:h-[3px] bg-gradient-to-r from-[var(--gold-primary)] to-transparent mt-3 sm:mt-4 mx-auto md:mx-0 rounded-full" />
                             </div>

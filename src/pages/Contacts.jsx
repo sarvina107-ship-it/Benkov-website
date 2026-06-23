@@ -1,12 +1,17 @@
 import React from 'react';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Contacts = () => {
   const { t } = useTranslation();
 
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.contacts')}
+        description={t('contacts.badge')}
+      />
       <section className="py-12 sm:py-16 md:py-20 bg-[#FBF9F7] dark:bg-gray-950 text-[#1B2A44] dark:text-gray-100 min-h-screen overflow-hidden relative flex flex-col justify-center">
 
         {/* Декоративный фон - адаптив */}

@@ -4,6 +4,7 @@ import { useTranslation } from 'react-i18next';
 import { DIRECTIONS } from '../data/studyPlan';
 import { ROUTES } from '../paths';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const StudyDetail = () => {
   const { id } = useParams();
@@ -31,8 +32,18 @@ const StudyDetail = () => {
     );
   }
 
+  // Получаем переведенное название конкретного направления (например: "Живопись")
+  const directionTitle = t(`directions.items.${currentDir.id}.title`, currentDir.title);
+
+  // Создаем красивое описание для поисковиков
+  const seoDescription = `${directionTitle} — ${t('study_detail.curriculum_label', 'Программа обучения по классам')} в школе имени П. Бенькова.`;
+
   return (
     <PageWrapper>
+      <Seo
+        title={`${directionTitle} | ${t('titles.studydetail', 'Учебный план')}`}
+        description={seoDescription}
+      />
       <div className="bg-[#FDFCFB] dark:bg-gray-950 min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6">
         <div className="max-w-6xl mx-auto">
 

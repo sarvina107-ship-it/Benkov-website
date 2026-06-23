@@ -2,6 +2,7 @@ import React from 'react';
 import { useTranslation } from 'react-i18next';
 import { Clock, Calendar, BookOpen, GraduationCap, Sparkles } from 'lucide-react';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Schedule = () => {
     const { t } = useTranslation();
@@ -15,6 +16,10 @@ const Schedule = () => {
 
     return (
         <PageWrapper>
+            <Seo
+                title={t('titles.schedule')}
+                description={t('schedule.routine_label')}
+            />
             <div className="bg-[#FDFCFB] dark:bg-gray-950 min-h-screen pt-20 sm:pt-24 md:pt-28 pb-12 sm:pb-16 md:pb-20 px-4 sm:px-6 relative overflow-hidden">
                 {/* Декор - адаптив */}
                 <div className="absolute top-20 -right-20 w-64 sm:w-80 md:w-96 h-64 sm:h-80 md:h-96 bg-[var(--gold-primary)]/5 dark:bg-[var(--gold-primary)]/3 rounded-full blur-3xl pointer-events-none"></div>

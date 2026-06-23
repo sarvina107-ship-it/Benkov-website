@@ -3,6 +3,7 @@ import axios from 'axios';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const NewsList = () => {
     const { t, i18n } = useTranslation();
@@ -33,8 +34,9 @@ const NewsList = () => {
     }, [itemsPerPage]);
 
     const getLocalizedField = (item, field) => {
-        const lang = i18n.language;
-        return item[`${field}_${lang}`] || item[field];
+        const currentLang = i18n.resolvedLanguage || i18n.language;
+        const localizedValue = item[`${field}_${currentLang}`];
+        return localizedValue || item[`${field}_ru`] || item[field] || '';
     };
 
     useEffect(() => {
@@ -92,6 +94,10 @@ const NewsList = () => {
 
     return (
         <PageWrapper>
+            <Seo
+                title={t('titles.newslist')}
+                description={t('newsList.header_title')}
+            />
             <div className="bg-white dark:bg-gray-950 min-h-screen">
                 {/* Хедер страницы */}
                 <div className="bg-[#F4F6F9] dark:bg-gray-900 py-12 sm:py-16 md:py-20 border-b border-gray-100 dark:border-gray-800">
@@ -154,7 +160,7 @@ const NewsList = () => {
                         <div className="mt-12 sm:mt-16 md:mt-20 flex flex-wrap justify-center items-center gap-2 sm:gap-3">
                             <button
                                 onClick={() => currentPage > 1 && paginate(currentPage - 1)}
-                                disabled={currentPage === 1}
+                                disabled={currentPage === 1}  aria-label
                                 className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all text-sm sm:text-base ${currentPage === 1
                                     ? 'border-gray-100 dark:border-gray-800 text-gray-300 dark:text-gray-600 cursor-not-allowed'
                                     : 'border-[var(--gold-primary)] text-[var(--gold-primary)] hover:bg-[var(--gold-primary)] hover:text-white'
@@ -166,7 +172,7 @@ const NewsList = () => {
                             {getPageNumbers().map((page, idx) => (
                                 <button
                                     key={idx}
-                                    onClick={() => typeof page === 'number' && paginate(page)}
+                                    onClick={() => typeof page === 'number' && paginate(page)} aria-label
                                     className={`w-8 h-8 sm:w-9 sm:h-9 md:w-10 md:h-10 rounded-full font-bold text-xs sm:text-sm transition-all duration-300 ${currentPage === page
                                         ? 'bg-[#0E1A2B] dark:bg-gray-800 text-white'
                                         : page === '...'
@@ -181,7 +187,7 @@ const NewsList = () => {
 
                             <button
                                 onClick={() => currentPage < totalPages && paginate(currentPage + 1)}
-                                disabled={currentPage === totalPages}
+                                disabled={currentPage === totalPages} aria-label
                                 className={`w-8 h-8 sm:w-10 sm:h-10 md:w-12 md:h-12 rounded-full border flex items-center justify-center transition-all text-sm sm:text-base ${currentPage === totalPages
                                     ? 'border-gray-100 dark:border-gray-800 text-gray-300 dark:text-gray-600 cursor-not-allowed'
                                     : 'border-[var(--gold-primary)] text-[var(--gold-primary)] hover:bg-[var(--gold-primary)] hover:text-white'

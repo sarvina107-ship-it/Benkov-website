@@ -2,6 +2,7 @@ import React, { useState } from 'react';
 import { useTranslation } from 'react-i18next';
 import { faqData } from '../data/faqData';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const FAQ = () => {
     const { t } = useTranslation();
@@ -21,6 +22,10 @@ const FAQ = () => {
 
     return (
         <PageWrapper>
+            <Seo
+                title={t('titles.faq')}
+                description={t('faq.subtitle')}
+            />
             <section className="bg-[#F8F6F2] dark:bg-gray-950 py-12 sm:py-16 md:py-20 lg:py-24 px-4 sm:px-6 md:px-8 text-[#1B2A44] dark:text-gray-100 min-h-screen relative overflow-hidden">
                 {/* Фоновые декоративные элементы */}
                 <div className="absolute top-0 left-1/4 w-64 h-64 sm:w-80 sm:h-80 md:w-96 md:h-96 bg-[var(--gold-primary)]/5 dark:bg-[var(--gold-primary)]/3 rounded-full blur-3xl pointer-events-none"></div>

@@ -7,7 +7,17 @@ i18n
     .use(initReactI18next)
     .init({
         debug: true,
+        detection: {
+            // Теперь проверяем пути: /uz/about или /en/about. Если префикса нет — будет /about (RU)
+            order: ['path', 'cookie', 'localStorage', 'htmlTag'],
+            lookupFromPathIndex: 0,
+            checkWhitelist: true
+        },
+        supportedLngs: ['ru', 'uz', 'en'], // Добавили английский в список разрешенных
+        fallbackLng: 'ru',
+
         resources: {
+            // --- РУССКИЙ ЯЗЫК ---
             ru: {
                 translation: {
                     admin: {
@@ -204,13 +214,18 @@ i18n
                         }
 
                     },
+                    home_page: {
+                        seo_title: "Специализированная художественная школа имени П. Бенькова",
+                        seo_description: "Добро пожаловать в школу имени П. Бенькова — кузницу талантов и выдающихся деятелей искусства Узбекистана. Информация о направлениях, поступлении и учебном плане."
+                    },
                     directions: {
                         data: {
                             title: "Наши направления",
                             desc: "Профессиональное обучение по всем видам художественного искусства.Выберите свою специализацию.",
                             btn: "Подробнее",
                             back: "назад к направлениям",
-                            undefined: "направление не найдено"
+                            undefined: "направление не найдено",
+                            work: "Работа"
                         },
                         categories: {
                             cinema: "ИСКУССТВО КИНО И ТЕЛЕВИДЕНИЕ",
@@ -404,6 +419,7 @@ i18n
                     },
                     management: {
                         title: "Руководство школы",
+                        desc: "Познакомьтесь с руководством школы имени П. Бенькова — командой, обеспечивающей высокое качество образования, развитие творческого потенциала и сохранение многолетних традиций.",
                         director_label: "Директор школы",
                         director_name: "Хакимов Умид Бахадирович",
                         director_name2: "Бахадирович",
@@ -703,6 +719,7 @@ i18n
                         phone_label: "Для справок:"
                     },
                     titles: {
+                        home: "Главная",
                         about: "История школы",
                         achievements: "Достижения школы",
                         admission: "Подать заявку",
@@ -940,8 +957,8 @@ i18n
                     },
                     benkov: {
                         badge: "Имя, ставшее символом эпохи",
-                        titleFirst: "Pavel Petrovich",
-                        titleLast: "Benkov",
+                        titleFirst: "Павел Петрович",
+                        titleLast: "Беньков",
                         quote: "«Человек, заново открывший солнце Средней Азии. Великий живописец, чей гений и страсть к свету навсегда изменили художественную летопись Востока».",
                         description: "Наша художественная школа с гордостью носит имя Павла Петровича Бенькова. Он не был её основателем, но его творческий почерк, преданность искусству и колоссальное культурное наследие стали тем невидимым фундаментом и вечным ориентиром, по которому сверяют свой путь тысячи молодых художников и мастеров Узбекистана.",
 
@@ -1004,6 +1021,8 @@ i18n
 
                 }
             },
+
+            // --- УЗБЕКСКИЙ ЯЗЫК ---
             uz: {
                 translation: {
                     admin: {
@@ -1075,7 +1094,7 @@ i18n
                         page: "Sahifa",
                         deputy: "O'rinbosar",
                         academic: "Pedagoglar",
-                        uz: "P.P. Benkov",
+                        benkov: "P.P. Benkov",
                     },
                     pageTitles: {
                         deputy: "O'rinbosar",
@@ -1168,8 +1187,8 @@ i18n
                                 one: {
                                     title: "Akademik ta’lim",
                                     desc: "Ta’lim jarayoni badiiy maktabning eng yaxshi an’analariga asoslanib, fundamental tayyorgarlik va ijodiy fikrlashni rivojlantirishni uyg‘unlashtiradi. O‘quvchilar tajribali ustozlar rahbarligida rasm, rangtasvir va kompozitsiya asoslarini chuqur o‘zlashtiradilar.",
-                                    list_1: "Rasm",
-                                    list_2: "Rangtasvir"
+                                    tag_1: "Rasm",
+                                    tag_2: "Rangtasvir"
                                 },
                                 two: {
                                     title: "Ijodiy ustaxonalar",
@@ -1186,8 +1205,8 @@ i18n
                                 four: {
                                     title: "Kasbiy rivojlanish",
                                     desc: "Maktab san’at va dizayn sohasidagi oliy ta’lim muassasalariga kirish hamda kelajakdagi kasbiy faoliyat uchun mustahkam poydevor yaratadi. O‘quvchilarning portfolio tayyorlashi va o‘ziga xos uslubini rivojlantirishga alohida e’tibor qaratiladi.",
-                                    list_1: "Portfolio",
-                                    list_2: "Karyera"
+                                    tag_1: "Portfolio",
+                                    tag_2: "Karyera"
                                 }
                             }
                         },
@@ -1200,13 +1219,18 @@ i18n
                         }
 
                     },
+                    home_page: {
+                        seo_title: "P. Benkov nomidagi ixtisoslashtirilgan badiiy maktab",
+                        seo_description: "P. Benkov nomidagi maktabga xush kelibsiz — O‘zbekistonning iste’dodli rassomlari va san’at arboblarini tarbiyalovchi maskan. Yo‘nalishlar, qabul jarayoni va o‘quv dasturi haqida ma’lumot."
+                    },
                     directions: {
                         data: {
                             title: "Bizning yo‘nalishlarimiz",
                             desc: "Barcha turdagi badiiy san’at yo‘nalishlari bo‘yicha professional ta’lim. O‘zingizga mos ixtisoslikni tanlang.",
                             btn: "Batafsil",
                             back: "yo'nalishlarga qaytish",
-                            undefined: "Yo'nalish topilmadi"
+                            undefined: "Yo'nalish topilmadi",
+                            work: "Ish"
                         },
                         categories: {
                             cinema: "KINO VA TELEVIDENIYE SAN’ATI",
@@ -1400,6 +1424,7 @@ i18n
                     },
                     management: {
                         title: "Maktab rahbariyati",
+                        desc: "P. Benkov nomidagi maktab rahbariyati bilan tanishing — ta’lim sifati, ijodiy salohiyatni rivojlantirish va ko‘p yillik an’analarni saqlashga xizmat qiluvchi jamoa.",
                         director_label: "Maktab direktori",
                         director_name: "Xakimov Umid ",
                         director_name2: "Baxadirovich",
@@ -1699,6 +1724,7 @@ i18n
                         phone_label: "Ma’lumot uchun:"
                     },
                     titles: {
+                        home: "Bosh sahifa",
                         about: "Maktab tarixi",
                         achievements: "Maktab yutuqlari",
                         admission: "Ariza topshirish",
@@ -1722,7 +1748,7 @@ i18n
                         deputy: "Direktor o‘rinbosari",
                         directionsdetail: "Yo‘nalish tafsilotlari",
                         academic: "Pedagoglar",
-                        uz: "Maktab nomi",
+                        benkov: "Maktab nomi",
                     },
                     contacts: {
                         badge: "Maktab kontaktlari",
@@ -2001,6 +2027,8 @@ i18n
                     }
                 }
             },
+
+            // --- АНГЛИЙСКИЙ ЯЗЫК ---
             en: {
                 translation: {
                     admin: {
@@ -2165,8 +2193,8 @@ i18n
                                 one: {
                                     title: "Academic Education",
                                     desc: "The educational process is based on the best traditions of classical art education, combining strong academic training with the development of creative thinking. Students master drawing, painting, and composition under the guidance of experienced teachers.",
-                                    list_1: "Drawing",
-                                    list_2: "Painting"
+                                    tag_1: "Drawing",
+                                    tag_2: "Painting"
                                 },
                                 two: {
                                     title: "Creative Studios",
@@ -2183,8 +2211,8 @@ i18n
                                 four: {
                                     title: "Professional Development",
                                     desc: "The school prepares students for admission to higher education institutions in art and design while building a strong foundation for future careers. Special attention is given to portfolio development and the growth of each student's individual artistic style.",
-                                    list_1: "Portfolio",
-                                    list_2: "Career"
+                                    tag_1: "Portfolio",
+                                    tag_2: "Career"
                                 }
                             }
                         },
@@ -2197,13 +2225,18 @@ i18n
                         }
 
                     },
+                    home_page: {
+                        seo_title: "P. Benkov Specialized Art School",
+                        seo_description: "Welcome to P. Benkov School — a place that nurtures talented artists and prominent figures of Uzbekistan's art. Learn about our programs, admissions, and curriculum."
+                    },
                     directions: {
                         data: {
                             title: "Our Study directions",
                             desc: "Professional education in all fields of visual and applied arts. Choose your specialization.",
                             btn: "Learn More",
                             back: "back to directions",
-                            undefined: "Direction not found"
+                            undefined: "Direction not found",
+                            work: "Work"
                         },
                         categories: {
                             cinema: "CINEMA AND TELEVISION ART",
@@ -2397,6 +2430,7 @@ i18n
                     },
                     management: {
                         title: "School Management",
+                        desc: "Meet the leadership of P. Benkov School — a dedicated team committed to academic excellence, creative development, and preserving the school's rich traditions.",
                         director_label: "School Director",
                         director_name: "Umid Bakhadirovich",
                         director_name2: "Khakimov",
@@ -2696,6 +2730,7 @@ i18n
                         phone_label: "For inquiries:"
                     },
                     titles: {
+                        home: "Home",
                         about: "School History",
                         achievements: "School Achievements",
                         admission: "Apply Now",
@@ -2997,10 +3032,6 @@ i18n
                     }
                 }
             }
-        },
-        fallbackLng: "ru",
-        interpolation: {
-            escapeValue: false
         }
     });
 

@@ -5,6 +5,7 @@ import Pavel from '../assets/img/Pavel.webp';
 import PavelImg1 from '../assets/img/PavelImg1.webp';
 import PavelImg2 from '../assets/img/PavelImg2.webp';
 import PavelImg3 from '../assets/img/PavelImg3.webp';
+import Seo from '../components/Seo';
 
 const Benkov = () => {
     const { t } = useTranslation();
@@ -41,6 +42,10 @@ const Benkov = () => {
 
     return (
         <PageWrapper>
+            <Seo
+                title={t('titles.benkov')}
+                description={t('benkov.description')}
+            />
             <main className="bg-[#F4F1EA] dark:bg-gray-950 min-h-screen py-16 sm:py-24 px-4 sm:px-6 text-[#1B2A44] dark:text-gray-100 font-sans selection:bg-[var(--gold-primary)] selection:text-white">
                 <div className="max-w-6xl mx-auto">
 
@@ -63,7 +68,7 @@ const Benkov = () => {
 
                                 <div className="text-center pt-3 border-t border-[#D1C9BC] dark:border-gray-800">
                                     <p className="text-xs font-serif italic text-gray-500 dark:text-gray-400 tracking-wider">
-                                        П. П. Беньков (1879 – 1949)
+                                        (1879 – 1949)
                                     </p>
                                 </div>
                             </div>

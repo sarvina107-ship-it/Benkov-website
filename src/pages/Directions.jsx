@@ -4,11 +4,17 @@ import { useTranslation } from 'react-i18next';
 import { directionsCategories, directionsData } from '../data/directionsData';
 import { ROUTES } from '../paths';
 import PageWrapper from '../components/PageWrapper';
+import Seo from '../components/Seo';
 
 const Directions = () => {
-  const { t } = useTranslation();
+  const { t, i18n } = useTranslation();
+
   return (
     <PageWrapper>
+      <Seo
+        title={t('titles.directions')}
+        description={t('directions.data.desc')}
+      />
       <section className="pt-16 sm:pt-20 md:pt-24 bg-[#F4F2EE] dark:bg-gray-950 text-[#1A1A1A] dark:text-gray-100" id="art-directions">
 
         {/* Заголовок */}
@@ -23,61 +29,70 @@ const Directions = () => {
         </div>
 
         <div className="max-w-7xl mx-auto px-4 sm:px-6 pb-16 sm:pb-24 md:pb-32">
-          {directionsCategories.map((category, catIndex) => (
-            <div key={catIndex} className="mb-16 sm:mb-20 md:mb-24 last:mb-0">
-              {/* Заголовок категории */}
-              <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
-                <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#0E1A2B] dark:text-gray-100 uppercase text-center sm:text-left">
-                  {t(`directions.categories.${category.category}`)}
-                </h3>
-                <div className="flex-1 h-[2px] bg-[var(--gold-primary)]/20 dark:bg-[var(--gold-primary)]/10 hidden sm:block"></div>
-              </div>
+          {directionsCategories.map((category, catIndex) => {
+            // Проверяем, есть ли перевод для категории, чтобы избежать пустых заголовков
+            const categoryKey = `directions.categories.${category.category}`;
+            if (!i18n.exists(categoryKey)) return null;
 
-              <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
-                {category.items.map((itemId) => {
-                  const staticData = directionsData[itemId];
-                  if (!staticData) return null;
+            return (
+              <div key={catIndex} className="mb-16 sm:mb-20 md:mb-24 last:mb-0">
+                {/* Заголовок категории */}
+                <div className="flex flex-col sm:flex-row items-center gap-3 sm:gap-4 mb-8 sm:mb-10">
+                  <h3 className="text-xl sm:text-2xl md:text-3xl font-serif font-bold text-[#0E1A2B] dark:text-gray-100 uppercase text-center sm:text-left">
+                    {t(categoryKey)}
+                  </h3>
+                  <div className="flex-1 h-[2px] bg-[var(--gold-primary)]/20 dark:bg-[var(--gold-primary)]/10 hidden sm:block"></div>
+                </div>
 
-                  return (
-                    <Link
-                      to={`${ROUTES.DIRECTIONS}/${itemId}`}
-                      key={itemId}
-                      className="group flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-md dark:shadow-gray-900/50 hover:shadow-2xl transition-all duration-500 border border-white dark:border-gray-800 hover:border-[var(--gold-primary)]/30"
-                    >
-                      {/* Фото */}
-                      <div className="md:w-2/5 lg:w-1/2 h-56 sm:h-64 md:h-auto overflow-hidden">
-                        <img
-                          src={staticData.image}
-                          alt={t(`directions.items.${itemId}.title`)}
-                          loading="lazy"
-                          decoding="async"
-                          className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                        />
-                      </div>
+                <div className="grid grid-cols-1 lg:grid-cols-2 gap-6 sm:gap-8 md:gap-10">
+                  {category.items.map((itemId) => {
+                    const staticData = directionsData[itemId];
+                    const titleKey = `directions.items.${itemId}.title`;
 
-                      {/* Текст */}
-                      <div className="md:w-3/5 lg:w-1/2 p-5 sm:p-6 md:p-8 flex flex-col justify-center">
-                        <h4 className="text-xl sm:text-2xl font-bold font-serif mb-3 sm:mb-4 text-[#0E1A2B] dark:text-gray-100 group-hover:text-[var(--gold-primary)] transition-colors duration-300 leading-tight">
-                          {t(`directions.items.${itemId}.title`)}
-                        </h4>
-                        <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6 line-clamp-3">
-                          {t(`directions.items.${itemId}.desc`)}
-                        </p>
+                    // Если нет картинок или перевода названия — пропускаем элемент во избежание багов интерфейса
+                    if (!staticData || !i18n.exists(titleKey)) return null;
 
-                        <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold uppercase tracking-widest text-[var(--gold-primary)]">
-                          <span>{t('directions.about.btn')}</span>
-                          <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform group-hover:translate-x-2">
-                            <line x1="5" y1="12" x2="19" y2="12"></line>
-                            <polyline points="12 5 19 12 12 19"></polyline>
-                          </svg>
+                    return (
+                      <Link
+                        to={`${ROUTES.DIRECTIONS}/${itemId}`}
+                        key={itemId}
+                        className="group flex flex-col md:flex-row bg-white dark:bg-gray-900 rounded-[20px] sm:rounded-[24px] overflow-hidden shadow-md dark:shadow-gray-900/50 hover:shadow-2xl transition-all duration-500 border border-white dark:border-gray-800 hover:border-[var(--gold-primary)]/30"
+                      >
+                        {/* Фото */}
+                        <div className="md:w-2/5 lg:w-1/2 h-56 sm:h-64 md:h-auto overflow-hidden">
+                          <img
+                            src={staticData.image}
+                            alt={t(titleKey)}
+                            loading="lazy"
+                            decoding="async"
+                            className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                          />
                         </div>
-                      </div>
-                    </Link>
-                  );
-                })}
+
+                        {/* Текст */}
+                        <div className="md:w-3/5 lg:w-1/2 p-5 sm:p-6 md:p-8 flex flex-col justify-center">
+                          <h4 className="text-xl sm:text-2xl font-bold font-serif mb-3 sm:mb-4 text-[#0E1A2B] dark:text-gray-100 group-hover:text-[var(--gold-primary)] transition-colors duration-300 leading-tight">
+                            {t(titleKey)}
+                          </h4>
+                          <p className="text-sm sm:text-base text-gray-600 dark:text-gray-400 leading-relaxed mb-4 sm:mb-6 line-clamp-3">
+                            {t(`directions.items.${itemId}.desc`)}
+                          </p>
+
+                          <div className="flex items-center gap-2 sm:gap-3 text-xs sm:text-sm font-bold uppercase tracking-widest text-[var(--gold-primary)]">
+                            <span>{t('directions.data.btn')}</span>
+                            <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className="transform transition-transform group-hover:translate-x-2">
+                              <line x1="5" y1="12" x2="19" y2="12"></line>
+                              <polyline points="12 5 19 12 12 19"></polyline>
+                            </svg>
+                          </div>
+                        </div>
+                      </Link>
+                    );
+                  })}
+                </div>
               </div>
-            </div>
-          ))}
+            );
+          })}
         </div>
 
         {/* Блок призыва к действию */}
