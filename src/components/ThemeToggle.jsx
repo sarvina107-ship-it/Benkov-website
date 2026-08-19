@@ -1,6 +1,8 @@
 import { useEffect, useState } from 'react';
+import { useTranslation } from 'react-i18next';
 
 export default function ThemeToggle() {
+    const { t } = useTranslation();
     const [isDark, setIsDark] = useState(() => {
         if (typeof window !== 'undefined') {
             const savedTheme = localStorage.getItem('theme');
@@ -27,7 +29,7 @@ export default function ThemeToggle() {
         <button
             onClick={() => setIsDark(!isDark)}
             className="relative p-2 rounded-xl bg-white/10 hover:bg-white/20 dark:bg-gray-800/50 dark:hover:bg-gray-700 text-white dark:text-gray-200 transition-all duration-300 hover:scale-105 active:scale-95 flex items-center justify-center group"
-            aria-label="Toggle Theme"
+            aria-label={t('nav.toggle_theme')}
         >
             {/* Анимированный индикатор */}
             <span className="absolute inset-0 rounded-xl bg-[var(--gold-primary)]/20 opacity-0 group-hover:opacity-100 transition-opacity duration-300"></span>

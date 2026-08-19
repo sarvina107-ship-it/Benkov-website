@@ -8,13 +8,14 @@ i18n
     .init({
         debug: true,
         detection: {
-            // Теперь проверяем пути: /uz/about или /en/about. Если префикса нет — будет /about (RU)
-            order: ['path', 'cookie', 'localStorage', 'htmlTag'],
+            // Теперь проверяем пути: /ru/about или /en/about. Если префикса нет — будет /about (UZ)
+            order: ['path', 'localStorage', 'cookie', 'htmlTag'],
             lookupFromPathIndex: 0,
-            checkWhitelist: true
+            checkWhitelist: true,
+            caches: ['localStorage', 'cookie'] // Сохраняем выбор пользователя сюда
         },
-        supportedLngs: ['ru', 'uz', 'en'], // Добавили английский в список разрешенных
-        fallbackLng: 'ru',
+        supportedLngs: ['uz', 'ru', 'en'], // Поставили uz на первое место (лучшая практика)
+        fallbackLng: 'uz', // Если язык не определился или перевода нет — включаем Узбекский
 
         resources: {
             // --- РУССКИЙ ЯЗЫК ---
@@ -89,7 +90,13 @@ i18n
                         page: "Страница",
                         deputy: "Заместитель",
                         academic: "Преподаватели",
-                        benkov: "П.П. Беньков"
+                        benkov: "П.П. Беньков",
+                        search_button: "Поиск",
+                        open_menu: "Открыть меню навигации",
+                        close_menu: "Закрыть меню",
+                        close_search: "Закрыть поиск",
+                        toggle_theme: "Переключить тему",
+                        back_to_top: "Наверх"
                     },
                     pageTitles: {
                         deputy: "Заместитель",
@@ -1095,6 +1102,12 @@ i18n
                         deputy: "O'rinbosar",
                         academic: "Pedagoglar",
                         benkov: "P.P. Benkov",
+                        search_button: "Qidiruv",
+                        open_menu: "Navigatsiya menyusini ochish",
+                        close_menu: "Menyuni yopish",
+                        close_search: "Qidiruvni yopish",
+                        toggle_theme: "Mavzuni o'zgartirish",
+                        back_to_top: "Yuqoriga"
                     },
                     pageTitles: {
                         deputy: "O'rinbosar",
@@ -2100,7 +2113,13 @@ i18n
                         page: "Page",
                         deputy: "Deputy",
                         academic: "Faculty",
-                        benkov: "P.P. Benkov"
+                        benkov: "P.P. Benkov",
+                        search_button: "Search",
+                        open_menu: "Open navigation menu",
+                        close_menu: "Close menu",
+                        close_search: "Close search",
+                        toggle_theme: "Toggle theme",
+                        back_to_top: "Back to top"
                     },
                     pageTitles: {
                         deputy: "Deputy",

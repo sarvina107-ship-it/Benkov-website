@@ -482,6 +482,7 @@ const Navbar = () => {
             {/* Кнопка поиска */}
             <button
               onClick={() => setMobileSearchOpen(!mobileSearchOpen)}
+              aria-label={t('nav.search_button')}
               className="text-white dark:text-gray-200 hover:text-[#D4A259] transition"
             >
               <svg
@@ -498,6 +499,7 @@ const Navbar = () => {
                   d="M21 21l-6-6m2-5a7 7 0 11-14 0 7 7 0 0114 0z"
                 />
               </svg>
+              
             </button>
 
             {/* Переключатель языков - мобильный */}
@@ -543,7 +545,7 @@ const Navbar = () => {
             {/* Бургер-меню */}
             <button
               onClick={() => setMobileMenuOpen(true)}
-              aria-label="Open navigation menu"
+              aria-label={t('nav.open_menu')}
               aria-expanded={mobileMenuOpen}
               className="focus:outline-none"
             >
@@ -579,7 +581,7 @@ const Navbar = () => {
               {/* Кнопка закрытия */}
               <button
                 onClick={() => setMobileSearchOpen(false)}
-                aria-label="Close search"
+                aria-label={t('nav.close_search')}
                 className="absolute right-3 top-1/2 -translate-y-1/2 text-gray-400 dark:text-gray-500 hover:text-[#D4A259] transition"
               >
                 <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
@@ -617,7 +619,7 @@ const Navbar = () => {
               <div className="p-5">
                 <div className="flex justify-between items-center mb-6 pb-4 border-b border-white/20 dark:border-gray-800">
                   <img className="w-[50px] h-[50px]" src={Logo} alt="Logo" loading="lazy" />
-                  <button onClick={() => setMobileMenuOpen(false)} aria-label="Close menu" className="text-white dark:text-gray-200 text-2xl">✕</button>
+                  <button onClick={() => setMobileMenuOpen(false)} aria-label={t('nav.close_menu')} className="text-white dark:text-gray-200 text-2xl">✕</button>
                 </div>
 
                 <div className="flex flex-col space-y-2">

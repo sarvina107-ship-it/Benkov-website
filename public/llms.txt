@@ -1,0 +1,22 @@
+# Республиканская специализированная школа живописи имени П. П. Бенькова / Pavel Benkov Republican Specialized Art School / P.P. Benkov nomidagi respublika ixtisoslashtirilgan rassomlik maktabi
+
+> Официальный сайт Республиканской специализированной школы живописи имени П. П. Бенькова в Ташкенте, Узбекистан.
+> Official website of the Pavel Benkov Republican Specialized Art School in Tashkent, Uzbekistan.
+> P.P. Benkov nomidagi respublika ixtisoslashtirilgan rassomlik maktabining rasmiy veb-sayti.
+
+## Разделы и навигация / Main Sections / Veb-sayt bo'limlari
+
+- [Главная / Home](https://benkov-website.vercel.app/): Информация о Республиканской специализированной школе живописи им. П. П. Бенькова.
+- [О школе / About](https://benkov-website.vercel.app/about): История основания школы (1918 год), традиции академического искусства и руководство.
+- [П. П. Беньков / Pavel Benkov](https://benkov-website.vercel.app/benkov): Информация о выдающемся художнике и педагоге Павле Петровиче Бенькове.
+- [Руководство / Management](https://benkov-website.vercel.app/management): Администрация школы, директор и заместители.
+- [Преподаватели / Academic Faculty](https://benkov-website.vercel.app/academic): Преподавательский состав и мастера изобразительного искусства.
+- [Направления обучения / Directions](https://benkov-website.vercel.app/directions): Специализации — станковая и монументальная живопись, графика, скульптура, дизайн костюма и интерьера, грим, резьба по дереву и ганчу, театральное искусство.
+- [Условия поступления / Admissions](https://benkov-website.vercel.app/conditions): Правила и условия приёма абитуриентов.
+- [Учебный план / Study Plan](https://benkov-website.vercel.app/studyplan): Образовательные программы и учебный план.
+- [Расписание / Schedule](https://benkov-website.vercel.app/schedule): Расписание занятий и учебных уроков.
+- [Частые вопросы / FAQ](https://benkov-website.vercel.app/faq): Ответы на популярные вопросы о процессе обучения и поступления.
+- [Документы / Documents](https://benkov-website.vercel.app/documents): Официальные документы, устав школы и лицензии.
+- [Новости / News](https://benkov-website.vercel.app/newsList): Актуальные новости, события и выставочная деятельность.
+- [Галерея / Gallery](https://benkov-website.vercel.app/gallery): Работы учащихся и творческие экспозиции.
+- [Контакты / Contacts](https://benkov-website.vercel.app/contacts): Адрес школы (г. Ташкент, ул. Фурката, 6А), приемная комиссия и контактные данные.

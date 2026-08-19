@@ -41,10 +41,13 @@ const AdminNews = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const IMGBB_API_KEY = '24e129c25ed502eb69213676bb176822';
+    const API_URL = 'https://sarvina-production.up.railway.app/api/news';
+
+    const getNewsId = (news) => news?._id ?? news?.id;
 
     const fetchNews = async () => {
         try {
-            const res = await axios.get('https://sarvina-production.up.railway.app/api/news');
+            const res = await axios.get(API_URL, { params: { _t: Date.now() } });
             const data = Array.isArray(res.data) ? res.data : (res.data.news || res.data.data || []);
             setNewsList(data);
         } catch (err) {
@@ -107,7 +110,7 @@ const AdminNews = () => {
     };
 
     const handleEdit = (news) => {
-        setEditId(news._id || news.id);
+        setEditId(getNewsId(news));
         setFormData({
             title_ru: news.title_ru || '',
             title_uz: news.title_uz || '',
@@ -141,10 +144,10 @@ const AdminNews = () => {
 
         try {
             if (editId) {
-                await axios.put(`https://sarvina-production.up.railway.app/api/news/${editId}`, formData);
+                await axios.put(`${API_URL}/${editId}`, formData);
                 setStatus(t('admin.update_success'));
             } else {
-                await axios.post('https://sarvina-production.up.railway.app/api/news', formData);
+                await axios.post(API_URL, formData);
                 setStatus(t('admin.create_success'));
             }
             resetForm();
@@ -158,13 +161,22 @@ const AdminNews = () => {
 
     const handleDelete = async (e, id) => {
         e.stopPropagation();
+        e.preventDefault();
+
+        if (!id) {
+            alert(t('admin.delete_error'));
+            return;
+        }
+
         if (window.confirm(t('admin.delete_confirm'))) {
             try {
-                await axios.delete(`https://sarvina-production.up.railway.app/api/news/${id}`);
-                fetchNews();
+                await axios.delete(`${API_URL}/${id}`);
+                setNewsList((prev) => prev.filter((item) => getNewsId(item) !== id));
                 if (editId === id) resetForm();
+                fetchNews();
             } catch (err) {
-                alert(t('admin.delete_error'));
+                const message = err.response?.data?.message || err.message;
+                alert(t('admin.delete_error') + ' ' + message);
             }
         }
     };
@@ -358,9 +370,12 @@ const AdminNews = () => {
                                 ) : (
                                     newsList.map((news) => (
                                         <div
-                                            key={news._id || news.id}
-                                            onClick={() => handleEdit(news)}
-                                            className={`flex items-center justify-between p-3 rounded-xl sm:rounded-2xl border cursor-pointer transition-all ${editId === (news._id || news.id) ? 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800' : 'bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
+                                            key={getNewsId(news)}
+                                            onClick={(e) => {
+                                                if (e.target.closest('[data-delete-btn]')) return;
+                                                handleEdit(news);
+                                            }}
+                                            className={`flex items-center justify-between p-3 rounded-xl sm:rounded-2xl border cursor-pointer transition-all ${editId === getNewsId(news) ? 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800' : 'bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                                         >
                                             <div className="flex items-center gap-3 flex-1 min-w-0">
                                                 <img
@@ -378,7 +393,9 @@ const AdminNews = () => {
                                                 </div>
                                             </div>
                                             <button
-                                                onClick={(e) => handleDelete(e, news._id || news.id)}
+                                                type="button"
+                                                data-delete-btn
+                                                onClick={(e) => handleDelete(e, getNewsId(news))}
                                                 className="p-2 text-gray-400 hover:text-red-500 dark:hover:text-red-400 transition-colors flex-shrink-0"
                                             >
                                                 <svg className="w-4 h-4 sm:w-5 sm:h-5" fill="none" stroke="currentColor" viewBox="0 0 24 24">

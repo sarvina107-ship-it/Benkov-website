@@ -10,6 +10,7 @@ import path from 'path'; // Нужен для указания пути к па�
 import { createRequire } from 'module';
 const require = createRequire(import.meta.url);
 const vitePrerender = require('vite-plugin-prerender');
+const languages = ['/uz', '/ru', '/en'];
 // ------------------------------------------------------------------
 
 async function getDynamicRoutes() {

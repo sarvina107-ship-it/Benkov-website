@@ -1,7 +1,9 @@
 import { useState, useEffect } from 'react';
+import { useTranslation } from 'react-i18next';
 import { ArrowUp } from 'lucide-react'; // Наша аккуратная стрелка
 
 export default function BackToTop() {
+    const { t } = useTranslation();
     const [isVisible, setIsVisible] = useState(false);
 
     useEffect(() => {
@@ -31,7 +33,7 @@ export default function BackToTop() {
         hover:bg-[#D4A259] hover:text-[#1B2A44] hover:border-[#D4A259] hover:-translate-y-1 hover:shadow-[#D4A259]/30
         focus:outline-none focus:ring-2 focus:ring-[#D4A259] focus:ring-offset-2 focus:ring-offset-[#1B2A44]
         ${isVisible ? 'opacity-100 scale-100 visible' : 'opacity-0 scale-75 invisible'}`}
-            aria-label="Наверх"
+            aria-label={t('nav.back_to_top')}
         >
             {/* Контейнер для анимации стрелки */}
             <div className="relative w-6 h-6 flex flex-col items-center overflow-hidden">
