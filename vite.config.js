@@ -110,23 +110,60 @@ export default defineConfig(async () => {
     plugins: [
       react({ fastRefresh: true }),
       tailwindcss(),
-      // Defer registerSW.js to prevent render-blocking (runs after PWA plugin)
+      // Defer registerSW.js and manifest.webmanifest to prevent critical request chaining (runs after PWA plugin)
       {
-        name: 'defer-register-sw',
+        name: 'defer-register-sw-and-manifest',
         enforce: 'post',
         closeBundle: {
           sequential: true,
           async handler() {
-            const { readFileSync, writeFileSync } = await import('fs');
-            const path = 'dist/index.html';
-            try {
-              const html = readFileSync(path, 'utf-8');
-              const updated = html.replace(
-                /(<script id="vite-plugin-pwa:register-sw" src="\/registerSW\.js")>/,
-                '$1 defer>'
-              );
-              if (updated !== html) writeFileSync(path, updated, 'utf-8');
-            } catch { }
+            const { readFileSync, writeFileSync, readdirSync, statSync } = await import('fs');
+            const { join } = await import('path');
+
+            function processHtmlFiles(dir) {
+              try {
+                const files = readdirSync(dir);
+                for (const file of files) {
+                  const fullPath = join(dir, file);
+                  if (statSync(fullPath).isDirectory()) {
+                    processHtmlFiles(fullPath);
+                  } else if (file.endsWith('.html')) {
+                    let html = readFileSync(fullPath, 'utf-8');
+                    let modified = false;
+
+                    // Remove blocking manifest link from head and inject non-blocking loader
+                    if (html.includes('<link rel="manifest" href="/manifest.webmanifest">')) {
+                      html = html.replace(/<link rel="manifest" href="\/manifest\.webmanifest">/g, '');
+                      html = html.replace(
+                        '</head>',
+                        '<script>window.addEventListener("load",function(){var l=document.createElement("link");l.rel="manifest";l.href="/manifest.webmanifest";document.head.appendChild(l);});</script></head>'
+                      );
+                      modified = true;
+                    }
+
+                    // Defer registerSW.js
+                    if (html.includes('id="vite-plugin-pwa:register-sw"')) {
+                      const updated = html.replace(
+                        /(<script id="vite-plugin-pwa:register-sw" src="\/registerSW\.js")>/g,
+                        '$1 defer>'
+                      );
+                      if (updated !== html) {
+                        html = updated;
+                        modified = true;
+                      }
+                    }
+
+                    if (modified) {
+                      writeFileSync(fullPath, html, 'utf-8');
+                    }
+                  }
+                }
+              } catch (e) {
+                console.error('Error processing HTML files in defer plugin:', e);
+              }
+            }
+
+            processHtmlFiles('dist');
           }
         }
       },
@@ -223,27 +260,18 @@ export default defineConfig(async () => {
       minify: 'esbuild',
       target: 'es2020',
       reportCompressedSize: true,
-      chunkSizeWarningLimit: 500,
+      chunkSizeWarningLimit: 800,
       sourcemap: false,
       cssCodeSplit: true,
       cssMinify: true,
+      modulePreload: {
+        polyfill: false,
+      },
 
       rollupOptions: {
         output: {
           manualChunks: (id) => {
             if (id.includes('node_modules')) {
-              if (id.includes('react-dom') || id.includes('react-router-dom')) {
-                return 'vendor-react';
-              }
-              if (id.includes('framer-motion')) {
-                return 'vendor-framer';
-              }
-              if (id.includes('swiper')) {
-                return 'vendor-swiper';
-              }
-              if (id.includes('i18next')) {
-                return 'vendor-i18n';
-              }
               return 'vendor';
             }
           },

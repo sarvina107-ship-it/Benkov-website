@@ -19,12 +19,16 @@ const Seo = ({ title, description }) => {
     const ruUrl = `${baseUrl}/ru${pathSuffix}`;
     const enUrl = `${baseUrl}/en${pathSuffix}`;
 
+    const defaultTitle = "Pavel Benkov nomidagi Respublika ixtisoslashtirilgan rassomlik maktabi";
+    const fullTitle = title ? `${title} | Benkov` : defaultTitle;
+    const metaDesc = description || "Pavel Benkov nomidagi Respublika ixtisoslashtirilgan san’at maktabi — tasviriy san’at yo‘nalishida professional ta’lim.";
+
     return (
-        <Helmet>
-            <title>{title} | Benkov</title>
-            <meta name="description" content={description} />
-            <meta property="og:title" content={`${title} | Benkov`} />
-            <meta property="og:description" content={description} />
+        <Helmet defaultTitle={defaultTitle}>
+            <title>{fullTitle}</title>
+            <meta name="description" content={metaDesc} />
+            <meta property="og:title" content={fullTitle} />
+            <meta property="og:description" content={metaDesc} />
 
             {/* Теги hreflang для робота Google */}
             <link rel="alternate" hrefLang="uz" href={uzUrl} />

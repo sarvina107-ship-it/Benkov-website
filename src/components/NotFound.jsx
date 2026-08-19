@@ -1,6 +1,7 @@
 import React, { useEffect, useState } from 'react';
 import { useTranslation } from 'react-i18next';
-import { useNavigate, useLocation } from 'react-router-dom'; // или твой роутер
+import { useNavigate, useLocation } from 'react-router-dom';
+import Seo from './Seo';
 
 export default function NotFound() {
     const { t, i18n } = useTranslation();
@@ -78,6 +79,7 @@ export default function NotFound() {
 
     return (
         <div className="bg-[#1B2A44] text-[#E2E8F0] min-h-[80vh] flex flex-col items-center justify-center p-6 font-sans relative overflow-hidden select-none w-full">
+            <Seo title="404 — Страница не найдена / Sahifa topilmadi" description="404 — Потерянная страница / Yo‘qolgan sahifa" />
             {/* Декоративные круги */}
             <div className="absolute -top-40 -right-40 w-[500px] h-[500px] bg-[#D4A259] opacity-[0.03] rounded-full blur-[120px] pointer-events-none transform rotate-45"></div>
             <div className="absolute -bottom-20 -left-20 w-96 h-96 bg-[#D4A259] opacity-[0.05] rounded-full blur-[80px] pointer-events-none"></div>
