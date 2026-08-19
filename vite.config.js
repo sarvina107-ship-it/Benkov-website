@@ -4,12 +4,8 @@ import tailwindcss from '@tailwindcss/vite'
 import { VitePWA } from 'vite-plugin-pwa'
 import { ViteImageOptimizer } from 'vite-plugin-image-optimizer';
 import Sitemap from 'vite-plugin-sitemap';
-import path from 'path'; // Нужен для указания пути к папке dist
 
 // --- Безопасное подключение установленного пакета для ES-модулей ---
-import { createRequire } from 'module';
-const require = createRequire(import.meta.url);
-const vitePrerender = require('vite-plugin-prerender');
 const languages = ['/uz', '/ru', '/en'];
 // ------------------------------------------------------------------
 
@@ -138,16 +134,6 @@ export default defineConfig(async () => {
         hostname: 'https://benkov-website.vercel.app',
         dynamicRoutes: allRoutes, // Передаем общий массив роутов
         generateRobotsTxt: false,
-      }),
-
-      // Вызываем установленный vite-plugin-prerender
-      vitePrerender({
-        staticDir: path.join(__dirname, 'dist'),
-        routes: allRoutes,
-        rendererOptions: {
-          maxConcurrentRoutes: 4,
-          renderAfterTime: 500,
-        }
       }),
 
       ViteImageOptimizer({
