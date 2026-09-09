@@ -29,9 +29,6 @@ const Footer = () => {
             <div className="space-y-4 sm:space-y-5 md:space-y-6">
               {/* Адрес */}
               <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[var(--gold-primary)]/30 flex items-center justify-center text-[var(--gold-primary)] group-hover:bg-[var(--gold-primary)] group-hover:text-[#1B2A44] dark:group-hover:text-gray-900 transition-all text-sm sm:text-base">
-                  📍
-                </div>
                 <div>
                   <h3 className="text-[var(--gold-primary)] font-bold text-[11px] sm:text-sm uppercase tracking-wider mb-0.5 sm:mb-1">
                     {t('footer.address_title')}
@@ -42,9 +39,6 @@ const Footer = () => {
 
               {/* Телефон */}
               <div className="flex items-center justify-center lg:justify-start gap-3 sm:gap-4 group">
-                <div className="w-8 h-8 sm:w-10 sm:h-10 rounded-full border border-[var(--gold-primary)]/30 flex items-center justify-center text-[var(--gold-primary)] group-hover:bg-[var(--gold-primary)] group-hover:text-[#1B2A44] dark:group-hover:text-gray-900 transition-all text-sm sm:text-base">
-                  📞
-                </div>
                 <div>
                   <h3 className="text-[var(--gold-primary)] font-bold text-[11px] sm:text-sm uppercase tracking-wider mb-0.5 sm:mb-1">
                     {t('footer.reception')}

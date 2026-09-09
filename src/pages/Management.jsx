@@ -2,11 +2,6 @@ import React, { useMemo } from 'react';
 import { Link } from 'react-router-dom';
 import { useTranslation } from 'react-i18next';
 import { ROUTES } from '../paths';
-import Deputy1 from '../assets/deputy/Deputy1.webp'
-import Deputy2 from '../assets/deputy/Deputy2.webp'
-import Deputy3 from '../assets/deputy/Deputy3.webp'
-import Deputy4 from '../assets/deputy/Deputy4.webp'
-import Director from '../assets/deputy/Director.webp'
 import PageWrapper from '../components/PageWrapper';
 import Seo from '../components/Seo';
 
@@ -19,29 +14,25 @@ const Management = () => {
       id: 1,
       name: t('management.names.egamov'),
       role: t('management.deputy_role'),
-      dept: t('management.depts.spiritual'),
-      photo: Deputy1
+      dept: t('management.depts.spiritual')
     },
     {
       id: 2,
       name: t('management.names.radjabov'),
       role: t('management.deputy_role'),
-      dept: t('management.depts.academic'),
-      photo: Deputy2
+      dept: t('management.depts.academic')
     },
     {
       id: 3,
       name: t('management.names.shakarimov'),
       role: t('management.deputy_role'),
-      dept: t('management.depts.fields'),
-      photo: Deputy3
+      dept: t('management.depts.fields')
     },
     {
       id: 4,
       name: t('management.names.tagaev'),
       role: t('management.deputy_role'),
-      dept: t('management.depts.economic'),
-      photo: Deputy4
+      dept: t('management.depts.economic')
     },
   ], [t]);
 
@@ -68,15 +59,6 @@ const Management = () => {
               <div className="relative max-w-5xl mx-auto bg-white dark:bg-gray-900 rounded-[24px] sm:rounded-[28px] md:rounded-[32px] lg:rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden transition-all duration-700 hover:shadow-[0_40px_80px_rgba(212,162,89,0.1)] dark:hover:shadow-[0_40px_80px_rgba(212,162,89,0.15)] border border-transparent hover:border-[var(--gold-primary)]/10">
 
                 <div className="flex flex-col md:flex-row items-stretch">
-                  {/* Фото директора */}
-                  <div className="md:w-2/5 lg:w-[45%] h-[320px] sm:h-[400px] md:h-[450px] lg:h-[500px] overflow-hidden bg-gray-100 dark:bg-gray-800">
-                    <img
-                      src={Director}
-                      className="w-full h-full object-cover transition-all duration-1000 group-hover:scale-105"
-                      alt="Director"
-                      loading="lazy"
-                    />
-                  </div>
 
                   {/* Информация о директоре */}
                   <div className="md:w-3/5 lg:w-[55%] p-6 sm:p-8 md:p-10 lg:p-16 xl:p-20 flex flex-col justify-center bg-white dark:bg-gray-900">
@@ -122,25 +104,6 @@ const Management = () => {
                       <p className="text-[var(--gold-primary)] font-semibold text-xs sm:text-sm md:text-base mb-4 sm:mb-5 md:mb-6 uppercase tracking-wider text-center sm:text-left">
                         {dep.role}
                       </p>
-
-                      {/* Фото заместителя - БОЛЬШОЕ */}
-                      <div className="w-full h-[250px] sm:h-[300px] md:h-[350px] lg:h-[380px] xl:h-[420px] bg-gray-50 dark:bg-gray-800 rounded-[20px] sm:rounded-[24px] mb-4 sm:mb-5 md:mb-6 overflow-hidden border border-gray-100 dark:border-gray-700">
-                        {dep.photo ? (
-                          <img
-                            src={dep.photo}
-                            className="w-full h-full object-cover transition-all duration-700 group-hover:scale-105"
-                            alt={dep.name}
-                            loading="lazy"
-                          />
-                        ) : (
-                          <div className="w-full h-full flex items-center justify-center text-gray-200 dark:text-gray-600 bg-[#FDFCFB] dark:bg-gray-800">
-                            <svg width="50" height="50" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="0.5">
-                              <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                              <circle cx="12" cy="7" r="4" />
-                            </svg>
-                          </div>
-                        )}
-                      </div>
 
                       {/* Отдел и кнопка */}
                       <div className="mt-auto flex flex-col sm:flex-row justify-between items-center gap-4 sm:gap-3">

@@ -56,21 +56,7 @@ const Deputy = () => {
                     <div className="bg-white dark:bg-gray-900 rounded-[24px] sm:rounded-[32px] md:rounded-[40px] shadow-[0_20px_50px_rgba(0,0,0,0.03)] dark:shadow-[0_20px_50px_rgba(0,0,0,0.3)] overflow-hidden mb-8 sm:mb-12 border border-gray-100 dark:border-gray-800">
                         <div className="flex flex-col md:flex-row">
 
-                            {/* Фото */}
-                            <div className="md:w-2/5 aspect-square bg-gray-100 dark:bg-gray-800 overflow-hidden">
-                                {person.photo ? (
-                                    <img
-                                        src={person.photo}
-                                        alt={person.name}
-                                        loading="lazy"
-                                        className="w-full h-full object-cover transition-transform duration-700 hover:scale-105"
-                                    />
-                                ) : (
-                                    <div className="w-full h-full flex items-center justify-center text-gray-400 dark:text-gray-600 font-medium">
-                                        No Photo
-                                    </div>
-                                )}
-                            </div>
+                           
 
                             {/* Информация */}
                             <div className="md:w-3/5 p-6 sm:p-8 md:p-10 lg:p-16 flex flex-col justify-center">
