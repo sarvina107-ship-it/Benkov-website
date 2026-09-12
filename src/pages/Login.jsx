@@ -71,7 +71,7 @@ const Login = () => {
                 localStorage.setItem('blockedUntil', blockUntil.toString());
                 setIsBlocked(true);
                 setTimeLeft(BLOCK_TIME_MS / 1000);
-                alert(t('lodin.attempt'));
+                alert(t('login.attempt'));
             } else {
                 alert(`${t('login.false')} ${MAX_ATTEMPTS - attempts}`);
             }

@@ -1164,7 +1164,7 @@ i18n
                     home: {
                         history_preview: {
                             badge: "1918",
-                            title: "Shohastarlar tug'iladigan",
+                            title: "Shoh asarlar tug'iladigan",
                             title_accent: "maktab",
                             quote: "«San'at qalbni kundalik hayot changidan tozalaydi». Biz qariyb bir asrdan buyon P. Benkov an'analarini davom ettirmoqdamiz.",
                             description: "1918-yilda asos solingan maktab, akademik qat'iyat va ijodiy jasorat o'rtasidagi muvozanatni saqlagan holda, O'zbekistonning ko'plab rassomlar avlodi uchun beshik bo'lib xizmat qilmoqda.",
