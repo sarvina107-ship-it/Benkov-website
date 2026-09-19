@@ -38,12 +38,38 @@ const AdminNews = () => {
     const [status, setStatus] = useState('');
     const [loading, setLoading] = useState(false);
     const [uploading, setUploading] = useState(false);
+    const [isDragging, setIsDragging] = useState(false);
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const IMGBB_API_KEY = '24e129c25ed502eb69213676bb176822';
     const API_URL = 'https://sarvina-production.up.railway.app/api/news';
 
     const getNewsId = (news) => news?._id ?? news?.id;
+
+    // Безопасная обработка и нормализация списка фотографий
+    const normalizeImages = (imageField) => {
+        if (!imageField) return [];
+        if (Array.isArray(imageField)) {
+            return imageField
+                .map(item => (typeof item === 'string' ? item.trim() : (item?.url || '')))
+                .filter(Boolean);
+        }
+        if (typeof imageField === 'string') {
+            return imageField
+                .split(/[,\n]/)
+                .map(url => url.trim())
+                .filter(Boolean);
+        }
+        if (typeof imageField === 'object' && imageField?.url) {
+            return [imageField.url.trim()];
+        }
+        return [];
+    };
+
+    const getFirstImageUrl = (imageField) => {
+        const list = normalizeImages(imageField);
+        return list.length > 0 ? list[0] : null;
+    };
 
     const fetchNews = async () => {
         try {
@@ -60,53 +86,80 @@ const AdminNews = () => {
         body.append('image', file);
         try {
             const res = await axios.post(`https://api.imgbb.com/1/upload?key=${IMGBB_API_KEY}`, body);
-            return res.data.data.url;
+            if (res?.data?.data?.url) {
+                return res.data.data.url;
+            }
+            throw new Error("ImgBB не вернул ссылку на изображение");
         } catch (err) {
             console.error("Ошибка ImgBB:", err);
-            throw new Error("Failed to upload photo");
+            const msg = err.response?.data?.error?.message || err.message || "Failed to upload photo";
+            throw new Error(msg);
+        }
+    };
+
+    // Общая функция загрузки пачки фотографий
+    const handleUploadFiles = async (files) => {
+        const imageFiles = Array.from(files).filter(f => f.type && f.type.startsWith('image/'));
+        if (imageFiles.length === 0) return;
+
+        setUploading(true);
+        setStatus(t('admin.processing'));
+
+        try {
+            const uploadedUrls = [];
+            for (const file of imageFiles) {
+                const url = await uploadToImgBB(file);
+                uploadedUrls.push(url);
+            }
+
+            setFormData(prev => {
+                const current = normalizeImages(prev.image);
+                return {
+                    ...prev,
+                    image: [...current, ...uploadedUrls].join(', ')
+                };
+            });
+            setStatus(t('admin.photo_added'));
+        } catch (err) {
+            setStatus(`${t('admin.photo_error')}: ${err.message}`);
+        } finally {
+            setUploading(false);
         }
     };
 
     const handlePaste = async (e) => {
-        const items = e.clipboardData.items;
+        const items = e.clipboardData?.items;
+        if (!items) return;
+
+        const files = [];
         for (let i = 0; i < items.length; i++) {
-            if (items[i].type.indexOf("image") !== -1) {
+            if (items[i].type && items[i].type.indexOf("image") !== -1) {
                 const file = items[i].getAsFile();
-                setUploading(true);
-                try {
-                    const url = await uploadToImgBB(file);
-                    setFormData(prev => ({
-                        ...prev,
-                        image: prev.image ? `${prev.image}, ${url}` : url
-                    }));
-                    setStatus(t('admin.photo_added'));
-                } catch (err) {
-                    setStatus(t('admin.photo_error'));
-                } finally {
-                    setUploading(false);
-                }
+                if (file) files.push(file);
             }
+        }
+
+        if (files.length > 0) {
+            await handleUploadFiles(files);
         }
     };
 
-    // Загрузка фото с телефона (через input)
+    // Загрузка фото с телефона/компьютера (поддержка нескольких файлов)
     const handleFileUpload = async (e) => {
-        const file = e.target.files[0];
-        if (!file) return;
+        const files = e.target.files;
+        if (!files || files.length === 0) return;
 
-        setUploading(true);
-        try {
-            const url = await uploadToImgBB(file);
-            setFormData(prev => ({
-                ...prev,
-                image: prev.image ? `${prev.image}, ${url}` : url
-            }));
-            setStatus(t('admin.photo_added'));
-        } catch (err) {
-            setStatus(t('admin.photo_error'));
-        } finally {
-            setUploading(false);
-        }
+        await handleUploadFiles(files);
+        e.target.value = ''; // Сброс, чтобы можно было выбрать тот же файл снова
+    };
+
+    const handleRemoveImage = (indexToRemove) => {
+        const current = normalizeImages(formData.image);
+        const updated = current.filter((_, idx) => idx !== indexToRemove);
+        setFormData(prev => ({
+            ...prev,
+            image: updated.join(', ')
+        }));
     };
 
     const handleEdit = (news) => {
@@ -119,7 +172,7 @@ const AdminNews = () => {
             description_uz: news.description_uz || '',
             description_en: news.description_en || '',
             date: news.date ? news.date.split('T')[0] : '',
-            image: news.image || ''
+            image: normalizeImages(news.image).join(', ')
         });
         window.scrollTo({ top: 0, behavior: 'smooth' });
         if (window.innerWidth < 768) {
@@ -142,12 +195,17 @@ const AdminNews = () => {
         setLoading(true);
         setStatus(editId ? t('admin.updating') : t('admin.sending'));
 
+        const payload = {
+            ...formData,
+            image: normalizeImages(formData.image).join(', ')
+        };
+
         try {
             if (editId) {
-                await axios.put(`${API_URL}/${editId}`, formData);
+                await axios.put(`${API_URL}/${editId}`, payload);
                 setStatus(t('admin.update_success'));
             } else {
-                await axios.post(API_URL, formData);
+                await axios.post(API_URL, payload);
                 setStatus(t('admin.create_success'));
             }
             resetForm();
@@ -298,21 +356,42 @@ const AdminNews = () => {
                             <div>
                                 <label className="block text-sm font-semibold text-gray-700 dark:text-gray-300 mb-2">{t('admin.photos')}</label>
 
-                                {/* Кнопка для выбора фото с телефона */}
+                                {/* Кнопка для выбора фото и Drag-and-Drop */}
                                 <div className="mb-3">
-                                    <label className="block w-full p-3 text-center bg-gray-100 dark:bg-gray-800 border-2 border-dashed border-gray-300 dark:border-gray-700 rounded-xl cursor-pointer hover:bg-gray-200 dark:hover:bg-gray-700 transition text-sm dark:text-gray-300">
-                                        {t('admin.select_photo')}
+                                    <label
+                                        onDragOver={(e) => { e.preventDefault(); setIsDragging(true); }}
+                                        onDragLeave={(e) => { e.preventDefault(); setIsDragging(false); }}
+                                        onDrop={(e) => {
+                                            e.preventDefault();
+                                            setIsDragging(false);
+                                            if (e.dataTransfer?.files?.length) {
+                                                handleUploadFiles(e.dataTransfer.files);
+                                            }
+                                        }}
+                                        className={`block w-full p-3 sm:p-4 text-center border-2 border-dashed rounded-xl cursor-pointer transition text-sm ${
+                                            isDragging
+                                                ? 'border-[var(--gold-primary)] bg-amber-50/50 dark:bg-amber-950/20 text-[var(--gold-primary)]'
+                                                : 'bg-gray-100 dark:bg-gray-800 border-gray-300 dark:border-gray-700 hover:bg-gray-200 dark:hover:bg-gray-700 text-gray-700 dark:text-gray-300'
+                                        }`}
+                                    >
+                                        {uploading ? (
+                                            <span className="animate-pulse">{t('admin.processing')}</span>
+                                        ) : (
+                                            <span>{t('admin.select_photo')}</span>
+                                        )}
                                         <input
                                             type="file"
                                             accept="image/*"
+                                            multiple
                                             onChange={handleFileUpload}
                                             className="hidden"
+                                            disabled={uploading}
                                         />
                                     </label>
                                 </div>
 
                                 <textarea
-                                    className="w-full p-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-xs text-gray-400 dark:text-gray-500 h-16 sm:h-20 outline-none"
+                                    className="w-full p-3 bg-gray-50 dark:bg-gray-800 border border-gray-200 dark:border-gray-700 rounded-xl text-xs text-gray-500 dark:text-gray-400 h-16 sm:h-20 outline-none focus:border-[var(--gold-primary)]"
                                     value={formData.image}
                                     onChange={(e) => setFormData({ ...formData, image: e.target.value })}
                                     placeholder={t('admin.photo_links')}
@@ -321,23 +400,27 @@ const AdminNews = () => {
 
                             {/* ПРЕДПРОСМОТР ФОТО */}
                             <div className="flex gap-2 sm:gap-3 flex-wrap">
-                                {formData.image && formData.image.split(',').map((url, i) => url.trim() && (
-                                    <div key={i} className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-[var(--gold-primary)] group">
-                                        <img src={url.trim()} className="w-full h-full object-cover" alt="preview" />
+                                {normalizeImages(formData.image).map((url, i) => (
+                                    <div key={`${url}-${i}`} className="relative w-16 h-16 sm:w-20 sm:h-20 rounded-xl overflow-hidden border-2 border-[var(--gold-primary)] group bg-gray-100 dark:bg-gray-800">
+                                        <img
+                                            src={url}
+                                            className="w-full h-full object-cover"
+                                            alt="preview"
+                                            onError={(e) => {
+                                                e.currentTarget.src = 'data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" width="80" height="80" viewBox="0 0 24 24" fill="none" stroke="%23888" stroke-width="2"><rect x="3" y="3" width="18" height="18" rx="2"/><circle cx="8.5" cy="8.5" r="1.5"/><polyline points="21 15 16 10 5 21"/></svg>';
+                                            }}
+                                        />
                                         <button
                                             type="button"
-                                            onClick={() => {
-                                                const images = formData.image.split(',').filter((_, index) => index !== i);
-                                                setFormData({ ...formData, image: images.join(',') });
-                                            }}
-                                            className="absolute inset-0 bg-black/40 text-white opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-[10px] sm:text-xs"
+                                            onClick={() => handleRemoveImage(i)}
+                                            className="absolute inset-0 bg-black/60 text-white opacity-0 group-hover:opacity-100 transition flex items-center justify-center text-xs font-bold"
                                         >
                                             ✕
                                         </button>
                                     </div>
                                 ))}
                                 {uploading && (
-                                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-dashed border-gray-300 dark:border-gray-700 flex items-center justify-center text-[10px] text-gray-400 dark:text-gray-600 animate-pulse">
+                                    <div className="w-16 h-16 sm:w-20 sm:h-20 rounded-xl border-2 border-dashed border-[var(--gold-primary)] flex items-center justify-center text-[10px] text-gray-400 dark:text-gray-600 animate-pulse bg-gray-50 dark:bg-gray-800">
                                         ⏳
                                     </div>
                                 )}
@@ -378,11 +461,25 @@ const AdminNews = () => {
                                             className={`flex items-center justify-between p-3 rounded-xl sm:rounded-2xl border cursor-pointer transition-all ${editId === getNewsId(news) ? 'bg-blue-50 dark:bg-blue-950/30 border-blue-200 dark:border-blue-800' : 'bg-gray-50 dark:bg-gray-800/50 border-gray-100 dark:border-gray-800 hover:bg-gray-100 dark:hover:bg-gray-800'}`}
                                         >
                                             <div className="flex items-center gap-3 flex-1 min-w-0">
-                                                <img
-                                                    src={news.image?.split(',')[0]}
-                                                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover bg-gray-200 dark:bg-gray-700 flex-shrink-0"
-                                                    alt=""
-                                                />
+                                                {getFirstImageUrl(news.image) ? (
+                                                    <img
+                                                        src={getFirstImageUrl(news.image)}
+                                                        className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg object-cover bg-gray-200 dark:bg-gray-700 flex-shrink-0"
+                                                        alt=""
+                                                        onError={(e) => {
+                                                            e.currentTarget.style.display = 'none';
+                                                            if (e.currentTarget.nextElementSibling) {
+                                                                e.currentTarget.nextElementSibling.style.display = 'flex';
+                                                            }
+                                                        }}
+                                                    />
+                                                ) : null}
+                                                <div
+                                                    style={{ display: getFirstImageUrl(news.image) ? 'none' : 'flex' }}
+                                                    className="w-10 h-10 sm:w-12 sm:h-12 rounded-lg bg-gray-200 dark:bg-gray-700 items-center justify-center text-gray-400 dark:text-gray-500 flex-shrink-0 text-xs"
+                                                >
+                                                    🖼️
+                                                </div>
                                                 <div className="flex-1 min-w-0">
                                                     <p className="font-bold text-xs sm:text-sm text-[#0E1A2B] dark:text-gray-200 line-clamp-1">
                                                         {news.title_ru || news.title_uz || news.title_en}
