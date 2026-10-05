@@ -71,9 +71,6 @@ export const getDirectorContent = (t, i18n) => {
     return {
         name: t('director.director_name'),
         role: t('director.director_label'),
-        birthDate: "27.11.1974",
-        nationality: t('director.director_nationality'),
-        languages: t('director.director_languages'),
-        additionalRole: t('director.director_extra')
+        description: t('director.director_description')
     };
 };

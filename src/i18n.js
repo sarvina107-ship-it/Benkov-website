@@ -147,7 +147,7 @@ i18n
                         mission_text: "Создаем пространство, где традиции академического искусства встречаются с современным видением, помогая каждому таланту найти свой путь.",
                         navigation: "Навигация",
                         socials: "Мы в сети",
-                        rights: "© 2026 РСХШ им. П.П. Бенькова",
+                        rights: "© {{year}} РСХШ им. П.П. Бенькова",
                         dev: "Design & Dev:"
                     },
                     home: {
@@ -471,20 +471,10 @@ i18n
                         title: "Руководство школы",
                         director_label: "Директор школы",
                         director_name: "Хакимов Умид Бахадирович",
-                        director_nationality: "Узбек",
-                        director_languages: "Русский, Узбекский",
-                        director_extra: "Председатель избирательной комиссии народных депутатов Шайхонтохурского района",
-                        back: "Вернуться к руководству",
-                        birth: "Дата рождения",
-                        nat_label: "Национальность",
-                        lang_label: "Знание языков",
-                        achievements_subtitle: "Признание и заслуги",
-                        awards_title: "Государственные награды и достижения",
-                        award_1: "Медаль Президента Республики Узбекистан «Шухрат»",
-                        award_2: "Памятный нагрудный знак Президента Республики Узбекистан «30-летие Конституции Узбекистана»",
-                        award_3: "Нагрудный знак «Преданный деятель Академии художеств Узбекистана»",
-                        award_4: "Серебряная медаль Академии художеств Узбекистана",
-                        award_5: "Золотая медаль Творческого союза художников Узбекистана"
+                        director_back: "Вернуться к руководству",
+                        director_description1: "Опытный руководитель, обеспечивающий эффективную организацию учебного процесса и работу педагогического коллектива.",
+                        director_description2: "Уделяет особое внимание качеству образования, развитию школы и созданию благоприятной среды для учащихся.",
+                        director_description3: "Активно участвует в общественной деятельности и выполняет обязанности председателя избирательной комиссии народных депутатов Шайхонтохурского района."
                     },
                     achievements: {
                         title: "Достижения Школы им. П.П. Бенькова",
@@ -1158,7 +1148,7 @@ i18n
                         mission_text: "Akademik san'at an'analari zamonaviy qarashlar bilan uchrashadigan makon yaratamiz va har bir iste'dodga o'z yo'lini topishga yordam beramiz.",
                         navigation: "Navigatsiya",
                         socials: "Ijtimoiy tarmoqlar",
-                        rights: "© 2026 P.P. Benkov nomidagi RIXM",
+                        rights: "© {{year}} P.P. Benkov nomidagi RIXM",
                         dev: "Dizayn va Ishlab chiqish:"
                     },
                     home: {
@@ -1481,20 +1471,10 @@ i18n
                         title: "Maktab rahbariyati",
                         director_label: "Maktab direktori",
                         director_name: "Xakimov Umid Baxadirovich",
-                        director_nationality: "O'zbek",
-                        director_languages: "Rus, ingliz tili",
-                        director_extra: "Shayxontohur tumani xalq deputatlari saylov komissiyasi raisi",
-                        back: "Rahbariyatga qaytish",
-                        birth: "Tug'ilgan sanasi",
-                        nat_label: "Millati",
-                        lang_label: "Tillarni bilishi",
-                        achievements_subtitle: "E’tirof va yutuqlar",
-                        awards_title: "Davlat mukofotlari va yutuqlar",
-                        award_1: "O‘zbekiston Respublikasi Prezidenti tomonidan berilgan «Shuhrat» medali",
-                        award_2: "O‘zbekiston Respublikasi Prezidenti tomonidan ta’sis etilgan «O‘zbekiston Konstitutsiyasining 30 yilligi» esdalik nishoni",
-                        award_3: "«O‘zbekiston Badiiy akademiyasi fidoiysi» ko‘krak nishoni",
-                        award_4: "O‘zbekiston Badiiy akademiyasining kumush medali",
-                        award_5: "O‘zbekiston Badiiy ijodkorlar uyushmasining oltin medali"
+                        director_back: "Rahbariyatga qaytish",
+                        director_description1: "Ta’lim jarayonini samarali tashkil etish va pedagogik jamoa faoliyatini muvofiqlashtirish uchun mas’ul bo‘lgan tajribali rahbar.",
+                        director_description2: "Ta’lim sifatiga, maktabni rivojlantirishga hamda o‘quvchilar uchun qulay ta’lim muhitini yaratishga alohida e’tibor qaratadi.",
+                        director_description3: "Jamoat faoliyatida faol ishtirok etadi va Shayxontohur tumani xalq deputatlari saylov komissiyasi raisi sifatida faoliyat yuritadi."
                     },
                     achievements: {
                         title: "P.P. Benkov nomidagi maktab yutuqlari",
@@ -2169,7 +2149,7 @@ i18n
                         mission_text: "We create a space where traditions of academic art meet modern vision, helping every talent find their own path.",
                         navigation: "Navigation",
                         socials: "Follow Us",
-                        rights: "© 2026 Benkov Art School",
+                        rights: "© {{year}} Benkov Art School",
                         dev: "Design & Dev:"
                     },
                     home: {
@@ -2450,8 +2430,7 @@ i18n
                         title: "School Management",
                         desc: "Meet the leadership of P. Benkov School — a dedicated team committed to academic excellence, creative development, and preserving the school's rich traditions.",
                         director_label: "School Director",
-                        director_name: "Umid Bakhadirovich",
-                        director_name2: "Khakimov",
+                        director_name: "Umid Bakhadirovich Khakimov",
                         director_quote: "«Art is not what you see, but what you make others see».",
                         profile_link: "Director's Profile",
                         deputies_title: "Deputy Directors",
@@ -2493,20 +2472,10 @@ i18n
                         title: "School Management",
                         director_label: "School Director",
                         director_name: "Khakimov Umid Bakhadirovich",
-                        director_nationality: "Uzbek",
-                        director_languages: "Russian, English",
-                        director_extra: "Chairman of the Electoral Commission of Shaykhantakhur District",
-                        back: "Back to management",
-                        birth: "Date of birth",
-                        nat_label: "Nationality",
-                        lang_label: "Languages",
-                        achievements_subtitle: "Honors and Achievements",
-                        awards_title: "National Awards and Distinctions",
-                        award_1: "Shukhrat Medal of the President of the Republic of Uzbekistan",
-                        award_2: "Commemorative Badge '30th Anniversary of the Constitution of Uzbekistan'",
-                        award_3: "Dedicated Contributor Badge of the Academy of Arts of Uzbekistan",
-                        award_4: "Silver Medal of the Academy of Arts of Uzbekistan",
-                        award_5: "Gold Medal of the Creative Union of Artists of Uzbekistan"
+                        director_back: "Back to Management",
+                        director_description1: "An experienced leader responsible for the effective organization of the educational process and the work of the teaching staff.",
+                        director_description2: "Pays special attention to the quality of education, the development of the school, and creating a supportive environment for students.",
+                        director_description3: "Actively participates in community activities and serves as the Chairperson of the Election Commission of the People's Deputies of Shaykhontohur District."
                     },
                     achievements: {
                         title: "Achievements of the P.P. Benkov \n School",
