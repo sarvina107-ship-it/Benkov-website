@@ -1132,8 +1132,8 @@ i18n
                         }
                     },
                     hero: {
-                        welcome: "XUSH KELIBSIZ",
-                        school_name: "SAN'AT MAKTABIGA",
+                        welcome: "SAN'AT MAKTABIGA",
+                        school_name: "XUSH KELIBSIZ",
                         description: "Pavel Benkov nomidagi",
                         descriptionname: "Respublika ixtisoslashtirilgan rassomlik maktabi"
                     },
