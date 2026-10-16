@@ -29,7 +29,7 @@ async function getDynamicRoutes() {
       return [];
     }
 
-    const newsRoutes = postsArray.map(post => `/news/${post._id}`);
+    const newsRoutes = postsArray.map(post => `/news/${post._id ?? post.id}`);
     console.log(`Успешно добавлено ${newsRoutes.length} новостей в Sitemap!`);
     return newsRoutes;
 
@@ -216,7 +216,7 @@ export default defineConfig(async () => {
               },
             },
             {
-              urlPattern: /^https:\/\/sarvina-production\.up\.railway\.app\/api\/news/,
+              urlPattern: /^https:\/\/benkov-backend-production\.up\.railway\.app\/api\/news/,
               handler: 'NetworkFirst',
               options: {
                 cacheName: 'api-cache',

@@ -122,14 +122,17 @@ const NewsSection = () => {
                                 ))
                             ) : (
                                 // ЕСЛИ ЗАГРУЗКА ЗАКОНЧИЛАСЬ, РЕНДЕРИМ НАСТОЯЩИЕ КАРТОЧКИ
-                                currentNews.map((item, index) => (
+                                currentNews.map((item, index) => {
+                                    const newsId = item._id ?? item.id;
+                                    const itemImage = (item.image || item.img || '').split(',')[0]?.trim();
+                                    return (
                                     <div
-                                        key={item._id || index}
+                                        key={newsId || index}
                                         className="bg-white dark:bg-gray-900 relative group rounded-2xl overflow-hidden shadow-xl dark:shadow-gray-900/50 hover:shadow-2xl transition-shadow duration-500 flex flex-col h-full"
                                     >
                                         <div className="overflow-hidden h-[200px] sm:h-[220px]">
                                             <img
-                                                src={item.image || null}
+                                                src={itemImage || null}
                                                 alt={item.title || "News"}
                                                 loading="lazy"      // Оптимизация загрузки изображений
                                                 decoding="async"    // Асинхронное декодирование
@@ -144,7 +147,7 @@ const NewsSection = () => {
                                                 {getLocalizedField(item, 'description') || t('home.news.placeholder_desc')}
                                             </p>
 
-                                            <Link to={`/news/${item._id}`} className="mt-auto">
+                                            <Link to={`/news/${newsId}`} className="mt-auto">
                                                 <button className="group/btn relative w-full sm:w-auto px-6 sm:px-8 py-3 sm:py-4 bg-[var(--gold-primary)] text-[#1B2A44] dark:text-gray-900 hover:text-[var(--gold-primary)] rounded-xl font-bold uppercase tracking-[0.15em] sm:tracking-[0.2em] text-[11px] sm:text-sm border border-[var(--gold-primary)]/50 transition-colors duration-500 hover:border-[var(--gold-primary)] hover:bg-[var(--gold-primary)]/5">
                                                     <span className="absolute top-0 left-0 w-2 h-2 border-t-2 border-l-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-tl-lg"></span>
                                                     <span className="absolute bottom-0 right-0 w-2 h-2 border-b-2 border-r-2 border-[var(--gold-primary)] opacity-0 group-hover/btn:opacity-100 transition-all duration-300 rounded-br-lg"></span>
@@ -162,7 +165,7 @@ const NewsSection = () => {
                                             </Link>
                                         </div>
                                     </div>
-                                ))
+                                );})
                             )}
                         </div>
 

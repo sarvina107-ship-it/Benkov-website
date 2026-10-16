@@ -25,24 +25,34 @@ const NewsDetail = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('https://benkov-backend-production.up.railway.app/api/news')
+        axios.get(`https://benkov-backend-production.up.railway.app/api/news/${id}`)
             .then(res => {
-                const allNews = Array.isArray(res.data) ? res.data : (res.data.news || res.data.data || []);
-                const foundItem = allNews.find(n => (n._id === id || n.id === id));
-                if (foundItem) {
-                    setItem(foundItem);
+                if (res.data && (res.data.id !== undefined || res.data._id !== undefined || res.data.title)) {
+                    setItem(res.data);
+                    setLoading(false);
+                    return;
                 }
-                setLoading(false);
+                throw new Error("Single news not returned");
             })
-            .catch(err => {
-                console.error("Ошибка API:", err);
-                setItem(null); // Явно сбрасываем в null при ошибке
-                setLoading(false);
+            .catch(() => {
+                // Запасной вариант: получаем весь список и ищем по id
+                axios.get('https://benkov-backend-production.up.railway.app/api/news')
+                    .then(res => {
+                        const allNews = Array.isArray(res.data) ? res.data : (res.data.news || res.data.data || []);
+                        const foundItem = allNews.find(n => String(n._id ?? n.id) === String(id));
+                        setItem(foundItem || null);
+                        setLoading(false);
+                    })
+                    .catch(err => {
+                        console.error("Ошибка API:", err);
+                        setItem(null);
+                        setLoading(false);
+                    });
             });
     }, [id]);
 
     // --- СНАЧАЛА ПРОВЕРЯЕМ ЗАГРУЗКУ И НАЛИЧИЕ ДАННЫХ ---
-    if (loading) return <div className="py-20 text-center text-xl text-[#0E1A2B] px-4">{t('newsDetail.loading')}</div>;
+    if (loading) return <div className="py-20 text-center text-xl text-[#0E1A2B] dark:text-gray-100 px-4">{t('newsDetail.loading')}</div>;
     if (!item) return <div className="py-20 text-center text-xl text-red-500 px-4">{t('newsDetail.not_found')}</div>;
 
     // --- ТЕПЕРЬ ДАННЫЕ ТОЧНО ЕСТЬ, ВЫЧИСЛЯЕМ SEO БЕЗОПАСНО ---
@@ -64,7 +74,10 @@ const NewsDetail = () => {
         })
         : t('newsDetail.date_placeholder') || 'not found';
 
-    const images = item.image ? item.image.split(',').map(img => img.trim()) : [];
+    const rawImages = item.image || item.img || '';
+    const images = typeof rawImages === 'string'
+        ? rawImages.split(',').map(img => img.trim()).filter(Boolean)
+        : (Array.isArray(rawImages) ? rawImages : []);
 
     return (
         <PageWrapper>

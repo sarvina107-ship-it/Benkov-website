@@ -117,14 +117,17 @@ const NewsList = () => {
       ${itemsPerPage === 4 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-4' : ''}
       ${itemsPerPage === 6 ? 'grid-cols-1 sm:grid-cols-2 lg:grid-cols-3' : ''}
     `}>
-                        {currentNews.map((item, index) => (
+                        {currentNews.map((item, index) => {
+                            const newsId = item._id ?? item.id;
+                            const itemImage = (item.image || item.img || '').split(',')[0]?.trim();
+                            return (
                             <div
-                                key={item._id || index}
+                                key={newsId || index}
                                 className="bg-white dark:bg-gray-900 group rounded-xl sm:rounded-2xl overflow-hidden shadow-sm dark:shadow-gray-900/50 hover:shadow-2xl transition-all duration-500 flex flex-col border border-gray-100 dark:border-gray-800"
                             >
                                 <div className="overflow-hidden h-[200px] sm:h-[220px] md:h-[250px] relative">
                                     <img
-                                        src={item.image ? item.image.split(',')[0].trim() : null}
+                                        src={itemImage || null}
                                         alt={item.title}
                                         loading="lazy"
                                         className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
@@ -144,7 +147,7 @@ const NewsList = () => {
                                         {getLocalizedField(item, 'description') || t('newsList.placeholder_desc')}
                                     </p>
 
-                                    <Link to={`/news/${item._id}`} className="mt-auto">
+                                    <Link to={`/news/${newsId}`} className="mt-auto">
                                         <button className="flex items-center justify-center sm:justify-start gap-2 text-[var(--gold-primary)] font-bold uppercase text-[10px] sm:text-xs tracking-widest group/btn w-full sm:w-auto">
                                             {t('newsList.read_full')}
                                             <span className="w-4 sm:w-6 h-[1px] bg-[var(--gold-primary)] group-hover/btn:w-6 sm:group-hover/btn:w-10 transition-all duration-300"></span>
@@ -152,7 +155,7 @@ const NewsList = () => {
                                     </Link>
                                 </div>
                             </div>
-                        ))}
+                        );})}
                     </div>
 
                     {/* ПАГИНАЦИЯ - адаптивная */}
