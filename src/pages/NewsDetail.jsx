@@ -25,7 +25,7 @@ const NewsDetail = () => {
 
     useEffect(() => {
         setLoading(true);
-        axios.get('https://sarvina-production.up.railway.app/api/news')
+        axios.get('https://benkov-backend-production.up.railway.app/api/news')
             .then(res => {
                 const allNews = Array.isArray(res.data) ? res.data : (res.data.news || res.data.data || []);
                 const foundItem = allNews.find(n => (n._id === id || n.id === id));

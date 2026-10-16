@@ -42,7 +42,7 @@ const AdminNews = () => {
     const [mobileMenuOpen, setMobileMenuOpen] = useState(false);
 
     const IMGBB_API_KEY = '24e129c25ed502eb69213676bb176822';
-    const API_URL = 'https://sarvina-production.up.railway.app/api/news';
+    const API_URL = 'https://benkov-backend-production.up.railway.app/api/news';
 
     const getNewsId = (news) => news?._id ?? news?.id;
 

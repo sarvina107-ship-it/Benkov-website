@@ -10,7 +10,7 @@ const languages = ['/uz', '/ru', '/en'];
 // ------------------------------------------------------------------
 
 async function getDynamicRoutes() {
-  const API_URL = 'https://sarvina-production.up.railway.app/api/news';
+  const API_URL = 'https://benkov-backend-production.up.railway.app/api/news';
 
   try {
     const response = await fetch(API_URL);
@@ -94,13 +94,13 @@ export default defineConfig(async () => {
       //     "script-src 'self' 'unsafe-eval' 'sha256-Z2/iFzh9VMlVkEOar1f/oSHWwQk3ve1qk/C2WdsC4Xk=' https://www.google-analytics.com; " +
       //     "style-src 'self' 'unsafe-inline' https://fonts.googleapis.com; " +
       //     "font-src 'self' https://fonts.gstatic.com; " +
-      //     "connect-src 'self' https://sarvina-production.up.railway.app ws://localhost:* http://localhost:*; " +
-      //     "img-src 'self' data: https://sarvina-production.up.railway.app *; " +
+      //     "connect-src 'self' https://benkov-backend-production.up.railway.app ws://localhost:* http://localhost:*; " +
+      //     "img-src 'self' data: https://benkov-backend-production.up.railway.app *; " +
       //     "frame-src 'self' https://yandex.uz https://*.yandex.uz;"
       // },
       proxy: {
         '/api': {
-          target: 'https://sarvina-production.up.railway.app',
+          target: 'https://benkov-backend-production.up.railway.app',
           changeOrigin: true,
           secure: false,
         },

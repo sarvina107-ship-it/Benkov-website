@@ -23,7 +23,7 @@ const NewsSection = () => {
 
     // Загрузка новостей
     useEffect(() => {
-        axios.get('https://sarvina-production.up.railway.app/api/news')
+        axios.get('https://benkov-backend-production.up.railway.app/api/news')
             .then(res => {
                 const data = Array.isArray(res.data)
                     ? res.data

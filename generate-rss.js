@@ -19,7 +19,7 @@ async function generateRss() {
 
     try {
         // 2. Запрос к твоему API на Railway
-        const response = await fetch('https://sarvina-production.up.railway.app/api/news');
+        const response = await fetch('https://benkov-backend-production.up.railway.app/api/news');
         const data = await response.json();
 
         // Проверяем в консоли, что именно прилетает с бэка:
