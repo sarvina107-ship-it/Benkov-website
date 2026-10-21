@@ -1,6 +1,9 @@
 import React, { useState, useEffect } from 'react';
 import { useParams, Link } from 'react-router-dom';
 import axios from 'axios';
+import ReactMarkdown from 'react-markdown';
+import remarkGfm from 'remark-gfm';
+import remarkBreaks from 'remark-breaks';
 import { useTranslation } from 'react-i18next';
 import { Swiper, SwiperSlide } from 'swiper/react';
 import { Navigation, Pagination } from 'swiper/modules';
@@ -82,7 +85,7 @@ const NewsDetail = () => {
     return (
         <PageWrapper>
             <Seo title={seoTitle} description={seoDescription} />
-            
+
             <div className="min-h-screen bg-white dark:bg-gray-950">
                 <div className="max-w-7xl mx-auto px-4 sm:px-6 py-8 sm:py-12 md:py-16">
 
@@ -151,12 +154,59 @@ const NewsDetail = () => {
                                 </div>
                             )}
 
+
                             {/* ОПИСАНИЕ */}
-                            <div className="text-gray-800 dark:text-gray-300 leading-relaxed space-y-4 sm:space-y-5 md:space-y-6" style={{ fontFamily: "'Merriweather', serif", fontSize: '1rem' }}>
-                                {getLocalizedField(item, 'description')?.split('\n').map((paragraph, i) => (
-                                    paragraph.trim() && <p key={i} className="text-sm sm:text-base md:text-lg">{paragraph}</p>
-                                ))}
+                            <div
+                                className="text-gray-800 dark:text-gray-300 leading-relaxed space-y-4 sm:space-y-5 md:space-y-6"
+                                style={{
+                                    fontFamily: "'Merriweather', serif",
+                                    fontSize: '1rem'
+                                }}
+                            >
+                                <ReactMarkdown
+                                    remarkPlugins={[remarkGfm, remarkBreaks]}
+                                    components={{
+                                        p: ({ children }) => (
+                                            <p className="text-sm sm:text-base md:text-lg mb-4 whitespace-pre-wrap">
+                                                {children}
+                                            </p>
+                                        ),
+                                        strong: ({ children }) => (
+                                            <strong className="font-bold text-[#0E1A2B] dark:text-gray-100">
+                                                {children}
+                                            </strong>
+                                        ),
+                                        a: ({ href, children }) => (
+                                            <a
+                                                href={href}
+                                                target="_blank"
+                                                rel="noopener noreferrer"
+                                                className="text-blue-600 dark:text-blue-400 underline hover:text-[var(--gold-primary)] break-words"
+                                            >
+                                                {children}
+                                            </a>
+                                        ),
+                                        ul: ({ children }) => (
+                                            <ul className="list-disc pl-6 mb-4 space-y-2">
+                                                {children}
+                                            </ul>
+                                        ),
+                                        ol: ({ children }) => (
+                                            <ol className="list-decimal pl-6 mb-4 space-y-2">
+                                                {children}
+                                            </ol>
+                                        ),
+                                        li: ({ children }) => (
+                                            <li className="text-sm sm:text-base md:text-lg">
+                                                {children}
+                                            </li>
+                                        ),
+                                    }}
+                                >
+                                    {getLocalizedField(item, 'description')}
+                                </ReactMarkdown>
                             </div>
+
                         </div>
 
                         {/* ПРАВАЯ КОЛОНКА */}
